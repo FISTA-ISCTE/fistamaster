@@ -45,7 +45,6 @@
                     <div class="header-wrap">
 
                         <div class="header-logo">
-                            <a class="logo-white" href="index.html"><img src="assets/images/logos/logo_fista_horizontal_branco_2023.png" alt=""></a>
                             <a class="logo-black" href="index.html"><img src="assets/images/logos/logo_fista_horizontal_azul_2023_v2.png" alt=""></a>                            
                         </div>
 
