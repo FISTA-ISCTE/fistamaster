@@ -546,7 +546,7 @@ textarea:-ms-input-placeholder {
   border-color: transparent;
   color: #ffffff;
   border-radius: 5px;
-  font-size: 25px;
+  font-size: 1.1rem;
   font-family: "Barlow", sans-serif;
   font-weight: 700;
   height: 60px;
@@ -748,7 +748,7 @@ textarea:-ms-input-placeholder {
 
 .header-menu .main-menu li {
   position: relative;
-  padding: 30px 20px;
+  padding: 30px 15px;
 }
 
 @media only screen and (max-width: 1199px) {
@@ -758,7 +758,7 @@ textarea:-ms-input-placeholder {
 }
 
 .header-menu .main-menu li a {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-family: "Barlow", sans-serif;
   font-weight: 700;
   text-transform: capitalize;
@@ -800,7 +800,7 @@ textarea:-ms-input-placeholder {
   position: absolute;
   left: 0;
   top: 110%;
-  width: 270px;
+  width: max-content;
   background: #ffffff;
   box-shadow: 0 2px 29px rgba(0, 0, 0, 0.05);
   padding: 20px 0;
@@ -818,7 +818,7 @@ textarea:-ms-input-placeholder {
 
 .header-menu .main-menu li .sub-menu li a {
   padding: 5px 25px;
-  font-size: 25px;
+  font-size: 1.1rem;
   font-family: "Barlow", sans-serif;
   font-weight: 600;
   text-transform: capitalize;
@@ -1225,8 +1225,8 @@ textarea:-ms-input-placeholder {
 }
 
 .header-btn .btn {
-  height: 60px;
-  line-height: 60px;
+  height: 45px;
+  line-height: 45px;
   padding: 0 45px;
 }
 
@@ -1832,8 +1832,8 @@ textarea:-ms-input-placeholder {
   position: absolute;
   right: 20px;
   top: 14px;
-  width: 30px;
-  height: 30px;
+  width: 16px;
+  height: 16px;
   cursor: pointer;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 3px;
@@ -1842,7 +1842,7 @@ textarea:-ms-input-placeholder {
 .offcanvas-menu .main-menu li .menu-expand::before {
   position: absolute;
   content: '';
-  width: 16px;
+  width: 9px;
   height: 2px;
   background-color: #ffffff;
   top: 50%;
@@ -1855,7 +1855,7 @@ textarea:-ms-input-placeholder {
   position: absolute;
   content: '';
   width: 2px;
-  height: 16px;
+  height: 9px;
   left: 50%;
   top: 50%;
   bottom: 0;
@@ -3119,7 +3119,7 @@ textarea:-ms-input-placeholder {
 }
 
 .techwix-service-section-04 .service-bottom .service-item-03 .service-text .title {
-  font-size: 24px;
+  font-size: 1.25rem;
   line-height: 27px;
   font-weight: 600;
   position: relative;
@@ -5009,7 +5009,7 @@ textarea:-ms-input-placeholder {
 }
 
 .techwix-about-section-07 .about-content-wrap .text {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   line-height: 30px;
   margin-top: 25px;
 }
@@ -5026,14 +5026,14 @@ textarea:-ms-input-placeholder {
 }
 
 .techwix-about-section-07 .about-content-wrap .about-list-03 .about-list-item-03 .title {
-  font-size: 1.30rem;
+  font-size: 1.25rem;
   line-height: 30px;
   font-weight: 700;
   color: #231e32;
 }
 
 .techwix-about-section-07 .about-content-wrap .about-list-03 .about-list-item-03 p {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   line-height: 30px;
 }
 
@@ -6762,7 +6762,7 @@ textarea:-ms-input-placeholder {
 }
 
 .techwix-choose-us-section-02 .choose-us-right .faq-accordion .accordion-item .accordion-button .title {
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   color: #0e0e0e;
   font-family: "Barlow", sans-serif;
   display: inline-block;
@@ -6790,7 +6790,7 @@ textarea:-ms-input-placeholder {
 }
 
 .techwix-choose-us-section-02 .choose-us-right .faq-accordion .accordion-item .accordion-body {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   border-top: 1px solid #ebebeb;
   padding: 30px 35px;
 }
@@ -7053,7 +7053,7 @@ textarea:-ms-input-placeholder {
 
 
 .techwix-team-section-03 .more-team-content p {
-  font-size: 1.35rem;
+  font-size: 1.1rem;
   line-height: 30px;
 }
 

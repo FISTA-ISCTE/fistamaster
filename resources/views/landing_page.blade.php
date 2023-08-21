@@ -250,7 +250,7 @@
     <div class="container">
         <!-- Team Wrap Start -->
         <div class="team-wrap">
-            <h1 style="font-size:3.5rem;font-weight:bold;color:#1EC4BD;text-align:center;margin-bottom:3%">Equipa</h1>
+            <h1 style="font-size:2.5rem;font-weight:bold;color:#1EC4BD;text-align:center;margin-bottom:3%">Equipa</h1>
 
             <div class="row">
                 <div class="col-lg-3 col-sm-6 team-show">
@@ -407,7 +407,7 @@
     <div class="container">
         <!-- Choose Us Wrap Start -->
         <div class="choose-us-wrap">
-            <h1 style="font-size:3.5rem;font-weight:bold;color:#1EC4BD;text-align:center;margin-bottom:3%">FAQ</h1>
+            <h1 style="font-size:2.5rem;font-weight:bold;color:#1EC4BD;text-align:center;margin-bottom:3%">FAQ</h1>
 
             <div class="row">
                 
@@ -512,7 +512,7 @@
     <div class="container">
         <!-- Brand Wrapper Start -->
         <div class="brand-wrapper text-center">
-            <h1 style="font-size:3.5rem;font-weight:bold;color:#1EC4BD;text-align:center;margin-bottom:3%">Patrocinadores</h1>
+            <h1 style="font-size:2.5rem;font-weight:bold;color:#1EC4BD;text-align:center;margin-bottom:3%">Patrocinadores</h1>
             <!-- Brand Active Start -->
             <div class="brand-active">
                 <div class="swiper-container">
@@ -565,7 +565,7 @@
     <div class="container">
         <!-- Brand Wrapper Start -->
         <div class="brand-wrapper text-center">
-            <h1 style="font-size:3.5rem;font-weight:bold;color:#1EC4BD;text-align:center;margin-bottom:3%">Parcerias</h1>            
+            <h1 style="font-size:2.5rem;font-weight:bold;color:#1EC4BD;text-align:center;margin-bottom:3%">Parcerias</h1>            
           
 
             <!-- Brand Active Start -->
