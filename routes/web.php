@@ -16,3 +16,27 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
+
+Route::get('/become-a-partner', function () {
+    return view('become-partner');
+})->name('become-partner');
+
+Route::get('/registarEmpresa/{name?}', function ($name = null) {
+    return view('registarEmpresa');
+})->name('registarEmpresa');
+
+Route::post('/registarEmpresa', 'EmpresaController@registarempresa')->name('registarEmpresasite');
+
+Route::get('/registerempresassite/{name?}', function ($name = null) {
+    return view('registerempresassite');
+})->name('registerempresassite');
