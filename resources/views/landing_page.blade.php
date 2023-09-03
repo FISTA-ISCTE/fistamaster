@@ -3,17 +3,17 @@
 @section('content')
 
 <!-- Hero Start -->
-<div class="section techwix-hero-section-04 d-flex align-items-center" style="background-image:url('https://fista.iscte-iul.pt/img/homepage_img1_2023_optimized.png');">
-    
-    <div class="container">
+<div class="section techwix-hero-section-04 d-flex align-items-center" style="background-image:url('/assets/images/home.jpg');">
+
+    <div class="container" style="margin-top:-18rem;">
         <div class="row align-items-center">
             <div class="col-lg-12">
                 <!-- Hero Content Start -->
                 <div class="hero-content text-center">
-                    <h3 class="sub-title" data-aos-delay="600" data-aos="fade-up">Bem vindo ao mundo das tecnologias e arquitetura</h3>
-                    <h2 class="title" data-aos="fade-up" data-aos-delay="800"><img style="width:450px"src="assets/images/logos/logo_fista_horizontal_branco_2023.png" alt="Logo"></h2>
-                    <p data-aos="fade-up" style="font-size:2rem;" data-aos-delay="900"><i class="flaticon-pin"></i> Iscte - Instituto Universitário de Lisboa, Pátio 2</p>
-                    <p data-aos="fade-up" style="font-size:2rem; font-weight:bold; margin-top:20px;" data-aos-delay="900"><i class="flaticon-calendar"></i> 28 e 29 de fevereiro</p>
+                    <h4 class="sub-title" data-aos-delay="600" data-aos="fade-up">Bem vindo ao mundo das tecnologias e arquitetura</h4>
+                    <h2 class="title" data-aos="fade-up" data-aos-delay="800"><img style="width:550px"src="assets/images/logos/logo_fista_horizontal_branco_2023.png" alt="Logo"></h2>
+                    <p data-aos="fade-up" style="font-size:1.5rem;" data-aos-delay="900"><i class="flaticon-pin"></i> Iscte - Instituto Universitário de Lisboa, Pátio 2</p>
+                    <p data-aos="fade-up" style="font-size:1.5rem; font-weight:bold; margin-top:20px;" data-aos-delay="900"><i class="flaticon-calendar"></i> 28 e 29 de fevereiro</p>
 
                     <div class="hero-btn" data-aos="fade-up" data-aos-delay="1000">
                         <a class="btn" href="about.html">Registar Empresa</a>
@@ -121,7 +121,7 @@
                     <!-- About Content Wrap Start -->
                     <div class="about-content-wrap">
                         <div class="section-title">
-                            <h3 class="sub-title">Who we are</h3>
+                            <h3 class="sub-title">Quem somos?</h3>
                             <h2 class="title">Highly Tailored IT Design, Management & Support Services.</h2>
                         </div>
                         <p class="text">Accelerate innovation with world-class tech teams We’ll match you to an entire remote team of incredible freelance talent for all your software development needs.</p>
@@ -166,7 +166,7 @@
                         <!-- Service Item Start -->
                         <div class="service-item-03">
                             <div class="service-img">
-                                <a href="service.html"><img src="assets/images/ser-img1.jpg" alt=""></a>
+                                <a href="service.html"><img src="assets/images/brand/13150512855_0a2cd5075e_c.jpg" alt=""></a>
                             </div>
                             <div class="service-text">
                                 <h3 class="title"><a href="service.html">Workshops</a></h3>
@@ -178,7 +178,7 @@
                         <!-- Service Item Start -->
                         <div class="service-item-03">
                             <div class="service-img">
-                                <a href="service.html"><img src="assets/images/ser-img2.jpg" alt=""></a>
+                                <a href="service.html"><img src="assets/images/brand/49617558991_9ba324fc14_c.jpg" alt=""></a>
                             </div>
                             <div class="service-text">
                                 <h3 class="title"><a href="service.html">IT Speed Talks</a></h3>
@@ -190,7 +190,7 @@
                         <!-- Service Item Start -->
                         <div class="service-item-03">
                             <div class="service-img">
-                                <a href="service.html"><img src="assets/images/ser-img3.jpg" alt=""></a>
+                                <a href="service.html"><img src="assets/images/brand/13150543325_ecd8a5f345_w.jpg" alt=""></a>
                             </div>
                             <div class="service-text">
                                 <h3 class="title"><a href="service.html">Conferências</a></h3>
@@ -202,7 +202,7 @@
                         <!-- Service Item Start -->
                         <div class="service-item-03">
                             <div class="service-img">
-                                <a href="service.html"><img src="assets/images/ser-img3.jpg" alt=""></a>
+                                <a href="service.html"><img src="assets/images/brand/13150512855_0a2cd5075e_c.jpg" alt=""></a>
                             </div>
                             <div class="service-text">
                                 <h3 class="title"><a href="service.html">Concursos</a></h3>
@@ -214,7 +214,7 @@
                         <!-- Service Item Start -->
                         <div class="service-item-03">
                             <div class="service-img">
-                                <a href="service.html"><img src="assets/images/ser-img3.jpg" alt=""></a>
+                                <a href="service.html"><img src="assets/images/brand/32930549451_a09d298edd_c.jpg" alt=""></a>
                             </div>
                             <div class="service-text">
                                 <h3 class="title"><a href="service.html">Oradores</a></h3>
@@ -226,7 +226,7 @@
                         <!-- Service Item Start -->
                         <div class="service-item-03">
                             <div class="service-img">
-                                <a href="service.html"><img src="assets/images/ser-img3.jpg" alt=""></a>
+                                <a href="service.html"><img src="assets/images/brand/13150512855_0a2cd5075e_c.jpg" alt=""></a>
                             </div>
                             <div class="service-text">
                                 <h3 class="title"><a href="service.html">FISTA GO</a></h3>
@@ -257,12 +257,12 @@
                     <!-- Single Team Start -->
                     <div class="single-team">
                         <div class="team-img">
-                            <a href="team.html"><img src=" https://fista.iscte-iul.pt/storage/users/81666276709.png" alt=""></a>
+                            <a href="team.html"><img src="/assets/images/team/1600522766229.jpg" alt=""></a>
                         </div>
                         <div class="team-content">
                             <h3 class="name"><a href="#">Ana <br>Margarida Alexandre</a></a></h3>
                             <span class="designation">Carrer Services</span>
-                            
+
                         </div>
                     </div>
                     <!-- Single Team End -->
@@ -271,12 +271,12 @@
                     <!-- Single Team Start -->
                     <div class="single-team">
                         <div class="team-img">
-                            <a href="team.html"><img src=" https://fista.iscte-iul.pt/storage/users/937462812.png" alt=""></a>
+                            <a href="team.html"><img src="/assets/images/team/1600522766229.jpg" alt=""></a>
                         </div>
                         <div class="team-content">
                             <h3 class="name"><a href="#">Luis <br> Cancela</a></h3>
                             <span class="designation">Professor Responsável</span>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -284,12 +284,12 @@
                     <!-- Single Team Start -->
                     <div class="single-team">
                         <div class="team-img">
-                            <a href="team.html"><img src=" https://fista.iscte-iul.pt/storage/users/13616761957260.jpg" alt=""></a>
+                            <a href="team.html"><img src="/assets/images/team/1600522766229.jpg" alt=""></a>
                         </div>
                         <div class="team-content">
                             <h3 class="name"><a href="#"> Miguel<br> Gomes</a></h3>
                             <span class="designation">Professor Arquitetura</span>
-                            
+
                         </div>
                     </div>
                     <!-- Single Team End -->
@@ -298,7 +298,7 @@
                     <!-- Single Team Start -->
                     <div class="single-team">
                         <div class="team-img">
-                            <a href="team.html"><img src=" https://fista.iscte-iul.pt/storage/users/691671495097.png" alt=""></a>
+                            <a href="team.html"><img src="/assets/images/team/1600522766229.jpg" alt=""></a>
                         </div>
                         <div class="team-content">
                             <h3 class="name"><a href="#">Telma<br> Faustino</a></h3>
@@ -316,7 +316,7 @@
                     <!-- Single Team Start -->
                     <div class="single-team">
                         <div class="team-img">
-                            <a href="team.html"><img src=" https://fista.iscte-iul.pt/storage/users/181671456151.jpeg" alt=""></a>
+                            <a href="team.html"><img src="/assets/images/team/1600522766229.jpg" alt=""></a>
                         </div>
                         <div class="team-content">
                             <h3 class="name"><a href="#">Michael <br> Frater</a></h3>
@@ -336,10 +336,10 @@
                     <!-- Single Team Start -->
                     <div class="single-team">
                         <div class="team-img">
-                            <a href="team.html"><img src=" https://fista.iscte-iul.pt/storage/users/41671764455.png" alt=""></a>
+                            <a href="team.html"><img src="/assets/images/team/1600522766229.jpg" alt=""></a>
                         </div>
                         <div class="team-content">
-                            <h3 class="name"><a href="#">Kevin <br> Perry</a></h3> 
+                            <h3 class="name"><a href="#">Kevin <br> Perry</a></h3>
                             <span class="designation">CEO, techwix</span>
                             <div class="team-social">
                                 <ul class="social">
@@ -351,7 +351,7 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
             <div class="row">
                     <div class="col-lg-12">
@@ -386,7 +386,7 @@
         // Toggle the text content of the <a> element
         toggleLink.innerHTML = currentState ? 'Ver Menos <i id="bla"class="fas fa-long-arrow-alt-up"></i>' : 'Ver Mais <i id="bla"class="fas fa-long-arrow-alt-down"></i>';
 
-          
+
     });
 
 </script>
@@ -410,7 +410,7 @@
             <h1 style="font-size:2.5rem;font-weight:bold;color:#1EC4BD;text-align:center;margin-bottom:3%">FAQ</h1>
 
             <div class="row">
-                
+
                 <div class="col-lg-12">
                     <!-- Choose Us Right Start -->
                     <div class="choose-us-right">
@@ -471,7 +471,7 @@
     <div class="container">
         <!-- Video Wrap Start -->
         <div class="video-wrap" style="background-image: url(assets/images/bg/video-bg.jpg);">
-            
+
             <div class="shape-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="602px" height="640px">
                     <defs>
@@ -565,8 +565,8 @@
     <div class="container">
         <!-- Brand Wrapper Start -->
         <div class="brand-wrapper text-center">
-            <h1 style="font-size:2.5rem;font-weight:bold;color:#1EC4BD;text-align:center;margin-bottom:3%">Parcerias</h1>            
-          
+            <h1 style="font-size:2.5rem;font-weight:bold;color:#1EC4BD;text-align:center;margin-bottom:3%">Parcerias</h1>
+
 
             <!-- Brand Active Start -->
             <div class="brand-active">
@@ -591,7 +591,7 @@
                         <div class="swiper-slide single-brand">
                             <img src="assets/images/parceiros/ned.png" alt="Brand" style="height:4rem">
                         </div>
-                        
+
                         <!-- Single Brand End -->
                     </div>
                 </div>

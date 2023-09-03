@@ -9,10 +9,10 @@
 
 
 -----------------------------------------------------------------------------------
-    
+
     CSS INDEX
     ===================
-	
+
     01. Theme default CSS
     02. Header CSS
     2.1. Header Top CSS
@@ -40,7 +40,7 @@
     23. Login Register CSS
     24. Footer CSS
     24.1. Footer Widget CSS
-	
+
 
 -----------------------------------------------------------------------------------*/
 /*----------------------------------------*/
@@ -2461,14 +2461,13 @@ textarea:-ms-input-placeholder {
   line-height: 78px;
   font-weight: 600;
   color: #ffffff;
-  margin-top: 45px;
 }
 
 .techwix-hero-section-04 .hero-content p {
   font-size: 24px;
   line-height: 36px;
   color: #ffffff;
-  margin-top: 50px;
+  margin-top: 5px;
 }
 
 .techwix-hero-section-04 .hero-content .hero-btn .btn {
