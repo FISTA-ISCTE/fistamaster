@@ -333,7 +333,7 @@
                                             <div class="col-sm-12">
                                                 <div class="single-form">
                                                     <label for="avatar" class="form-label">Upload de Logotipo (PNG, JPG ou JPEG)</label>
-                                                    <input type="file" onchange="ValidateSingleInput(this);" required class="form-control" name="avatar" id="avatar">
+                                                    <input type="file" onchange="ValidateSingleInput(this);" class="form-control" name="avatar" id="avatar" required>
                                                 </div>
                                             </div>
                                             <div class="col-sm-12">
@@ -403,14 +403,36 @@
                                                 </div>
                                                 <div class="col-sm-12">
                                                     <div class="single-form">
-                                                        <div class="workshopselector" style="width: 100%;">
-                                                            <select class="form-control" type="text" name="workshop_option">
+                                                        <label class="container">
+                                                        <label id="workshoptext"><span style="display: inline; color: black">Workshop ou Speed Interview</span> </label>
+                                                        <input type="checkbox" value=1 name="workshop" id="workshopCheckbox">
+                                                        <span class="checkmark"></span>
+                                                        <div class="workshopselector" style="display:none; width: 100%;">
+                                                            <select class="custom-select" type="text" name="workshop_option">
                                                                 <option value="null" selected disabled>Selecionar Modelo</option>
-                                                                <option value="ws_online">Workshop Online</option>
                                                                 <option value="ws_presencial">Workshop Presencial</option>
                                                                 <option value="si">Speed Interviews</option>
                                                             </select>
                                                         </div>
+                                                    </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <div class="single-form">
+                                                        <label class="workshopextra container" style="display:none">
+                                                            <label id="workshopextratext"><span style="display: inline; color: black">Workshop Presencial</span> </label>
+                                                            <input type="checkbox" value=1 name="workshopextra">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <div class="single-form">
+                                                        <label class="siextra container" style="display:none">
+                                                            <label id="siextratext"><span style="display: inline; color: black">Speed Interview</span> </label>
+                                                            <input type="checkbox" value=1 name="siextra">
+                                                            <span class="checkmark"></span>
+                                                        </label>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-12">
@@ -446,13 +468,13 @@
                                             <div class="col-sm-12">
                                                 <div class="single-form" id="attending">
                                                     <label class="container">
-                                                        <label id="day1text"><span style="display: inline; color: black">8 de março</span> </label>
-                                                        <input type="checkbox" class="checkoption" value="8" name="day1" onclick="checkedOn(this);">
+                                                        <label id="day1text"><span style="display: inline; color: black">28 de Fevereiro</span> </label>
+                                                        <input type="checkbox" class="checkoption" value="28" name="day1" onclick="checkedOn(this);">
                                                         <span id="checkday1" class="checkmark"></span>
                                                     </label>
                                                     <label class="container">
-                                                        <label id="day2text"><span style="display: inline; color: black">9 de março</span> </label>
-                                                        <input type="checkbox" class="checkoption" value="9" name="day2" onclick="checkedOn(this);">
+                                                        <label id="day2text"><span style="display: inline; color: black">29 de Fevereiro</span> </label>
+                                                        <input type="checkbox" class="checkoption" value="29" name="day2" onclick="checkedOn(this);">
                                                         <span id="checkday2" class="checkmark"></span>
                                                     </label>
                                                 </div>
@@ -622,22 +644,22 @@
 	use App\Models\Empresa;
 	
 	$day1silver = Empresa::where('plano', 'silver')
-	    ->where('dia1', '8')
+	    ->where('dia1', '28')
 	    ->count();
 	$day2silver = Empresa::where('plano', 'silver')
-	    ->where('dia2', '9')
+	    ->where('dia2', '29')
 	    ->count();
 	$day1gold = Empresa::where('plano', 'gold')
-	    ->where('dia1', '8')
+	    ->where('dia1', '28')
 	    ->count();
 	$day2gold = Empresa::where('plano', 'gold')
-	    ->where('dia2', '9')
+	    ->where('dia2', '29')
 	    ->count();
 	$day1premium = Empresa::where('plano', 'premium')
-	    ->where('dia1', '8')
+	    ->where('dia1', '28')
 	    ->count();
 	$day2premium = Empresa::where('plano', 'premium')
-	    ->where('dia2', '9')
+	    ->where('dia2', '29')
 	    ->count();
 	?>
 
@@ -667,6 +689,27 @@
 			calcSim(false);
 		});
 
+        $('#join_form select[name="workshop_option"]').change(function() {
+            if(modaldade == "premium"){
+                opcao = $('#join_form select[name="workshop_option"]').val();
+                $extras = $('#form_extras');
+                if(opcao == "ws_presencial"){
+                    $extras.find('input[name="workshopextra"]').prop({
+						checked: false,
+					});
+                    $('.siextra').css('display','block');
+                    $('.workshopextra').css('display','none');
+                }else{
+                    $extras.find('input[name="siextra"]').prop({
+						checked: false,
+					});
+                    $('.siextra').css('display','none');
+                    $('.workshopextra').css('display','block');
+                }
+                calcSim(true);
+            }
+        });
+
 
 		function calcSim(clear) {
 			selected = $('#join_form select[name="company_plan"]').val();
@@ -694,12 +737,21 @@
 						checked: false,
 						disabled: false
 					});
+                    $extras.find('input[name="workshopextra"]').prop({
+						checked: false,
+						disabled: false
+					});
+                    $extras.find('input[name="siextra"]').prop({
+						checked: false,
+						disabled: false
+					});
+                    $('.workshopselector').css("display", "none");
 				}
 				modaldade = selected;
 			}
 
 
-			//Desativar silver para dia 8 se tiver excedido o limite (5)
+			//Desativar silver para dia 28 se tiver excedido o limite (5)
 			var day1silver = {{ $day1silver }}
 			if (selected == 'silver') {
 				if (day1silver >= 6) {
@@ -709,16 +761,16 @@
 					});
 					$('#checkday1').css('display', 'none');
 					document.getElementById('day1text').innerHTML =
-						'<strike>8 de março</strike> <b><font color="red">Esgotado!</font></b>';
+						'<strike>28 de março</strike> <b><font color="red">Esgotado!</font></b>';
 				} else {
 					$('#join_form #attending input[name="day1"]').attr({
 						disabled: false
 					});
-					document.getElementById('day1text').innerHTML = '8 de março';
+					document.getElementById('day1text').innerHTML = '28 de março';
 				}
 
 			}
-			//Desativar silver para dia 9 se tiver excedido o limite (6)
+			//Desativar silver para dia 29 se tiver excedido o limite (6)
 			var day2silver = {{ $day2silver }}
 			if (selected == 'silver') {
 				if (day2silver >= 6) {
@@ -728,16 +780,16 @@
 					});
 					$('#checkday2').css('display', 'none');
 					document.getElementById('day2text').innerHTML =
-						'<strike>9 de março</strike> <b><font color="red">Esgotado!</font></b>';
+						'<strike>29 de março</strike> <b><font color="red">Esgotado!</font></b>';
 				} else {
 					$('#join_form #attending input[name="day2"]').attr({
 						disabled: false
 					});
-					document.getElementById('day2text').innerHTML = '9 de março';
+					document.getElementById('day2text').innerHTML = '29 de março';
 				}
 			}
 
-			//Desativar gold para dia 8 se tiver excedido o limite (34)
+			//Desativar gold para dia 28 se tiver excedido o limite (34)
 			var day1gold = {{ $day1gold }}
 			if (selected == 'gold') {
 				if (day1gold >= 34) {
@@ -747,16 +799,16 @@
 					});
 					$('#checkday1').css('display', 'none');
 					document.getElementById('day1text').innerHTML =
-						'<strike>8 de março</strike> <b><font color="red">Esgotado!</font></b>';
+						'<strike>28 de março</strike> <b><font color="red">Esgotado!</font></b>';
 				} else {
 					$('#join_form #attending input[name="day1"]').attr({
 						disabled: false
 					});
-					document.getElementById('day1text').innerHTML = '8 de março';
+					document.getElementById('day1text').innerHTML = '28 de março';
 				}
 			}
 
-			//Desativar gold para dia 9 se tiver excedido o limite (34)
+			//Desativar gold para dia 29 se tiver excedido o limite (34)
 			var day2gold = {{ $day2gold }}
 			if (selected == 'gold') {
 				if (day2gold >= 34) {
@@ -766,16 +818,16 @@
 					});
 					$('#checkday2').css('display', 'none');
 					document.getElementById('day2text').innerHTML =
-						'<strike>9 de março</strike> <b><font color="red">Esgotado!</font></b>';
+						'<strike>29 de março</strike> <b><font color="red">Esgotado!</font></b>';
 				} else {
 					$('#join_form #attending input[name="day2"]').attr({
 						disabled: false
 					});
-					document.getElementById('day2text').innerHTML = '9 de março';
+					document.getElementById('day2text').innerHTML = '29 de março';
 				}
 			}
 
-			//Desativar premium para dia 8 se tiver excedido o limite (10)
+			//Desativar premium para dia 28 se tiver excedido o limite (10)
 			var day1premium = {{ $day1premium }}
 
 			if (selected == 'premium') {
@@ -786,16 +838,16 @@
 					});
 					$('#checkday1').css('display', 'none');
 					document.getElementById('day1text').innerHTML =
-						'<strike>8 de março</strike> <b><font color="red">Esgotado!</font></b>';
+						'<strike>28 de março</strike> <b><font color="red">Esgotado!</font></b>';
 				} else {
 					$('#join_form #attending input[name="day1"]').attr({
 						disabled: false
 					});
-					document.getElementById('day1text').innerHTML = '8 de março';
+					document.getElementById('day1text').innerHTML = '28 de março';
 				}
 			}
 
-			//Desativar premium para dia 9 se tiver excedido o limite (9)
+			//Desativar premium para dia 29 se tiver excedido o limite (9)
 			var day2premium = {{ $day2premium }}
 			if (selected == 'premium') {
 				if (day2premium >= 9) {
@@ -805,12 +857,12 @@
 					});
 					$('#checkday2').css('display', 'none');
 					document.getElementById('day2text').innerHTML =
-						'<strike>9 de março</strike> <b><font color="red">Esgotado!</font></b>';
+						'<strike>29 de março</strike> <b><font color="red">Esgotado!</font></b>';
 				} else {
 					$('#join_form #attending input[name="day2"]').attr({
 						disabled: false
 					});
-					document.getElementById('day2text').innerHTML = '9 de março';
+					document.getElementById('day2text').innerHTML = '29 de março';
 				}
 			}
 
@@ -880,6 +932,8 @@
 					}); //IT Speed Talk Sold Out*/
 					$('.cocktaildiv').css('display', 'none');
 					$('.itst').css('display', 'block');
+                    $('.workshopextra').css('display', 'none');
+                    $('.siextra').css('display', 'none');
 
 					if (checkedcount == 2) {
 						price *= 2;
@@ -897,6 +951,8 @@
 					}); //IT Speed Talk Sold Out*/
 					$('.itst').css('display', 'none');
 					$('.cocktaildiv').css('display', 'none');
+                    $('.workshopextra').css('display', 'none');
+                    $('.siextra').css('display', 'none');
 					if (checkedcount == 2) {
 						price *= 2;
 					}
@@ -907,6 +963,8 @@
 						checked: true,
 						disabled: true
 					});
+                    $('.workshopextra').css('display', 'none');
+                    $('.siextra').css('display', 'none');
 					if (checkedcount == 2) {
 						price *= 2;
 
@@ -931,6 +989,12 @@
 
 			if ($extras.find('input[name="cocktail"]')[0].checked)
 				price += 200;
+
+            console.log($extras.find('input[name="workshopextra"]')[0].checked);
+            console.log($extras.find('input[name="siextra"]')[0].checked);
+
+            if($extras.find('input[name="workshopextra"]')[0].checked || $extras.find('input[name="siextra"]')[0].checked)
+                price += 200;
 
 			if (parseInt($extras.find('select[name="almoco_number"]').val()) != 0) {
 				almoco_price = parseInt($extras.find('select[name="almoco_number"]').val()) * 10;

@@ -10,8 +10,9 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use Webpatser\Uuid\Uuid;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens;
     use HasFactory;
@@ -59,6 +60,25 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    // EMAIL VERIFICATION
+
+    public function isConfirmed(): bool
+    {
+        return !is_null($this->email_verified_at);
+    }
+
+    public function scopeconfirm()
+    {
+        $this->email_verified_at = now();
+        $this->save();
+    }
+
+    public function scopesendConfirmationEmail()
+    {
+        $this->notify(new ConfirmEmailNotification($this));
+    }
+    //
 
     public static function boot()
     {

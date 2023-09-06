@@ -26,6 +26,7 @@
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
             </div>
 
+            @if(!isset($_GET['empresa']))
             <div class="mt-4">
                 <select name="id_curso" class="form-control mb-1" id="id_curso" required>
                     <option disabled selected value="">Select Curso</option>
@@ -43,6 +44,10 @@
                     @endforeach
                 </select>
             </div>
+            @else
+                <input TYPE="hidden" id="empresa" readonly value="{{ $_GET['empresa'] }}"
+                    type="text" class="form-control" name="empresa">
+            @endif
 
             <div class="mt-4">
                 <x-label for="password" value="{{ __('Password') }}" />

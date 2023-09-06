@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 use Laravel\Jetstream\Jetstream;
+use App\Models\Empresa;
+use Illuminate\Support\Facades\Auth;
 
 class CreateNewUser implements CreatesNewUsers
 {
@@ -17,7 +19,58 @@ class CreateNewUser implements CreatesNewUsers
      *
      * @param  array<string, string>  $input
      */
-    public function create(array $data): User
+    public function create(array $data)
+    {
+        $empresa = Empresa::where('id', $data['empresa'])->first();
+        $validator = $this->validator($data);
+        if ($validator->fails()) {
+            return redirect('/register')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        // $client = new Client();
+
+        // $response = $client->get('https://api.testmail.top/domain/check?data=' . $request->email, [
+        //     'headers' => [
+        //         'Authorization' => env('TESTMAIL_AUTH'),
+        //     ],
+        // ]);
+
+        // $json = json_decode($response->getBody()->getContents());
+        // if (!$json->result) {
+        //     return redirect('/');
+        // }
+        if (strcmp($data['first_name'], "James") != 0 && strcmp($data['last_name'], "Smith") != 0) {
+            $user = $this->register($data);
+//      event(new Registered($user));
+            //$user->sendConfirmationEmail();
+            if ($user->remember_token != null) {
+                $invite = new Invite;
+                $invite->uuid_convidar = $user->remember_token;
+                $invite->uuid_convidado = $user->uuid;
+                $invite->save();
+                $user->remember_token = null;
+                $user->save();
+            }
+            if (!empty($data['empresa'])) {
+                $empresa->id_user = $user->id;
+                $user->empresa = $data['empresa'];
+                $user->save();
+                $empresa->save();
+            }
+            Auth::login($user);
+            /*if ($response = $this->registered($data, $user)) {
+                return $response;
+            }*/
+
+            return $data->wantsJson()
+            ? new Response('', 201)
+            : redirect()->route('verify');
+        }
+    }
+
+    public function register(array $data): User
     {
         $user = new User;
         $user->first_name = $data['first_name'];
@@ -39,57 +92,6 @@ class CreateNewUser implements CreatesNewUsers
         $user->email_verified_at = null;
         $user->save();
         return $user;
-    }
-
-    public function register(Request $request)
-    {
-        $empresa = Empresa::where('id', $request->empresa)->first();
-        $validator = $this->validator($request->all());
-        if ($validator->fails()) {
-            return redirect('/' . '#myModal')
-                ->withErrors($validator)
-                ->withInput();
-        }
-
-        // $client = new Client();
-
-        // $response = $client->get('https://api.testmail.top/domain/check?data=' . $request->email, [
-        //     'headers' => [
-        //         'Authorization' => env('TESTMAIL_AUTH'),
-        //     ],
-        // ]);
-
-        // $json = json_decode($response->getBody()->getContents());
-        // if (!$json->result) {
-        //     return redirect('/');
-        // }
-        if (strcmp($request->first_name, "James") != 0 && strcmp($request->last_name, "Smith") != 0) {
-            $user = $this->create($request->all());
-//      event(new Registered($user));
-            $user->sendConfirmationEmail();
-            if ($user->remember_token != null) {
-                $invite = new Invite;
-                $invite->uuid_convidar = $user->remember_token;
-                $invite->uuid_convidado = $user->uuid;
-                $invite->save();
-                $user->remember_token = null;
-                $user->save();
-            }
-            if (!empty($request->empresa)) {
-                $empresa->id_user = $user->id;
-                $user->empresa = $request->empresa;
-                $user->save();
-                $empresa->save();
-            }
-            $this->guard()->login($user);
-            if ($response = $this->registered($request, $user)) {
-                return $response;
-            }
-
-            return $request->wantsJson()
-            ? new Response('', 201)
-            : redirect()->route('verify');
-        }
     }
 
     /**

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EmpresaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,8 +36,4 @@ Route::get('/registarEmpresa/{name?}', function ($name = null) {
     return view('registarEmpresa');
 })->name('registarEmpresa');
 
-Route::post('/registarEmpresa', 'EmpresaController@registarempresa')->name('registarEmpresasite');
-
-Route::get('/registerempresassite/{name?}', function ($name = null) {
-    return view('registerempresassite');
-})->name('registerempresassite');
+Route::post('/registarEmpresa', [EmpresaController::class,'registarempresa'])->name('registarEmpresasite');

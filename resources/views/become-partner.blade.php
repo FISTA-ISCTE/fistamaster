@@ -269,7 +269,7 @@
                         <img src="{{asset('img/logo_fista_branco_2023.png')}}" style="width:30%">
                     </div>
                     <div class="row text-center">
-                        <h4 class="title">8 e 9 de Março de 2023</h4>
+                        <h4 class="title">28 e 29 de Fevereiro de 2024</h4>
                     </div>
                 </div>
             </div>

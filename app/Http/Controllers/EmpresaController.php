@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Empresa;
+use App\Models\Billing;
+use App\Models\Logistica;
 
 class EmpresaController extends Controller
 {
@@ -80,7 +83,7 @@ class EmpresaController extends Controller
         $emailsend = $request->contact_email;
 
         $empresfind = Empresa::where('nome_empresa', $request->company_name)->first();
-        Mail::to($emailsend)->send(new EmailRegistoEmpresa($empresa->nome_empresa, $empresa->plano, $empresa->total));
-        return redirect()->route('registerempresassite', ['empresa' => $empresfind->id, 'invite' => '']);
+        //Mail::to($emailsend)->send(new EmailRegistoEmpresa($empresa->nome_empresa, $empresa->plano, $empresa->total));
+        return redirect()->route('register', ['empresa' => $empresfind->id, 'invite' => '']);
     }
 }
