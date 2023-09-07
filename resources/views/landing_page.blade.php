@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app2')
 
 @section('content')
 
@@ -152,6 +152,57 @@
     </div>
 </div>
 <!-- About End -->
+<!-- Service Start -->
+<div class="section techwix-service-section-04 ">
+    <div class="container">
+        <h1 style="font-size:2.5rem;font-weight:bold;color:#1EC4BD;text-align:center;">Diamond</h1>
+        <!-- Service Wrap Start -->
+        <div class="service-wrap">
+
+            <!-- Service Bottom Start -->
+            <div class="service-bottom ">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <!-- Service Item Start -->
+                        <div class="service-item-03">
+                            <div class="service-img">
+                                <a href="service.html"><img src="img/Untitled-1.jpg" alt=""></a>
+                            </div>
+                        </div>
+                        <!-- Service Item End -->
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <!-- Service Item Start -->
+                        <div class="service-item-03">
+                            <div class="service-img">
+                                <a href="service.html"><img src="img/Untitled-1.jpg" alt=""></a>
+                            </div>
+
+                        </div>
+                        <!-- Service Item End -->
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <!-- Service Item Start -->
+                        <div class="service-item-03">
+                            <div class="service-img">
+                                <a href="service.html"><img src="img/Untitled-1.jpg" alt=""></a>
+                            </div>
+
+                        </div>
+                        <!-- Service Item End -->
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- Service Bottom End -->
+        </div>
+        <!-- Service Wrap End -->
+    </div>
+</div>
+<!-- Service End -->
+
+
 
 <!-- Service Start -->
 <div class="section techwix-service-section-04 section-padding">

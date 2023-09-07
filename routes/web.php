@@ -1,7 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UserProfileController;
+use App\Http\Controllers\ResetPassword;
+use App\Http\Controllers\ChangePassword;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,13 +27,6 @@ Route::get('/1', function () {
 Route::get('/', function () {
     return view('landing_page');
 });
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\PageController;
-use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\UserProfileController;
-use App\Http\Controllers\ResetPassword;
-use App\Http\Controllers\ChangePassword;
 
 Route::prefix('admin')->group(function () {
     Route::get('/', function () {return redirect('/dashboard');})->middleware('auth');
@@ -52,4 +51,3 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/{page}', [PageController::class, 'index'])->name('page');
 	Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 });
-
