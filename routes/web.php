@@ -27,6 +27,9 @@ Route::get('/1', function () {
 Route::get('/', function () {
     return view('landing_page');
 });
+Route::get('/become-a-partner', function () {
+    return view('become');
+});
 
 Route::prefix('admin')->group(function () {
     Route::get('/', function () {return redirect('/dashboard');})->middleware('auth');

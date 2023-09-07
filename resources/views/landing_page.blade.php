@@ -16,7 +16,7 @@
                     <p data-aos="fade-up" style="font-size:1.5rem; font-weight:bold; margin-top:20px;" data-aos-delay="900"><i class="flaticon-calendar"></i> 28 e 29 de fevereiro</p>
 
                     <div class="hero-btn" data-aos="fade-up" data-aos-delay="1000">
-                        <a class="btn" href="about.html">Registar Empresa</a>
+                        <a class="btn" href="/become-a-partner">Registar Empresa</a>
                     </div>
                 </div>
                 <!-- Hero Content End -->
