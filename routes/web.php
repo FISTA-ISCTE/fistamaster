@@ -8,6 +8,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\ResetPassword;
 use App\Http\Controllers\ChangePassword;
+use App\Http\Controllers\EmpresaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -54,3 +55,11 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/{page}', [PageController::class, 'index'])->name('page');
 	Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 });
+
+
+Route::get('/registarEmpresa/{name?}', function ($name = null) {
+    return view('registarEmpresa');
+})->name('registarEmpresa');
+
+Route::post('/registarEmpresa', [EmpresaController::class,'registarempresa'])->name('registarEmpresasite');
+
