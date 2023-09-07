@@ -3,17 +3,17 @@
 
 @section('content')
         <!-- Page Banner Start -->
-        <div class="section page-banner-section" style="background-image: url('{{asset('img/fundo_azul.png')}}');">
+        <div class="section page-banner-section" style="background-color: #000000;min-height:20rem;">
             <div class="container">
-                <div class="page-banner" style="margin-top:3%;margin-bottom:2%">
+                <div class="page-banner" style="margin-top:0.5%;margin-bottom:5%">
                     <div class="row text-center">
                         <h2 class="title">Become a partner</h2>
                     </div>
-                    <div class="row justify-content-center">
-                        <img src="{{asset('img/logo_fista_branco_2023.png')}}" style="width:30%">
-                    </div>
+                    <!--<div class="row justify-content-center">
+                        <img src="{{asset('assets/images/logos/logo_fista_horizontal_branco_2023.png')}}" style="width:30%">
+                    </div>-->
                     <div class="row text-center">
-                        <h4 class="title">28 e 29 de Fevereiro de 2024</h4>
+                        <h4 class="title" style="font-size: 1.5rem !important">28 e 29 de Fevereiro de 2024</h4>
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                                             <li>Feed Website FISTA(1 publicação)</li>
                                         </ul>
                                         <div class="pricing-btn">
-                                            <a class="btn" href="{{ route('registarEmpresa',['type' => 'silver'])}}">Sign up</a>
+                                            <a class="btn" href="{{ route('registarEmpresa',['type' => 'silver'])}}">Registar</a>
                                         </div>
                                     </div>
                                 </div>
@@ -78,7 +78,7 @@
                                             <li>Feed Website FISTA(2 publicações)</li>
                                         </ul>
                                         <div class="pricing-btn">
-                                            <a class="btn" href="{{ route('registarEmpresa',['type' => 'gold'])}}">Sign Up</a>
+                                            <a class="btn" href="{{ route('registarEmpresa',['type' => 'gold'])}}">Registar</a>
                                         </div>
                                     </div>
                                 </div>
@@ -110,7 +110,7 @@
                                             <li>Estacionamento</li>
                                         </ul>
                                         <div class="pricing-btn">
-                                            <a class="btn" href="{{ route('registarEmpresa',['type' => 'premium'])}}">Sign Up</a>
+                                            <a class="btn" href="{{ route('registarEmpresa',['type' => 'premium'])}}">Registar</a>
                                         </div>
                                     </div>
                                 </div>

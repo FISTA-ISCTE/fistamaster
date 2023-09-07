@@ -4,8 +4,8 @@
     <title>@yield('title', 'FISTA 24')</title>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Techwix - Technology IT Solutions Consultancy HTML5 Template</title>
-    <meta name="robots" content="noindex, follow" />
+    <title>FISTA | Forum de Empresas da escola ISTA do Iscte</title>
+
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon -->
