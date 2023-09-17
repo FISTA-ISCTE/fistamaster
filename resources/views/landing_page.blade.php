@@ -521,7 +521,7 @@
 <div class="section techwix-video-section">
     <div class="container">
         <!-- Video Wrap Start -->
-        <div class="video-wrap" style="background-image: url(assets/images/bg/video-bg.jpg);">
+        <div class="video-wrap" style="background-image: url(img/52736830684_fdcb28555a_h.jpg);">
 
             <div class="shape-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="602px" height="640px">
@@ -544,10 +544,10 @@
             <!-- Video Content Start -->
             <div class="video-content text-center">
                 <div class="section-title">
-                    <h2 class="title white">We focus on your tech success</h2>
+                    <h2 class="title white">Revê o sucesso do FISTA23</h2>
                 </div>
                 <div class="play-btn-02">
-                    <a class="popup-video" href="https://www.youtube.com/watch?time_continue=3&v=_X0eYtY8T_U"><i class="fas fa-play"></i></a>
+                    <a class="popup-video" href="https://www.youtube.com/watch?time_continue=3&v=aiE6tCvtQeQ"><i class="fas fa-play"></i></a>
                 </div>
             </div>
             <!-- Video Content End -->

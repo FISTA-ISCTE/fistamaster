@@ -35,6 +35,16 @@
 </head>
 <body>
     <div class="main-wrapper">
+
+        <!-- Preloader start -->
+        <div id="preloader">
+            <div class="preloader">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <!-- Preloader End -->
+
         <header>
             <!-- Header Start  -->
             <div id="header" class="section header-section header-section-04">
@@ -50,7 +60,10 @@
 
                         <div class="header-menu d-none d-lg-block">
                             <ul class="main-menu">
-                                <li class="active-menu">
+                                <li>
+                                    <a href="/">Home</a>
+                                </li>
+                                <li>
                                     <a href="#">Evento</a>
                                 </li>
                                 <li>
@@ -82,7 +95,7 @@
                         <div class="header-meta">
 
                             <div class="header-btn d-none d-xl-block">
-                                <a class="btn" href="login-register.html">Minha Conta</a>
+                                <a class="btn" href="/login">Minha Conta</a>
                             </div>
                             <!-- Header Toggle Start -->
                             <div class="header-toggle d-lg-none">
