@@ -541,7 +541,7 @@ textarea:-ms-input-placeholder {
   display: inline-block;
   overflow: hidden;
   transform: perspective(0) translateZ(0);
-  background: linear-gradient(195deg, #1ec4bd 0%, #42b9ff 100%);
+  background: linear-gradient(195deg, #00c4cc 0%, #008d84 100%);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   border-color: transparent;
   color: #ffffff;
@@ -6767,9 +6767,9 @@ textarea:-ms-input-placeholder {
   font-family: "Barlow", sans-serif;
   display: inline-block;
   font-weight: 600;
-  text-transform: capitalize;
   position: relative;
   z-index: 1;
+  width: 97.5%;
 }
 
 .techwix-choose-us-section-02 .choose-us-right .faq-accordion .accordion-item .accordion-button::after {
@@ -6784,7 +6784,7 @@ textarea:-ms-input-placeholder {
   text-align: center;
   border-radius: 50%;
   color: #ffffff;
-  background: linear-gradient(-140deg, #1ec4bd 0%, #43baff 100%);
+  background: linear-gradient(-140deg, #c3f8fd 0%, #00c4cc 100%);
   right: 35px;
   transition: all .3s ease-out 0s;
 }

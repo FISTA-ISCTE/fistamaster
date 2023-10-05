@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\RegistoEmpresa;
 use Illuminate\Http\Request;
 use App\Models\Empresa;
 use App\Models\Billing;
 use App\Models\Logistica;
 use App\Models\Workshop;
+use Illuminate\Support\Facades\Mail;
 
 class EmpresaController extends Controller
 {
@@ -101,7 +103,7 @@ class EmpresaController extends Controller
         $emailsend = $request->contact_email;
 
         $empresfind = Empresa::where('nome_empresa', $request->company_name)->first();
-        //Mail::to($emailsend)->send(new EmailRegistoEmpresa($empresa->nome_empresa, $empresa->plano, $empresa->total));
+        Mail::to($emailsend)->send(new RegistoEmpresa($empresa->nome_empresa, $empresa->plano, $empresa->total));
         return redirect()->route('confirmacao1');
     }
 }

@@ -72,7 +72,7 @@
                     <div class="header-wrap">
 
                         <div class="header-logo">
-                            <a class="logo-black" href="index.html"><img src="img/fista/original_fista.png" alt=""></a>
+                            <a class="logo-black" href="/"><img src="img/fista/original_fista.png" alt=""></a>
                         </div>
 
                         <div class="header-menu d-none d-lg-block">

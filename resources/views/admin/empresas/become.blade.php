@@ -30,7 +30,7 @@
                     </div>
                     <div class="pricing-content-wrap">
                         <div class="row">
-                            <div class="col-lg-3 col-md-6">
+                            <div class="col-lg-4 col-md-6">
                                 <!-- Single Pricing Start -->
                                 <div class="single-pricing">
                                     <div class="pricing-badge">
@@ -56,7 +56,7 @@
                                 </div>
                                 <!-- Single Pricing End -->
                             </div>
-                            <div class="col-lg-3 col-md-6">
+                            <div class="col-lg-4 col-md-6">
                                 <!-- Single Pricing Start -->
                                 <div class="single-pricing">
                                     <div class="pricing-badge">
@@ -84,7 +84,7 @@
                                 </div>
                                 <!-- Single Pricing End -->
                             </div>
-                            <div class="col-lg-3 col-md-6">
+                            <div class="col-lg-4 col-md-6">
                                 <!-- Single Pricing Start -->
                                 <div class="single-pricing">
                                     <div class="pricing-badge">
@@ -116,32 +116,6 @@
                                 </div>
                                 <!-- Single Pricing End -->
                             </div>
-                            <div class="col-lg-3 col-md-6">
-                                <!-- Single Pricing Start -->
-                                <div class="single-pricing">
-                                    <div class="pricing-badge">
-                                        <span class="title">Plus</span>
-                                    </div>
-                                    <div class="pricing-price">
-                                        <span class="currency">€</span>
-                                        <h4 class="price">350<span>+IVA/DIA</span></h4>
-                                    </div>
-                                    <div class="pricing-content">
-                                        <ul class="pricing-list">
-                                            <li>Stand A</li>
-                                            <li>Jogo(QR Code)</li>
-                                            <li>Logo no site(tamanho pequeno)</li>
-                                            <li>Redes Sociais(1 publicação)</li>
-                                            <li>Almoços(2 refeições)</li>
-                                            <li>Feed Website FISTA(1 publicação)</li>
-                                        </ul>
-                                        <div class="pricing-btn">
-                                            <a class="btn" href="{{ route('registarEmpresa',['type' => 'silver'])}}">Registar</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Single Pricing End -->
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -149,6 +123,69 @@
             </div>
         </div>
         <!-- Pricing End -->
+        <div class="section techwix-choose-us-section-02 section-padding-02" style="background-image: url(assets/images/bg/choose-us-bg2.jpg);">
+            <div class="container">
+                <!-- Choose Us Wrap Start -->
+                <div class="choose-us-wrap">
+                    <h1 style="font-size:2.5rem;font-weight:bold;color:#1EC4BD;text-align:center;margin-bottom:3%">FAQ</h1>
+
+                    <div class="row">
+
+                        <div class="col-lg-12">
+                            <!-- Choose Us Right Start -->
+                            <div class="choose-us-right">
+                                <!-- Faq Accordion Start -->
+                                <div class="faq-accordion">
+                                    <div class="accordion" id="accordionExample">
+                                        <div class="accordion-item">
+                                            <div class="accordion-header" id="headingOne">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    <span class="title">Como é que como empresa me posso inscrever para participar no FISTA24 e qual é o prazo para as inscrições?                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    As inscrições para o FISTA24 estão abertas até início de fevereiro e podem ser feitas através do nosso website.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <div class="accordion-header" id="headingThree">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                    <span class="title">Pretendo participar nos dois dias do FISTA como é que o posso fazer? </span>
+                                                </button>
+                                            </div>
+                                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    Na inscrição para o FISTA24 apenas dá para escolher um dos dois dias para estarem presentes, no entanto caso pretendam estar presentes nos dois dias envie um email para o seguinte endereço: <a href="mailto:fista@iscte.iul.pt">fista@iscte.iul.pt</a>. Tomando nota de que ao participar nos dois dias terá que ser com a mesma modalidade do pacote.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <div class="accordion-header" id="headingFour">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                                                    <span class="title">Como é que podemos entrar em contacto para obter mais informações ou esclarecer dúvidas sobre a participação no FISTA24? </span>
+                                                </button>
+                                            </div>
+                                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    Para obter mais informações ou esclarecer dúvidas sobre a participação no FISTA24, podem contactar connosco por meio do nosso website ou por email (fista.iscte-iul.pt). Estamos à disposição para fornecer informações adicionais e orientação sobre como aproveitar ao máximo a sua participação no evento.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Faq Accordion End -->
+                            </div>
+                            <!-- Choose Us Right End -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Choose Us Wrap End -->
+            </div>
+        </div>
 
 
 @endsection

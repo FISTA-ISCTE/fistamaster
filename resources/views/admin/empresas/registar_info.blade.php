@@ -64,7 +64,7 @@
                                         </ul>
                                     </div>
                                 @endif
-                                <form id="join_form" method="POST" action="{{ route('registarEmpresasite') }}" accept-charset="UTF-8"enctype="multipart/form-data">
+                                <form id="join_form"  method="POST" action="{{ route('registarEmpresasite') }}" accept-charset="UTF-8"enctype="multipart/form-data">
                                     @csrf
                                     <div class="row">
                                         <div class="col-sm-12">

@@ -4,10 +4,18 @@
     /*--
         preloader
     -----------------------------------*/
-     $(window).on('load', function(event) {
-        $('#preloader').delay(500).fadeOut(500);
-    });
+    $(document).ready(function() {
+        // Preloader para quando a página carrega
+        $(window).on('load', function(event) {
+            $('#preloader').delay(500).fadeOut(500);
+        });
 
+        // Preloader para quando o botão "submeter" é clicado
+        $('#join_form').on('submit', function(event) {
+            $('#preloader').fadeIn(500); // Mostra o preloader
+            // O formulário será submetido normalmente
+        });
+    });
     /*--
         Header Sticky
     -----------------------------------*/
@@ -20,9 +28,9 @@
         } else {
             left.classList.remove("sticky");
         }
-    }    
+    }
 
-    
+
     /*--
         Menu parent Element Icon
     -----------------------------------*/
@@ -76,9 +84,9 @@
 		e.stopPropagation();
 	});
 
-        
+
     /*--
-        Mobile Menu 
+        Mobile Menu
     -----------------------------------*/
 
     /* Get Sibling */
@@ -148,7 +156,7 @@
 
 
     /*--
-		Offcanvas/Collapseable Menu 
+		Offcanvas/Collapseable Menu
 	-----------------------------------*/
     const offCanvasMenu = function (selector) {
 
@@ -198,23 +206,23 @@
     offCanvasMenu('.offcanvas-menu');
 
   /*--
-    magnificPopup video view 
-  -----------------------------------*/	
+    magnificPopup video view
+  -----------------------------------*/
 	$('.popup-video').magnificPopup({
 		type: 'iframe'
 	});
 
-  /*--    
+  /*--
       Counter Up
-  -----------------------------------*/  
+  -----------------------------------*/
 
     $('.counter').counterUp({
         delay: 10,
         time: 1500,
     });
 
-  
- 
+
+
     /*--
         Case Study Active
 	-----------------------------------*/
@@ -253,10 +261,10 @@
     var swiper = new Swiper('.testimonial-active', {
         slidesPerView: 1,
         spaceBetween: 30,
-        loop: true,        
+        loop: true,
     });
 
-    /*--    
+    /*--
         Testimonial Two Active
     -----------------------------------*/
     var swiper = new Swiper(".testimonial-02-active", {
@@ -286,9 +294,9 @@
           },
         },
     });
-  
 
-    /*--    
+
+    /*--
         Brand Active
     -----------------------------------*/
     var swiper = new Swiper(".brand-active .swiper-container", {
@@ -318,7 +326,7 @@
         },
     });
 
-    /*--    
+    /*--
         Testimonial Two Active
     -----------------------------------*/
     var swiper = new Swiper(".team-active", {
@@ -346,9 +354,9 @@
 
 
 
-    /*--    
+    /*--
       Progress Bar
-  -----------------------------------*/  
+  -----------------------------------*/
 
     if($('.progress-line').length) {
         $('.progress-line').appear(function(){
@@ -362,7 +370,7 @@
 
     /*--
         AOS
-    -----------------------------------*/   
+    -----------------------------------*/
     AOS.init({
         duration: 1200,
         once: true,
