@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('img/favicon_fista.jpg')}}">
 
     <!-- CSS
 	============================================ -->
@@ -110,10 +110,9 @@
 
                         <!-- Header Meta Start -->
                         <div class="header-meta">
-
-                            <div class="header-btn d-none d-xl-block">
+                           <!-- <div class="header-btn d-none d-xl-block">
                                 <a class="btn" href="/entrar">Minha Conta</a>
-                            </div>
+                            </div>-->
                             <!-- Header Toggle Start -->
                             <div class="header-toggle d-lg-none">
                                 <button data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample">

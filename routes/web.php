@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Empresa;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmpresaController;
 
@@ -13,6 +14,9 @@ use App\Http\Controllers\EmpresaController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/error', function () {
+    return view('error');
+});
 
 Route::get('/', function () {
     return view('landing_page');
@@ -42,7 +46,40 @@ Route::middleware([
     'verified',
 ])->group(function () {
 
+    Route::middleware(['role:empresa'])->prefix('empresa')->group(function () {
+        Route::get('/dashboard', function () {
+            $company= Empresa::findOrFail(2);
+            return view('admin.empresas.dashboard')->with(['company'=>$company]);
+        })->name('empresa.dashboard');
+
+    });
+
+    // Rotas para admin
+    Route::middleware(['role:admin'])->prefix('admin')->group(function () {
+        Route::get('/dashboard', function () {
+            return view('admin.fista.dashboard');
+        })->name('admin.dashboard');
+        Route::get('/empresas', function () {
+            $empresas= Empresa::all();
+            return view('admin.fista.empresas')->with(['empresas' => $empresas]);
+        })->name('admin.empresas');
+        Route::get('/empresas/1', function () {
+            $empresas= Empresa::all();
+            return view('admin.fista.empresas.view');
+        })->name('view.empresas');
+
+
+    });
+
+    // Rotas para usuários
+    Route::middleware(['role:user'])->prefix('user')->group(function () {
+
+
+    });
+
+
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
 });

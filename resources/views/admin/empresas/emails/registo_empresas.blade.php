@@ -30,7 +30,7 @@
         <p>Agradecemos pelo seu registo. Informamos que a sua inscrição foi efetuada com <strong>sucesso</strong> e está atualmente sob revisão pela nossa equipa.</p>
         <p>Tal como foi apresentado através da página “Become a Partner” do nosso website, tendo sido selecionado o tipo de plano <strong>{{$plano}}</strong>, o valor do orçamento corresponderá a <strong>{{ $preco }}+IVA</strong>.</p>
         <p>Assim que a sua inscrição for verificada e aprovada, enviar-lhe-emos um e-mail de confirmação com todas as informações e passos necessários para a sua participação no FISTA24.</p>
-        <p>Entendemos a importância deste evento para a sua empresa e estamos trabalhando para garantir que tudo corra da melhor forma possível. Agradecemos a sua paciência e compreensão durante este processo de verificação.</p>
+        <p>Entendemos a importância deste evento para a sua empresa e estamos a trabalhar para garantir que tudo corra da melhor forma possível. Agradecemos a sua paciência e compreensão durante este processo de verificação.</p>
         <p>Se tiver alguma dúvida ou necessitar de esclarecimentos adicionais, por favor, não hesite em contactar-nos. Estamos à disposição para ajudar.</p>
         <p>Cumprimentos,<br>Organização FISTA'24.</p>
     </div>

@@ -1,21 +1,93 @@
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
+    <style>
+        .focus\:border-indigo-700:focus {
+            --tw-border-opacity: 1;
+            border-color: rgb(0, 141, 132);
+        }
+        .border-indigo-400 {
+            --tw-border-opacity: 1;
+            border-color: rgba(0, 141,132, 0.55);
+        }
+        .notification {
+            position: relative;
+            display: inline-block;  /* Adicionado para manter o ícone e badge como uma unidade */
+        }
+        .notification i {
+            font-size: 1.3rem;  /* Reduzi o tamanho do ícone */
+        }
+
+        .notification .badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 3px 5px;
+            border-radius: 50%;
+            background-color: red;
+            color: white;
+            font-size: 0.45rem;
+            transform: translate(50%, -50%); /* Ajuste para colocar o badge precisamente no canto superior direito */
+        }
+    </style>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
+                    <a href="/entrar">
                         <x-application-mark class="block h-9 w-auto" />
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
-                </div>
+                @if(auth()->user() && auth()->user()->hasRole('admin'))
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link href="{{ route('admin.dashboard') }}" :active="request()->routeIs('admin.dashboard')">
+                            {{ __('Dashboard') }}
+                        </x-nav-link>
+                    </div>
+                @endif
+                @if(auth()->user() && auth()->user()->hasRole('admin'))
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link href="{{ route('admin.empresas') }}" :active="request()->routeIs('admin.empresas')">
+                            {{ __('Empresas') }}
+                        </x-nav-link>
+                    </div>
+                @endif
+
+                @if(auth()->user() && auth()->user()->hasRole('empresa'))
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link href="{{ route('empresa.dashboard') }}" :active="request()->routeIs('empresa.dashboard')">
+                            {{ __('Dashboard') }}
+                        </x-nav-link>
+                    </div>
+                @endif
+                @if(auth()->user() && auth()->user()->hasRole('empresa'))
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link href="" :active="request()->routeIs('dashboard')">
+                            {{ __('Faturação') }}
+                        </x-nav-link>
+                    </div>
+                @endif
+                @if(auth()->user() && auth()->user()->hasRole('empresa'))
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link href="" :active="request()->routeIs('dashboard')">
+                            {{ __('Logistica') }}
+                        </x-nav-link>
+                    </div>
+                @endif
+                @if(auth()->user() && auth()->user()->hasRole('empresa'))
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link href="" :active="request()->routeIs('dashboard')">
+                            {{ __('Avisos') }}
+                        </x-nav-link>
+                    </div>
+                @endif
+                <!-- Workshop caso exista-->
+                <!-- Backoffice alunos caso exista-->
+                <!-- Inserir post feed -->
+
+
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
@@ -70,7 +142,12 @@
                         </x-dropdown>
                     </div>
                 @endif
-
+                @if(auth()->user() && auth()->user()->hasRole('empresa'))
+                <a href=""><div class="notification">
+                    <i class="fas fa-bell fa-2x"></i>
+                    <span class="badge">5</span>
+                </div> </a>
+                @endif
                 <!-- Settings Dropdown -->
                 <div class="ml-3 relative">
                     <x-dropdown align="right" width="48">
@@ -95,11 +172,11 @@
                         <x-slot name="content">
                             <!-- Account Management -->
                             <div class="block px-4 py-2 text-xs text-gray-400">
-                                {{ __('Manage Account') }}
+                                {{ Auth::user()->getRoleNames()->first()}}
                             </div>
 
                             <x-dropdown-link href="{{ route('profile.show') }}">
-                                {{ __('Profile') }}
+                                {{ __('Perfil') }}
                             </x-dropdown-link>
 
                             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
@@ -107,7 +184,9 @@
                                     {{ __('API Tokens') }}
                                 </x-dropdown-link>
                             @endif
-
+                            <x-dropdown-link href="/">
+                                {{ __('Website FISTA') }}
+                            </x-dropdown-link>
                             <div class="border-t border-gray-200"></div>
 
                             <!-- Authentication -->
