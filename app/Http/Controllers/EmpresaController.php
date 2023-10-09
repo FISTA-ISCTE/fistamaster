@@ -45,7 +45,7 @@ class EmpresaController extends Controller
 
         $empresa = new Empresa();
         $empresa->nome_empresa = $request->company_name;
-        $empresa->pequena_descricao = $request->company_desc;
+        $empresa->description = $request->company_desc;
         $empresa->plano = $request->company_plan;
         $empresa->nome_user = $request->contact_name;
         $empresa->telemovel = $request->contact_number;
