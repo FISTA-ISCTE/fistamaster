@@ -38,7 +38,7 @@
                                     </div>
                                     <div class="pricing-price">
                                         <span class="currency">€</span>
-                                        <h3 class="price">350<span>+IVA/DIA</span></h3>
+                                        <h3 class="price">400<span>+IVA/DIA</span></h3>
                                     </div>
                                     <div class="pricing-content">
                                         <ul class="pricing-list">
@@ -64,7 +64,7 @@
                                     </div>
                                     <div class="pricing-price">
                                         <span class="currency">€</span>
-                                        <h3 class="price">675<span>+IVA/DIA</span></h3>
+                                        <h3 class="price">700<span>+IVA/DIA</span></h3>
                                     </div>
                                     <div class="pricing-content">
                                         <ul class="pricing-list">
@@ -92,7 +92,7 @@
                                     </div>
                                     <div class="pricing-price">
                                         <span class="currency">€</span>
-                                        <h4 class="price">1000<span>+IVA/DIA</span></h4>
+                                        <h4 class="price">1100<span>+IVA/DIA</span></h4>
                                     </div>
                                     <div class="pricing-content">
                                         <ul class="pricing-list">

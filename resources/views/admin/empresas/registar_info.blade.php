@@ -656,7 +656,7 @@ $day2premium = Empresa::where('plano', 'premium')
             price += 200;
 
         if (parseInt($extras.find('select[name="almoco_number"]').val()) != 0) {
-            almoco_price = parseInt($extras.find('select[name="almoco_number"]').val()) * 10;
+            almoco_price = parseInt($extras.find('select[name="almoco_number"]').val()) * 15;
         } else {
             almoco_price = parseInt($extras.find('select[name="almoco_number"]').val());
         }
