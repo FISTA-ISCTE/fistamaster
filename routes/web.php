@@ -17,7 +17,9 @@ use App\Http\Controllers\EmpresaController;
 Route::get('/error', function () {
     return view('error');
 });
-
+Route::get('/brevemente', function () {
+    return view('brevemente');
+});
 Route::get('/', function () {
     return view('landing_page');
 });

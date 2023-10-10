@@ -232,7 +232,7 @@ Service End -->
                                 <a href="service.html"><img src="assets/images/brand/13150512855_0a2cd5075e_c.jpg" alt=""></a>
                             </div>
                             <div class="service-text">
-                                <h3 class="title"><a href="">Workshops</a></h3>
+                                <h3 class="title"><a href="/brevemente">Workshops</a></h3>
                             </div>
                         </div>
                         <!-- Service Item End -->
@@ -244,7 +244,7 @@ Service End -->
                                 <a href="service.html"><img src="img/conjunto/fotoitspeedtalks.jpg" alt=""></a>
                             </div>
                             <div class="service-text">
-                                <h3 class="title"><a href="">IT Speed Talks</a></h3>
+                                <h3 class="title"><a href="/brevemente">IT Speed Talks</a></h3>
                             </div>
                         </div>
                         <!-- Service Item End -->
@@ -256,7 +256,7 @@ Service End -->
                                 <a href="service.html"><img src="img/conjunto/fotoconferencias2.3.jpg" alt=""></a>
                             </div>
                             <div class="service-text">
-                                <h3 class="title"><a href="">Conferências</a></h3>
+                                <h3 class="title"><a href="/brevemente">Conferências</a></h3>
                             </div>
                         </div>
                         <!-- Service Item End -->
@@ -268,7 +268,7 @@ Service End -->
                                 <a href="service.html"><img src="img/conjunto/fotoconcursos.jpg" alt=""></a>
                             </div>
                             <div class="service-text">
-                                <h3 class="title"><a href="">Concursos</a></h3>
+                                <h3 class="title"><a href="/brevemente">Concursos</a></h3>
                             </div>
                         </div>
                         <!-- Service Item End -->
@@ -280,7 +280,7 @@ Service End -->
                                 <a href="service.html"><img src="assets/images/brand/32930549451_a09d298edd_c.jpg" alt=""></a>
                             </div>
                             <div class="service-text">
-                                <h3 class="title"><a href="">Oradores</a></h3>
+                                <h3 class="title"><a href="/brevemente">Oradores</a></h3>
                             </div>
                         </div>
                         <!-- Service Item End -->
@@ -292,7 +292,7 @@ Service End -->
                                 <a href="service.html"><img src="img/conjunto/fotofistago.jpg" alt=""></a>
                             </div>
                             <div class="service-text">
-                                <h3 class="title"><a href="">FISTA GO</a></h3>
+                                <h3 class="title"><a href="/brevemente">FISTA GO</a></h3>
                             </div>
                         </div>
                         <!-- Service Item End -->
@@ -476,7 +476,7 @@ Team End -->
                                     </div>
                                     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
-                                            O FISTA é voltado principalmente para alunos do ISCTE, mas também é aberto a visitantes externos que desejam conhecer as empresas participantes.
+                                            O FISTA é voltado principalmente para alunos do Iscte, mas também é aberto a visitantes externos que desejam conhecer as empresas participantes.
                                         </div>
                                     </div>
                                 </div>
@@ -639,6 +639,7 @@ Team End -->
             <h1 style="font-size:2.5rem;font-weight:bold;color:#1EC4BD;text-align:center;margin-bottom:3%">Parcerias</h1>
 
 
+
             <!-- Brand Active Start -->
             <div class="brand-active">
                 <div class="swiper-container">
@@ -662,7 +663,6 @@ Team End -->
                         <div class="swiper-slide single-brand">
                             <img src="assets/images/parceiros/ned.png" alt="Brand" style="height:4rem">
                         </div>
-
                         <!-- Single Brand End -->
                     </div>
                 </div>

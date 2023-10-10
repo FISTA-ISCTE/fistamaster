@@ -81,7 +81,7 @@
                                     <a href="/">Home</a>
                                 </li>
                                 <li>
-                                    <a href="#">Evento</a>
+                                    <a href="/brevemente">Evento</a>
                                 </li>
                                <!-- <li>
                                     <a href="#">Programa</a>
@@ -222,8 +222,8 @@
 
                                     <div class="widget-link">
                                         <ul class="link">
-                                            <li><a href="#">Multimédia dos anos anteriores </a></li>
-                                            <li><a href="#">Sobre Nós</a></li>
+                                            <li><a href="/brevemente">Multimédia dos anos anteriores </a></li>
+                                            <li><a href="/brevemente">Sobre Nós</a></li>
                                             <li><a href="#">Politicas de Privacidade</a></li>
                                         </ul>
                                     </div>
@@ -237,10 +237,10 @@
 
                                     <div class="widget-link">
                                         <ul class="link">
-                                            <li><a href="#">Oradores</a></li>
-                                            <li><a href="#">Workshops</a></li>
-                                            <li><a href="#">Empresas</a></li>
-                                            <li><a href="#">Concursos</a></li>
+                                            <li><a href="/brevemente">Oradores</a></li>
+                                            <li><a href="/brevemente">Workshops</a></li>
+                                            <li><a href="/brevemente">Empresas</a></li>
+                                            <li><a href="/brevemente">Concursos</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -259,7 +259,7 @@
                                                     <i class="far fa-envelope-open"></i>
                                                 </div>
                                                 <div class="info-text">
-                                                    <span><a href="#">fista@iscte-iul.pt</a></span>
+                                                    <span><a href="mailto:fista@iscte-iul.pt">fista@iscte-iul.pt</a></span>
                                                 </div>
                                             </li>
                                             <li>
@@ -285,7 +285,7 @@
                             &nbsp;<a href="https://arquivo.pt/noFrame/replay/20220729094345/https://fista.iscte-iul.pt/2017">2017</a>&nbsp;|&nbsp;<a href="https://arquivo.pt/noFrame/replay/20220729094345/https://fista.iscte-iul.pt/2018">2018</a>&nbsp;|
                             &nbsp;<a href="https://arquivo.pt/noFrame/replay/20220729094345/https://fista.iscte-iul.pt/2019">2019</a>&nbsp;|&nbsp;<a href="https://arquivo.pt/noFrame/replay/20220729094345/https://fista.iscte-iul.pt/2020">2020</a>&nbsp;|
                             &nbsp;<a href="https://arquivo.pt/noFrame/replay/20220729094345/https://fista.iscte-iul.pt/2021">2021</a>&nbsp;|&nbsp;<a href="https://arquivo.pt/noFrame/replay/20220729094345/https://fista.iscte-iul.pt/">2022</a>&nbsp;|
-                            &nbsp;<a href="">2023</a></p>
+                            &nbsp;<a href="/brevemente">2023</a></p>
                     </div>
                     <!-- Footer Widget Wrap End -->
                 </div>
