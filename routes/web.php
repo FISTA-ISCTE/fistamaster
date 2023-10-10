@@ -14,11 +14,17 @@ use App\Http\Controllers\EmpresaController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/contacto', function () {
+    return view('contacto');
+});
 Route::get('/error', function () {
     return view('error');
 });
 Route::get('/brevemente', function () {
     return view('brevemente');
+});
+Route::get('/politica-de-privacidade', function () {
+    return view('politica');
 });
 Route::get('/', function () {
     return view('landing_page');

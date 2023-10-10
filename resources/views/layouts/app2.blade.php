@@ -104,7 +104,7 @@
                                         <li><a href="blog-details.html">Corrida de Cursos</a></li>
                                     </ul>
                                 </li>-->
-                                <li><a href="#">Contacto</a>
+                                <li><a href="/contacto">Contacto</a>
                             </ul>
                         </div>
 
@@ -171,7 +171,7 @@
                                     <li><a href="blog-details.html">Corrida de Cursos</a></li>
                                 </ul>
                             </li>-->
-                            <li><a href="#">Contacto</a>
+                            <li><a href="/contacto">Contacto</a>
                         </ul>
                     </div>
                 </div>
@@ -203,7 +203,7 @@
                                     -->
                                     <p>O FISTA é uma feira de emprego que ocorre anualmento no Iscte.
                                         Este evento traz o mundo das empresas à universidade.
-                                        .</p>
+                                        </p>
                                     <div class="footer-social">
                                         <ul class="social">
                                             <li><a href="https://www.facebook.com/fista.iscte"><i class="fab fa-facebook-f"></i></a></li>
@@ -223,8 +223,8 @@
                                     <div class="widget-link">
                                         <ul class="link">
                                             <li><a href="/brevemente">Multimédia dos anos anteriores </a></li>
-                                            <li><a href="/brevemente">Sobre Nós</a></li>
-                                            <li><a href="#">Politicas de Privacidade</a></li>
+                                            <li><a href="/contacto">Contactos</a></li>
+                                            <li><a href="/politica-de-privacidade">Politicas de Privacidade</a></li>
                                         </ul>
                                     </div>
                                 </div>
