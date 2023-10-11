@@ -178,7 +178,7 @@
 
                         <div class="service-item-03">
                             <div class="service-img">
-                                <a href="service.html"><img src="img/Untitled-1.jpg" alt=""></a>
+                                <a href="/brevemente"><img src="img/Untitled-1.jpg" alt=""></a>
                             </div>
                         </div>
 
@@ -187,7 +187,7 @@
 
                         <div class="service-item-03">
                             <div class="service-img">
-                                <a href="service.html"><img src="img/Untitled-1.jpg" alt=""></a>
+                                <a href="/brevemente"><img src="img/Untitled-1.jpg" alt=""></a>
                             </div>
 
                         </div>
@@ -197,7 +197,7 @@
 
                         <div class="service-item-03">
                             <div class="service-img">
-                                <a href="service.html"><img src="img/Untitled-1.jpg" alt=""></a>
+                                <a href="/brevemente"><img src="img/Untitled-1.jpg" alt=""></a>
                             </div>
 
                         </div>
@@ -229,7 +229,7 @@ Service End -->
                         <!-- Service Item Start -->
                         <div class="service-item-03">
                             <div class="service-img">
-                                <a href="service.html"><img src="assets/images/brand/13150512855_0a2cd5075e_c.jpg" alt=""></a>
+                                <a href="/brevemente"><img src="assets/images/brand/13150512855_0a2cd5075e_c.jpg" alt=""></a>
                             </div>
                             <div class="service-text">
                                 <h3 class="title"><a href="/brevemente">Workshops</a></h3>
@@ -241,7 +241,7 @@ Service End -->
                         <!-- Service Item Start -->
                         <div class="service-item-03">
                             <div class="service-img">
-                                <a href="service.html"><img src="img/conjunto/fotoitspeedtalks.jpg" alt=""></a>
+                                <a href="/brevemente"><img src="img/conjunto/fotoitspeedtalks.jpg" alt=""></a>
                             </div>
                             <div class="service-text">
                                 <h3 class="title"><a href="/brevemente">IT Speed Talks</a></h3>
@@ -253,7 +253,7 @@ Service End -->
                         <!-- Service Item Start -->
                         <div class="service-item-03">
                             <div class="service-img">
-                                <a href="service.html"><img src="img/conjunto/fotoconferencias2.3.jpg" alt=""></a>
+                                <a href="/brevemente"><img src="img/conjunto/fotoconferencias2.3.jpg" alt=""></a>
                             </div>
                             <div class="service-text">
                                 <h3 class="title"><a href="/brevemente">Conferências</a></h3>
@@ -265,7 +265,7 @@ Service End -->
                         <!-- Service Item Start -->
                         <div class="service-item-03">
                             <div class="service-img">
-                                <a href="service.html"><img src="img/conjunto/fotoconcursos.jpg" alt=""></a>
+                                <a href="/brevemente"><img src="img/conjunto/fotoconcursos.jpg" alt=""></a>
                             </div>
                             <div class="service-text">
                                 <h3 class="title"><a href="/brevemente">Concursos</a></h3>
@@ -277,7 +277,7 @@ Service End -->
                         <!-- Service Item Start -->
                         <div class="service-item-03">
                             <div class="service-img">
-                                <a href="service.html"><img src="assets/images/brand/32930549451_a09d298edd_c.jpg" alt=""></a>
+                                <a href="/brevemente"><img src="assets/images/brand/32930549451_a09d298edd_c.jpg" alt=""></a>
                             </div>
                             <div class="service-text">
                                 <h3 class="title"><a href="/brevemente">Oradores</a></h3>
@@ -289,7 +289,7 @@ Service End -->
                         <!-- Service Item Start -->
                         <div class="service-item-03">
                             <div class="service-img">
-                                <a href="service.html"><img src="img/conjunto/fotofistago.jpg" alt=""></a>
+                                <a href="/brevemente"><img src="img/conjunto/fotofistago.jpg" alt=""></a>
                             </div>
                             <div class="service-text">
                                 <h3 class="title"><a href="/brevemente">FISTA GO</a></h3>
