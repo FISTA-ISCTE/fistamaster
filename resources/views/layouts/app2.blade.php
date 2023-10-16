@@ -176,6 +176,7 @@
                                 </ul>
                             </li>-->
                             <li><a href="/contacto">Contacto</a></li>
+                            <li><a class="btn" href="/entrar">Minha Conta</a></li>
                         </ul>
                     </div>
                 </div>
