@@ -10,6 +10,7 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
+use Webpatser\Uuid\Uuid;
 
 class User extends Authenticatable
 {
@@ -36,6 +37,13 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    public static function boot()
+    {
+        parent::boot();
+        self::creating(function ($model) {
+            $model->uuid = (string) Uuid::generate(4);
+        });
+    }
     protected $hidden = [
         'password',
         'remember_token',
