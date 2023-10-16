@@ -1018,9 +1018,8 @@
                 "uri-template/tests": "1.0.0"
             },
             "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "GuzzleHttp\\UriTemplate\\": "src"
+
+            "extra": {
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3463,13 +3462,10 @@
                 "files": [
                     "src/functions.php"
                 ],
-                "psr-4": {
                     "Psy\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
             ],
             "authors": [
                 {
