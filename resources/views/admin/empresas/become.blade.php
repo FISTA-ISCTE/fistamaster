@@ -123,7 +123,7 @@
             </div>
         </div>
         <!-- Pricing End -->
-        <div class="section techwix-choose-us-section-02 section-padding-02" style="background-image: url(assets/images/bg/choose-us-bg2.jpg);">
+        <div class="section techwix-choose-us-section-02 section-padding-02" style="background-color: #e1e1e1;">
             <div class="container">
                 <!-- Choose Us Wrap Start -->
                 <div class="choose-us-wrap">

@@ -32,7 +32,7 @@ class RedirectIfAuthenticated
                         return redirect()->route('empresa.dashboard');
                     }
 
-                    return redirect()->route('home');
+                    return redirect('/user/profile');
             }
         }
 

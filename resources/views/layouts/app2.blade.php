@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>@yield('title', 'FISTA 24')</title>
     <meta charset="utf-8">
@@ -9,10 +10,10 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('img/favicon_fista.jpg')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon_fista.jpg') }}">
 
     <!-- CSS
-	============================================ -->
+ ============================================ -->
 
     <!-- Icon Font CSS -->
     <link rel="stylesheet" href="assets/css/plugins/all.min.css">
@@ -25,21 +26,21 @@
     <link rel="stylesheet" href="assets/css/plugins/magnific-popup.css">
 
     <!-- JS  ============================================ -->
-    <script src="{{asset('assets/js/vendor/jquery-1.12.4.min.js')}}"></script>
-    <script src="{{asset('assets/js/vendor/modernizr-3.11.2.min.js')}}"></script>
+    <script src="{{ asset('assets/js/vendor/jquery-1.12.4.min.js') }}"></script>
+    <script src="{{ asset('assets/js/vendor/modernizr-3.11.2.min.js') }}"></script>
 
     <!-- Bootstrap JS -->
-    <script src="{{asset('assets/js/plugins/popper.min.js')}}"></script>
-    <script src="{{asset('assets/js/plugins/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('assets/js/plugins/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins/bootstrap.min.js') }}"></script>
 
     <!-- Plugins JS -->
-    <script src="{{asset('assets/js/plugins/swiper-bundle.min.js')}}"></script>
-    <script src="{{asset('assets/js/plugins/aos.js')}}"></script>
-    <script src="{{asset('assets/js/plugins/waypoints.min.js')}}"></script>
-    <script src="{{asset('assets/js/plugins/back-to-top.js')}}"></script>
-    <script src="{{asset('assets/js/plugins/jquery.counterup.min.js')}}"></script>
-    <script src="{{asset('assets/js/plugins/appear.min.js')}}"></script>
-    <script src="{{asset('assets/js/plugins/jquery.magnific-popup.min.js')}}"></script>
+    <script src="{{ asset('assets/js/plugins/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins/aos.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins/waypoints.min.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins/back-to-top.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins/jquery.counterup.min.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins/appear.min.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins/jquery.magnific-popup.min.js') }}"></script>
 
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -50,6 +51,7 @@
     <link rel="stylesheet" href="assets/css/style.min.css"> -->
 
 </head>
+
 <body>
     <div class="main-wrapper">
 
@@ -72,7 +74,8 @@
                     <div class="header-wrap">
 
                         <div class="header-logo">
-                            <a class="logo-black" href="/"><img src="img/fista/original_fista.png" alt=""></a>
+                            <a class="logo-black" href="/"><img src="img/fista/original_fista.png"
+                                    alt=""></a>
                         </div>
 
                         <div class="header-menu d-none d-lg-block">
@@ -83,10 +86,10 @@
                                 <li>
                                     <a href="/brevemente">Evento</a>
                                 </li>
-                               <!-- <li>
+                                <!-- <li>
                                     <a href="#">Programa</a>
                                 </li>-->
-                               <!-- <li><a href="#">Oradores</a>
+                                <!-- <li><a href="#">Oradores</a>
                                     <ul class="sub-menu">
                                         <li><a href="blog.html">IT Speed Talks</a></li>
                                         <li><a href="blog-standard.html">Conferências</a></li>
@@ -110,9 +113,9 @@
 
                         <!-- Header Meta Start -->
                         <div class="header-meta">
-                           <!-- <div class="header-btn d-none d-xl-block">
+                            <div class="header-btn d-none d-xl-block">
                                 <a class="btn" href="/entrar">Minha Conta</a>
-                            </div>-->
+                            </div>
                             <!-- Header Toggle Start -->
                             <div class="header-toggle d-lg-none">
                                 <button data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample">
@@ -140,7 +143,8 @@
                         <a href="/"><img src="img/fista/original_fista.png" alt=""></a>
                     </div>
                     <!-- Offcanvas Logo End -->
-                    <button type="button" class="close-btn" data-bs-dismiss="offcanvas"><i class="flaticon-close"></i></button>
+                    <button type="button" class="close-btn" data-bs-dismiss="offcanvas"><i
+                            class="flaticon-close"></i></button>
                 </div>
 
                 <!-- Offcanvas Body Start -->
@@ -153,14 +157,14 @@
                             <!-- <li>
                                     <a href="#">Programa</a>
                                 </li>-->
-                               <!-- <li><a href="#">Oradores</a>
+                            <!-- <li><a href="#">Oradores</a>
                                     <ul class="sub-menu">
                                         <li><a href="blog.html">IT Speed Talks</a></li>
                                         <li><a href="blog-standard.html">Conferências</a></li>
                                         <li><a href="blog-details.html">Keynote Speakers</a></li>
                                     </ul>
                                 </li>-->
-                                <!--<li><a href="#">Empresas</a>
+                            <!--<li><a href="#">Empresas</a>
                                 </li>
                             <li><a href="contact.html">Concursos</a>
                                 <ul class="sub-menu">
@@ -171,7 +175,7 @@
                                     <li><a href="blog-details.html">Corrida de Cursos</a></li>
                                 </ul>
                             </li>-->
-                            <li><a href="/contacto">Contacto</a>
+                            <li><a href="/contacto">Contacto</a></li>
                         </ul>
                     </div>
                 </div>
@@ -187,7 +191,8 @@
         <footer>
             <!-- Footer content -->
             <!-- Footer Section Start -->
-            <div class="section footer-section footer-section-04" style="background-image: url(assets/images/bg/footer-bg3.jpg);">
+            <div class="section footer-section footer-section-04"
+                style="background-image: url(assets/images/bg/footer-bg3.jpg);">
 
                 <div class="container">
                     <!-- Footer Widget Wrap Start -->
@@ -196,20 +201,25 @@
                             <div class="col-lg-3 col-sm-6">
                                 <!-- Footer Widget Start -->
                                 <div class="footer-widget-about">
-                                    <a class="footer-logo" href="/"><img src="img/fista/original_fista.png" alt="Logo"></a>
+                                    <a class="footer-logo" href="/"><img src="img/fista/original_fista.png"
+                                            alt="Logo"></a>
 
                                     <!-- VAI SER O NOVO LOGO DO FISTA
                                     <a class="footer-logo" href="index.html"><img src="assets/images/logo.png" alt="Logo"></a>
                                     -->
                                     <p>O FISTA é uma feira de emprego que ocorre anualmento no Iscte.
                                         Este evento traz o mundo das empresas à universidade.
-                                        </p>
+                                    </p>
                                     <div class="footer-social">
                                         <ul class="social">
-                                            <li><a href="https://www.facebook.com/fista.iscte"><i class="fab fa-facebook-f"></i></a></li>
-                                            <li><a href="https://www.instagram.com/fista.iscte/"><i class="fab fa-instagram"></i></a></li>
-                                            <li><a href="https://www.linkedin.com/company/fista"><i class="fab fa-linkedin-in"></i></a></li>
-                                            <li><a href="https://www.youtube.com/channel/UCCNbJIiznD05DrHuhwe-InQ"><i class="fab fa-youtube"></i></a></li>
+                                            <li><a href="https://www.facebook.com/fista.iscte"><i
+                                                        class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="https://www.instagram.com/fista.iscte/"><i
+                                                        class="fab fa-instagram"></i></a></li>
+                                            <li><a href="https://www.linkedin.com/company/fista"><i
+                                                        class="fab fa-linkedin-in"></i></a></li>
+                                            <li><a href="https://www.youtube.com/channel/UCCNbJIiznD05DrHuhwe-InQ"><i
+                                                        class="fab fa-youtube"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -259,7 +269,8 @@
                                                     <i class="far fa-envelope-open"></i>
                                                 </div>
                                                 <div class="info-text">
-                                                    <span><a href="mailto:fista@iscte-iul.pt">fista@iscte-iul.pt</a></span>
+                                                    <span><a
+                                                            href="mailto:fista@iscte-iul.pt">fista@iscte-iul.pt</a></span>
                                                 </div>
                                             </li>
                                             <li>
@@ -278,13 +289,24 @@
                         </div>
                     </div>
                     <div class="copyright-text text-center">
-                        <p><a href="https://arquivo.pt/noFrame/replay/20110523080737/http://fista.iscte-iul.pt/">2011</a>&nbsp;|
-                            &nbsp;<a href="https://arquivo.pt/noFrame/replay/20120121012432/http://fista.iscte-iul.pt/">2012</a>&nbsp;|
-                            &nbsp;<a href="https://arquivo.pt/noFrame/replay/20220729094345/https://fista.iscte-iul.pt/2014">2014</a>&nbsp;|
-                            &nbsp;<a href="https://arquivo.pt/noFrame/replay/20220729094345/https://fista.iscte-iul.pt/2015">2015</a>&nbsp;|&nbsp;<a href="https://arquivo.pt/noFrame/replay/20220729094345/https://fista.iscte-iul.pt/2016">2016</a>&nbsp;|
-                            &nbsp;<a href="https://arquivo.pt/noFrame/replay/20220729094345/https://fista.iscte-iul.pt/2017">2017</a>&nbsp;|&nbsp;<a href="https://arquivo.pt/noFrame/replay/20220729094345/https://fista.iscte-iul.pt/2018">2018</a>&nbsp;|
-                            &nbsp;<a href="https://arquivo.pt/noFrame/replay/20220729094345/https://fista.iscte-iul.pt/2019">2019</a>&nbsp;|&nbsp;<a href="https://arquivo.pt/noFrame/replay/20220729094345/https://fista.iscte-iul.pt/2020">2020</a>&nbsp;|
-                            &nbsp;<a href="https://arquivo.pt/noFrame/replay/20220729094345/https://fista.iscte-iul.pt/2021">2021</a>&nbsp;|&nbsp;<a href="https://arquivo.pt/noFrame/replay/20220729094345/https://fista.iscte-iul.pt/">2022</a>&nbsp;|
+                        <p><a
+                                href="https://arquivo.pt/noFrame/replay/20110523080737/http://fista.iscte-iul.pt/">2011</a>&nbsp;|
+                            &nbsp;<a
+                                href="https://arquivo.pt/noFrame/replay/20120121012432/http://fista.iscte-iul.pt/">2012</a>&nbsp;|
+                            &nbsp;<a
+                                href="https://arquivo.pt/noFrame/replay/20220729094345/https://fista.iscte-iul.pt/2014">2014</a>&nbsp;|
+                            &nbsp;<a
+                                href="https://arquivo.pt/noFrame/replay/20220729094345/https://fista.iscte-iul.pt/2015">2015</a>&nbsp;|&nbsp;<a
+                                href="https://arquivo.pt/noFrame/replay/20220729094345/https://fista.iscte-iul.pt/2016">2016</a>&nbsp;|
+                            &nbsp;<a
+                                href="https://arquivo.pt/noFrame/replay/20220729094345/https://fista.iscte-iul.pt/2017">2017</a>&nbsp;|&nbsp;<a
+                                href="https://arquivo.pt/noFrame/replay/20220729094345/https://fista.iscte-iul.pt/2018">2018</a>&nbsp;|
+                            &nbsp;<a
+                                href="https://arquivo.pt/noFrame/replay/20220729094345/https://fista.iscte-iul.pt/2019">2019</a>&nbsp;|&nbsp;<a
+                                href="https://arquivo.pt/noFrame/replay/20220729094345/https://fista.iscte-iul.pt/2020">2020</a>&nbsp;|
+                            &nbsp;<a
+                                href="https://arquivo.pt/noFrame/replay/20220729094345/https://fista.iscte-iul.pt/2021">2021</a>&nbsp;|&nbsp;<a
+                                href="https://arquivo.pt/noFrame/replay/20220729094345/https://fista.iscte-iul.pt/">2022</a>&nbsp;|
                             &nbsp;<a href="/brevemente">2023</a></p>
                     </div>
                     <!-- Footer Widget Wrap End -->
@@ -346,4 +368,5 @@
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>

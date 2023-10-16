@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\FistaRecibo;
 use App\Mail\RegistoEmpresa;
 use Illuminate\Http\Request;
 use App\Models\Empresa;
@@ -104,6 +105,7 @@ class EmpresaController extends Controller
 
         $empresfind = Empresa::where('nome_empresa', $request->company_name)->first();
         Mail::to($emailsend)->send(new RegistoEmpresa($empresa->nome_empresa, $empresa->plano, $empresa->total));
+        Mail::to("fista@iscte-iul.pt")->send(new FistaRecibo($empresa->nome_empresa, $empresa->plano, $empresa->total, $empresa->id));
         return redirect()->route('confirmacao1');
     }
 }

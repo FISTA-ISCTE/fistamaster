@@ -3,7 +3,7 @@
 use App\Models\Empresa;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmpresaController;
-
+use App\Http\Controllers\EmailController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,7 +25,7 @@ Route::get('/brevemente', function () {
 });
 Route::get('/politica-de-privacidade', function () {
     return view('politica');
-});
+})->name('politica');
 Route::get('/', function () {
     return view('landing_page');
 });
@@ -56,14 +56,20 @@ Route::middleware([
 
     Route::middleware(['role:empresa'])->prefix('empresa')->group(function () {
         Route::get('/dashboard', function () {
-            $company= Empresa::findOrFail(2);
+            $company= Empresa::findOrFail(Auth::user()->id_empresa);
             return view('admin.empresas.dashboard')->with(['company'=>$company]);
         })->name('empresa.dashboard');
 
     });
 
+    Route::get('/enviar-emails', [EmailController::class,'enviarEmailsArmazenados'])->name('enviar.emails');
     // Rotas para admin
     Route::middleware(['role:admin'])->prefix('admin')->group(function () {
+        Route::get('/emails-convites', function () {
+            return view('admin.fista.email-empresas.view');
+        })->name('enviar.emails.blade');
+
+
         Route::get('/dashboard', function () {
             return view('admin.fista.dashboard');
         })->name('admin.dashboard');

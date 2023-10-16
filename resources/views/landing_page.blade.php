@@ -572,7 +572,7 @@ Team End -->
                     <h2 class="title white">Revê o sucesso do FISTA23</h2>
                 </div>
                 <div class="play-btn-02">
-                    <a class="popup-video" href="https://www.youtube.com/watch?time_continue=3&v=aiE6tCvtQeQ"><i class="fas fa-play"></i></a>
+                    <a class="popup-video" href="https://www.youtube.com/watch?time_continue=3&v=i-DRgyXc15U"><i class="fas fa-play"></i></a>
                 </div>
             </div>
             <!-- Video Content End -->

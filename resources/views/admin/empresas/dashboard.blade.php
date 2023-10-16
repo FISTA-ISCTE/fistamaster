@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h1 class="font-semibold text-xl text-gray-800 leading-tight" style="margin-left:1rem;font-size:1.5rem;">
-            {{ __('👋 Olá, ') }}<span style="font-size:1.8rem;">{{ __('Deloitte') }}</span>
+            {{ __('👋 Olá, ') }}<span style="font-size:1.8rem;">{{ Auth::user()->name }}</span>
         </h1>
     </x-slot>
     <style>
@@ -129,7 +129,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <div style="margin-top:3rem;margin-bottom:3rem;; position: relative;">
-                    <div class="overlay" style="margin:0.6rem;">
+                    <!--<div class="overlay" style="margin:0.6rem;">
                         <span class="font-semibold text-xl text-gray-800 leading-tight" style="margin-left:1rem;font-size:1.5rem;">
                             {{ __('⚠ Progresso') }} <a href=""><span style="font-size: 0.60rem;">ver mais</span></a>
                         </span>
@@ -137,7 +137,7 @@
 
                     <div class="progress" style="background-color:#e1e1e1;">
                         <div class="progress-bar" role="progressbar" style="width: 25%;background-color:#21386e;color:white;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span style="padding-left: 2rem;">25%</span></div>
-                    </div>
+                    </div>-->
                 </div>
                 <div class="container mt-5 emp-profile">
                     <form id="companyProfile" method="post">
@@ -145,7 +145,7 @@
                             <!-- Logo da empresa -->
                             <div class="col-md-4">
                                 <div class="image-container position-relative">
-                                    <img src="https://via.placeholder.com/300x150" alt="Logotipo da Empresa" style="width: 300px; height: 150px;" class="img-fluid mb-2">
+                                    <img src="{{ asset("storage/" . $company->avatar) }}" alt="Logotipo da Empresa" style="width: 300px; height: 150px;" class="img-fluid mb-2">
                                     <label for="fileInput" id="changeImageLabel" style="display: none;" class="position-absolute" style="bottom: 10px; right: 10px;">
                                         <i class="fas fa-pen" style="cursor: pointer;"></i>
                                     </label>
@@ -155,8 +155,8 @@
 
                             <!-- Detalhes da empresa -->
                             <div class="col-md-8">
-                                <h2 class="font-semibold text-xl text-gray-800 leading-tight" style="font-size:1.2rem;">Nome da Empresa</h2>
-                                <p id="descText" class="mb-3">Texto Descritivo da Empresa. Breve descrição sobre a atividade da empresa.</p>
+                                <h2 class="font-semibold text-xl text-gray-800 leading-tight" style="font-size:1.2rem;">{{ $company->nome_empresa }}</h2>
+                                <p id="descText" class="mb-3">{{ $company->description }}</p>
                                 <textarea id="descInput" class="form-control mb-3" style="display: none;">Texto Descritivo da Empresa. Breve descrição sobre a atividade da empresa.</textarea>
 
                                 <div class="row">

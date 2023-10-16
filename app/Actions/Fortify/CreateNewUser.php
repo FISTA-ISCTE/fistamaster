@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 use Laravel\Jetstream\Jetstream;
 use Spatie\Permission\Models\Role;
+use Illuminate\Http\Request;
 
 class CreateNewUser implements CreatesNewUsers
 {
@@ -20,6 +21,7 @@ class CreateNewUser implements CreatesNewUsers
      */
     public function create(array $input): User
     {
+
         Validator::make($input, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -32,7 +34,11 @@ class CreateNewUser implements CreatesNewUsers
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
         ]);
-
+        if (request()->has('empresa')) {
+            $empresa = $input["empresa"];
+            $user->id_empresa = $empresa;
+            $user->save();
+        }
         $role = Role::findById($input['role_id']);
         $user->assignRole($role);
 
