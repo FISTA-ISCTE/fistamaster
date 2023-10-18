@@ -308,7 +308,7 @@
                             &nbsp;<a
                                 href="https://arquivo.pt/noFrame/replay/20220729094345/https://fista.iscte-iul.pt/2021">2021</a>&nbsp;|&nbsp;<a
                                 href="https://arquivo.pt/noFrame/replay/20220729094345/https://fista.iscte-iul.pt/">2022</a>&nbsp;|
-                            &nbsp;<a href="/brevemente">2023</a></p>
+                            &nbsp;<a href="/2023/public">2023</a></p>
                     </div>
                     <!-- Footer Widget Wrap End -->
                 </div>

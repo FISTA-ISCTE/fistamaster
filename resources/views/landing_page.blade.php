@@ -459,7 +459,7 @@ Team End -->
         <!-- Choose Us Wrap Start -->
         <div class="choose-us-wrap">
             <h1 style="font-size:2.5rem;font-weight:bold;color:#1EC4BD;text-align:center;margin-bottom:3%">FAQ</h1>
-
+<div class="row"><h3 style="font-size:1.5rem;font-weight:bold;color:#1EC4BD;text-align:left;margin-bottom:1%">Para alunos:</h3></div>
             <div class="row">
 
                 <div class="col-lg-12">
