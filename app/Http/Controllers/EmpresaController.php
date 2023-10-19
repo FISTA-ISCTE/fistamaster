@@ -10,6 +10,7 @@ use App\Models\Billing;
 use App\Models\Logistica;
 use App\Models\Workshop;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Auth;
 
 class EmpresaController extends Controller
 {
@@ -107,5 +108,50 @@ class EmpresaController extends Controller
         Mail::to($emailsend)->send(new RegistoEmpresa($empresa->nome_empresa, $empresa->plano, $empresa->total));
         Mail::to("fista@iscte-iul.pt")->send(new FistaRecibo($empresa->nome_empresa, $empresa->plano, $empresa->total, $empresa->id));
         return redirect()->route('confirmacao1');
+    }
+
+    public function guardarFaturacao(Request $request){
+        $empresa = Auth::user()->id_empresa;
+        if($empresa){
+            $billing = Billing::where('id_empresa', $empresa)->first();
+            $billing->nome_fiscal = $request->nome_fiscal;
+            $billing->morada = $request->morada;
+            $billing->nif = $request->nif;
+            $billing->s_n_numeroOrdemCompra = $request->opcaoNumeroOrdemCompra;
+            if($request->opcaoNumeroOrdemCompra === "1")
+                $billing->numeroOrdemCompra = $request->numeroOrdemCompra;
+            else
+                $billing->numeroOrdemCompra = null;
+            $billing->faturacao2023 = $request->opcaoFaturacao2023;
+            $billing->save();
+        }
+        return redirect()->route('empresa.faturacao');
+    }
+
+    public function guardarLogistica(Request $request){
+        $empresa = Empresa::where('id', Auth::user()->id_empresa)->first();
+        if($empresa){
+            $logistica = Logistica::where('id_empresa', $empresa->id)->first();
+            if(isset($empresa->dia1)){
+                $logistica->s_n_cadeiras_dia1 = $request->opcaoCadeirasDia1;
+                if($request->opcaoCadeirasDia1 === '1')
+                    $logistica->cadeiras_dia1 = $request->cadeiras_dia1;
+                else
+                $logistica->cadeiras_dia1 = null;
+                $logistica->mesa_stand_dia1 = $request->opcaoMesaStandDia1;
+                $logistica->num_almocos_dia1 = $request->num_almocos_dia1;
+            }
+            if(isset($empresa->dia2)){
+                $logistica->s_n_cadeiras_dia2 = $request->opcaoCadeirasDia2;
+                if($request->opcaoCadeirasDia2 === '1')
+                    $logistica->cadeiras_dia2 = $request->cadeiras_dia2;
+                else
+                    $logistica->cadeiras_dia2 = null;
+                $logistica->mesa_stand_dia2 = $request->opcaoMesaStandDia2;
+                $logistica->num_almocos_dia2 = $request->num_almocos_dia2;
+            }
+            $logistica->save();
+        }
+        return redirect()->route('empresa.logistica');
     }
 }

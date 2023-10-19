@@ -4,6 +4,8 @@ use App\Models\Empresa;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\EmailController;
+use App\Models\Billing;
+use App\Models\Logistica;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -60,6 +62,22 @@ Route::middleware([
             return view('admin.empresas.dashboard')->with(['company'=>$company]);
         })->name('empresa.dashboard');
 
+        Route::get('/faturacao', function () {
+            $company= Auth::user()->id_empresa;
+            $faturacao = Billing::where('id_empresa', $company)->first();
+            return view('admin.empresas.faturacao')->with(['company'=>$company, 'faturacao'=>$faturacao]);
+        })->name('empresa.faturacao');
+
+        Route::post('/faturacao/guardar', [EmpresaController::class, 'guardarFaturacao'])->name('empresa.faturacao.guardar');
+
+        Route::get('/logistica', function () {
+            $company= Auth::user()->id_empresa;
+            $empresa = Empresa::where('id', $company)->first();
+            $logistica = Logistica::where('id_empresa', $company)->first();
+            return view('admin.empresas.logistica')->with(['empresa'=>$empresa, 'logistica'=>$logistica]);
+        })->name('empresa.logistica');
+
+        Route::post('/logistica/guardar', [EmpresaController::class, 'guardarLogistica'])->name('empresa.logistica.guardar');
     });
 
     Route::get('/enviar-emails', [EmailController::class,'enviarEmailsArmazenados'])->name('enviar.emails');
