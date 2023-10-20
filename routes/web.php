@@ -80,6 +80,7 @@ Route::middleware([
         Route::post('/logistica/guardar', [EmpresaController::class, 'guardarLogistica'])->name('empresa.logistica.guardar');
     });
 
+
     Route::get('/enviar-emails', [EmailController::class,'enviarEmailsArmazenados'])->name('enviar.emails');
     // Rotas para admin
     Route::middleware(['role:admin'])->prefix('admin')->group(function () {
