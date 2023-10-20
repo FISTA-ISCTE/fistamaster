@@ -97,7 +97,7 @@ class EmpresaController extends Controller
         if ($request->file('avatar')) {
             $file = $request->file('avatar');
             $filename = $empresa->id . time() . '.' . $file->getClientOriginalExtension();
-            $request->avatar->storeAs('/storage/users/empresas', $filename);
+            $request->avatar->storeAs('/public/storage/users/empresas', $filename);
             $empresa->avatar = 'users/empresas/' . $filename;
         }
 
