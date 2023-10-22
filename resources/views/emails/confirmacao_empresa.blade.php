@@ -28,7 +28,7 @@
         <h2>Bem-vindo(a) à plataforma do FISTA24</h2>
         <p>Estamos satisfeitos em informar que a inscrição da sua empresa foi aceite com sucesso!</p>
 
-        <p>Para concluir o processo de registo, por favor, <a href="htpps://fista.iscte-iul.pt/registar-user?empresa={{$id}}" class="btn">Clique aqui</a>.</p>
+        <p>Para concluir o processo de registo, por favor, <a href="htpps://fista.iscte-iul.pt/registar-user?empresa={{$id}}" class="btn">htpps://fista.iscte-iul.pt/registar-user?empresa={{$id}}</a>.</p>
 
         <h3>Nota Importante</h3>
         <p>O cancelamento é gratuito até 31 de dezembro de 2023. No entanto, após essa data aplicam-se as seguintes condições:</p>
