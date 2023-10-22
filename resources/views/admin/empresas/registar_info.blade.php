@@ -87,7 +87,15 @@
                                         </div>
                                         <div class="col-sm-12">
                                             <div class="single-form">
-                                                <label for="avatar" class="form-label">Upload de Logotipo (PNG, JPG ou JPEG)</label>
+                                                <label for="avatar" class="form-label">Upload de Logotipo (JPG ou JPEG)</label>
+                                                <div class="alert alert-warning" style="width: 63%;font-size:1rem;" role="alert">
+                                                    Tamanho do logotipo: <br>
+                                                    -Silver:90x80px<br>
+                                                    -Gold:130x120px  <br>
+                                                    -Premium:200x190px <br>
+
+
+                                                </div>
                                                 <input type="file" onchange="ValidateSingleInput(this);" class="form-control" name="avatar" id="avatar" >
                                                 @error('avatar')
                                                 <span class="text-danger">{{ $message }}</span>
@@ -278,7 +286,7 @@
                                         <div class="col-sm-12">
                                             <!--  Single Form Start -->
                                             <div class="form-btn">
-                                                <p style="font-size: 11px; line-height: 15px;">Ao registar, aceita as nossas condições. Veja como recolhemos,
+                                                <p style="font-size: 11px; line-height: 15px;">Ao registar, aceita as nossas condições dos pacotes. Veja como recolhemos,
                                                     usamos e partilhamos a sua informação na nossa <a href="https://fista.iscte-iul.pt/politica-privacidade"
                                                     style="color:black !important;font-size: 11px; line-height: 15px;">Política de Privacidade</a>.</p>
                                                 <button class="btn" type="submit">Seguinte</button>

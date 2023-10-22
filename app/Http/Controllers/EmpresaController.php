@@ -34,7 +34,7 @@ class EmpresaController extends Controller
     {
         //dd($request->price_simulation);
         $request->validate([
-            'avatar' => 'required|nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'avatar' => 'required|nullable|image|mimes:jpeg,jpg|max:2048',
             'company_name' => 'required',
             'company_desc'=> 'required',
             'company_plan'=> 'required',
