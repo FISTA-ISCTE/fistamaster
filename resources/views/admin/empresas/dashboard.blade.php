@@ -357,7 +357,7 @@ function camposEmFalta($empresa, $faturacao, $logistica)
                         <div class="progress-bar" role="progressbar"
                             style="width:{{ progressoEmpresa($company, $faturacao, $logistica) }}%;background-color:#21386e;color:white;"
                             aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span
-                                style="padding-left: 2rem;">{{ progressoEmpresa($company, $faturacao, $logistica) }}</span>
+                                style="padding-left: 2rem;">{{ progressoEmpresa($company, $faturacao, $logistica) }}%</span>
                         </div>
                     </div>
                 </div>
