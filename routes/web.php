@@ -130,7 +130,7 @@ Route::middleware([
     });
 
 
-    Route::get('/dashboard', function () {
+    Route::get('/user/profile', function () {
         return view('dashboard');
     })->name('dashboard');
 
