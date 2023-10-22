@@ -15,6 +15,20 @@ use Illuminate\Support\Facades\Auth;
 class EmpresaController extends Controller
 {
     //
+    public function editarinfos(Request $request)
+    {
+        $id_empresa=Auth::user()->id_empresa;
+        $empresa=Empresa::find($id_empresa);
+        $empresa->linkedin = $request->linkedin ?? $empresa->linkedin;
+        $empresa->website = $request->website ?? $empresa->website;
+        $empresa->linkedin = $request->linkedin ?? $empresa->linkedin;
+        $empresa->description = $request->description ?? $empresa->description;
+        $empresa->others = $request->others ?? $empresa->others;+
+        session()->flash('success', 'Dados guardados com sucesso!');
+        $empresa->save();
+        return redirect()->route('empresa.dashboard');
+
+    }
 
     public function registarempresa(Request $request)
     {
@@ -100,7 +114,6 @@ class EmpresaController extends Controller
             $request->avatar->storeAs('users/empresas', $filename, 'public');
             $empresa->avatar = 'users/empresas/' . $filename;
         }
-
         $empresa->save();
         $emailsend = $request->contact_email;
 

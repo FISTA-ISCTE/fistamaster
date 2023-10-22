@@ -156,98 +156,57 @@
                                 <div class="row" style="margin-bottom:2rem;">
                                     <!-- Botões à esquerda -->
                                     <div class="col-md-9">
-                                        <a href="{{ route('fatura.empresas', ['id' => $empresa->id]) }}"
-                                            class="btn  mr-2" style="background-color:black;color:#fff">Faturação</a>
-                                        <!--<button class="btn"
+                                        <button onclick="goBack()" style="background-color:black;color:#fff"
+                                            class="btn mr-2">
+                                            <i class="fas fa-arrow-left"></i> Voltar atrás
+                                        </button>
+                                        <script>
+                                            function goBack() {
+                                                window.history.back();
+                                            }
+                                        </script>
+
+                                      <!--  <button class="btn"
                                             style="background-color:black; color:#fff">Logistica</button>-->
                                     </div>
-
-                                    <!-- Botão à direita -->
-                                    <style>
-                                        .btn-mostrar {
-                                            background-color: green;
-                                            color: white;
-                                            padding: 10px 15px;
-                                            border: none;
-                                            cursor: pointer;
-                                        }
-
-                                        .btn-nao-mostrar {
-                                            background-color: red;
-                                            color: white;
-                                            padding: 10px 15px;
-                                            border: none;
-                                            cursor: pointer;
-                                        }
-                                    </style>
-                                    <form action="{{ route('toggle.mostrar', $empresa->id) }}" method="post">
-                                        @csrf
-                                        <div class="col-md-3 text-right">
-                                            <button type="submit" class="{{ $empresa->mostrar ? 'btn-nao-mostrar' : 'btn-mostrar' }}">
-                                                {{ $empresa->mostrar ? 'Não Mostrar' : 'Mostrar' }}
-                                            </button>
-                                        </div>
-                                    </form>
-
-
-
-
                                 </div>
-                                <form id="companyProfile" method="post"
-                                    action="{{ route('admin.empresa.infos.guardar', ['id' => $empresa->id]) }}">
-                                    @csrf
-                                    @if (session('success'))
-                                        <div class="alert alert-success">
-                                            {{ session('success') }}
-                                        </div>
-                                    @endif
-                                    <div class="row">
+                                <div class="row">
+                                    <!-- Logo da empresa -->
+                                    <!-- Detalhes da empresa -->
+                                    <div class="col-md-8">
+                                        <h2 class="font-semibold text-xl text-gray-800 leading-tight"
+                                            style="font-size:1.2rem;">
+                                            Empresa: {{ $empresa->nome_empresa }}</h2>
+                                        <h2 class="font-semibold text-xl text-gray-800 leading-tight"
+                                            style="font-size:0.8rem;">
+                                            São disponibilizadas 2 cadeiras, necessita de mais?</h2>
+                                        <input type="text" disabled name="website" id="webInput" class="form-control mb-3"
+                                            value="{{$fatura->nif}}" placeholder="Sem resposta">
 
-                                        <!-- Logo da empresa -->
-                                        <div class="col-md-4">
-                                            <div class="image-container position-relative">
-                                                <img src="{{ asset('storage/' . $empresa->avatar) }}"
-                                                    alt="Logotipo da Empresa" style="width: 300px; height: 150px;"
-                                                    class="img-fluid mb-2">
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <h2 class="font-semibold text-xl text-gray-800 leading-tight"
+                                                    style="font-size:0.8rem;">Nome de Empresa para Faturação</h2>
+                                                <input disabled type="text" name="website" id="webInput"
+                                                    class="form-control mb-3" value="{{$fatura->nome_fiscal}}" placeholder="Sem resposta">
                                             </div>
-                                        </div>
-
-                                        <!-- Detalhes da empresa -->
-                                        <div class="col-md-8">
-                                            <h2 class="font-semibold text-xl text-gray-800 leading-tight"
-                                                style="font-size:1.2rem;">
-                                                {{ $empresa->nome_empresa }}</h2>
-                                            <h2 class="font-semibold text-xl text-gray-800 leading-tight"
-                                                style="font-size:0.8rem;">
-                                                Descrição</h2>
-                                            <textarea id="descInput" name="description" class="form-control mb-3">{{ $empresa->description }}</textarea>
-
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <h2 class="font-semibold text-xl text-gray-800 leading-tight"
-                                                        style="font-size:0.8rem;">Website( https://...)</h2>
-                                                    <input type="text" name="website" id="webInput"
-                                                        class="form-control mb-3" value="{{ $empresa->website }}"
-                                                        placeholder="Link do Website">
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <h2 class="font-semibold text-xl text-gray-800 leading-tight"
-                                                        style="font-size:0.8rem;">Linkedin( https://...)</h2>
-                                                    <input type="text" name="linkedin" id="liInput"
-                                                        class="form-control mb-3" value="{{ $empresa->linkedin }}"
-                                                        placeholder="Link do LinkedIn">
-                                                </div>
+                                            <div class="col-md-8">
+                                                <h2 class="font-semibold text-xl text-gray-800 leading-tight"
+                                                    style="font-size:0.8rem;">Pretende número de ordem de compra na
+                                                    fatura?</h2>
+                                                <input disabled type="text" name="linkedin" id="liInput"
+                                                    class="form-control mb-3" value="{{$fatura->s_n_numeroOrdemCompra}}"
+                                                    placeholder="Sem resposta">
                                             </div>
-                                            <h2 class="font-semibold text-xl text-gray-800 leading-tight"
-                                                style="font-size:0.8rem;">
-                                                Outras Informações</h2>
-                                            <textarea id="otherInfoInput" name="others" class="form-control mb-3" placeholder="Outras Informações">{{ $empresa->others }}</textarea>
-
-                                            <button type="submit" id="editBtn" class="btn"
-                                                style="margin-top:2%;background: linear-gradient(195deg, #00c4cc 0%, #008d84 100%);">Guardar</button>
+                                            <div class="col-md-8">
+                                                <h2 class="font-semibold text-xl text-gray-800 leading-tight"
+                                                    style="font-size:0.8rem;">Pretende faturação ainda em 2023?</h2>
+                                                <input type="text" disabled id="liInput" class="form-control mb-3"
+                                                value="{{$fatura->faturacao2023}}" placeholder="Sem resposta">
+                                            </div>
                                         </div>
                                     </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>

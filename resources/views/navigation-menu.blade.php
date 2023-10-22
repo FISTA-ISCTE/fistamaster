@@ -1,3 +1,5 @@
+
+
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <style>
@@ -76,13 +78,7 @@
                         </x-nav-link>
                     </div>
                 @endif
-                @if(auth()->user() && auth()->user()->hasRole('empresa'))
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-nav-link href="" :active="request()->routeIs('dashboard')">
-                            {{ __('Avisos') }}
-                        </x-nav-link>
-                    </div>
-                @endif
+
                 <!-- Workshop caso exista-->
                 <!-- Backoffice alunos caso exista-->
                 <!-- Inserir post feed -->
@@ -142,12 +138,7 @@
                         </x-dropdown>
                     </div>
                 @endif
-                @if(auth()->user() && auth()->user()->hasRole('empresa'))
-                <a href=""><div class="notification">
-                    <i class="fas fa-bell fa-2x"></i>
-                    <span class="badge">5</span>
-                </div> </a>
-                @endif
+
                 <!-- Settings Dropdown -->
                 <div class="ml-3 relative">
                     <x-dropdown align="right" width="48">

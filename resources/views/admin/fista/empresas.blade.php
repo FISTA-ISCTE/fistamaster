@@ -5,6 +5,7 @@
         </h1>
     </x-slot>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
 <style>
     .responsive-table {
     overflow-x: auto;
@@ -31,7 +32,7 @@
                                 <th class="w-1/12 text-left py-3 px-4 uppercase font-semibold text-sm">Dia</th>
                                 <th class="w-1/12 text-left py-3 px-4 uppercase font-semibold text-sm">Dia</th>
                                 <th class="w-1/12 text-left py-3 px-4 uppercase font-semibold text-sm">Ativo/Desativo</th>
-                                <th class="w-2/12 text-left py-3 px-4 uppercase font-semibold text-sm">Ações</th>
+                                <th class="w-2/12 text-left py-3 px-4 uppercase font-semibold text-sm">Ver</th>
                             </tr>
                         </thead>
                         <tbody class="text-gray-700">
@@ -46,9 +47,7 @@
                                 <td class="w-1/12 text-left py-3 px-4">{{$empresa->dia2}}</td>
                                 <td class="w-1/12 text-left py-3 px-4">  <?php if($empresa->mostrar==0){ echo "Desativo"; } else{ echo "Ativo";} ?>  </td>
                                 <td class="w-2/12 text-left py-3 px-4">
-                                    <a href="#" class="text-blue-600 hover:text-blue-900 mr-2">Ver</a>
-                                    <a href="#" class="text-yellow-600 hover:text-yellow-900 mr-2">Editar</a>
-                                    <a href="#" class="text-red-600 hover:text-red-900">Eliminar</a>
+                                    <a href="{{ route('view.empresas', ['id' => $empresa->id]) }}" class="text-blue-600 hover:text-blue-900"><i style="font-size:1rem;" class="fas fa-info-circle"></i></a>
                                 </td>
                             </tr>
                             @endforeach

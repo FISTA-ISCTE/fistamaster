@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Models\Empresa;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\EmailController;
 use App\Models\Billing;
 use App\Models\Logistica;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,7 +50,7 @@ Route::get('/registarEmpresa/{name?}', function ($name = null) {
     return view('admin.empresas.registar_info');
 })->name('registarEmpresa');
 
-Route::post('/registarEmpresa', [EmpresaController::class,'registarempresa'])->name('registarEmpresasite');
+Route::post('/registarEmpresa', [EmpresaController::class, 'registarempresa'])->name('registarEmpresasite');
 
 Route::middleware([
     'auth:sanctum',
@@ -58,30 +60,31 @@ Route::middleware([
 
     Route::middleware(['role:empresa'])->prefix('empresa')->group(function () {
         Route::get('/dashboard', function () {
-            $company= Empresa::findOrFail(Auth::user()->id_empresa);
-            return view('admin.empresas.dashboard')->with(['company'=>$company]);
+            $company = Empresa::findOrFail(Auth::user()->id_empresa);
+            return view('admin.empresas.dashboard')->with(['company' => $company]);
         })->name('empresa.dashboard');
 
         Route::get('/faturacao', function () {
-            $company= Auth::user()->id_empresa;
+            $company = Auth::user()->id_empresa;
             $faturacao = Billing::where('id_empresa', $company)->first();
-            return view('admin.empresas.faturacao')->with(['company'=>$company, 'faturacao'=>$faturacao]);
+            return view('admin.empresas.faturacao')->with(['company' => $company, 'faturacao' => $faturacao]);
         })->name('empresa.faturacao');
 
         Route::post('/faturacao/guardar', [EmpresaController::class, 'guardarFaturacao'])->name('empresa.faturacao.guardar');
+        Route::post('/infos/guardar', [EmpresaController::class, 'editarinfos'])->name('empresa.infos.guardar');
 
         Route::get('/logistica', function () {
-            $company= Auth::user()->id_empresa;
+            $company = Auth::user()->id_empresa;
             $empresa = Empresa::where('id', $company)->first();
             $logistica = Logistica::where('id_empresa', $company)->first();
-            return view('admin.empresas.logistica')->with(['empresa'=>$empresa, 'logistica'=>$logistica]);
+            return view('admin.empresas.logistica')->with(['empresa' => $empresa, 'logistica' => $logistica]);
         })->name('empresa.logistica');
 
         Route::post('/logistica/guardar', [EmpresaController::class, 'guardarLogistica'])->name('empresa.logistica.guardar');
     });
 
 
-    Route::get('/enviar-emails', [EmailController::class,'enviarEmailsArmazenados'])->name('enviar.emails');
+    Route::get('/enviar-emails', [EmailController::class, 'enviarEmailsArmazenados'])->name('enviar.emails');
     // Rotas para admin
     Route::middleware(['role:admin'])->prefix('admin')->group(function () {
         Route::get('/emails-convites', function () {
@@ -93,13 +96,29 @@ Route::middleware([
             return view('admin.fista.dashboard');
         })->name('admin.dashboard');
         Route::get('/empresas', function () {
-            $empresas= Empresa::all();
+            $empresas = Empresa::all();
             return view('admin.fista.empresas')->with(['empresas' => $empresas]);
         })->name('admin.empresas');
-        Route::get('/empresas/1', function () {
-            $empresas= Empresa::all();
-            return view('admin.fista.empresas.view');
+        Route::get('/empresas/{id}', function ($id) {
+            $empresa = Empresa::find($id);
+            return view('admin.fista.empresas.view')->with(['empresa' => $empresa]);
         })->name('view.empresas');
+
+        Route::get('/empresas/faturacao/{id}', function ($id) {
+            $empresa = Empresa::find($id);
+            $fatura = Billing::where('id_empresa', $id)->first();
+            return view('admin.fista.empresas.faturacao')->with(['fatura' => $fatura, 'empresa' => $empresa]);
+        })->name('fatura.empresas');
+
+        Route::get('/empresas/logistica/{id}', function ($id) {
+            $empresa = Empresa::find($id);
+            $logistica = Logistica::where('id_empresa', $id)->first();
+            return view('admin.fista.empresas.logistica')->with(['logistica' => $logistica, 'empresa' => $empresa]);
+        })->name('logistica.empresas');
+
+        Route::post('/toggle-mostrar/{id}', [AdminController::class, 'toggleMostrar'])->name('toggle.mostrar');
+
+        Route::post('/infos/guardar/{id}', [AdminController::class, 'editarinfos'])->name('admin.empresa.infos.guardar');
 
 
     });

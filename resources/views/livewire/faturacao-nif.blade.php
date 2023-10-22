@@ -4,22 +4,22 @@
         <div class="col-10">
             <div class="single-form">
                 <h2 class="font-semibold text-xl text-gray-800 leading-tight" style="font-size:1.2rem;">Número de Identificação de Pessoa Coletiva</h2>
-                <input type="text" name="nif" id="nif"  autocomplete="nif" autofocus placeholder="Número de Identificação de Pessoa Coletiva" wire:model="nif">          
+                <input type="text" name="nif" id="nif"  autocomplete="nif" autofocus placeholder="Número de Identificação de Pessoa Coletiva" wire:model="nif">
             </div>
         </div>
-        <div class="col-2" style="display: flex;align-items: end;">
+       <!-- <div class="col-2" style="display: flex;align-items: end;">
             <button type="button" class="btn" style="background: linear-gradient(195deg, #00c4cc 0%, #008d84 100%);padding:0 10px;height:auto;" wire:click="consultarNif">Preencher dados</button>
-        </div>
+        </div>-->
     </div>
 
     <div class="single-form" style="margin-top:2%">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight" style="font-size:1.2rem;">Nome de Empresa para Faturação</h2>
-        <input type="text" name="nome_fiscal" id="nome_fiscal"  autocomplete="nome_fiscal" autofocus placeholder="Nome de Empresa para Faturação" wire:model="nome_fiscal">          
+        <input type="text" name="nome_fiscal" id="nome_fiscal"  autocomplete="nome_fiscal" autofocus placeholder="Nome de Empresa para Faturação" wire:model="nome_fiscal">
     </div>
 
     <div class="single-form" style="margin-top:2%">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight" style="font-size:1.2rem;">Morada de Faturação</h2>
-        <input type="text" name="morada" id="morada"  autocomplete="morada" autofocus placeholder="Morada de Faturação" wire:model="morada">          
+        <input type="text" name="morada" id="morada"  autocomplete="morada" autofocus placeholder="Morada de Faturação" wire:model="morada">
     </div>
 
     <div class="single-form" style="margin-top:2%">
@@ -42,7 +42,7 @@
                 <label class="form-check-label" for="opcaoNumeroOrdemCompraNao">Não</label>
             </div>
             <input style="width:88.5%; display:none" type="text" name="numeroOrdemCompra" id="numeroOrdemCompra"  autocomplete="numeroOrdemCompra" autofocus placeholder="Número de Ordem de Compra" wire:model="numeroOrdemCompra">
-        </div>          
+        </div>
     </div>
 
     <div class="single-form" style="margin-top:2%">
@@ -65,7 +65,7 @@
                 <label class="form-check-label" for="opcaoFaturacao2023Nao">Não</label>
             </div>
             <h2 class="text-sm text-gray-800 leading-tight">(Nota: Por norma a faturação é feita em 2024. Caso, por alguma razão, a sua empresa pretenda que o custo seja imputado em 2023, deve responder “sim”. )</h2>
-        </div>          
+        </div>
     </div>
 
     <button type="submit" id="editBtn" class="btn" style="margin-top:2%;background: linear-gradient(195deg, #00c4cc 0%, #008d84 100%);">Guardar</button>
