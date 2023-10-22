@@ -339,7 +339,13 @@ function camposEmFalta($empresa, $faturacao, $logistica)
                             <a href="" data-toggle="modal" data-target="#camposModal">
                                 <div class="notification">
                                     <i class="fas fa-bell fa-2x"></i>
-                                    <span class="badge">{{count(camposEmFalta($company, $faturacao, $logistica))}}</span>
+                                    <span class="badge"><?php $counta =camposEmFalta($company, $faturacao, $logistica);
+                                    if (is_array($counta) || $counta instanceof Countable) {
+                                        $count = count($count);
+                                    } else {
+                                        $count = 0;
+                                    }
+                                    ?></span>
                                 </div>
                             </a>
                         @endif
