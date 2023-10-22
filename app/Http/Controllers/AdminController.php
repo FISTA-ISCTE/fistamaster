@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ConfiEmpresa;
 use App\Models\Empresa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class AdminController extends Controller
 {
@@ -27,7 +29,7 @@ class AdminController extends Controller
         $empresa = Empresa::findOrFail($id);
         $empresa->mostrar = !$empresa->mostrar;
         $empresa->save();
-
+        Mail::to($empresa->email)->send(new ConfiEmpresa($empresa->id));
         return back()->with('success', $empresa->mostrar ? 'Mostra empresa' : 'Não mostrar empresa');
     }
 }
