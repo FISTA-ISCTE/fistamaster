@@ -342,8 +342,10 @@ function camposEmFalta($empresa, $faturacao, $logistica)
                                     <span class="badge"><?php $counta =camposEmFalta($company, $faturacao, $logistica);
                                     if (is_array($counta) || $counta instanceof Countable) {
                                         $count = count($count);
+                                        echo $count;
                                     } else {
                                         $count = 0;
+                                        echo $count;
                                     }
                                     ?></span>
                                 </div>
