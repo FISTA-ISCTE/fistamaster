@@ -154,6 +154,7 @@
                             <li class="active-menu">
                                 <a href="#">Evento</a>
                             </li>
+
                             <!-- <li>
                                     <a href="#">Programa</a>
                                 </li>-->
@@ -164,8 +165,9 @@
                                         <li><a href="blog-details.html">Keynote Speakers</a></li>
                                     </ul>
                                 </li>-->
-                            <!--<li><a href="#">Empresas</a>
+                            <li><a href="/empresas">Empresas</a>
                                 </li>
+                                <!--
                             <li><a href="contact.html">Concursos</a>
                                 <ul class="sub-menu">
                                     <li><a href="blog.html">Concurso de ideias</a></li>

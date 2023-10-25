@@ -3,17 +3,18 @@
 
 @section('content')
         <!-- Page Banner Start -->
-        <div class="section page-banner-section" style="background-color: #000000;min-height:20rem;">
+        <div class="section page-banner-section" style="background: url(https://fista.iscte-iul.pt/img/fotobecomeapartner.jpg); background-size: cover;min-height:35rem;">
             <div class="container">
-                <div class="page-banner" style="margin-top:0.5%;margin-bottom:5%">
+                <div class="page-banner" style="margin-top:0.5%;margin-bottom:5%;">
                     <div class="row text-center">
-                        <h2 class="title">Become a partner</h2>
+                        <h2 class="title" style="color:black;text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);">Become a partner</h2>
                     </div>
                     <!--<div class="row justify-content-center">
-                        <img src="{{asset('assets/images/logos/logo_fista_horizontal_branco_2023.png')}}" style="width:30%">
-                    </div>-->
+                                <img src="https://fista.iscte-iul.pt/assets/images/logos/logo_fista_horizontal_branco_2023.png" style="width:30%">
+                            </div>-->
                     <div class="row text-center">
-                        <h4 class="title" style="font-size: 1.5rem !important">28 e 29 de Fevereiro de 2024</h4>
+                        <h4 class="title" style="color:black; text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);font-size: 1.5rem !important">28 e
+                            29 de Fevereiro de 2024</h4>
                     </div>
                 </div>
             </div>

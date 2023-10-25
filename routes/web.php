@@ -34,6 +34,15 @@ Route::get('/politica-de-privacidade', function () {
 Route::get('/', function () {
     return view('landing_page');
 });
+Route::get('/empresas', function () {
+    $empresaspremium = Empresa::where('plano','premium')->where('mostrar','1')->get();
+    $countpremium = $empresaspremium->count();
+    $empresasgold = Empresa::where('plano','gold')->where('mostrar','1')->get();
+    $countgold = $empresasgold->count();
+    $empresassilver = Empresa::where('plano','silver')->where('mostrar','1')->get();
+    $countsilver = $empresassilver->count();
+    return view('empresas')->with(['empresaspremium'=> $empresaspremium, 'empresasgold'=>$empresasgold, 'empresassilver'=>$empresassilver, 'countpremium'=>$countpremium,'countgold'=> $countgold, 'countsilver'=> $countsilver ]);
+});
 Route::get('/confirmacao-empresa', function () {
     return view('admin.empresas.confirmacaopage');
 })->name('confirmacao1');
