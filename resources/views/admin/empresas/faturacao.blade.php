@@ -13,15 +13,15 @@
     </style>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-
+    <div class="row">
+        <div class="alert alert-warning" role="alert">
+            Para consultar os dados financeiros do Iscte, <a href="{{asset('docs/Dados_Faturação_Iscte_24.docx.pdf')}}" class="alert-link" download>Clique aqui</a>.
+        </div>
+    </div>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <div class="row">
-                    <div class="alert alert-warning" role="alert">
-                        Para consultar os dados financeiros do Iscte, <a href="{{asset('docs/Dados_Faturação_Iscte_24.docx.pdf')}}" class="alert-link" download>Clique aqui</a>.
-                    </div>
-                </div>
+
                 <div class="container emp-profile">
                     <livewire:faturacao-nif :faturacao="$faturacao">
                 </div>
