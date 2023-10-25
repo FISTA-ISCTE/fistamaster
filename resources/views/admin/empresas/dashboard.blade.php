@@ -340,13 +340,14 @@ function camposEmFalta($empresa, $faturacao, $logistica)
                                 <div class="notification">
                                     <i class="fas fa-bell fa-2x"></i>
                                     <span class="badge"><?php $counta =camposEmFalta($company, $faturacao, $logistica);
+                                    if(!isset($counta)){
                                     if (is_array($counta) || $counta instanceof Countable) {
                                         $count = count($count);
                                         echo $count;
                                     } else {
                                         $count = 0;
                                         echo $count;
-                                    }
+                                    }}
                                     ?></span>
                                 </div>
                             </a>
