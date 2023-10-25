@@ -442,12 +442,45 @@ Team End -->
 
 </script>
 
+<!-- Video Start -->
+<div class="section techwix-video-section" style="margin-top:15rem;">
+    <div class="container">
+        <!-- Video Wrap Start -->
+        <div class="video-wrap" style="background-image: url(img/play.jpg);">
 
+            <div class="shape-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="602px" height="640px">
+                    <defs>
+                        <linearGradient id="PSgrad_0" x1="0%" x2="0%" y1="0%" y2="100%">
+                            <stop offset="0%" stop-color="#1ec4bd" stop-opacity="1" />
+                            <stop offset="100%" stop-color="rgb(66, 185, 255)" stop-opacity="1" />
+                        </linearGradient>
 
-
-
-
-
+                    </defs>
+                    <path fill-rule="evenodd" fill="rgb(65, 183, 254)" d="M457.662,0.334 L601.963,129.999 L144.337,639.281 L0.35,509.616 L457.662,0.334 Z" />
+                    <path fill="url(#PSgrad_0)" d="M457.662,0.334 L601.963,129.999 L144.337,639.281 L0.35,509.616 L457.662,0.334 Z" />
+                </svg>
+            </div>
+            <div class="shape-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="238px" height="254px">
+                    <path d="M234.904,0.974 L237.95,3.24 L3.95,253.24 L0.904,250.974 L234.904,0.974 Z" />
+                </svg>
+            </div>
+            <!-- Video Content Start -->
+            <div class="video-content text-center">
+                <div class="section-title">
+                    <h2 class="title white">Revê o sucesso do FISTA23</h2>
+                </div>
+                <div class="play-btn-02">
+                    <a class="popup-video" href="https://www.youtube.com/watch?time_continue=3&v=i-DRgyXc15U"><i class="fas fa-play"></i></a>
+                </div>
+            </div>
+            <!-- Video Content End -->
+        </div>
+        <!-- Video Wrap End -->
+    </div>
+</div>
+<!-- Video End -->
 
 
 
@@ -541,47 +574,6 @@ Team End -->
     </div>
 </div>
 <!-- Choose Us End -->
-
-<!-- Video Start -->
-<div class="section techwix-video-section">
-    <div class="container">
-        <!-- Video Wrap Start -->
-        <div class="video-wrap" style="background-image: url(img/play.jpg);">
-
-            <div class="shape-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="602px" height="640px">
-                    <defs>
-                        <linearGradient id="PSgrad_0" x1="0%" x2="0%" y1="0%" y2="100%">
-                            <stop offset="0%" stop-color="#1ec4bd" stop-opacity="1" />
-                            <stop offset="100%" stop-color="rgb(66, 185, 255)" stop-opacity="1" />
-                        </linearGradient>
-
-                    </defs>
-                    <path fill-rule="evenodd" fill="rgb(65, 183, 254)" d="M457.662,0.334 L601.963,129.999 L144.337,639.281 L0.35,509.616 L457.662,0.334 Z" />
-                    <path fill="url(#PSgrad_0)" d="M457.662,0.334 L601.963,129.999 L144.337,639.281 L0.35,509.616 L457.662,0.334 Z" />
-                </svg>
-            </div>
-            <div class="shape-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="238px" height="254px">
-                    <path d="M234.904,0.974 L237.95,3.24 L3.95,253.24 L0.904,250.974 L234.904,0.974 Z" />
-                </svg>
-            </div>
-            <!-- Video Content Start -->
-            <div class="video-content text-center">
-                <div class="section-title">
-                    <h2 class="title white">Revê o sucesso do FISTA23</h2>
-                </div>
-                <div class="play-btn-02">
-                    <a class="popup-video" href="https://www.youtube.com/watch?time_continue=3&v=i-DRgyXc15U"><i class="fas fa-play"></i></a>
-                </div>
-            </div>
-            <!-- Video Content End -->
-        </div>
-        <!-- Video Wrap End -->
-    </div>
-</div>
-<!-- Video End -->
-
 
 <!-- Sponsors Logo Start
  <div class="section techwix-brand-section techwix-brand-section-03">

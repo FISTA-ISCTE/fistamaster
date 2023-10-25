@@ -26,7 +26,7 @@
                 <!-- Pricing Wrap Start -->
                 <div class="pricing-wrap">
                     <div class="section-title text-center">
-                        <h2 class="title">Junte-se a nós. Esperamos a sua empresa neste fantástico evento anual!</h2>
+                        <h2 class="title">Junte-se a nós. Esperamos pela sua empresa neste fantástico evento anual!</h2>
                     </div>
                     <div class="pricing-content-wrap">
                         <div class="row">

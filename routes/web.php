@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Models\Empresa;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\EmailController;
@@ -93,7 +94,10 @@ Route::middleware([
 
 
         Route::get('/dashboard', function () {
-            return view('admin.fista.dashboard');
+            $usersWithoutRoleXCount = User::all()->count();
+            $empresasCount = Empresa::all()->count();
+            $sessions = $activeSessions = DB::table(config('session.table', 'sessions'))->count();
+            return view('admin.fista.dashboard')->with(['usersWithoutRoleXCount'=>$usersWithoutRoleXCount, 'empresasCount' =>$empresasCount,'sessions'=>$sessions]);
         })->name('admin.dashboard');
         Route::get('/empresas', function () {
             $empresas = Empresa::all();

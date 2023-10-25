@@ -184,7 +184,7 @@
                                         @csrf
                                         <div class="col-md-3 text-right">
                                             <button type="submit" class="{{ $empresa->mostrar ? 'btn-nao-mostrar' : 'btn-mostrar' }}">
-                                                {{ $empresa->mostrar ? 'Não Mostrar' : 'Mostrar' }}
+                                                {{ $empresa->mostrar ? 'Desativar' : 'Ativar' }}
                                             </button>
                                         </div>
                                     </form>
