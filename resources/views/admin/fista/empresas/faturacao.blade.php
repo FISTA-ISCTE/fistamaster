@@ -171,6 +171,11 @@
                                     </div>
                                 </div>
                                 <div class="row">
+                                    <div class="alert alert-warning" role="alert">
+                                        Para consultar os dados financeiros do Iscte, <a href="{{asset('docs/Dados_Faturação_Iscte_24.docx.pdf')}}" class="alert-link" download>Clique aqui</a>.
+                                    </div>
+                                </div>
+                                <div class="row">
                                     <!-- Logo da empresa -->
                                     <!-- Detalhes da empresa -->
                                     <div class="col-md-8">
