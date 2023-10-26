@@ -193,12 +193,19 @@
                                             </div>
                                             <div class="col-md-8">
                                                 <h2 class="font-semibold text-xl text-gray-800 leading-tight"
+                                                    style="font-size:0.8rem;">Morada</h2>
+                                                <input disabled type="text" name="website" id="webInput"
+                                                    class="form-control mb-3" value="{{$fatura->morada}}" placeholder="Sem resposta">
+                                            </div>
+                                            <div class="col-md-8">
+                                                <h2 class="font-semibold text-xl text-gray-800 leading-tight"
                                                     style="font-size:0.8rem;">Pretende número de ordem de compra na
                                                     fatura?</h2>
                                                 <input disabled type="text" name="linkedin" id="liInput"
                                                     class="form-control mb-3" value="{{$fatura->s_n_numeroOrdemCompra}}"
                                                     placeholder="Sem resposta">
                                             </div>
+
                                             <div class="col-md-8">
                                                 <h2 class="font-semibold text-xl text-gray-800 leading-tight"
                                                     style="font-size:0.8rem;">Pretende faturação ainda em 2023?</h2>
