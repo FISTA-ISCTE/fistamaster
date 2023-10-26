@@ -223,7 +223,7 @@
                                             <textarea id="descInput" name="description" class="form-control mb-3">{{ $empresa->description }}</textarea>
 
                                             <div class="row">
-                                                <div class="col-md-6">
+                                                <dv6iv class="col-md-6">
                                                     <h2 class="font-semibold text-xl text-gray-800 leading-tight"
                                                         style="font-size:0.8rem;">Website( https://...)</h2>
                                                     <input type="text" name="website" id="webInput"
@@ -245,9 +245,11 @@
 
                                             <button type="submit" id="editBtn" class="btn"
                                                 style="margin-top:2%;background: linear-gradient(195deg, #00c4cc 0%, #008d84 100%);">Guardar</button>
+
                                         </div>
                                     </div>
                                 </form>
+
                             </div>
                         </div>
                     </div>
