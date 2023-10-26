@@ -2,11 +2,11 @@
 
 @section('content')
     <div class="section page-banner-section"
-        style="background: url(https://fista.iscte-iul.pt/img/fotobecomeapartner.jpg); background-size: cover;min-height:15rem;">
+        style="background-color: white;min-height:15rem;">
         <div class="container">
             <div class="page-banner" style="margin-top:0.5%;margin-bottom:5%;">
-                <div class="row text-center">
-                    <h2 class="title" style="color:black;text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);">Empresas</h2>
+                <div class="row text-left">
+                    <h1 class="titl" style="color:black;">Empresas</h1>
                 </div>
 
             </div>

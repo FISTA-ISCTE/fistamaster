@@ -180,7 +180,7 @@
                                             Empresa: {{ $empresa->nome_empresa }}</h2>
                                         <h2 class="font-semibold text-xl text-gray-800 leading-tight"
                                             style="font-size:0.8rem;">
-                                            São disponibilizadas 2 cadeiras, necessita de mais?</h2>
+                                            NIF</h2>
                                         <input type="text" disabled name="website" id="webInput" class="form-control mb-3"
                                             value="{{$fatura->nif}}" placeholder="Sem resposta">
 
@@ -210,8 +210,21 @@
                                                 <h2 class="font-semibold text-xl text-gray-800 leading-tight"
                                                     style="font-size:0.8rem;">Pretende faturação ainda em 2023?</h2>
                                                 <input type="text" disabled id="liInput" class="form-control mb-3"
-                                                value="{{$fatura->faturacao2023}}" placeholder="Sem resposta">
+                                                value="{{$fatura->faturacao2023}}" placeholder="Sem resposta (1- sim, 0 é não)">
                                             </div>
+                                            <div class="col-md-8">
+                                                <h2 class="font-semibold text-xl text-gray-800 leading-tight"
+                                                    style="font-size:0.8rem;">Nome</h2>
+                                                <input type="text" disabled id="liInput" class="form-control mb-3"
+                                                value="{{$empresa->nome_user}}" placeholder="Sem resposta (1- sim, 0 é não)">
+                                            </div>
+                                            <div class="col-md-8">
+                                                <h2 class="font-semibold text-xl text-gray-800 leading-tight"
+                                                    style="font-size:0.8rem;">Email</h2>
+                                                <input type="text" disabled id="liInput" class="form-control mb-3"
+                                                value="{{$empresa->email}}" placeholder="Sem resposta (1- sim, 0 é não)">
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
