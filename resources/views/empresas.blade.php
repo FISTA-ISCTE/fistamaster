@@ -13,7 +13,6 @@
     </div>
     <style>
         .logo-card {
-            width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -50,7 +49,7 @@
             <div class="row mb-5">
                 <!-- Premium Logo -->
                 @foreach ($empresaspremium as $empresapremium)
-                    <div class="col-md-3 mb-4 d-flex justify-content-center align-items-center">
+                    <div class="col-md-3 mb-4 d-flex justify-content-center">
                         <div class="card logo-card">
                             <img src="{{ asset('storage/' . $empresapremium->avatar) }}" alt="Logo Empresa 1"
                                 class="card-img-top logo-premium">
@@ -67,7 +66,7 @@
             <div class="row mb-5">
                 <!-- Gold Logo -->
                 @foreach ($empresasgold as $empresagold)
-                    <div class="col-md-3 mb-3 d-flex justify-content-center align-items-center">
+                    <div class="col-md-3 mb-3 d-flex justify-content-center">
                         <div class="card logo-card">
                             <img src="{{ asset('storage/' . $empresagold->avatar) }}" alt="Logo Empresa 2"
                                 class="card-img-top logo-gold">
@@ -84,7 +83,7 @@
             <div class="row mb-5">
                 <!-- Silver Logos -->
                 @foreach ($empresassilver as $empresasilver)
-                    <div class="col-md-2 mb-2 d-flex justify-content-center align-items-center">
+                    <div class="col-md-2 mb-2 d-flex justify-content-center">
                         <div class="card logo-card">
                             <img src="{{ asset('storage/' . $empresasilver->avatar) }}" alt="Logo Empresa 3"
                                 class="card-img-top logo-silver">
@@ -95,4 +94,5 @@
             </div>
         @endif
     </div>
+
 @endsection
