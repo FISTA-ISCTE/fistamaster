@@ -1,8 +1,7 @@
 @extends('layouts.app2')
 
 @section('content')
-    <div class="section page-banner-section"
-        style="background-color: white;min-height:15rem;">
+    <div class="section page-banner-section" style="background-color: white;min-height:15rem;">
         <div class="container">
             <div class="page-banner" style="margin-top:0.5%;margin-bottom:5%;">
                 <div class="row text-left">
@@ -13,11 +12,18 @@
         </div>
     </div>
     <style>
+        .logo-card {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+        }
+
         .logo-premium,
         .logo-gold,
         .logo-silver {
             display: block;
-            width: 100%;
             max-width: 100%;
             height: auto;
         }
@@ -44,9 +50,11 @@
             <div class="row mb-5">
                 <!-- Premium Logo -->
                 @foreach ($empresaspremium as $empresapremium)
-                    <div class="col-md-3 mb-4">
-                        <img src="{{ asset('storage/' . $empresapremium->avatar) }}" alt="Logo Empresa 1"
-                            class="logo-premium">
+                    <div class="col-md-3 mb-4 d-flex justify-content-center align-items-center">
+                        <div class="card logo-card">
+                            <img src="{{ asset('storage/' . $empresapremium->avatar) }}" alt="Logo Empresa 1"
+                                class="card-img-top logo-premium">
+                        </div>
                     </div>
                 @endforeach
                 <!-- ... repetir conforme necessário ... -->
@@ -59,25 +67,28 @@
             <div class="row mb-5">
                 <!-- Gold Logo -->
                 @foreach ($empresasgold as $empresagold)
-                    <div class="col-md-3 mb-3">
-                        <img src="{{ asset('storage/' . $empresagold->avatar) }}" alt="Logo Empresa 2"
-                            class="logo-gold">
+                    <div class="col-md-3 mb-3 d-flex justify-content-center align-items-center">
+                        <div class="card logo-card">
+                            <img src="{{ asset('storage/' . $empresagold->avatar) }}" alt="Logo Empresa 2"
+                                class="card-img-top logo-gold">
+                        </div>
                     </div>
                 @endforeach
-
-
                 <!-- ... repetir conforme necessário ... -->
             </div>
         @endif
+
         <!-- Silver Plan -->
         @if ($countsilver != 0)
             <h2 class="mb-3">Plano Silver</h2>
             <div class="row mb-5">
                 <!-- Silver Logos -->
                 @foreach ($empresassilver as $empresasilver)
-                    <div class="col-md-2 mb-2">
-                        <img src="{{ asset('storage/' . $empresasilver->avatar) }}" alt="Logo Empresa 3"
-                            class="logo-silver">
+                    <div class="col-md-2 mb-2 d-flex justify-content-center align-items-center">
+                        <div class="card logo-card">
+                            <img src="{{ asset('storage/' . $empresasilver->avatar) }}" alt="Logo Empresa 3"
+                                class="card-img-top logo-silver">
+                        </div>
                     </div>
                 @endforeach
                 <!-- ... repetir conforme necessário ... -->
