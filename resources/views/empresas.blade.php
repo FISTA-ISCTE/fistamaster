@@ -12,16 +12,11 @@
         </div>
     </div>
     <style>
-        .card-link {
-            text-decoration: none;
-        }
-
         .logo-card {
             display: flex;
             justify-content: center;
             align-items: center;
             border: none;
-            /* Adiciona sombra */
         }
 
         .logo-premium,
@@ -47,64 +42,64 @@
             max-height: 80px;
         }
     </style>
-    <div class="container mt-5">
-        <!-- Premium Plan -->
-        @if ($countpremium != 0)
-            <h2 class="mb-3">Plano Premium</h2>
-            <div class="row mb-5">
-                <!-- Premium Logo -->
-                @foreach ($empresaspremium as $empresapremium)
-                    <div class="col-md-3 mb-4 d-flex shadow justify-content-center">
-                        <a href="{{ $empresapremium->website }}" class="card-link">
-                            <div class="card logo-card ">
-                                <img src="{{ asset('storage/' . $empresapremium->avatar) }}" alt="Logo Empresa 1"
-                                    class="card-img-top logo-premium">
-                            </div>
-                        </a>
-                    </div>
-                @endforeach
-                <!-- ... repetir conforme necessário ... -->
-            </div>
-        @endif
+<div class="container mt-5">
+    <!-- Premium Plan -->
+    @if ($countpremium != 0)
+        <h2 class="mb-3">Plano Premium</h2>
+        <div class="row mb-5">
+            <!-- Premium Logo -->
+            @foreach ($empresaspremium as $empresapremium)
+                <div class="col-md-3 mb-4 d-flex justify-content-center">
+                    <a href="{{ $empresapremium->website }}" class="card-link">
+                        <div class="card logo-card">
+                            <img src="{{ asset('storage/' . $empresapremium->avatar) }}" alt="Logo Empresa 1"
+                                class="card-img-top logo-premium">
+                        </div>
+                    </a>
+                </div>
+            @endforeach
+            <!-- ... repetir conforme necessário ... -->
+        </div>
+    @endif
 
-        <!-- Gold Plan -->
-        @if ($countgold != 0)
-            <h2 class="mb-3">Plano Gold</h2>
-            <div class="row mb-5">
-                <!-- Gold Logo -->
-                @foreach ($empresasgold as $empresagold)
-                    <div class="col-md-3 mb-3 d-flex shadow justify-content-center">
-                        <a href="{{ $empresagold->website }}" class="card-link">
-                            <div class="card logo-card ">
-                                <img src="{{ asset('storage/' . $empresagold->avatar) }}" alt="Logo Empresa 2"
-                                    class="card-img-top logo-gold">
-                            </div>
-                        </a>
-                    </div>
-                @endforeach
-                <!-- ... repetir conforme necessário ... -->
-            </div>
-        @endif
+    <!-- Gold Plan -->
+    @if ($countgold != 0)
+        <h2 class="mb-3">Plano Gold</h2>
+        <div class="row mb-5">
+            <!-- Gold Logo -->
+            @foreach ($empresasgold as $empresagold)
+                <div class="col-md-3 mb-3 d-flex justify-content-center">
+                    <a href="{{ $empresagold->website }}" class="card-link">
+                        <div class="card logo-card">
+                            <img src="{{ asset('storage/' . $empresagold->avatar) }}" alt="Logo Empresa 2"
+                                class="card-img-top logo-gold">
+                        </div>
+                    </a>
+                </div>
+            @endforeach
+            <!-- ... repetir conforme necessário ... -->
+        </div>
+    @endif
 
-        <!-- Silver Plan -->
-        @if ($countsilver != 0)
-            <h2 class="mb-3">Plano Silver</h2>
-            <div class="row mb-5">
-                <!-- Silver Logos -->
-                @foreach ($empresassilver as $empresasilver)
-                    <div class="col-md-2 mb-2 d-flex shadow justify-content-center">
-                        <a href="{{ $empresasilver->website }}" class="card-link">
-                            <div class="card logo-card ">
-                                <img src="{{ asset('storage/' . $empresasilver->avatar) }}" alt="Logo Empresa 3"
-                                    class="card-img-top logo-silver">
-                            </div>
-                        </a>
-                    </div>
-                @endforeach
-                <!-- ... repetir conforme necessário ... -->
-            </div>
-        @endif
-    </div>
+    <!-- Silver Plan -->
+    @if ($countsilver != 0)
+        <h2 class="mb-3">Plano Silver</h2>
+        <div class="row mb-5">
+            <!-- Silver Logos -->
+            @foreach ($empresassilver as $empresasilver)
+                <div class="col-md-2 mb-2 d-flex justify-content-center">
+                    <a href="{{ $empresasilver->website }}" class="card-link">
+                        <div class="card logo-card">
+                            <img src="{{ asset('storage/' . $empresasilver->avatar) }}" alt="Logo Empresa 3"
+                                class="card-img-top logo-silver">
+                        </div>
+                    </a>
+                </div>
+            @endforeach
+            <!-- ... repetir conforme necessário ... -->
+        </div>
+    @endif
+</div>
 
 
 @endsection
