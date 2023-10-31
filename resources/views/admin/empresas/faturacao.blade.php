@@ -5,7 +5,7 @@
         </h1>
     </x-slot>
     <style>
-        .emp-profile{
+        .emp-profile {
             padding: 3%;
             border-radius: 0.5rem;
             background: #fff;
@@ -19,35 +19,42 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <div class="row">
                     <div class="alert alert-warning" style="margin:2rem;" role="alert">
-                        Para consultar os dados financeiros do Iscte, <a href="{{asset('docs/Dados_Faturação_Iscte_24.docx.pdf')}}" class="alert-link" download>Clique aqui</a>.
+                        Para consultar os dados financeiros do Iscte, <a
+                            href="{{ asset('docs/Dados_Faturação_Iscte_24.docx.pdf') }}" class="alert-link"
+                            download>Clique aqui</a>.
                     </div>
                 </div>
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
                 <div class="container emp-profile">
                     <livewire:faturacao-nif :faturacao="$faturacao">
                 </div>
 
-<script>
-    const showInputRadio = document.querySelector('input[name="opcaoNumeroOrdemCompra"][value="1"]');
-    const hideInputRadio = document.querySelector('input[name="opcaoNumeroOrdemCompra"][value="0"]');
-    const numeroOrdemCompra = document.getElementById('numeroOrdemCompra');
+                <script>
+                    const showInputRadio = document.querySelector('input[name="opcaoNumeroOrdemCompra"][value="1"]');
+                    const hideInputRadio = document.querySelector('input[name="opcaoNumeroOrdemCompra"][value="0"]');
+                    const numeroOrdemCompra = document.getElementById('numeroOrdemCompra');
 
-    if(showInputRadio.checked)
-        numeroOrdemCompra.style.display = 'block';
+                    if (showInputRadio.checked)
+                        numeroOrdemCompra.style.display = 'block';
 
-    // Add a change event listener to the radio buttons
-    showInputRadio.addEventListener('change', function () {
-        if (this.checked) {
-            numeroOrdemCompra.style.display = 'block';
-        }
-    });
+                    // Add a change event listener to the radio buttons
+                    showInputRadio.addEventListener('change', function() {
+                        if (this.checked) {
+                            numeroOrdemCompra.style.display = 'block';
+                        }
+                    });
 
-    hideInputRadio.addEventListener('change', function () {
-        if (this.checked) {
-            numeroOrdemCompra.style.display = 'none';
-        }
-    });
-
-</script>
+                    hideInputRadio.addEventListener('change', function() {
+                        if (this.checked) {
+                            numeroOrdemCompra.style.display = 'none';
+                        }
+                    });
+                </script>
 
             </div>
         </div>

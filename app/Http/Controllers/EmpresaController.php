@@ -137,6 +137,7 @@ class EmpresaController extends Controller
                 $billing->numeroOrdemCompra = null;
             $billing->faturacao2023 = $request->opcaoFaturacao2023;
             $billing->save();
+            session()->flash('success', 'Dados guardados com sucesso!');
         }
         return redirect()->route('empresa.faturacao');
     }
@@ -164,6 +165,7 @@ class EmpresaController extends Controller
                 $logistica->num_almocos_dia2 = $request->num_almocos_dia2;
             }
             $logistica->save();
+            session()->flash('success', 'Dados guardados com sucesso!');
         }
         return redirect()->route('empresa.logistica');
     }
