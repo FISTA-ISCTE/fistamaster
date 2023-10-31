@@ -52,7 +52,7 @@
                                 <td class="w-1/12 text-left py-3 px-4">{{$empresa->dia2}}</td>
 
                                 <td class="w-2/12 text-left py-3 px-4">{{$empresa->cvs}}</td>
-                                <td class="w-1/12 text-left py-3 px-4">{{$empresa->workshop}}</td>
+                                <td class="w-1/12 text-left py-3 px-4">{{$empresa->worshop}}</td>
                                 <td class="w-1/12 text-left py-3 px-4">{{$empresa->cocktail}}</td>
                                 <td class="w-1/12 text-left py-3 px-4">{{$empresa->itspeedtalks}}</td>
                                 <td class="w-1/12 text-left py-3 px-4">{{$empresa->backoffice}}</td>
