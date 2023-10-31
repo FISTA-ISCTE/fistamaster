@@ -12,11 +12,17 @@
         </div>
     </div>
     <style>
+        .card-link {
+            text-decoration: none;
+        }
+
         .logo-card {
             display: flex;
             justify-content: center;
             align-items: center;
             border: none;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            /* Adiciona sombra */
         }
 
         .logo-premium,
@@ -50,10 +56,12 @@
                 <!-- Premium Logo -->
                 @foreach ($empresaspremium as $empresapremium)
                     <div class="col-md-3 mb-4 d-flex justify-content-center">
-                        <div class="card logo-card">
-                            <img src="{{ asset('storage/' . $empresapremium->avatar) }}" alt="Logo Empresa 1"
-                                class="card-img-top logo-premium">
-                        </div>
+                        <a href="{{ $empresapremium->website }}" class="card-link">
+                            <div class="card logo-card">
+                                <img src="{{ asset('storage/' . $empresapremium->avatar) }}" alt="Logo Empresa 1"
+                                    class="card-img-top logo-premium">
+                            </div>
+                        </a>
                     </div>
                 @endforeach
                 <!-- ... repetir conforme necessário ... -->
@@ -67,10 +75,12 @@
                 <!-- Gold Logo -->
                 @foreach ($empresasgold as $empresagold)
                     <div class="col-md-3 mb-3 d-flex justify-content-center">
-                        <div class="card logo-card">
-                            <img src="{{ asset('storage/' . $empresagold->avatar) }}" alt="Logo Empresa 2"
-                                class="card-img-top logo-gold">
-                        </div>
+                        <a href="{{ $empresagold->website }}" class="card-link">
+                            <div class="card logo-card">
+                                <img src="{{ asset('storage/' . $empresagold->avatar) }}" alt="Logo Empresa 2"
+                                    class="card-img-top logo-gold">
+                            </div>
+                        </a>
                     </div>
                 @endforeach
                 <!-- ... repetir conforme necessário ... -->
@@ -84,15 +94,18 @@
                 <!-- Silver Logos -->
                 @foreach ($empresassilver as $empresasilver)
                     <div class="col-md-2 mb-2 d-flex justify-content-center">
-                        <div class="card logo-card">
-                            <img src="{{ asset('storage/' . $empresasilver->avatar) }}" alt="Logo Empresa 3"
-                                class="card-img-top logo-silver">
-                        </div>
+                        <a href="{{ $empresasilver->website }}" class="card-link">
+                            <div class="card logo-card">
+                                <img src="{{ asset('storage/' . $empresasilver->avatar) }}" alt="Logo Empresa 3"
+                                    class="card-img-top logo-silver">
+                            </div>
+                        </a>
                     </div>
                 @endforeach
                 <!-- ... repetir conforme necessário ... -->
             </div>
         @endif
     </div>
+
 
 @endsection
