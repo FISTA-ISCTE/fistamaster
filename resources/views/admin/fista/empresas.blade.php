@@ -31,6 +31,11 @@
                                 <th class="w-1/12 text-left py-3 px-4 uppercase font-semibold text-sm">Valor</th>
                                 <th class="w-1/12 text-left py-3 px-4 uppercase font-semibold text-sm">Dia</th>
                                 <th class="w-1/12 text-left py-3 px-4 uppercase font-semibold text-sm">Dia</th>
+                                <th class="w-1/12 text-left py-3 px-4 uppercase font-semibold text-sm">CV</th>
+                                <th class="w-1/12 text-left py-3 px-4 uppercase font-semibold text-sm">Workshop</th>
+                                <th class="w-1/12 text-left py-3 px-4 uppercase font-semibold text-sm">Pequeno-Almoço</th>
+                                <th class="w-1/12 text-left py-3 px-4 uppercase font-semibold text-sm">IT Speed</th>
+                                <th class="w-1/12 text-left py-3 px-4 uppercase font-semibold text-sm">Backoffice</th>
                                 <th class="w-1/12 text-left py-3 px-4 uppercase font-semibold text-sm">Ativo/Desativo</th>
                                 <th class="w-2/12 text-left py-3 px-4 uppercase font-semibold text-sm">Ver</th>
                             </tr>
@@ -45,6 +50,13 @@
                                 <td class="w-1/12 text-left py-3 px-4">{{$empresa->total}}</td>
                                 <td class="w-1/12 text-left py-3 px-4">{{$empresa->dia1}}</td>
                                 <td class="w-1/12 text-left py-3 px-4">{{$empresa->dia2}}</td>
+
+                                <td class="w-2/12 text-left py-3 px-4">{{$empresa->cvs}}</td>
+                                <td class="w-1/12 text-left py-3 px-4">{{$empresa->workshop}}</td>
+                                <td class="w-1/12 text-left py-3 px-4">{{$empresa->cocktail}}</td>
+                                <td class="w-1/12 text-left py-3 px-4">{{$empresa->itspeedtalks}}</td>
+                                <td class="w-1/12 text-left py-3 px-4">{{$empresa->backoffice}}</td>
+
                                 <td class="w-1/12 text-left py-3 px-4">  <?php if($empresa->mostrar==0){ echo "Desativo"; } else{ echo "Ativo";} ?>  </td>
                                 <td class="w-2/12 text-left py-3 px-4">
                                     <a href="{{ route('view.empresas', ['id' => $empresa->id]) }}" class="text-blue-600 hover:text-blue-900"><i style="font-size:1rem;" class="fas fa-info-circle"></i></a>
