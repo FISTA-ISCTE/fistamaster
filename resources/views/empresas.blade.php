@@ -12,12 +12,7 @@
         </div>
     </div>
     <style>
-        .logo-card {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: none;
-        }
+
 
         .logo-premium,
         .logo-gold,
