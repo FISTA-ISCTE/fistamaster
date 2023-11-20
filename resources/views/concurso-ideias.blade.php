@@ -45,7 +45,7 @@
                         <div class="row justy-content-between">
                             <div class="d-flex flex-wrap justify-content-around">
                                 <div class="pt-4 ">
-                                    <a class="btn" href="/brevemente">Regulamento</a>
+                                    <a class="btn" href="assets/files/Regulamento Concurso de ideias - FISTA24.pdf">Regulamento</a>
                                 </div>
                                 <div class="pt-4 pb-4 pt-md-4 ">
 
