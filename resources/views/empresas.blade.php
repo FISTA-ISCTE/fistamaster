@@ -44,7 +44,7 @@
     </style>
     <div class="container mt-5">
         @if ($countdiamount != 0)
-            <h2 class="mb-3">Plano Diamount</h2>
+            <h2 class="mb-3">Plano Diamond</h2>
             <div class="row mb-5">
                 <!-- Premium Logo -->
                 @foreach ($empresasdiamount as $empresadiamount)

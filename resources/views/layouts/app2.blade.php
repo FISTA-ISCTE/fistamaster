@@ -86,7 +86,7 @@
                                 <li>
                                     <a href="/brevemente">Evento</a>
                                 </li>
-                               <!-- <li><a href="/empresas">Empresas</a>-->
+                               <li><a href="/empresas">Empresas</a>
                                 </li>
                                 <!-- <li>
                                     <a href="#">Programa</a>
@@ -154,7 +154,7 @@
                             <li class="active-menu">
                                 <a href="#">Evento</a>
                             </li>
-                            <!-- <li><a href="/empresas">Empresas</a>-->
+                            <li><a href="/empresas">Empresas</a>
                             </li>
                             <!-- <li>
                                     <a href="#">Programa</a>

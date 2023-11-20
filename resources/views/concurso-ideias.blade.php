@@ -26,7 +26,7 @@
                                 <!--<p style="margin-top:20px;font-size: 23px;text-align:center;padding-right: 20px;width:80%">Consulta aqui o regulamento em breve!</p>-->
                                 <!-- Descomentar quando sair o regulamento, e comentar o p acima-->
                                 <p style="margin-top:20px;font-size: 22px;text-align:center;padding:0 2% 0 2%">Este ano o
-                                    tema é <b>"Tecnologias Inovadoras que sirvam de auxílio ao ensino e trabalho à distância"</b>,
+                                    tema é <b>"Desenvolvimento de ideias inovadoras e disruptivas"</b>,
                                     para ficares a saber mais sobre o funcionamento do concurso consulta o regulamento.</p>
                                 <p style="margin-top:20px;font-size: 18px;padding:0 2% 0 2%; color:black"> Sponser:</p>
 
