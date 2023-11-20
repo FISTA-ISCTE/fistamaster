@@ -140,6 +140,7 @@
                                                         </option>
                                                         <option value="LCD">Ciência de Dados</option>
                                                         <option value="Arquiteura">Arquitetura</option>
+                                                        <option value="Campus Iscte-Sintra">Campus Iscte-Sintra</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -168,6 +169,7 @@
                                                         </option>
                                                         <option value="LCD">Ciência de Dados</option>
                                                         <option value="Arquitetura">Arquitetura</option>
+                                                        <option value="Campus Iscte-Sintra">Campus Iscte-Sintra</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -194,6 +196,7 @@
                                                         </option>
                                                         <option value="LCD">Ciência de Dados</option>
                                                         <option value="Arquitetura">Arquitetura</option>
+                                                        <option value="Campus Iscte-Sintra">Campus Iscte-Sintra</option>
                                                     </select>
                                                 </div>
                                             </div>
