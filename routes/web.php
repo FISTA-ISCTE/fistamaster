@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PageController;
 use App\Models\Empresa;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Route;
@@ -19,8 +20,13 @@ use App\Models\Logistica;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/contacto', function () {
-    return view('contacto');
+Route::get('/confirmacao', function () {
+    return view('confirmacao');
+});
+Route::post('/resgistar-concurso-ideias', [PageController::class, 'resgistar_concurso_ideias'])->name('resgistar_concurso_ideias');
+
+Route::get('/concurso-de-ideias', function () {
+    return view('concurso-ideias');
 });
 Route::get('/error', function () {
     return view('error');

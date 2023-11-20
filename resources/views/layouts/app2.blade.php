@@ -91,13 +91,11 @@
                                 <!-- <li>
                                     <a href="#">Programa</a>
                                 </li>-->
-                                <!-- <li><a href="#">Oradores</a>
+                                <li><a href="#">Atividades</a>
                                     <ul class="sub-menu">
-                                        <li><a href="blog.html">IT Speed Talks</a></li>
-                                        <li><a href="blog-standard.html">Conferências</a></li>
-                                        <li><a href="blog-details.html">Keynote Speakers</a></li>
+                                        <li><a href="/concurso-de-ideias">Concurso de Ideias</a></li>
                                     </ul>
-                                </li>-->
+                                </li>
                                 <!--<li><a href="#">Empresas</a>
                                 </li>
                                 <li><a href="contact.html">Concursos</a>
@@ -109,7 +107,7 @@
                                         <li><a href="blog-details.html">Corrida de Cursos</a></li>
                                     </ul>
                                 </li>-->
-                                <li><a href="/contacto">Contacto</a>
+
                             </ul>
                         </div>
 
@@ -179,7 +177,7 @@
                                     <li><a href="blog-details.html">Corrida de Cursos</a></li>
                                 </ul>
                             </li>-->
-                            <li><a href="/contacto">Contacto</a></li>
+
                             <li><a class="btn" href="/entrar">Minha Conta</a></li>
                         </ul>
                     </div>
@@ -238,7 +236,7 @@
                                     <div class="widget-link">
                                         <ul class="link">
                                             <li><a href="/brevemente">Multimédia dos anos anteriores </a></li>
-                                            <li><a href="/contacto">Contactos</a></li>
+
                                             <li><a href="/politica-de-privacidade">Politicas de Privacidade</a></li>
                                         </ul>
                                     </div>

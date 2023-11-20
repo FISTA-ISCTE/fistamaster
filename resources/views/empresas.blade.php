@@ -43,6 +43,21 @@
         }
     </style>
     <div class="container mt-5">
+        @if ($countdiamount != 0)
+            <h2 class="mb-3">Plano Diamount</h2>
+            <div class="row mb-5">
+                <!-- Premium Logo -->
+                @foreach ($empresasdiamount as $empresadiamount)
+                    <div class="shadow col-md-3 mb-4 d-flex justify-content-center">
+                        <div class="card logo-card">
+                            <img src="{{ asset('storage/' . $empresadiamount->avatar) }}" alt="Logo Empresa 1"
+                                class="card-img-top logo-diamount">
+                        </div>
+                    </div>
+                @endforeach
+                <!-- ... repetir conforme necessário ... -->
+            </div>
+        @endif
         <!-- Premium Plan -->
         @if ($countpremium != 0)
             <h2 class="mb-3">Plano Premium</h2>
