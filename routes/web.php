@@ -38,7 +38,9 @@ Route::get('/politica-de-privacidade', function () {
     return view('politica');
 })->name('politica');
 Route::get('/', function () {
-    return view('landing_page');
+    $empresasdiamond = Empresa::where('plano','diamond')->where('mostrar','1')->get();
+    $countdiamount = $empresasdiamond->count();
+    return view('landing_page')->with(['empresasdiamount'=>$empresasdiamond, 'countdiamount' => $countdiamount ]);
 });
 Route::get('/empresas', function () {
     $empresaspremium = Empresa::where('plano','premium')->where('mostrar','1')->get();

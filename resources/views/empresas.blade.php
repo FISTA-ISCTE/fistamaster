@@ -44,15 +44,21 @@
     </style>
     <div class="container mt-5">
         @if ($countdiamount != 0)
-            <h2 class="mb-3">Plano Diamond</h2>
-            <div class="row mb-5">
+            <h2
+                style="margin:none !important;paddin-bottom:0.5rem;background-color:#1EC4BD;text-align:center;color:white;border-radius: 25px;">
+                Diamond</h2>
+            <hr>
+            <div class="row justify-content-center" style="margin:0;margin-bottom:10%">
                 <!-- Premium Logo -->
                 @foreach ($empresasdiamount as $empresadiamount)
-                    <div class="shadow col-md-3 mb-4 d-flex justify-content-center">
-                        <div class="card logo-card">
-                            <img src="{{ asset('storage/' . $empresadiamount->avatar) }}" alt="Logo Empresa 1"
-                                class="card-img-top logo-diamount">
-                        </div>
+                    <div class='col-md-4 text-center' style="margin-left: auto;margin-right: auto; padding:10px;">
+                        <a href='#' style="width:100%;padding-left:7%;padding-right:7%">
+                            <div class="card"
+                                style="margin-bottom:15px;width:100%;-webkit-box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);">
+                                <img src="{{ asset('storage/' . $empresadiamount->avatar) }}" alt="Logo Empresa 1"
+                                    class="card-img-top logo-diamount">
+                            </div>
+                        </a>
                     </div>
                 @endforeach
                 <!-- ... repetir conforme necessário ... -->
@@ -60,15 +66,22 @@
         @endif
         <!-- Premium Plan -->
         @if ($countpremium != 0)
-            <h2 class="mb-3">Plano Premium</h2>
-            <div class="row mb-5">
+            <h2
+                style="margin:none !important;paddin-bottom:0.5rem;background-color:#4FAD32;text-align:center;color:white;border-radius: 25px;">
+                Premium</h2>
+            <hr>
+            <div class="row justify-content-center" style="margin:0;margin-bottom:5%">
                 <!-- Premium Logo -->
                 @foreach ($empresaspremium as $empresapremium)
-                    <div class="shadow col-md-3 mb-4 d-flex justify-content-center">
-                        <div class="card logo-card">
-                            <img src="{{ asset('storage/' . $empresapremium->avatar) }}" alt="Logo Empresa 1"
-                                class="card-img-top logo-premium">
-                        </div>
+                    <div class='col-md-3 text-center' style="margin-left: auto;margin-right: auto; padding:10px;">
+                        <a href='#' style="width:100%;padding-left:7%;padding-right:7%">
+                            <div class="card"
+                                style="margin-bottom:15px;width:100%;-webkit-box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);">
+                                <img src="{{ asset('storage/' . $empresapremium->avatar) }}" class="imgEmpresaGold"
+                                    style="object-fit:contain">
+
+                            </div>
+                        </a>
                     </div>
                 @endforeach
                 <!-- ... repetir conforme necessário ... -->
@@ -77,15 +90,19 @@
 
         <!-- Gold Plan -->
         @if ($countgold != 0)
-            <h2 class="mb-3">Plano Gold</h2>
-            <div class="row mb-5">
+            <h2 style="background-color:#FFCC66;text-align:center;color:white;border-radius: 25px;">Gold</h2>
+            <hr>
+            <div class="row justify-content-center" style="margin:0;margin-bottom:5%">
                 <!-- Gold Logo -->
                 @foreach ($empresasgold as $empresagold)
-                    <div class="shadow col-md-3 mb-3 d-flex justify-content-center">
-                        <div class="card logo-card">
-                            <img src="{{ asset('storage/' . $empresagold->avatar) }}" alt="Logo Empresa 2"
-                                class="card-img-top logo-gold">
-                        </div>
+                    <div class='col-md-3 d-flex justify-content-center'>
+                        <a href='#' style="width:100%;padding-left:7%;padding-right:7%">
+                            <div class="card"
+                                style="margin-bottom:15px;width:100%;-webkit-box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);">
+                                <img src="{{ asset('storage/' . $empresagold->avatar) }}" alt="Logo Empresa 2"
+                                    class="card-img-top logo-gold">
+                            </div>
+                        </a>
                     </div>
                 @endforeach
                 <!-- ... repetir conforme necessário ... -->
@@ -94,15 +111,21 @@
 
         <!-- Silver Plan -->
         @if ($countsilver != 0)
-            <h2 class="mb-3">Plano Silver</h2>
-            <div class="row mb-5">
+            <h2
+                style="margin:none !important;paddin-bottom:0.5rem;background-color:#c0c0c0;color:white;text-align:center;border-radius: 25px;">
+                Silver</h2>
+            <hr>
+            <div class="row justify-content-center" style="margin:0">
                 <!-- Silver Logos -->
                 @foreach ($empresassilver as $empresasilver)
-                    <div class="shadow col-md-2 mb-2 d-flex justify-content-center">
-                        <div class="card logo-card">
-                            <img src="{{ asset('storage/' . $empresasilver->avatar) }}" alt="Logo Empresa 3"
-                                class="card-img-top logo-silver">
-                        </div>
+                    <div class='col-md-2 d-flex justify-content-center' style="margin-left: auto;margin-right: auto;">
+                        <a href='#' style="width:100%;padding-left:7%;padding-right:7%">
+                            <div class="card"
+                                style="margin-bottom:15px;width:100%;-webkit-box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);">
+                                <img src="{{ asset('storage/' . $empresasilver->avatar) }}" alt="Logo Empresa 3"
+                                    class="card-img-top logo-silver">
+                            </div>
+                        </a>
                     </div>
                 @endforeach
                 <!-- ... repetir conforme necessário ... -->
@@ -110,6 +133,42 @@
         @endif
     </div>
 
+    <style>
+        .imgEmpresaDiamond {
+            display: inline-block;
+            padding: 0 20px;
+            margin-bottom: 10%;
+            margin-top: 10%;
+            height: 140px;
+            position: relative;
+        }
 
+        .imgEmpresaPremium {
+            display: inline-block;
+            padding: 0 20px;
+            margin-bottom: 10%;
+            margin-top: 10%;
+            height: 120px;
+            position: relative;
+        }
+
+        .imgEmpresaGold {
+            display: inline-block;
+            padding: 0 20px;
+            margin-bottom: 10%;
+            margin-top: 10%;
+            height: 100px;
+            position: relative;
+        }
+
+        .imgEmpresaSilver {
+            display: inline-block;
+            padding: 0 20px;
+            margin-bottom: 7%;
+            margin-top: 7%;
+            height: 80px;
+            position: relative;
+        }
+    </style>
 
 @endsection

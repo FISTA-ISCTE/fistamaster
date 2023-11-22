@@ -72,11 +72,15 @@
 
                     <!-- Header Wrap Start  -->
                     <div class="header-wrap">
-
-                        <div class="header-logo">
+                        <div class="header-logo logo-white" >
+                            <a class="logo-white"  href="/"><img style="padding: 1.5rem;" src="img/fista/branco_fista.png"
+                                    alt=""></a>
+                        </div>
+                        <div class="header-logo logo-black">
                             <a class="logo-black" href="/"><img src="img/fista/original_fista.png"
                                     alt=""></a>
                         </div>
+
 
                         <div class="header-menu d-none d-lg-block">
                             <ul class="main-menu">
@@ -86,7 +90,7 @@
                                 <li>
                                     <a href="/brevemente">Evento</a>
                                 </li>
-                               <li><a href="/empresas">Empresas</a>
+                                <li><a href="/empresas">Empresas</a>
                                 </li>
                                 <!-- <li>
                                     <a href="#">Programa</a>

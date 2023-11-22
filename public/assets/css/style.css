@@ -1323,7 +1323,7 @@ textarea:-ms-input-placeholder {
 }
 
 .header-section-02 .header-logo .logo-black {
-  display: none;
+  display: block;
 }
 
 .header-section-02 .header-menu .main-menu > li > a {
@@ -1417,12 +1417,18 @@ textarea:-ms-input-placeholder {
 }
 
 .header-section-04.sticky .header-wrap .header-logo .logo-black {
-  display: block;
+  display: block !important;
 }
 
 .header-section-04.sticky .header-wrap .header-logo .logo-white {
-  display: none;
+  display: none !important;
 }
+.header-section-04 .header-wrap .header-logo .logo-white {
+    display: block !important;
+  }
+  .header-section-04 .header-wrap .header-logo .logo-black {
+    display: none !important;
+  }
 
 .header-section-04.sticky .header-wrap .header-menu .main-menu li a {
   color: #0e0e0e;
@@ -1478,7 +1484,7 @@ textarea:-ms-input-placeholder {
 }
 
 .header-section-04 .header-logo .logo-black {
-  display: none;
+  display: block;
 }
 
 .header-section-04 .header-menu .main-menu > li > a {
