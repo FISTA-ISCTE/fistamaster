@@ -56,7 +56,8 @@
                             <div class="card"
                                 style="margin-bottom:15px;width:100%;-webkit-box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);">
                                 <img src="{{ asset('storage/' . $empresadiamount->avatar) }}" alt="Logo Empresa 1"
-                                    class="card-img-top logo-diamount">
+                                class="imgEmpresaDiamond"
+                                style="object-fit:contain">
                             </div>
                         </a>
                     </div>
@@ -77,7 +78,7 @@
                         <a href='#' style="width:100%;padding-left:7%;padding-right:7%">
                             <div class="card"
                                 style="margin-bottom:15px;width:100%;-webkit-box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);">
-                                <img src="{{ asset('storage/' . $empresapremium->avatar) }}" class="imgEmpresaGold"
+                                <img src="{{ asset('storage/' . $empresapremium->avatar) }}" class="imgEmpresaPremium"
                                     style="object-fit:contain">
 
                             </div>
@@ -100,7 +101,8 @@
                             <div class="card"
                                 style="margin-bottom:15px;width:100%;-webkit-box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);">
                                 <img src="{{ asset('storage/' . $empresagold->avatar) }}" alt="Logo Empresa 2"
-                                    class="card-img-top logo-gold">
+                                class="imgEmpresaGold"
+                                style="object-fit:contain">
                             </div>
                         </a>
                     </div>
@@ -123,7 +125,8 @@
                             <div class="card"
                                 style="margin-bottom:15px;width:100%;-webkit-box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);">
                                 <img src="{{ asset('storage/' . $empresasilver->avatar) }}" alt="Logo Empresa 3"
-                                    class="card-img-top logo-silver">
+                                class="imgEmpresaSilver"
+                                style="object-fit:contain">
                             </div>
                         </a>
                     </div>
