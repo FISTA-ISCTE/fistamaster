@@ -20,6 +20,17 @@ use App\Models\Logistica;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/eventos', function () {
+    return view('eventos');
+});
+Route::get('eventos/tecnologias', function () {
+    return view('eventos.tecnologias');
+});
+Route::get('eventos/arquitetura', function () {
+    return view('eventos.arquitetura');
+});
+
+
 Route::get('/confirmacao', function () {
     return view('confirmacao');
 });

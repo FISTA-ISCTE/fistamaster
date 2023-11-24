@@ -28,7 +28,7 @@
                                 <p style="margin-top:20px;font-size: 22px;text-align:center;padding:0 2% 0 2%">Este ano o
                                     tema é <b>"Desenvolvimento de ideias inovadoras e disruptivas"</b>,
                                     para ficares a saber mais sobre o funcionamento do concurso consulta o regulamento.</p>
-                                <p style="margin-top:20px;font-size: 18px;padding:0 2% 0 2%; color:black"> Sponser:</p>
+                                <p style="margin-top:20px;font-size: 18px;padding:0 2% 0 2%; color:black"> Sponsor:</p>
 
                                 <img style="height: 3rem;" src="img/logos/GlobalLogo_NTTDATA_Black.png" alt="">
 

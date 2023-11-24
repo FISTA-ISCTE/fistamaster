@@ -218,6 +218,54 @@
         </div>
     </div>
 
+    <div class="section techwix-service-section-04 ">
+        <div class="container">
+            <h1 style="font-size:2.5rem;font-weight:bold;color:#1EC4BD;text-align:center;">Parceiros de Comunicação</h1>
+
+            <div class="service-wrap">
+
+
+                <div class="service-bottom ">
+                    <div class="row justify-content-center" style="margin:0;margin-bottom:10%">
+
+                            <div class='col-md-4 text-center' style="margin-left: auto;margin-right: auto; padding:10px;">
+                                <a href='#' style="width:100%;padding-left:7%;padding-right:7%">
+                                    <div class="card"
+                                        style="margin-bottom:15px;width:100%;-webkit-box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);">
+                                        <img src="{{ asset('img/media/rfm.png')}}" alt="RFM"
+                                            class="imgmedia" style="object-fit:contain">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class='col-md-4 text-center' style="margin-left: auto;margin-right: auto; padding:10px;">
+                                <a href='#' style="width:100%;padding-left:7%;padding-right:7%">
+                                    <div class="card"
+                                        style="margin-bottom:15px;width:100%;-webkit-box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);">
+                                        <img src="{{ asset('img/media/mop.png')}}" alt="RFM"
+                                            class="imgmedia" style="object-fit:contain">
+                                    </div>
+                                </a>
+                            </div>
+                        <style>
+                            .imgmedia {
+                                display: inline-block;
+                                padding: 0 5px;
+                                margin-bottom: 10%;
+                                margin-top: 10%;
+                                height: 80px;
+                                position: relative;
+                            }
+                        </style>
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
 
 
 
@@ -667,9 +715,6 @@
             <div class="brand-wrapper text-center">
                 <h1 style="font-size:2.5rem;font-weight:bold;color:#1EC4BD;text-align:center;margin-bottom:3%">Parcerias
                 </h1>
-
-
-
                 <!-- Brand Active Start -->
                 <div class="brand-active">
                     <div class="swiper-container">
