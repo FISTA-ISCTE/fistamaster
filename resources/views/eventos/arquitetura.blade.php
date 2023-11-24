@@ -5,8 +5,8 @@
     <div class="container">
         <div class="case-study-wrap" style="margin-top:5rem;">
             <div class="section-title text-center">
-                <h3 class="sub-title">Arquitetura</h3>
-                <h2 class="title">Concursos, Conferências, Exposição</h2>
+                <h3 class="sub-title">Concursos, Conferências, Exposição</h3>
+                <h2 class="title">Arquitetura</h2>
             </div>
             <div class="case-study-content-wrap">
                 <div class="swiper-container case-study-active">
