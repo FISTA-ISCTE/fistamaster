@@ -193,7 +193,6 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 /*--Section Spacing--*/
 .section-padding {
-  padding-top: 120px;
   padding-bottom: 120px;
 }
 
@@ -6676,7 +6675,7 @@ textarea:-ms-input-placeholder {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  padding-bottom: 400px;
+  padding-bottom: 2rem;
   z-index: 1;
 }
 

@@ -243,7 +243,102 @@
     </section>
 
 
+    <!-- 2020 -->
+    <section style="background-color:white;width:100%;">
+        <div style="padding-top:0px;padding-bottom:70px;background-color:white">
+            <div class="container">
+                <div class="row" style="margin:0">
+                    <h1 class="titulo" style="color:black;font-weight: bold">Edição de 2023<span
+                            style="font-weight:bold"> Projeto Vencedor</span></h1>
 
+                    <div class="col-lg-5 col-md-12 order-md-1 order-2 d-flex align-items-center">
+
+                        <div class="cont">
+                            <img src="{{asset('/img/ideias2023.png')}}"
+                                width="95%" style="display:block;margin:auto; ">
+                        </div>
+                        <!--<p style="text-align: center;font-size: 50px;font-weight: bold;margin-top:20px">EM BREVE<hr/></p>-->
+                        <!--<p style="margin-top:20px;font-size: 22px;">Com mais uma edição do FISTA vem mais uma edição do Concurso de Ideias! Este ano apresentamos-te o tema, para ficares a saber mais sobre o funcionamento do concurso consulta o <a href="https://fista.iscte-iul.pt/storage/settings/November2020/regulamento21.pdf" style="color:black !important;font-size: 22px !important;font-weight: bold !important;">regulamento </a>.</p>-->
+
+                    </div>
+
+
+                    <div class="col-lg-6 col-md-12 d-flex flex-column " style="text-align:left;">
+
+                        <p style="margin-top:20px;font-size: 16px;">A <b> "Car-Rides"</b> consiste em fornecer um serviço de transporte, onde
+                            condutores e passageiros podem usufruir da deslocação de
+                            condutores para um destino que será pré-definido, aproveitando
+                            assim a “boleia”</span>
+                        </p>
+                        <h3 class="mt-2" style="color: black; ">Grupo:</h3>
+                        <ul style="list-style-type: disc; margin-left: 1.5em;">
+                            <li style="color:black; font-size:1p5x">Bruno Oliveira (Informática e Gestão de Empresas)</li>
+                            <li style="color:black; font-size:15px">Gonçalo Tavares (Informática e Gestão de Empresas) </li>
+                        </ul>
+
+                        <div class="mt-4 d-flex justify-content-center">
+
+                            <a class="btn"
+                                href="{{asset('docs/Car_Rides.pdf')}}">Conhecer
+                                o Projeto</a>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- 2019 -->
+
+    <section style="background-color:white;width:100%;">
+        <div style="padding-top:0px;padding-bottom:70px;background-color:white">
+            <div class="container">
+                <div class="row" style="margin:0">
+                    <h1 class="titulo" style="color:black;font-weight: bold">Edição de 2022<span
+                            style="font-weight:bold"> Projeto Vencedor</span></h1>
+
+                    <div class="col-lg-5 col-md-12 " style="d-flex align-items-center">
+                        <div class="cont">
+                            <img src="https://fista.iscte-iul.pt/2023/public/img/concurso-ideias/ci_venc_2022.png"
+                                width="90%" style="display:block;margin:auto; ">
+                        </div>
+                        <!--<p style="text-align: center;font-size: 50px;font-weight: bold;margin-top:20px">EM BREVE<hr/></p>-->
+                        <!--<p style="margin-top:20px;font-size: 22px;">Com mais uma edição do FISTA vem mais uma edição do Concurso de Ideias! Este ano apresentamos-te o tema, para ficares a saber mais sobre o funcionamento do concurso consulta o <a href="https://fista.iscte-iul.pt/storage/settings/November2020/regulamento21.pdf" style="color:black !important;font-size: 22px !important;font-weight: bold !important;">regulamento </a>.</p>-->
+
+                    </div>
+
+
+                    <div class="col-lg-6 col-md-12 d-flex flex-column" style="text-align:left;padding: 0 2% 0 2%">
+                        <p style="margin-top:20px;font-size: 16px;">O projecto vencedor da edição de 2022 do Concurso de Ideias foi a aplicação <b>SAFESIT</b>, com o objetivo de permitir a monitorização ao minuto da lotação das salas de estudo da faculdade.</span>
+                        </p>
+                        <h3 class="mt-2" style="color: black; ">Grupo:</h3>
+                        <ul style="list-style-type: disc; margin-left: 1.5em;">
+                            <li style=" color:black; font-size:15px">Sebastião Leal (Informática e Gestão de Empresas)</li>
+                            <li style="color:black; font-size:15px">Francisco Quintela (Informática e Gestão de Empresas)</li>
+                        </ul>
+
+                        <div class="mt-4 d-flex justify-content-center">
+
+                            <a class="btn"
+                                href="https://fista.iscte-iul.pt/2023/public/img/concurso-ideias/file/ci_venc_2022_presentation.pdf">Conhecer
+                                o Projeto</a>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </section>
 
     <!-- 2021 -->
 
