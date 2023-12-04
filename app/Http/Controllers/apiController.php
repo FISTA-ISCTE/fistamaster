@@ -17,14 +17,11 @@ class apiController extends Controller
 
         if (Auth::attempt($loginDetails)) {
             $user = Auth::user();
-            if ($user->email_verified_at != null) {
 
                 return response()->json(['message' => 'login successful',
                     'user' => $user,
                     'code' => 200]);
-            } else {
-                return response()->json(['message' => 'Verifica o email!', 'code' => 501]);
-            }
+
         } else {
             return response()->json(['message' => 'wrong login', 'code' => 501]);
         }
