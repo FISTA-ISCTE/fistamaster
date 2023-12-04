@@ -38,7 +38,7 @@ Route::get('/empresas', function () {
     return Empresa::orderBy('nome_empresa')->get();
 })->name('empresas');
 
-Route::post('login', [apiController::class, 'apiController']);
+Route::post('login', [apiController::class, 'authlogin']);
 Route::post('curso', [apiController::class, 'update']);
 Route::post('ano', [apiController::class, 'updateAno']);
 
