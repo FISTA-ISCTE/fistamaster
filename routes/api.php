@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\apiController;
 use App\Models\Empresa;
 use App\models\User;
 
@@ -37,9 +38,10 @@ Route::get('/empresas', function () {
     return Empresa::orderBy('nome_empresa')->get();
 })->name('empresas');
 
-Route::post('login', 'apiController@authLogin');
-Route::post('curso', 'apiController@update');
-Route::post('ano', 'apiController@updateAno');
+Route::post('login', [apiController::class, 'apiController']);
+Route::post('curso', [apiController::class, 'update']);
+Route::post('ano', [apiController::class, 'updateAno']);
+
 /*
 Route::post('token', 'apiController@insertToken');
 Route::post('workshopinscrever', 'apiController@inscrever');
@@ -59,6 +61,6 @@ Route::post('checkinKeynote', 'apiController@checkinKeynote');
 Route::post('/getBackoffice', 'apiController@getBackoffice');
 Route::post('/guardarBackoffice', 'apiController@guardarBackoffice');
 */
-Route::post('registar', 'apiController@registar');
 
-Route::post('apagarConta', 'apiController@apagarConta');
+Route::post('registar', [apiController::class, 'registar']);
+Route::post('apagarConta', [apiController::class, 'apagarConta']);
