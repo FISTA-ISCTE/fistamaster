@@ -199,20 +199,10 @@
                                                     <div class="workshopselector" style="display:none; width: 100%;">
                                                         <select class="custom-select" type="text" name="workshop_option">
                                                             <option value="null" selected disabled>Selecionar Modelo</option>
-                                                            <option value="ws_presencial">Workshop Presencial</option>
                                                             <option value="si">Speed Interviews</option>
                                                         </select>
                                                     </div>
                                                 </label>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-12">
-                                                <div class="single-form">
-                                                    <label class="workshopextra container" style="display:none;padding-left: 0rem !important;">
-                                                        <label id="workshopextratext"><span style="display: inline; color: black">Workshop Presencial</span> </label>
-                                                        <input type="checkbox" value=1 name="workshopextra">
-                                                        <span class="checkmark"></span>
-                                                    </label>
                                                 </div>
                                             </div>
                                             <div class="col-sm-12">
@@ -657,10 +647,10 @@ $day2premium = Empresa::where('plano', 'premium')
         if ($extras.find('input[name="cocktail"]')[0].checked)
             price += 200;
 
-        console.log($extras.find('input[name="workshopextra"]')[0].checked);
+
         console.log($extras.find('input[name="siextra"]')[0].checked);
 
-        if($extras.find('input[name="workshopextra"]')[0].checked || $extras.find('input[name="siextra"]')[0].checked)
+        if($extras.find('input[name="siextra"]')[0].checked)
             price += 200;
 
         if (parseInt($extras.find('select[name="almoco_number"]').val()) != 0) {
