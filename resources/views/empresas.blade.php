@@ -11,23 +11,6 @@
         </div>
     </div>
     <style>
-        .btn {
-            border: none !important;
-            outline: none !important;
-            padding: 12px 16px !important;
-            background-color: white !important;
-            cursor: pointer !important;
-        }
-
-        .btn:hover {
-            background-color: #ddd !important;
-        }
-
-        .btn.active {
-            background-color: #666 !important;
-            color: white !important;
-        }
-
         .logo-card {
             display: flex;
             justify-content: center;
