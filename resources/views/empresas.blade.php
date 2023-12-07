@@ -7,11 +7,27 @@
                 <div class="row text-left">
                     <h1 class="titl" style="color:black;">Empresas</h1>
                 </div>
-
             </div>
         </div>
     </div>
     <style>
+        .btn {
+            border: none !important;
+            outline: none !important;
+            padding: 12px 16px !important;
+            background-color: white !important;
+            cursor: pointer !important;
+        }
+
+        .btn:hover {
+            background-color: #ddd !important;
+        }
+
+        .btn.active {
+            background-color: #666 !important;
+            color: white !important;
+        }
+
         .logo-card {
             display: flex;
             justify-content: center;
@@ -42,6 +58,7 @@
             max-height: 80px;
         }
     </style>
+
     <div class="container mt-5">
         @if ($countdiamount != 0)
             <h2
@@ -51,13 +68,14 @@
             <div class="row justify-content-center" style="margin:0;margin-bottom:10%">
                 <!-- Premium Logo -->
                 @foreach ($empresasdiamount as $empresadiamount)
-                    <div class='col-md-4 text-center' style="margin-left: auto;margin-right: auto; padding:10px;">
-                        <a <?php if(!empty($empresadiamount->website)){echo "href='$empresadiamount->website'";} ?> style="width:100%;padding-left:7%;padding-right:7%">
+                    <div class='col-md-4 text-center column cars' style="margin-left: auto;margin-right: auto; padding:10px;">
+                        <a <?php if (!empty($empresadiamount->website)) {
+                            echo "href='$empresadiamount->website'";
+                        } ?> style="width:100%;padding-left:7%;padding-right:7%">
                             <div class="card"
                                 style="margin-bottom:15px;width:100%;-webkit-box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);">
                                 <img src="{{ asset('storage/' . $empresadiamount->avatar) }}" alt="Logo Empresa 1"
-                                class="imgEmpresaDiamond"
-                                style="object-fit:contain">
+                                    class="imgEmpresaDiamond" style="object-fit:contain">
                             </div>
                         </a>
                     </div>
@@ -75,7 +93,9 @@
                 <!-- Premium Logo -->
                 @foreach ($empresaspremium as $empresapremium)
                     <div class='col-md-3 text-center' style="margin-left: auto;margin-right: auto; padding:10px;">
-                        <a <?php if(!empty($empresapremium->website)){echo "href='$empresapremium->website'";} ?> style="width:100%;padding-left:7%;padding-right:7%">
+                        <a <?php if (!empty($empresapremium->website)) {
+                            echo "href='$empresapremium->website'";
+                        } ?> style="width:100%;padding-left:7%;padding-right:7%">
                             <div class="card"
                                 style="margin-bottom:15px;width:100%;-webkit-box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);">
                                 <img src="{{ asset('storage/' . $empresapremium->avatar) }}" class="imgEmpresaPremium"
@@ -97,12 +117,13 @@
                 <!-- Gold Logo -->
                 @foreach ($empresasgold as $empresagold)
                     <div class='col-md-3 d-flex justify-content-center'>
-                        <a <?php if(!empty($empresagold->website)){echo "href='$empresagold->website'";} ?> style="width:100%;padding-left:7%;padding-right:7%">
+                        <a <?php if (!empty($empresagold->website)) {
+                            echo "href='$empresagold->website'";
+                        } ?> style="width:100%;padding-left:7%;padding-right:7%">
                             <div class="card"
                                 style="margin-bottom:15px;width:100%;-webkit-box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);">
                                 <img src="{{ asset('storage/' . $empresagold->avatar) }}" alt="Logo Empresa 2"
-                                class="imgEmpresaGold"
-                                style="object-fit:contain">
+                                    class="imgEmpresaGold" style="object-fit:contain">
                             </div>
                         </a>
                     </div>
@@ -121,12 +142,13 @@
                 <!-- Silver Logos -->
                 @foreach ($empresassilver as $empresasilver)
                     <div class='col-md-2 d-flex justify-content-center' style="margin-left: auto;margin-right: auto;">
-                        <a <?php if(!empty($empresasilver->website)){echo "href='$empresasilver->website'";} ?> style="width:100%;padding-left:7%;padding-right:7%">
+                        <a <?php if (!empty($empresasilver->website)) {
+                            echo "href='$empresasilver->website'";
+                        } ?> style="width:100%;padding-left:7%;padding-right:7%">
                             <div class="card"
                                 style="margin-bottom:15px;width:100%;-webkit-box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);">
                                 <img src="{{ asset('storage/' . $empresasilver->avatar) }}" alt="Logo Empresa 3"
-                                class="imgEmpresaSilver"
-                                style="object-fit:contain">
+                                    class="imgEmpresaSilver" style="object-fit:contain">
                             </div>
                         </a>
                     </div>

@@ -17,17 +17,24 @@ class EmpresaController extends Controller
     //
     public function editarinfos(Request $request)
     {
+
         $id_empresa=Auth::user()->id_empresa;
         $empresa=Empresa::find($id_empresa);
         $empresa->linkedin = $request->linkedin ?? $empresa->linkedin;
         $empresa->website = $request->website ?? $empresa->website;
+        $empresa->email = $request->email ?? $request->email;
         $empresa->linkedin = $request->linkedin ?? $empresa->linkedin;
         $empresa->description = $request->description ?? $empresa->description;
-        $empresa->others = $request->others ?? $empresa->others;+
+        $empresa->others = $request->others ?? $empresa->others;
+        if ($request->file('avatar')) {
+            $file = $request->file('avatar');
+            $filename = $empresa->id . time() . '.' . $file->getClientOriginalExtension();
+            $request->avatar->storeAs('users/empresas', $filename, 'public');
+            $empresa->avatar = 'users/empresas/' . $filename;
+        }
         session()->flash('success', 'Dados guardados com sucesso!');
         $empresa->save();
         return redirect()->route('empresa.dashboard');
-
     }
 
     public function registarempresa(Request $request)

@@ -15,11 +15,17 @@ class AdminController extends Controller
         $empresa = Empresa::find($id);
         $empresa->linkedin = $request->linkedin ?? $empresa->linkedin;
         $empresa->website = $request->website ?? $empresa->website;
+        $empresa->email = $request->email ?? $request->email;
         $empresa->linkedin = $request->linkedin ?? $empresa->linkedin;
         $empresa->description = $request->description ?? $empresa->description;
         $empresa->others = $request->others ?? $empresa->others;
-        +
-            session()->flash('success', 'Dados guardados com sucesso!');
+        if ($request->file('avatar')) {
+            $file = $request->file('avatar');
+            $filename = $empresa->id . time() . '.' . $file->getClientOriginalExtension();
+            $request->avatar->storeAs('users/empresas', $filename, 'public');
+            $empresa->avatar = 'users/empresas/' . $filename;
+        }
+        session()->flash('success', 'Dados guardados com sucesso!');
         $empresa->save();
         return redirect()->route('view.empresas', ['id' => $empresa->id]);
 

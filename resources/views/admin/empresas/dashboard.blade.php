@@ -339,15 +339,16 @@ function camposEmFalta($empresa, $faturacao, $logistica)
                             <a href="" data-toggle="modal" data-target="#camposModal">
                                 <div class="notification">
                                     <i class="fas fa-bell fa-2x"></i>
-                                    <span class="badge"><?php $counta =camposEmFalta($company, $faturacao, $logistica);
-                                    if(!isset($counta)){
-                                    if (is_array($counta) || $counta instanceof Countable) {
-                                        $count = count($count);
-                                        echo $count;
-                                    } else {
-                                        $count = 0;
-                                        echo $count;
-                                    }}
+                                    <span class="badge"><?php $counta = camposEmFalta($company, $faturacao, $logistica);
+                                    if (!isset($counta)) {
+                                        if (is_array($counta) || $counta instanceof Countable) {
+                                            $count = count($count);
+                                            echo $count;
+                                        } else {
+                                            $count = 0;
+                                            echo $count;
+                                        }
+                                    }
                                     ?></span>
                                 </div>
                             </a>
@@ -392,7 +393,7 @@ function camposEmFalta($empresa, $faturacao, $logistica)
                 @endif
 
                 <div class="container mt-5 emp-profile">
-                    <form id="companyProfile" method="post" action="{{ route('empresa.infos.guardar') }}">
+                    <form id="companyProfile" method="post" action="{{ route('empresa.infos.guardar') }}" enctype="multipart/form-data">
                         @csrf
                         @if (session('success'))
                             <div class="alert alert-success">
@@ -403,11 +404,23 @@ function camposEmFalta($empresa, $faturacao, $logistica)
 
                             <!-- Logo da empresa -->
                             <div class="col-md-4">
+                                <div class="alert alert-warning" style="width: 80%;font-size:1rem;" role="alert">
+                                    Clica em cima da imagem para editar o logotipo e de seguida em em Guardar.
+                                    Tamanho do logotipo: <br>
+                                    -Silver:90x80px<br>
+                                    -Gold:130x120px  <br>
+                                    -Premium:200x190px <br>
+                                </div>
                                 <div class="image-container position-relative">
-                                    <img src="{{ asset('storage/' . $company->avatar) }}" alt="Logotipo da Empresa"
-                                        style="width: 300px; height: 150px;" class="img-fluid mb-2">
+                                    <!-- Clique na imagem para mudar -->
+                                    <img src="{{ asset('storage/' . $company->avatar) }}" alt="Logotipo da Empresa" style="width: 300px; height: 150px;" class="img-fluid mb-2" onclick="document.getElementById('fileInput').click()">
+
+                                    <!-- Input de arquivo escondido -->
+                                    <input type="file" id="fileInput" name="avatar">
                                 </div>
                             </div>
+
+
 
                             <!-- Detalhes da empresa -->
                             <div class="col-md-8">
@@ -431,7 +444,8 @@ function camposEmFalta($empresa, $faturacao, $logistica)
                                             value="{{ $company->linkedin }}" placeholder="Link do LinkedIn">
                                     </div>
                                 </div>
-                                <h2 class="font-semibold text-xl text-gray-800 leading-tight" style="font-size:0.8rem;">
+                                <h2 class="font-semibold text-xl text-gray-800 leading-tight"
+                                    style="font-size:0.8rem;">
                                     Outras Informações</h2>
                                 <textarea id="otherInfoInput" name="others" class="form-control mb-3" placeholder="Outras Informações">{{ $company->others }}</textarea>
 
