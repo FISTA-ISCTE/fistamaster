@@ -68,14 +68,33 @@
             <div class="row justify-content-center" style="margin:0;margin-bottom:10%">
                 <!-- Premium Logo -->
                 @foreach ($empresasdiamount as $empresadiamount)
-                    <div class='col-md-4 text-center column cars' style="margin-left: auto;margin-right: auto; padding:10px;">
+                    <div class='col-md-4 text-center column cars'
+                        style="margin-left: auto;margin-right: auto; padding:10px;">
                         <a <?php if (!empty($empresadiamount->website)) {
                             echo "href='$empresadiamount->website'";
                         } ?> style="width:100%;padding-left:7%;padding-right:7%">
-                            <div class="card"
+                            <div class="card" data-toggle="tooltip" data-placement="bottom"
+                                title="
+                            <?php
+
+                            if (is_null($empresadiamount->dia1) && is_null($empresadiamount->dia2)) {
+                                // Se ambos dia1 e dia2 são nulos
+                                echo 'Nenhum dia está definido.';
+                            } elseif (is_null($empresadiamount->dia1) || is_null($empresadiamount->dia2)) {
+                                // Se um dos dias é nulo
+                                $diaDisponivel = is_null($empresadiamount->dia1) ? $empresadiamount->dia2 : $empresadiamount->dia1;
+                                echo 'Presente no dia ' . $diaDisponivel;
+                            } else {
+                                // Se ambos os dias estão definidos
+                                echo 'Presente nos dias ' . $empresadiamount->dia1 . ' e ' . $empresadiamount->dia2;
+                            }
+                            ?>
+                            "
                                 style="margin-bottom:15px;width:100%;-webkit-box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);">
-                                <img src="{{ asset('storage/' . $empresadiamount->avatar) }}" alt="Logo Empresa 1"
-                                    class="imgEmpresaDiamond" style="object-fit:contain">
+                                <img src="{{ asset('storage/' . $empresadiamount->avatar) }}" class="imgEmpresaDiamond"
+                                    style="object-fit:contain">
+
+
                             </div>
                         </a>
                     </div>
@@ -96,7 +115,23 @@
                         <a <?php if (!empty($empresapremium->website)) {
                             echo "href='$empresapremium->website'";
                         } ?> style="width:100%;padding-left:7%;padding-right:7%">
-                            <div class="card"
+                            <div class="card" data-toggle="tooltip" data-placement="bottom"
+                                title="
+                            <?php
+
+                            if (is_null($empresapremium->dia1) && is_null($empresapremium->dia2)) {
+                                // Se ambos dia1 e dia2 são nulos
+                                echo 'Nenhum dia está definido.';
+                            } elseif (is_null($empresapremium->dia1) || is_null($empresapremium->dia2)) {
+                                // Se um dos dias é nulo
+                                $diaDisponivel = is_null($empresapremium->dia1) ? $empresapremium->dia2 : $empresapremium->dia1;
+                                echo 'Presente no dia ' . $diaDisponivel;
+                            } else {
+                                // Se ambos os dias estão definidos
+                                echo 'Presente nos dias ' . $empresapremium->dia1 . ' e ' . $empresapremium->dia2;
+                            }
+                            ?>
+                            "
                                 style="margin-bottom:15px;width:100%;-webkit-box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);">
                                 <img src="{{ asset('storage/' . $empresapremium->avatar) }}" class="imgEmpresaPremium"
                                     style="object-fit:contain">
@@ -120,7 +155,23 @@
                         <a <?php if (!empty($empresagold->website)) {
                             echo "href='$empresagold->website'";
                         } ?> style="width:100%;padding-left:7%;padding-right:7%">
-                            <div class="card"
+                            <div class="card" data-toggle="tooltip" data-placement="bottom"
+                                title="
+                            <?php
+
+                            if (is_null($empresagold->dia1) && is_null($empresagold->dia2)) {
+                                // Se ambos dia1 e dia2 são nulos
+                                echo 'Nenhum dia está definido.';
+                            } elseif (is_null($empresagold->dia1) || is_null($empresagold->dia2)) {
+                                // Se um dos dias é nulo
+                                $diaDisponivel = is_null($empresagold->dia1) ? $empresagold->dia2 : $empresagold->dia1;
+                                echo 'Presente no dia ' . $diaDisponivel;
+                            } else {
+                                // Se ambos os dias estão definidos
+                                echo 'Presente nos dias ' . $empresagold->dia1 . ' e ' . $empresagold->dia2;
+                            }
+                            ?>
+                            "
                                 style="margin-bottom:15px;width:100%;-webkit-box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);">
                                 <img src="{{ asset('storage/' . $empresagold->avatar) }}" alt="Logo Empresa 2"
                                     class="imgEmpresaGold" style="object-fit:contain">
@@ -145,7 +196,23 @@
                         <a <?php if (!empty($empresasilver->website)) {
                             echo "href='$empresasilver->website'";
                         } ?> style="width:100%;padding-left:7%;padding-right:7%">
-                            <div class="card"
+                            <div class="card" data-toggle="tooltip" data-placement="bottom"
+                                title="
+                            <?php
+
+                            if (is_null($empresasilver->dia1) && is_null($empresasilver->dia2)) {
+                                // Se ambos dia1 e dia2 são nulos
+                                echo 'Nenhum dia está definido.';
+                            } elseif (is_null($empresasilver->dia1) || is_null($empresasilver->dia2)) {
+                                // Se um dos dias é nulo
+                                $diaDisponivel = is_null($empresasilver->dia1) ? $empresasilver->dia2 : $empresasilver->dia1;
+                                echo 'Presente no dia ' . $diaDisponivel;
+                            } else {
+                                // Se ambos os dias estão definidos
+                                echo 'Presente nos dias ' . $empresasilver->dia1 . ' e ' . $empresasilver->dia2;
+                            }
+                            ?>
+                            "
                                 style="margin-bottom:15px;width:100%;-webkit-box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);">
                                 <img src="{{ asset('storage/' . $empresasilver->avatar) }}" alt="Logo Empresa 3"
                                     class="imgEmpresaSilver" style="object-fit:contain">

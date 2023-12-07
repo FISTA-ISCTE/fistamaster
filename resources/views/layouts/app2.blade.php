@@ -82,7 +82,7 @@
                         </div>
 
 
-                        <div class="header-menu d-none d-lg-block">
+                        <div class="header-menu d-none d-lg-block" style="margin-right: 10rem;">
                             <ul class="main-menu">
                                 <li>
                                     <a href="/">Home</a>
