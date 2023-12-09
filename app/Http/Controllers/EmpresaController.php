@@ -22,7 +22,6 @@ class EmpresaController extends Controller
         $empresa=Empresa::find($id_empresa);
         $empresa->linkedin = $request->linkedin ?? $empresa->linkedin;
         $empresa->website = $request->website ?? $empresa->website;
-        $empresa->email = $request->email ?? $request->email;
         $empresa->linkedin = $request->linkedin ?? $empresa->linkedin;
         $empresa->description = $request->description ?? $empresa->description;
         $empresa->others = $request->others ?? $empresa->others;
