@@ -89,7 +89,8 @@ Route::get('/sobre-nos', function () {
         return [
             'team_name' => $team->name,
             'user_name' => $team->user->name, // Assumindo que 'name' é um campo na tabela User
-            'linkedin' => $team->user->linkedin // Assumindo que 'linkedin' é um campo na tabela User
+            'linkedin' => $team->user->linkedin, // Assumindo que 'linkedin' é um campo na tabela User
+            'photo' => $team->user->profile_photo_url,
         ];
     });
     return view('about')->with(['teamData'=> $teamData]);

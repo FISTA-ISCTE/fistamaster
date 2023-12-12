@@ -639,7 +639,7 @@
                                     <div class="col-lg-3 col-sm-6">
                                         <div class="single-team">
                                             <div class="team-img">
-                                                <a href="team.html"><img src="/assets/images/team/1600522766229.jpg"
+                                                <a href="team.html"><img src="{{ $data['photo'] }}"
                                                         alt=""></a>
                                             </div>
                                             <div class="team-content">
@@ -658,7 +658,7 @@
 
                             </div>
 
-                            <!-- team-toggle--->
+                            <!-- team-toggle --->
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="more-team-content text-center">
