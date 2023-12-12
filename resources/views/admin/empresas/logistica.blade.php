@@ -52,7 +52,7 @@
                                         @endif
                                         <label class="form-check-label" for="opcaoCadeirasDia1Nao">Não</label>
                                     </div>
-                                    <input style="width:88.5%; display:none" type="text" name="cadeiras_dia1"
+                                    <input style="width:40.5%;" type="text" name="cadeiras_dia1"
                                         id="cadeiras_dia1" autocomplete="cadeiras_dia1" autofocus
                                         placeholder="Número de Cadeiras"
                                         value="@if (isset($logistica->cadeiras_dia1)) {{ $logistica->cadeiras_dia1 }} @endif">
@@ -125,9 +125,9 @@
                                         @endif
                                         <label class="form-check-label" for="opcaoCadeirasDia2Nao">Não</label>
                                     </div>
-                                    <input style="width:88.5%; display:none" type="text" name="cadeiras_dia2"
+                                    <input style="width:40.5%;" type="text" name="cadeiras_dia2"
                                         id="cadeiras_dia2" autocomplete="cadeiras_dia2" autofocus
-                                        placeholder="Número de Cadeiras"
+                                        placeholder="(Se sim) Nº de Cadeiras extra"
                                         value="@if (isset($logistica->cadeiras_dia2)) {{ $logistica->cadeiras_dia2 }} @endif">
                                 </div>
                             </div>

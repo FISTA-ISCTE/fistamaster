@@ -7008,7 +7008,7 @@ textarea:-ms-input-placeholder {
 }
 
 .single-team:hover .team-content .name::before {
-  height: 145px;
+  height: 140px;
   width: 80px;
   transform: translateY(-35%);
 }

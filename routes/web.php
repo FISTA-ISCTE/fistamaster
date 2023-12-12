@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PageController;
 use App\Models\Empresa;
+use App\Models\Team;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmpresaController;
@@ -49,20 +50,20 @@ Route::get('/politica-de-privacidade', function () {
     return view('politica');
 })->name('politica');
 Route::get('/', function () {
-    $empresasdiamond = Empresa::where('plano','diamond')->where('mostrar','1')->get();
+    $empresasdiamond = Empresa::where('plano', 'diamond')->where('mostrar', '1')->get();
     $countdiamount = $empresasdiamond->count();
-    return view('landing_page')->with(['empresasdiamount'=>$empresasdiamond, 'countdiamount' => $countdiamount ]);
+    return view('landing_page')->with(['empresasdiamount' => $empresasdiamond, 'countdiamount' => $countdiamount]);
 });
 Route::get('/empresas', function () {
-    $empresaspremium = Empresa::where('plano','premium')->where('mostrar','1')->get();
-    $empresasdiamond = Empresa::where('plano','diamond')->where('mostrar','1')->get();
+    $empresaspremium = Empresa::where('plano', 'premium')->where('mostrar', '1')->get();
+    $empresasdiamond = Empresa::where('plano', 'diamond')->where('mostrar', '1')->get();
     $countdiamount = $empresasdiamond->count();
     $countpremium = $empresaspremium->count();
-    $empresasgold = Empresa::where('plano','gold')->where('mostrar','1')->get();
+    $empresasgold = Empresa::where('plano', 'gold')->where('mostrar', '1')->get();
     $countgold = $empresasgold->count();
-    $empresassilver = Empresa::where('plano','silver')->where('mostrar','1')->get();
+    $empresassilver = Empresa::where('plano', 'silver')->where('mostrar', '1')->get();
     $countsilver = $empresassilver->count();
-    return view('empresas')->with(['empresasdiamount'=>$empresasdiamond,'empresaspremium'=> $empresaspremium, 'empresasgold'=>$empresasgold, 'empresassilver'=>$empresassilver, 'countpremium'=>$countpremium,'countgold'=> $countgold, 'countsilver'=> $countsilver , 'countdiamount' => $countdiamount ]);
+    return view('empresas')->with(['empresasdiamount' => $empresasdiamond, 'empresaspremium' => $empresaspremium, 'empresasgold' => $empresasgold, 'empresassilver' => $empresassilver, 'countpremium' => $countpremium, 'countgold' => $countgold, 'countsilver' => $countsilver, 'countdiamount' => $countdiamount]);
 });
 Route::get('/confirmacao-empresa', function () {
     return view('admin.empresas.confirmacaopage');
@@ -80,6 +81,19 @@ Route::get('/become-a-partner', function () {
 Route::get('/registarEmpresa/{name?}', function ($name = null) {
     return view('admin.empresas.registar_info');
 })->name('registarEmpresa');
+
+Route::get('/sobre-nos', function () {
+    $teams = Team::with('user')->get();
+
+    $teamData = $teams->map(function ($team) {
+        return [
+            'team_name' => $team->name,
+            'user_name' => $team->user->name, // Assumindo que 'name' é um campo na tabela User
+            'linkedin' => $team->user->linkedin // Assumindo que 'linkedin' é um campo na tabela User
+        ];
+    });
+    return view('about')->with(['teamData'=> $teamData]);
+})->name('about');
 
 Route::post('/registarEmpresa', [EmpresaController::class, 'registarempresa'])->name('registarEmpresasite');
 
@@ -127,7 +141,7 @@ Route::middleware([
             $usersWithoutRoleXCount = User::all()->count();
             $empresasCount = Empresa::all()->count();
             $sessions = $activeSessions = DB::table(config('session.table', 'sessions'))->count();
-            return view('admin.fista.dashboard')->with(['usersWithoutRoleXCount'=>$usersWithoutRoleXCount, 'empresasCount' =>$empresasCount,'sessions'=>$sessions]);
+            return view('admin.fista.dashboard')->with(['usersWithoutRoleXCount' => $usersWithoutRoleXCount, 'empresasCount' => $empresasCount, 'sessions' => $sessions]);
         })->name('admin.dashboard');
         Route::get('/empresas', function () {
             $empresas = Empresa::all();
