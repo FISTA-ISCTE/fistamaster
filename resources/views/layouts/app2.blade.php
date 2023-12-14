@@ -92,6 +92,7 @@
                                 </li>
                                 <li><a href="/empresas">Empresas</a>
                                 </li>
+                                <li><a href="/sobre-nos">Sobre Nós</a></li>
                                 <!-- <li>
                                     <a href="#">Programa</a>
                                 </li>
@@ -160,6 +161,7 @@
                             </li>
                             <li><a href="/empresas">Empresas</a>
                             </li>
+                            <li><a href="/sobre-nos">Sobre Nós</a></li>
                             <!-- <li>
                                     <a href="#">Programa</a>
                                 </li>-->
