@@ -636,25 +636,41 @@
 
                             <div class="row">
                                 @foreach ($teamData as $data)
-                                    <div class="col-lg-3 col-sm-6">
-                                        <div class="single-team">
-                                            <div class="team-img">
-                                                <a href="team.html"><img src="{{ $data['photo'] }}"
-                                                        alt=""></a>
-                                            </div>
-                                            <div class="team-content">
-                                                <h3 class="name"><a href="#"> {{ $data['user_name'] }}</a></h3>
-                                                <span class="designation">{{ $data['team_name'] }}</span>
-                                                <div class="team-social">
-                                                    <ul class="social">
-                                                        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                                                    </ul>
-                                                </div>
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="single-team">
+                                        <div class="team-img">
+                                            <a href="#">
+                                                <img src="{{ $data['photo'] }}" alt="" class="team-photo">
+                                            </a>
+                                        </div>
+                                        <div class="team-content">
+                                            <h3 class="name"><a href="#"> {{ $data['user_name'] }}</a></h3>
+                                            <span class="designation">{{ $data['team_name'] }}</span>
+                                            <div class="team-social">
+                                                <ul class="social">
+                                                    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
-                                @endforeach
+                                </div>
+                            @endforeach
 
+<style>
+ .team-photo {
+        width: 100%;
+        height: 323px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    @media (max-width: 767px) {
+        .team-photo {
+            height: auto; /* Ajusta a altura em dispositivos menores para manter a responsividade */
+        }
+    }
+
+</style>
 
                             </div>
 
