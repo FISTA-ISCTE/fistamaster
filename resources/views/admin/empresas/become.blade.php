@@ -117,7 +117,7 @@
                                     <div class="pricing-btn">
                                         <a class="btn disabled-link">ESGOTADO</a>
                                     </div>
-                                    <span style="color:red; font-size: 0.8rem;text-align:center;"> Para mais esclarecimentos, envie-nos email. <a href="mailto:fista.iscte-iul.pt">AQUI</a></span>
+                                    <span style="color:red; font-size: 0.8rem;text-align:center;"> Para mais esclarecimentos, envie-nos email. <a href="mailto:fista@iscte-iul.pt">AQUI</a></span>
                                     <style>
                                         .disabled-link {
                                             background: rgb(215, 215, 215) !important;
