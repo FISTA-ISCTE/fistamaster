@@ -33,18 +33,20 @@ class Interesses extends Component
         $this->year = Auth::user()->id_ano;
         $this->course = Auth::user()->id_curso;
         $existe = BackOfficeAluno::where('id_user', Auth::user()->id)->first();
-        $this->interest1 = $existe->areainteresse1;
-        $this->interest2 = $existe->areainteresse2;
-        $this->birthdate = $existe->datanascimento;
         $back = BackOfficeAluno::where('id_user', Auth::user()->id)->first();
-        if ($back->fulltime) {
-            $this->workType[] = '1'; // Representando fulltime
-        }
-        if ($back->estagioverao) {
-            $this->workType[] = '2'; // Representando estagioverao
-        }
-        if ($back->parttime) {
-            $this->workType[] = '3'; // Representando parttime
+        if (isset($existe->areainteresse1) && isset($existe->areainteresse2) && isset($existe->datanascimento) && isset($back->fulltime) && isset($back->estagioverao) && isset($back->parttime)) {
+            $this->interest1 = $existe->areainteresse1;
+            $this->interest2 = $existe->areainteresse2;
+            $this->birthdate = $existe->datanascimento;
+            if ($back->fulltime) {
+                $this->workType[] = '1'; // Representando fulltime
+            }
+            if ($back->estagioverao) {
+                $this->workType[] = '2'; // Representando estagioverao
+            }
+            if ($back->parttime) {
+                $this->workType[] = '3'; // Representando parttime
+            }
         }
 
     }
