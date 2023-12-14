@@ -347,11 +347,14 @@
                     <div class="col-lg-4">
                         <div class="solution-item solution-item-sm">
                             <div class="solution-img">
-                                <a href="https://www.flickr.com/photos/iscteiul/albums/72157703465466132/with/40169351553"><img src="assets/images/20190.png" alt=""></a>
+                                <a href="https://www.flickr.com/photos/iscteiul/albums/72157703465466132/with/40169351553"><img
+                                        src="assets/images/20190.png" alt=""></a>
                             </div>
                             <div class="solution-content">
                                 <div class="solution-title">
-                                    <h3 class="title"><a href="https://www.flickr.com/photos/iscteiul/albums/72157703465466132/with/40169351553">Fotos</a></h3>
+                                    <h3 class="title"><a
+                                            href="https://www.flickr.com/photos/iscteiul/albums/72157703465466132/with/40169351553">Fotos</a>
+                                    </h3>
                                 </div>
 
                             </div>
@@ -360,7 +363,7 @@
                     <div class="col-lg-4">
                         <div class="solution-item solution-item-sm">
                             <div class="solution-img">
-                              <a href=""> <img src="assets/images/20191.jpg" alt=""></a>
+                                <a href=""> <img src="assets/images/20191.jpg" alt=""></a>
                             </div>
                             <div class="solution-content">
                                 <div class="solution-title">
@@ -375,7 +378,7 @@
                     <div class="col-lg-4">
                         <div class="solution-item solution-item-sm">
                             <div class="solution-img">
-                             <a href=""><img src="assets/images/20192.jpg" alt=""></a>
+                                <a href=""><img src="assets/images/20192.jpg" alt=""></a>
                             </div>
                             <div class="solution-content">
                                 <div class="solution-title">
@@ -404,11 +407,14 @@
                     <div class="col-lg-4">
                         <div class="solution-item solution-item-sm">
                             <div class="solution-img">
-                                <a href="https://www.flickr.com/photos/iscteiul/albums/72157713355133396/"><img src="assets/images/20201.png" alt=""></a>
+                                <a href="https://www.flickr.com/photos/iscteiul/albums/72157713355133396/"><img
+                                        src="assets/images/20201.png" alt=""></a>
                             </div>
                             <div class="solution-content">
                                 <div class="solution-title">
-                                    <h3 class="title"><a href="https://www.flickr.com/photos/iscteiul/albums/72157713355133396/">Fotos</a></h3>
+                                    <h3 class="title"><a
+                                            href="https://www.flickr.com/photos/iscteiul/albums/72157713355133396/">Fotos</a>
+                                    </h3>
                                 </div>
 
                             </div>
@@ -468,8 +474,8 @@
                                     <h3 class="title"><a href="#">Aftermovie</a></h3>
                                 </div>
                                 <a class="play-btn popup-video"
-                                href="https://www.youtube.com/watch?time_continue=3&v=cicTTBijw84"><i
-                                    class="fas fa-play"></i></a>
+                                    href="https://www.youtube.com/watch?time_continue=3&v=cicTTBijw84"><i
+                                        class="fas fa-play"></i></a>
                             </div>
                         </div>
                     </div>
@@ -519,11 +525,14 @@
                     <div class="col-lg-4">
                         <div class="solution-item solution-item-sm">
                             <div class="solution-img">
-                                <a href="https://www.flickr.com/photos/iscteiul/albums/72177720296917280/"><img src="assets/images/20222.png" alt=""></a>
+                                <a href="https://www.flickr.com/photos/iscteiul/albums/72177720296917280/"><img
+                                        src="assets/images/20222.png" alt=""></a>
                             </div>
                             <div class="solution-content">
                                 <div class="solution-title">
-                                    <h3 class="title"><a href="https://www.flickr.com/photos/iscteiul/albums/72177720296917280/">Fotos</a></h3>
+                                    <h3 class="title"><a
+                                            href="https://www.flickr.com/photos/iscteiul/albums/72177720296917280/">Fotos</a>
+                                    </h3>
                                 </div>
 
                             </div>
@@ -576,46 +585,49 @@
                     <div class="col-lg-4">
                         <div class="solution-item solution-item-sm">
                             <div class="solution-img">
-                                <a href="https://www.flickr.com/photos/iscteiul/albums/72177720306431849/"><img src="assets/images/20230.png" alt=""></a>
+                                <a href="https://www.flickr.com/photos/iscteiul/albums/72177720306431849/"><img
+                                        src="assets/images/20230.png" alt=""></a>
                             </div>
                             <div class="solution-content">
                                 <div class="solution-title">
-                                    <h3 class="title"><a href="https://www.flickr.com/photos/iscteiul/albums/72177720306431849/">Fotos</a></h3>
+                                    <h3 class="title"><a
+                                            href="https://www.flickr.com/photos/iscteiul/albums/72177720306431849/">Fotos</a>
+                                    </h3>
                                 </div>
 
                             </div>
                         </div>
                     </div>
                     <!---<div class="col-lg-4">
-                        <div class="solution-item solution-item-sm">
-                            <div class="solution-img">
-                                <a href="#"><img src="assets/images/solution-img2.jpg" alt=""></a>
-                            </div>
-                            <div class="solution-content">
-                                <div class="solution-title">
-                                    <h3 class="title"><a href="#">AfterMovie</a></h3>
+                            <div class="solution-item solution-item-sm">
+                                <div class="solution-img">
+                                    <a href="#"><img src="assets/images/solution-img2.jpg" alt=""></a>
                                 </div>
-                                <a class="play-btn popup-video"
-                                    href="https://www.youtube.com/watch?time_continue=3&v=_X0eYtY8T_U"><i
-                                        class="fas fa-play"></i></a>
+                                <div class="solution-content">
+                                    <div class="solution-title">
+                                        <h3 class="title"><a href="#">AfterMovie</a></h3>
+                                    </div>
+                                    <a class="play-btn popup-video"
+                                        href="https://www.youtube.com/watch?time_continue=3&v=_X0eYtY8T_U"><i
+                                            class="fas fa-play"></i></a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="solution-item solution-item-sm">
-                            <div class="solution-img">
-                                <a href="#"><img src="assets/images/solution-img2.jpg" alt=""></a>
-                            </div>
-                            <div class="solution-content">
-                                <div class="solution-title">
-                                    <h3 class="title"><a href="#">Teaser</a></h3>
+                        <div class="col-lg-4">
+                            <div class="solution-item solution-item-sm">
+                                <div class="solution-img">
+                                    <a href="#"><img src="assets/images/solution-img2.jpg" alt=""></a>
                                 </div>
-                                <a class="play-btn popup-video"
-                                    href="https://www.youtube.com/watch?time_continue=3&v=_X0eYtY8T_U"><i
-                                        class="fas fa-play"></i></a>
+                                <div class="solution-content">
+                                    <div class="solution-title">
+                                        <h3 class="title"><a href="#">Teaser</a></h3>
+                                    </div>
+                                    <a class="play-btn popup-video"
+                                        href="https://www.youtube.com/watch?time_continue=3&v=_X0eYtY8T_U"><i
+                                            class="fas fa-play"></i></a>
+                                </div>
                             </div>
-                        </div>
-                    </div>--->
+                        </div>--->
                 </div>
                 <div class="row" style="margin-top:1rem;">
                     <div class="col-lg-12">
@@ -636,41 +648,42 @@
 
                             <div class="row">
                                 @foreach ($teamData as $data)
-                                <div class="col-lg-3 col-sm-6">
-                                    <div class="single-team">
-                                        <div class="team-img">
-                                            <a href="#">
-                                                <img src="{{ $data['photo'] }}" alt="" class="team-photo">
-                                            </a>
-                                        </div>
-                                        <div class="team-content">
-                                            <h3 class="name"><a href="#"> {{ $data['user_name'] }}</a></h3>
-                                            <span class="designation">{{ $data['team_name'] }}</span>
-                                            <div class="team-social">
-                                                <ul class="social">
-                                                    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                                                </ul>
+                                    <div class="col-lg-3 col-sm-6">
+                                        <div class="single-team">
+                                            <div class="team-img">
+                                                <a href="#">
+                                                    <img src="{{ $data['photo'] }}" alt="" class="team-photo">
+                                                </a>
+                                            </div>
+
+                                            <div class="team-content">
+                                                <h3 class="name"><a href="#"> {{ $data['user_name'] }}</a></h3>
+                                                <span class="designation">{{ $data['team_name'] }}</span>
+                                                <div class="team-social">
+                                                    <ul class="social">
+                                                        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            @endforeach
+                                @endforeach
 
-<style>
- .team-photo {
-        width: 100%;
-        height: 323px;
-        object-fit: cover;
-        object-position: center;
-    }
+                                <style>
+                                    .team-photo {
+                                        width: 100%;
+                                        height: 323px;
+                                        object-fit: cover;
+                                        object-position: center;
+                                    }
 
-    @media (max-width: 767px) {
-        .team-photo {
-            height: auto; /* Ajusta a altura em dispositivos menores para manter a responsividade */
-        }
-    }
-
-</style>
+                                    @media (max-width: 767px) {
+                                        .team-photo {
+                                            height: auto;
+                                            /* Ajusta a altura em dispositivos menores para manter a responsividade */
+                                        }
+                                    }
+                                </style>
 
                             </div>
 

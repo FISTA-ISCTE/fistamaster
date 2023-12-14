@@ -10,8 +10,8 @@
                     <h2 class="title" style="color:black;text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);">Become a partner</h2>
                 </div>
                 <!--<div class="row justify-content-center">
-                            <img src="{{ asset('assets/images/logos/logo_fista_horizontal_branco_2023.png') }}" style="width:30%">
-                        </div>-->
+                                <img src="{{ asset('assets/images/logos/logo_fista_horizontal_branco_2023.png') }}" style="width:30%">
+                            </div>-->
                 <div class="row text-center">
                     <h4 class="title"
                         style="color:black; text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);font-size: 1.5rem !important">28 e
@@ -51,8 +51,7 @@
                     </div>
                 </div>
                 <!-- Modal Backofice -->
-                <div class="modal fade" id="back" tabindex="-1" aria-labelledby="back"
-                    aria-hidden="true">
+                <div class="modal fade" id="back" tabindex="-1" aria-labelledby="back" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -61,7 +60,8 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                Acesso às informações fornecidas pelos participantes, por exemplo, áreas de interesse, hobbies, linkedin.
+                                Acesso às informações fornecidas pelos participantes, por exemplo, áreas de interesse,
+                                hobbies, linkedin.
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
@@ -71,17 +71,19 @@
                     </div>
                 </div>
                 <!-- Modal Backofice -->
-                <div class="modal fade" id="breakfast" tabindex="-1" aria-labelledby="back"
-                    aria-hidden="true">
+                <div class="modal fade" id="breakfast" tabindex="-1" aria-labelledby="back" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Opcional (200€ + IVA): Pequeno Almoço com alunos</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Opcional (200€ + IVA): Pequeno Almoço com
+                                    alunos</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                Antes da abertura da tenda, venha tomar o pequeno almoço com um grupo de estudantes previamente selecionados. Aproveite este momento de networking, para conhecer melhor os nossos estudantes, falar sobre a sua empresa e as oportunidades que tem para lhes oferecer.
+                                Antes da abertura da tenda, venha tomar o pequeno almoço com um grupo de estudantes
+                                previamente selecionados. Aproveite este momento de networking, para conhecer melhor os
+                                nossos estudantes, falar sobre a sua empresa e as oportunidades que tem para lhes oferecer.
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
@@ -113,9 +115,17 @@
                                         <li>Estacionamento</li>
                                     </ul>
                                     <div class="pricing-btn">
-                                        <a class="btn"
-                                            href="{{ route('registarEmpresa', ['type' => 'silver']) }}">Registar</a>
+                                        <a class="btn disabled-link">ESGOTADO</a>
                                     </div>
+                                    <span style="color:red; font-size: 0.8rem;text-align:center;"> Para mais esclarecimentos, envie-nos email. <a href="mailto:fista.iscte-iul.pt">AQUI</a></span>
+                                    <style>
+                                        .disabled-link {
+                                            background: rgb(215, 215, 215) !important;
+                                            color: rgb(248, 0, 0);
+                                            pointer-events: none;
+                                            cursor: default;
+                                        }
+                                    </style>
                                 </div>
                             </div>
                             <!-- Single Pricing End -->
@@ -163,7 +173,8 @@
                                 <div class="pricing-content">
                                     <ul class="pricing-list">
                                         <li>Stand C (2.5mx3.0m)</li>
-                                        <li><a data-bs-toggle="modal" data-bs-target="#exampleModal" href="">IT Speed Talks <i class="fa fa-info-circle" aria-hidden="true"></i></a></li>
+                                        <li><a data-bs-toggle="modal" data-bs-target="#exampleModal" href="">IT
+                                                Speed Talks <i class="fa fa-info-circle" aria-hidden="true"></i></a></li>
                                         <li>Currículos</li>
                                         <li>Workshops/Speed Interviews</li>
                                         <li>Jogo(QR Code)</li>
@@ -172,9 +183,12 @@
                                         <li>Publicidade Física</li>
                                         <li>Almoços(3 refeições)</li>
                                         <li>Feed Website FISTA(3 publicações)</li>
-                                        <li><a data-bs-toggle="modal" data-bs-target="#back" href="">BackOffice <i class="fa fa-info-circle" aria-hidden="true"></i></a></li>
+                                        <li><a data-bs-toggle="modal" data-bs-target="#back" href="">BackOffice <i
+                                                    class="fa fa-info-circle" aria-hidden="true"></i></a></li>
                                         <li>Estacionamento</li>
-                                        <li><a data-bs-toggle="modal" data-bs-target="#breakfast" href="">(Opcional) Pequeno Almoço com Alunos<i class="fa fa-info-circle" aria-hidden="true"></i></a></li>
+                                        <li><a data-bs-toggle="modal" data-bs-target="#breakfast"
+                                                href="">(Opcional) Pequeno Almoço com Alunos<i
+                                                    class="fa fa-info-circle" aria-hidden="true"></i></a></li>
 
                                     </ul>
                                     <div class="pricing-btn">
@@ -218,7 +232,9 @@
                                         <div id="collapseOne" class="accordion-collapse collapse show"
                                             aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
-                                                A inscrição é feita através do registo no nosso site. Basta ver qual o pacote que pretende, “clicar” no respetivo botão e preencher com a informação solicitada.
+                                                A inscrição é feita através do registo no nosso site. Basta ver qual o
+                                                pacote que pretende, “clicar” no respetivo botão e preencher com a
+                                                informação solicitada.
                                             </div>
                                         </div>
                                     </div>
@@ -278,7 +294,10 @@
                                         <div id="collapse1" class="accordion-collapse collapse"
                                             aria-labelledby="heading1" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
-                                                A tenda tem lugares limitados para cada um dos dias. Assim, não existe uma data de fecho formal das inscrições, sendo que estas fecham quando todos os lugares estiverem esgotados. Nos anos anteriores isso acontece cerca de 3 semanas antes do evento
+                                                A tenda tem lugares limitados para cada um dos dias. Assim, não existe uma
+                                                data de fecho formal das inscrições, sendo que estas fecham quando todos os
+                                                lugares estiverem esgotados. Nos anos anteriores isso acontece cerca de 3
+                                                semanas antes do evento
                                             </div>
                                         </div>
                                     </div>
@@ -288,14 +307,16 @@
                                             <button class="accordion-button collapsed" type="button"
                                                 data-bs-toggle="collapse" data-bs-target="#collapse2"
                                                 aria-expanded="false" aria-controls="collapseThree">
-                                                <span class="title">Quando deverá ser feito o pagamento da participação no evento?
+                                                <span class="title">Quando deverá ser feito o pagamento da participação no
+                                                    evento?
                                                 </span>
                                             </button>
                                         </div>
                                         <div id="collapse2" class="accordion-collapse collapse"
                                             aria-labelledby="heading2" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
-                                                O pagamento é feito, por norma, durante os meses de fevereiro e março do ano em que o evento acontece.
+                                                O pagamento é feito, por norma, durante os meses de fevereiro e março do ano
+                                                em que o evento acontece.
                                             </div>
                                         </div>
                                     </div>
@@ -305,14 +326,18 @@
                                             <button class="accordion-button collapsed" type="button"
                                                 data-bs-toggle="collapse" data-bs-target="#collapse3"
                                                 aria-expanded="false" aria-controls="collapseThree">
-                                                <span class="title">Pretendo que o evento seja faturado ainda em 2023. É possível?
+                                                <span class="title">Pretendo que o evento seja faturado ainda em 2023. É
+                                                    possível?
                                                 </span>
                                             </button>
                                         </div>
                                         <div id="collapse3" class="accordion-collapse collapse"
                                             aria-labelledby="heading3" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
-                                                Neste caso, quando fizer a sua inscrição deverá enviar um email para fista@iscte-iul.pt dando essa indicação. Neste caso, para que isto seja possível, todas as informações para faturação devem ser enviadas até ao dia 12 de dezembro de 2023
+                                                Neste caso, quando fizer a sua inscrição deverá enviar um email para
+                                                fista@iscte-iul.pt dando essa indicação. Neste caso, para que isto seja
+                                                possível, todas as informações para faturação devem ser enviadas até ao dia
+                                                12 de dezembro de 2023
                                             </div>
                                         </div>
                                     </div>
@@ -322,20 +347,27 @@
                                             <button class="accordion-button collapsed" type="button"
                                                 data-bs-toggle="collapse" data-bs-target="#collapse4"
                                                 aria-expanded="false" aria-controls="collapseThree">
-                                                <span class="title">Inscrevi a minha empresa, mas aconteceu um imprevisto e vou ter de cancelar a nossa participação. Como devo proceder e quais as consequências desse cancelamento?
+                                                <span class="title">Inscrevi a minha empresa, mas aconteceu um imprevisto
+                                                    e vou ter de cancelar a nossa participação. Como devo proceder e quais
+                                                    as consequências desse cancelamento?
                                                 </span>
                                             </button>
                                         </div>
                                         <div id="collapse4" class="accordion-collapse collapse"
                                             aria-labelledby="heading4" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
-                                                Neste caso deve dar-nos conhecimento dessa situação para podermos fazer o cancelamento. O cancelamento é gratuito até 31 de dezembro 2023, sendo que a partir dessa data se aplicam as seguintes condições:
-<br>
-Até 1 mês antes data do evento, a empresa deverá pagar 20% do valor da inscrição efetuada.
-<br>
-A menos de 1 mês do evento, há lugar a uma compensação no valor de 50% da inscrição efetuada.
-<br>
-Por fim, o cancelamento a menos de uma semana do evento e daí para a frente, implica o pagamento de 75% do pacote previamente escolhido.
+                                                Neste caso deve dar-nos conhecimento dessa situação para podermos fazer o
+                                                cancelamento. O cancelamento é gratuito até 31 de dezembro 2023, sendo que a
+                                                partir dessa data se aplicam as seguintes condições:
+                                                <br>
+                                                Até 1 mês antes data do evento, a empresa deverá pagar 20% do valor da
+                                                inscrição efetuada.
+                                                <br>
+                                                A menos de 1 mês do evento, há lugar a uma compensação no valor de 50% da
+                                                inscrição efetuada.
+                                                <br>
+                                                Por fim, o cancelamento a menos de uma semana do evento e daí para a frente,
+                                                implica o pagamento de 75% do pacote previamente escolhido.
                                             </div>
                                         </div>
                                     </div>
@@ -352,7 +384,13 @@ Por fim, o cancelamento a menos de uma semana do evento e daí para a frente, im
                                         <div id="collapse5" class="accordion-collapse collapse"
                                             aria-labelledby="heading5" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
-                                                A sua inscrição dá-lhe um espaço com a dimensão de acordo com o pacote escolhido. Para conveniência das empresas o espaço não é delimitado com “paredes”. Assim sendo as empresas podem personalizar totalmente o seu espaço. Fornecemos ainda cadeira e mesas, de acordo com o tamanho do stand, wi-fi, tomadas e extensões elétricas. Caso não precisem de algum deste material, ou tenham algum material com dimensões mais específicas, bem comos outras necessidades devem sempre contactar-nos.
+                                                A sua inscrição dá-lhe um espaço com a dimensão de acordo com o pacote
+                                                escolhido. Para conveniência das empresas o espaço não é delimitado com
+                                                “paredes”. Assim sendo as empresas podem personalizar totalmente o seu
+                                                espaço. Fornecemos ainda cadeira e mesas, de acordo com o tamanho do stand,
+                                                wi-fi, tomadas e extensões elétricas. Caso não precisem de algum deste
+                                                material, ou tenham algum material com dimensões mais específicas, bem comos
+                                                outras necessidades devem sempre contactar-nos.
                                             </div>
                                         </div>
                                     </div>
@@ -362,14 +400,21 @@ Por fim, o cancelamento a menos de uma semana do evento e daí para a frente, im
                                             <button class="accordion-button collapsed" type="button"
                                                 data-bs-toggle="collapse" data-bs-target="#collapse6"
                                                 aria-expanded="false" aria-controls="collapseThree">
-                                                <span class="title">Pretendo adquirir mais almoços para além dos que constam na inscrição, como poderei fazer?
+                                                <span class="title">Pretendo adquirir mais almoços para além dos que
+                                                    constam na inscrição, como poderei fazer?
                                                 </span>
                                             </button>
                                         </div>
                                         <div id="collapse6" class="accordion-collapse collapse"
                                             aria-labelledby="heading6" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
-                                                O número de almoços pode ser ajustado na sua área até à altura da faturação. Uma vez já faturado poderá adquirir o seu almoço no dia, em qualquer um dos espaços que sirvam refeições no Iscte, ou em qualquer local próximo. Iremos tentar garantir uma margem de almoços extra a pagar no próprio dia, mas não conseguimos ter a certeza de que serão suficientes para todos os participantes de última hora. Falem com a nossa equipa e tentaremos sempre dar o nosso melhor.
+                                                O número de almoços pode ser ajustado na sua área até à altura da faturação.
+                                                Uma vez já faturado poderá adquirir o seu almoço no dia, em qualquer um dos
+                                                espaços que sirvam refeições no Iscte, ou em qualquer local próximo. Iremos
+                                                tentar garantir uma margem de almoços extra a pagar no próprio dia, mas não
+                                                conseguimos ter a certeza de que serão suficientes para todos os
+                                                participantes de última hora. Falem com a nossa equipa e tentaremos sempre
+                                                dar o nosso melhor.
                                             </div>
                                         </div>
                                     </div>

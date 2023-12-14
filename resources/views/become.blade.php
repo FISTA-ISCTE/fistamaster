@@ -51,7 +51,7 @@
                                             <li>Feed Website FISTA(1 publicação)</li>
                                         </ul>
                                         <div class="pricing-btn">
-                                            <a class="btn" href="{{ route('registarEmpresa',['type' => 'silver'])}}">Registar</a>
+
                                         </div>
                                     </div>
                                 </div>
