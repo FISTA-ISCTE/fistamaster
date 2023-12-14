@@ -174,7 +174,9 @@ Route::middleware([
 
     // Rotas para usuários
     Route::middleware(['role:user'])->prefix('user')->group(function () {
-
+        Route::get('/interesses', function () {
+            return view('admin.user.interesses');
+        })->name('user.interesses');
 
     });
 

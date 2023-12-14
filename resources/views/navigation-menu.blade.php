@@ -42,6 +42,21 @@
                 </div>
 
                 <!-- Navigation Links -->
+                <!--@if(auth()->user() && auth()->user()->hasRole('user'))
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 1.5rem;">
+                        <x-nav-link href="" :active="request()->routeIs()">
+                            {{ __('Feed') }}
+                        </x-nav-link>
+                    </div>
+                @endif-->
+                @if(auth()->user() && auth()->user()->hasRole('user'))
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 1.5rem;">
+                        <x-nav-link href="{{route('user.interesses')}}" :active="request()->routeIs('user.interesses')">
+                            {{ __('Interesses') }}
+                        </x-nav-link>
+                    </div>
+                @endif
+
                 @if(auth()->user() && auth()->user()->hasRole('admin'))
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-nav-link href="{{ route('admin.dashboard') }}" :active="request()->routeIs('admin.dashboard')">
