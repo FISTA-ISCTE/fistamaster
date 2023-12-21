@@ -64,7 +64,11 @@ class Interesses extends Component
             $file = $this->file;
             $filename = $user->id . time() . '.' . $file->getClientOriginalExtension();
             $this->file->storeAs('users/cv', $filename, 'public');
+            if ($user->file === null) {
+                $user->pontos += 1000;
+            }
             $user->file = 'users/cv/' . $filename;
+
 
         }
         if (isset($this->course) || isset($this->year)) {

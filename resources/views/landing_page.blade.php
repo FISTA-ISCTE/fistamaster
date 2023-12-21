@@ -145,9 +145,9 @@
                         <div class="about-content-wrap">
                             <div class="section-title">
                                 <h3 class="sub-title">Quem somos?</h3>
-                                <h2 class="title">Forum of Iscte School of Technology and Arquitecture</h2>
+                                <h2 class="title">Forum of Iscte School of Technology and Architecture</h2>
                             </div>
-                            <p class="text">O FISTA é uma feira de emprego que ocorre anualmento no Iscte.
+                            <p class="text">O FISTA é uma feira de emprego que ocorre anualmente no Iscte.
                                 Este evento traz o mundo das empresas à universidade. São dois dias de apresentações,
                                 workshops, concursos, It Speed Talks, Speed Interviews e bancas de empresas nacionais e
                                 internacionais.
