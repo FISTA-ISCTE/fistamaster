@@ -152,6 +152,7 @@
                                 workshops, concursos, It Speed Talks, Speed Interviews e bancas de empresas nacionais e
                                 internacionais.
                             </p>
+
                             <!-- About List Start -->
                             <div class="about-list-03">
                                 <div class="row">
