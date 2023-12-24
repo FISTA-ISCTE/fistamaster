@@ -41,7 +41,14 @@
                         <x-application-mark class="block h-9 w-auto" />
                     </a>
                 </div>
-
+<!-- Navigation Links -->
+@if(auth()->user() && auth()->user()->hasRole('user'))
+<div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 1.5rem;">
+    <x-nav-link href="{{route('user.pontos')}}" :active="request()->routeIs('user.pontos')">
+        {{ __('Tokens') }}
+    </x-nav-link>
+</div>
+@endif
                 <!-- Navigation Links -->
                 @if(auth()->user() && auth()->user()->hasRole('user'))
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 1.5rem;">
