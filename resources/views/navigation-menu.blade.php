@@ -34,6 +34,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
+
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="/entrar">
@@ -42,7 +43,6 @@
                 </div>
 
                 <!-- Navigation Links -->
-
                 @if(auth()->user() && auth()->user()->hasRole('user'))
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 1.5rem;">
                         <x-nav-link href="{{route('user.interesses')}}" :active="request()->routeIs('user.interesses')">
@@ -58,6 +58,7 @@
                         </x-nav-link>
                     </div>
                 @endif
+
                 @if(auth()->user() && auth()->user()->hasRole('admin'))
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-nav-link href="{{ route('admin.empresas') }}" :active="request()->routeIs('admin.empresas')">
@@ -73,6 +74,7 @@
                         </x-nav-link>
                     </div>
                 @endif
+
                 @if(auth()->user() && auth()->user()->hasRole('empresa'))
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-nav-link href="{{ route('empresa.faturacao') }}" :active="request()->routeIs('empresa.faturacao')">
@@ -80,6 +82,7 @@
                         </x-nav-link>
                     </div>
                 @endif
+
                 @if(auth()->user() && auth()->user()->hasRole('empresa'))
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-nav-link href="{{ route('empresa.logistica') }}" :active="request()->routeIs('empresa.logistica')">
