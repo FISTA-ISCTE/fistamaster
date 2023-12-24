@@ -57,7 +57,7 @@ class Pontos extends Component
 																												</script>";
                         }
                     } else {
-                        dd($empresa_token->token);
+
                         $insert_ponto->id_user = Auth::user()->id;
                         $insert_ponto->token = $this->token;
                         $insert_ponto->tipo = $empresa_token->descricao;
@@ -69,11 +69,8 @@ class Pontos extends Component
                         $total = $pontosint + $empresa_token->pontos;
                         $user->pontos = $total;
                         $user->save();
-                        if ($user->pontos == 0) {
-                            echo "<script>
-																													alert('O Token já não está válido!');
-																												</script>";
-                        }
+                        dd($user);
+
 
                         echo "<script>
 																									alert('Token inserido com sucesso!');
