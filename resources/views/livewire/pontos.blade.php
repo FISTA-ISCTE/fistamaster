@@ -12,7 +12,7 @@
     @endif
 
     <div style="justify-content: space-between; align-items: center;">
-        <input type="text" wire:model="token" class="form-control" style="width: 70%; margin-right: 10px;">
+        <input type="text" wire:model="token" class="form-control" placeholder="Insira o token aqui" style="width: 90%; margin-right: 10px;">
         <button wire:click="save" class="btn btn-primary" style="margin-top: 1.2rem;">Guardar</button>
     </div>
 </div>
