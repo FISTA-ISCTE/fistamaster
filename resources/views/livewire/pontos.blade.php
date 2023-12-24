@@ -13,6 +13,6 @@
 
     <div style="display: flex; justify-content: space-between; align-items: center;">
         <input type="text" wire:model="token" class="form-control" style="width: 70%; margin-right: 10px;">
-        <button wire:click="save" class="btn btn-primary" style="width: 25%;">Guardar</button>
+        <button wire:click="save" class="btn btn-primary">Guardar</button>
     </div>
 </div>
