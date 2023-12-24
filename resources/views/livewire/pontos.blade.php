@@ -11,8 +11,8 @@
         </div>
     @endif
 
-    <div style="display: flex; justify-content: space-between; align-items: center;">
+    <div style="justify-content: space-between; align-items: center;">
         <input type="text" wire:model="token" class="form-control" style="width: 70%; margin-right: 10px;">
-        <button wire:click="save" class="btn btn-primary">Guardar</button>
+        <button wire:click="save" class="btn btn-primary" style="margin-top: 1.2rem;">Guardar</button>
     </div>
 </div>
