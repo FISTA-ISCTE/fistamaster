@@ -14,14 +14,13 @@ class Pontos extends Component
     public $token;
     public function save()
     {
-
         $log_pontos = Log_Token::where('id_user', Auth::user()->id)
             ->where('token', $this->token)
             ->first();
 
         $empresa_token = Tokens::where('token', $this->token)->first();
 
-dd($empresa_token);
+        dd($empresa_token);
         $insert_ponto = new Log_Token();
 
         if (empty($empresa_token)) {
