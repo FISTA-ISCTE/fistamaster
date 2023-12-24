@@ -31,9 +31,10 @@ class Pontos extends Component
             if (strcmp($empresa_token->descricao, 'jogo') !== 0) {
 
                 if (strcmp($empresa_token->token, $this->token) == 0) {
-                    dd($empresa_token->descricao);
+
                     # code..
                     if (!empty($log_pontos->token)) {
+                        dd($empresa_token->descricao);
                         if (strcmp($log_pontos->token, $this->token) == 0) {
                             echo "<script>
 																													alert('Token já introduzido!');
@@ -56,6 +57,7 @@ class Pontos extends Component
 																												</script>";
                         }
                     } else {
+                        dd($empresa_token->token);
                         $insert_ponto->id_user = Auth::user()->id;
                         $insert_ponto->token = $this->token;
                         $insert_ponto->tipo = $empresa_token->descricao;
