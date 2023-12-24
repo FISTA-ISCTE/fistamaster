@@ -27,6 +27,7 @@ class Pontos extends Component
 													alert('Token inválido!');
 												</script>";
         } else {
+            dd($empresa_token->descricao);
             if (strcmp($empresa_token->descricao, 'jogo') !== 0) {
                 if (strcmp($empresa_token->token, $this->token) == 0) {
                     # code..
@@ -36,6 +37,7 @@ class Pontos extends Component
 																													alert('Token já introduzido!');
 																												</script>";
                         } else {
+                            dd($empresa_token->descricao);
                             $insert_ponto->id_user = Auth::user()->id;
                             $insert_ponto->token = $this->token;
                             $insert_ponto->tipo = $empresa_token->descricao;
