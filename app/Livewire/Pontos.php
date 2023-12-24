@@ -18,7 +18,7 @@ class Pontos extends Component
             ->where('token', $this->token)
             ->first();
 
-        $empresa_token = Tokens::where('token', $this->token)->first();
+        $empresa_token = Tokens::all();
 
         dd($empresa_token);
         $insert_ponto = new Log_Token();
