@@ -18,8 +18,10 @@ class Pontos extends Component
         $log_pontos = Log_Token::where('id_user', Auth::user()->id)
             ->where('token', $this->token)
             ->first();
-        dd($this->token);
+
         $empresa_token = Tokens::where('token', $this->token)->first();
+
+dd($empresa_token);
         $insert_ponto = new Log_Token();
 
         if (empty($empresa_token)) {
