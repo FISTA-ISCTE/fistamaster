@@ -29,8 +29,9 @@ class Pontos extends Component
         } else {
 
             if (strcmp($empresa_token->descricao, 'jogo') !== 0) {
-                dd($empresa_token->descricao);
+
                 if (strcmp($empresa_token->token, $this->token) == 0) {
+                    dd($empresa_token->descricao);
                     # code..
                     if (!empty($log_pontos->token)) {
                         if (strcmp($log_pontos->token, $this->token) == 0) {
