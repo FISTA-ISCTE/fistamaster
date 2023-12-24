@@ -27,7 +27,7 @@ class Pontos extends Component
 													alert('Token inválido!');
 												</script>";
         } else {
-            dd($empresa_token->descricao);
+
             if (strcmp($empresa_token->descricao, 'jogo') !== 0) {
                 if (strcmp($empresa_token->token, $this->token) == 0) {
                     # code..
