@@ -34,12 +34,12 @@ class Pontos extends Component
 
                     # code..
                     if (!empty($log_pontos->token)) {
-                        dd($empresa_token->descricao);
+
                         if (strcmp($log_pontos->token, $this->token) == 0) {
                             session()->flash('error', 'Token inválido!');
                             return;
                         } else {
-                            dd($empresa_token->descricao);
+
                             $insert_ponto->id_user = Auth::user()->id;
                             $insert_ponto->token = $this->token;
                             $insert_ponto->tipo = $empresa_token->descricao;
