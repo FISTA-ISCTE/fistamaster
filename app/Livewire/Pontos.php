@@ -20,7 +20,6 @@ class Pontos extends Component
 
         $empresa_token = Tokens::where('token', $this->token)->first();
 
-        dd($empresa_token);
         $insert_ponto = new Log_Token();
 
         if (empty($empresa_token)) {
