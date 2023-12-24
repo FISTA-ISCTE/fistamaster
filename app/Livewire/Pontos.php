@@ -36,9 +36,8 @@ class Pontos extends Component
                     if (!empty($log_pontos->token)) {
                         dd($empresa_token->descricao);
                         if (strcmp($log_pontos->token, $this->token) == 0) {
-                            echo "<script>
-																													alert('Token já introduzido!');
-																												</script>";
+                            session()->flash('error', 'Token inválido!');
+                            return;
                         } else {
                             dd($empresa_token->descricao);
                             $insert_ponto->id_user = Auth::user()->id;
@@ -52,9 +51,9 @@ class Pontos extends Component
                             $total = $pontosint + $empresa_token->pontos;
                             $user->pontos = $total;
                             $user->save();
-                            echo "<script>
-																													alert('Token inserido com sucesso!');
-																												</script>";
+                            session()->flash('success', 'Token inserido com sucesso!');
+            return;
+
                         }
                     } else {
 
@@ -69,30 +68,14 @@ class Pontos extends Component
                         $total = $pontosint + $empresa_token->pontos;
                         $user->pontos = $total;
                         $user->save();
-                        dd($user);
 
-
-                        echo "<script>
-																									alert('Token inserido com sucesso!');
-																								</script>";
+                        session()->flash('success', 'Token inserido com sucesso!');
+                        return;
                     }
                 } else {
-                    echo "<script>
-																					alert('Token que introduziu é inválido ou já passou a época festiva!');
-																				</script>";
-                }
-            } else {
-                $id_empres = $empresa_token->id_empresa;
-                ///$questoes = Questao::where('id_empresa', $id_empres)->get();
-                if (empty($log_pontos->token)) {
-                    echo "<script>
-																					alert('Faz a leitura do qr na aplicação do FISTA!');
-																				</script>";
-                    //return redirect()->route('jogo',[ 'q1' => $questoes[0]->id, 'q2' => $questoes[1]->id,'token' => $request->token]);
-                } else {
-                    echo "<script>
-																					alert('Token já introduzido!Tenta outra empresa!');
-																				</script>";
+
+                                                                                session()->flash('error', 'Token que introduziu é inválido ou já passou a época festiva!');
+            return;
                 }
             }
         }
