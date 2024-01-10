@@ -43,12 +43,12 @@
             </div>
         </div>
         <!-- <div class="shape-svg">
-                    <svg id="svg" viewbox="0, 0, 400,27.708333333333336">
-                        <g id="svgg">
-                            <path id="path0" d="M0.000 13.854 L 0.000 27.708 200.000 27.708 L 400.000 27.708 400.000 14.216 L 400.000 0.725 395.573 1.822 C 322.012 20.064,241.242 29.243,178.709 26.467 C 123.876 24.033,57.451 14.315,4.123 0.926 C 2.094 0.417,0.336 0.000,0.217 0.000 C 0.069 0.000,0.000 4.399,0.000 13.854"></path>
-                        </g>
-                    </svg>
-                </div>-->
+                        <svg id="svg" viewbox="0, 0, 400,27.708333333333336">
+                            <g id="svgg">
+                                <path id="path0" d="M0.000 13.854 L 0.000 27.708 200.000 27.708 L 400.000 27.708 400.000 14.216 L 400.000 0.725 395.573 1.822 C 322.012 20.064,241.242 29.243,178.709 26.467 C 123.876 24.033,57.451 14.315,4.123 0.926 C 2.094 0.417,0.336 0.000,0.217 0.000 C 0.069 0.000,0.000 4.399,0.000 13.854"></path>
+                            </g>
+                        </svg>
+                    </div>-->
     </div>
     <!-- Hero End -->
 
@@ -99,20 +99,20 @@
                     <div class="col-md-2 col-xl-2">
                     </div>
                     <!--<div class="col-xl-4 col-lg-6">
-                                <div class="features-item" style="background-image: url(assets/images/bg/feat-bg.jpg);">
-                                    <div class="features-icon">
-                                        <img src="assets/images/fista-stats/workshops.svg" style="width:80px;height:80px;"alt="">
-                                    </div>
-                                    <div class="features-content">
-                                        <div class="row pb-1">
-                                            <h3 class="title" style="font-size:3rem;font-weight:bold;color:#1EC4BD;text-align:left">+20</h3>
+                                    <div class="features-item" style="background-image: url(assets/images/bg/feat-bg.jpg);">
+                                        <div class="features-icon">
+                                            <img src="assets/images/fista-stats/workshops.svg" style="width:80px;height:80px;"alt="">
                                         </div>
-                                        <div class="row pt-1">
-                                            <h5 class="title">Workshops</h3>
+                                        <div class="features-content">
+                                            <div class="row pb-1">
+                                                <h3 class="title" style="font-size:3rem;font-weight:bold;color:#1EC4BD;text-align:left">+20</h3>
+                                            </div>
+                                            <div class="row pt-1">
+                                                <h5 class="title">Workshops</h3>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>-->
+                                </div>-->
                 </div>
             </div>
             <!-- Features Wrap End -->
@@ -121,7 +121,8 @@
     <!-- Features End -->
 
     <!-- About Start -->
-    <div class="section techwix-about-section-07 section-padding" style="padding-bottom: 0rem !important;padding-top:120px;">
+    <div class="section techwix-about-section-07 section-padding"
+        style="padding-bottom: 0rem !important;padding-top:120px;">
         <div class="shape-1"></div>
         <div class="container">
             <!-- About Wrapper Start -->
@@ -147,10 +148,9 @@
                                 <h3 class="sub-title">Quem somos?</h3>
                                 <h2 class="title">Forum of Iscte School of Technology and Architecture</h2>
                             </div>
-                            <p class="text">O FISTA é uma feira de emprego que ocorre anualmente no Iscte.
-                                Este evento traz o mundo das empresas à universidade. São dois dias de apresentações,
-                                workshops, concursos, It Speed Talks, Speed Interviews e bancas de empresas nacionais e
-                                internacionais.
+                            <p class="text">O FISTA é o Fórum da ISTA que ocorre anualmento no Iscte. Este evento traz o
+                                mundo das empresas e ateliers à universidade. São dois dias de conferências, workshops,
+                                concursos, It Speed Talks, Speed Interviews e bancas de empresas nacionais e internacionais.
                             </p>
 
                             <!-- About List Start -->
@@ -159,8 +159,7 @@
                                     <div class="col-sm-12">
                                         <div class="about-list-item-03">
                                             <h3 class="title">A nossa Missão</h3>
-                                            <p>O FISTA é um evento de alunos para alunos, que tem como objetivo aproximar os
-                                                estudantes de tecnologias ao mundo empresarial.
+                                            <p>O FISTA é um evento de alunos para alunos, que tem como objetivo aproximar os estudantes das Tecnologias e de Arquitetura ao mundo profissional.
                                             </p>
                                         </div>
                                     </div>
@@ -321,113 +320,113 @@
 
 
     <!-- Team Start
-            <div class="section techwix-team-section techwix-team-section-03 section-padding">
-                <div class="container">
-                    <div class="team-wrap">
-                        <h1 style="font-size:2.5rem;font-weight:bold;color:#1EC4BD;text-align:center;margin-bottom:3%">Equipa</h1>
+                <div class="section techwix-team-section techwix-team-section-03 section-padding">
+                    <div class="container">
+                        <div class="team-wrap">
+                            <h1 style="font-size:2.5rem;font-weight:bold;color:#1EC4BD;text-align:center;margin-bottom:3%">Equipa</h1>
 
-                        <div class="row">
-                            <div class="col-lg-3 col-sm-6 team-show">
-                                <div class="single-team">
-                                    <div class="team-img">
-                                        <a href="team.html"><img src="/assets/images/team/1600522766229.jpg" alt=""></a>
-                                    </div>
-                                    <div class="team-content">
-                                        <h3 class="name"><a href="#">Ana <br>Margarida Alexandre</a></a></h3>
-                                        <span class="designation">Carrer Services</span>
+                            <div class="row">
+                                <div class="col-lg-3 col-sm-6 team-show">
+                                    <div class="single-team">
+                                        <div class="team-img">
+                                            <a href="team.html"><img src="/assets/images/team/1600522766229.jpg" alt=""></a>
+                                        </div>
+                                        <div class="team-content">
+                                            <h3 class="name"><a href="#">Ana <br>Margarida Alexandre</a></a></h3>
+                                            <span class="designation">Carrer Services</span>
 
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="single-team">
-                                    <div class="team-img">
-                                        <a href="team.html"><img src="/assets/images/team/1600522766229.jpg" alt=""></a>
-                                    </div>
-                                    <div class="team-content">
-                                        <h3 class="name"><a href="#">Luis <br> Cancela</a></h3>
-                                        <span class="designation">Professor Responsável</span>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="single-team">
-                                    <div class="team-img">
-                                        <a href="team.html"><img src="/assets/images/team/1600522766229.jpg" alt=""></a>
-                                    </div>
-                                    <div class="team-content">
-                                        <h3 class="name"><a href="#"> Miguel<br> Gomes</a></h3>
-                                        <span class="designation">Professor Arquitetura</span>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div  class="col-lg-3 col-sm-6">
-                                <div class="single-team">
-                                    <div class="team-img">
-                                        <a href="team.html"><img src="/assets/images/team/1600522766229.jpg" alt=""></a>
-                                    </div>
-                                    <div class="team-content">
-                                        <h3 class="name"><a href="#">Telma<br> Faustino</a></h3>
-                                        <span class="designation">Empresas</span>
-                                        <div class="team-social">
-                                            <ul class="social">
-                                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                                            </ul>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div  class="col-lg-3 col-sm-6 team-toggle" style="display:none">
-                                <div class="single-team">
-                                    <div class="team-img">
-                                        <a href="team.html"><img src="/assets/images/team/1600522766229.jpg" alt=""></a>
-                                    </div>
-                                    <div class="team-content">
-                                        <h3 class="name"><a href="#">Michael <br> Frater</a></h3>
-                                        <span class="designation">CEO, techwix</span>
-                                        <div class="team-social">
-                                            <ul class="social">
-                                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                                            </ul>
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="single-team">
+                                        <div class="team-img">
+                                            <a href="team.html"><img src="/assets/images/team/1600522766229.jpg" alt=""></a>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div  class="col-lg-3 col-sm-6 team-toggle" style="display:none">
-                                <div class="single-team">
-                                    <div class="team-img">
-                                        <a href="team.html"><img src="/assets/images/team/1600522766229.jpg" alt=""></a>
-                                    </div>
-                                    <div class="team-content">
-                                        <h3 class="name"><a href="#">Kevin <br> Perry</a></h3>
-                                        <span class="designation">CEO, techwix</span>
-                                        <div class="team-social">
-                                            <ul class="social">
-                                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                        <div class="team-content">
+                                            <h3 class="name"><a href="#">Luis <br> Cancela</a></h3>
+                                            <span class="designation">Professor Responsável</span>
 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="single-team">
+                                        <div class="team-img">
+                                            <a href="team.html"><img src="/assets/images/team/1600522766229.jpg" alt=""></a>
+                                        </div>
+                                        <div class="team-content">
+                                            <h3 class="name"><a href="#"> Miguel<br> Gomes</a></h3>
+                                            <span class="designation">Professor Arquitetura</span>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div  class="col-lg-3 col-sm-6">
+                                    <div class="single-team">
+                                        <div class="team-img">
+                                            <a href="team.html"><img src="/assets/images/team/1600522766229.jpg" alt=""></a>
+                                        </div>
+                                        <div class="team-content">
+                                            <h3 class="name"><a href="#">Telma<br> Faustino</a></h3>
+                                            <span class="designation">Empresas</span>
+                                            <div class="team-social">
+                                                <ul class="social">
+                                                    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div  class="col-lg-3 col-sm-6 team-toggle" style="display:none">
+                                    <div class="single-team">
+                                        <div class="team-img">
+                                            <a href="team.html"><img src="/assets/images/team/1600522766229.jpg" alt=""></a>
+                                        </div>
+                                        <div class="team-content">
+                                            <h3 class="name"><a href="#">Michael <br> Frater</a></h3>
+                                            <span class="designation">CEO, techwix</span>
+                                            <div class="team-social">
+                                                <ul class="social">
+                                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                                    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div  class="col-lg-3 col-sm-6 team-toggle" style="display:none">
+                                    <div class="single-team">
+                                        <div class="team-img">
+                                            <a href="team.html"><img src="/assets/images/team/1600522766229.jpg" alt=""></a>
+                                        </div>
+                                        <div class="team-content">
+                                            <h3 class="name"><a href="#">Kevin <br> Perry</a></h3>
+                                            <span class="designation">CEO, techwix</span>
+                                            <div class="team-social">
+                                                <ul class="social">
+                                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                                    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="more-team-content text-center">
+                                            <p><a href="#" id="more-content-team">Ver Mais <i id="bla"class="fas fa-long-arrow-alt-down"></i></a></p>
+                                        </div>
+                                    </div>
+                                </div>
                         </div>
-                        <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="more-team-content text-center">
-                                        <p><a href="#" id="more-content-team">Ver Mais <i id="bla"class="fas fa-long-arrow-alt-down"></i></a></p>
-                                    </div>
-                                </div>
-                            </div>
                     </div>
                 </div>
-            </div>
-            Team End -->
+                Team End -->
 
 
 
@@ -616,51 +615,51 @@
     <!-- Choose Us End -->
 
     <!-- Sponsors Logo Start
-             <div class="section techwix-brand-section techwix-brand-section-03">
-                <div class="container">
+                 <div class="section techwix-brand-section techwix-brand-section-03">
+                    <div class="container">
 
-                    <div class="brand-wrapper text-center">
-                        <h1 style="font-size:2.5rem;font-weight:bold;color:#1EC4BD;text-align:center;margin-bottom:3%">Patrocinadores</h1>
+                        <div class="brand-wrapper text-center">
+                            <h1 style="font-size:2.5rem;font-weight:bold;color:#1EC4BD;text-align:center;margin-bottom:3%">Patrocinadores</h1>
 
-                        <div class="brand-active">
-                            <div class="swiper-container">
-                                <div class="swiper-wrapper">
+                            <div class="brand-active">
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper">
 
-                                    <div class="swiper-slide single-brand">
-                                        <img src="assets/images/patrocinios/gms.png" style="height:4rem" alt="Brand">
+                                        <div class="swiper-slide single-brand">
+                                            <img src="assets/images/patrocinios/gms.png" style="height:4rem" alt="Brand">
+                                        </div>
+
+                                        <div class="swiper-slide single-brand">
+                                            <img src="assets/images/patrocinios/logo_preto_ef.svg" style="height:4rem" alt="Brand">
+                                        </div>
+
+                                        <div class="swiper-slide single-brand">
+                                            <img src="assets/images/patrocinios/Logo_Sogenave.png" style="height:4rem" alt="Brand">
+                                        </div>
+
+                                        <div class="swiper-slide single-brand">
+                                            <img src="assets/images/patrocinios/Logo_Unimidia.jpg" style="height:4rem" alt="Brand">
+                                        </div>
+
+                                        <div class="swiper-slide single-brand">
+                                            <img src="assets/images/patrocinios/logos_delta.jpg" style="height:4rem" alt="Brand">
+                                        </div>
+
+                                        <div class="swiper-slide single-brand">
+                                            <img src="assets/images/patrocinios/Yorn_logo.svg" style="height:4rem" alt="Brand">
+                                        </div>
+                                        <div class="swiper-slide single-brand">
+                                            <img src="assets/images/patrocinios/sumol.jpg" style="height:4rem" alt="Brand">
+                                        </div>
+
                                     </div>
-
-                                    <div class="swiper-slide single-brand">
-                                        <img src="assets/images/patrocinios/logo_preto_ef.svg" style="height:4rem" alt="Brand">
-                                    </div>
-
-                                    <div class="swiper-slide single-brand">
-                                        <img src="assets/images/patrocinios/Logo_Sogenave.png" style="height:4rem" alt="Brand">
-                                    </div>
-
-                                    <div class="swiper-slide single-brand">
-                                        <img src="assets/images/patrocinios/Logo_Unimidia.jpg" style="height:4rem" alt="Brand">
-                                    </div>
-
-                                    <div class="swiper-slide single-brand">
-                                        <img src="assets/images/patrocinios/logos_delta.jpg" style="height:4rem" alt="Brand">
-                                    </div>
-
-                                    <div class="swiper-slide single-brand">
-                                        <img src="assets/images/patrocinios/Yorn_logo.svg" style="height:4rem" alt="Brand">
-                                    </div>
-                                    <div class="swiper-slide single-brand">
-                                        <img src="assets/images/patrocinios/sumol.jpg" style="height:4rem" alt="Brand">
-                                    </div>
-
                                 </div>
                             </div>
+
                         </div>
 
                     </div>
-
-                </div>
-            </div>-->
+                </div>-->
     <!-- Brand Logo End -->
     <div class="section techwix-service-section-04 " style="margin-top:2.5rem;">
         <div class="container">

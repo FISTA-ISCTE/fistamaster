@@ -216,7 +216,7 @@
                                     <!-- VAI SER O NOVO LOGO DO FISTA
                                     <a class="footer-logo" href="index.html"><img src="assets/images/logo.png" alt="Logo"></a>
                                     -->
-                                    <p>O FISTA é uma feira de emprego que ocorre anualmento no Iscte.
+                                    <p>O FISTA é uma feira de emprego que ocorre anualmente no Iscte.
                                         Este evento traz o mundo das empresas à universidade.
                                     </p>
                                     <div class="footer-social">
@@ -241,7 +241,7 @@
 
                                     <div class="widget-link">
                                         <ul class="link">
-                                            <li><a href="/brevemente">Multimédia dos anos anteriores </a></li>
+                                            <li><a href="/sobre-nos">Multimédia dos anos anteriores </a></li>
 
                                             <li><a href="/politica-de-privacidade">Politicas de Privacidade</a></li>
                                         </ul>
@@ -258,8 +258,8 @@
                                         <ul class="link">
                                             <li><a href="/brevemente">Oradores</a></li>
                                             <li><a href="/brevemente">Workshops</a></li>
-                                            <li><a href="/brevemente">Empresas</a></li>
-                                            <li><a href="/brevemente">Concursos</a></li>
+                                            <li><a href="/empresas">Empresas</a></li>
+                                            <li><a href="/eventos">Concursos</a></li>
                                         </ul>
                                     </div>
                                 </div>
