@@ -11,6 +11,24 @@ use Illuminate\Support\Facades\Validator;
 
 class apiController extends Controller
 {
+    public function registar(Request $request)
+    {
+        $postInput = file_get_contents('php://input');
+        $data = json_decode($postInput, true);
+        $array = ['email' => $request->only('email')['email'], 'name' => $request->only('name')['name'], 'password' => $request->only('password')['password'], 'password_confirmation' => $request->only('password_confirmation')['password_confirmation']];
+        $validator = Validator::make($array, [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['message' => 'Erro!', 'validator' => $validator->errors(), 'code' => 200]);
+        } else {
+            $user = $this->create($array);
+            //$user->sendConfirmationEmail();
+            return response()->json(['message' => 'Certo!', 'code' => 200]);
+        }
+    }
     public function authlogin(Request $request)
     {
         $loginDetails = $request->only('email', 'password');

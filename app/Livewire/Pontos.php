@@ -14,6 +14,7 @@ class Pontos extends Component
     public $token;
     public function save()
     {
+
         $log_pontos = Log_Token::where('id_user', Auth::user()->id)
             ->where('token', $this->token)
             ->first();
