@@ -80,17 +80,17 @@ class EmpresaController extends Controller
         $request->cocktail == null ? ($empresa->cocktail = 0) : ($empresa->cocktail = $request->cocktail);
 
         if ($request->company_plan == 'premium') {
-            $empresa->plano_num = 2;
+            $empresa->plano_num = 3;
             $empresa->cvs = 1;
             $empresa->worshop = 1;
             $empresa->itspeedtalks = 1;
             $empresa->backoffice = 1;
         } elseif ($request->company_plan == 'gold') {
-            $empresa->plano_num = 3;
+            $empresa->plano_num = 2;
             $empresa->cvs = 1;
             $empresa->cocktail = 0;
         } elseif ($request->company_plan == 'silver') {
-            $empresa->plano_num = 4;
+            $empresa->plano_num = 1;
             $empresa->cocktail = 0;
             $empresa->itspeedtalks = 0;
         }
