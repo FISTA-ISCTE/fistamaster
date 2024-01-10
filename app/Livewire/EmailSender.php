@@ -31,7 +31,7 @@ class EmailSender extends Component
             }
             $emails = rtrim($emails, ";");
             $test="<h4>Email Enviado:</h4><br>". $this->text . "<br><br><h4>Para os Emails:</h4><br><br>". $emails;
-            Mail::to("david.g.leal00@fista.com")->send(new EmailSends($test, "Emails Enviados através do Site"));
+            Mail::to("fista@iscte-iul.pt")->send(new EmailSends($test, "Emails Enviados através do Site"));
             session()->flash('success', 'E-mails enviados com sucesso!');
         } else {
             session()->flash('success', 'E-mails nao enviados com sucesso!');
