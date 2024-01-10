@@ -295,7 +295,7 @@
                                                 </div>
                                                 <div class="col-md-3">
                                                     <input type="text" name="total" id="liInput"
-                                                        class="form-control mb-3" value="{{ $empresa->total }}"
+                                                        class="form-control mb-3" value="{{ $empresa->total }}€"
                                                         placeholder="Total">
                                                 </div>
                                             </div>
