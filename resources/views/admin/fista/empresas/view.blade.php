@@ -293,6 +293,11 @@
                                                             value="diamond">Diamond</option>
                                                     </select>
                                                 </div>
+                                                <div class="col-md-3">
+                                                    <input type="text" name="total" id="liInput"
+                                                        class="form-control mb-3" value="{{ $empresa->total }}"
+                                                        placeholder="Total">
+                                                </div>
                                             </div>
                                             <button type="submit" id="editBtn" class="btn"
                                                 style="margin-top:2%;background: linear-gradient(195deg, #00c4cc 0%, #008d84 100%);">Guardar</button>
