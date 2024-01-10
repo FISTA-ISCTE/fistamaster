@@ -455,47 +455,14 @@ class apiController extends Controller
         return response()->json(['message' => 'Certo!', 'backoffice' => $backoffice, 'code' => 200]);
     }
 */
-    public function registar(Request $request)
-    {
-        $postInput = file_get_contents('php://input');
-        $data = json_decode($postInput, true);
-        $array = ['email' => $request->only('email')['email'], 'first_name' => $request->only('first_name')['first_name'], 'last_name' => $request->only('last_name')['last_name'], 'id_curso' => $request->only('id_curso')['id_curso'], 'id_ano' => $request->only('id_ano')['id_ano'], 'password' => $request->only('password')['password'], 'password_confirmation' => $request->only('password_confirmation')['password_confirmation']];
-        $validator = Validator::make($array, [
-            'first_name' => ['required', 'string', 'max:255'],
-            'last_name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
-        if ($validator->fails()) {
-            return response()->json(['message' => 'Erro!', 'validator' => $validator->errors(), 'code' => 200]);
-        } else {
-            $user = $this->create($array);
-            $user->sendConfirmationEmail();
-            //event(new Registered($user));
-            return response()->json(['message' => 'Certo!', 'code' => 200]);
-        }
-    }
-
     protected function create(array $data)
     {
         $user = new User;
-        $user->first_name = $data['first_name'];
-        $user->last_name = $data['last_name'];
+        $user->name = $data['name'];
         $user->email = $data['email'];
         $user->pontos = '0';
-        $user->email_verify = 0;
-        $user->remember_token = null;
-        $user->email_verified_at = null;
-        $user->provider = 'web';
+        $user->provider = 'app';
         $user->password = Hash::make($data['password']);
-        if (array_key_exists('id_curso', $data)) {
-            $user->id_curso = $data['id_curso'];
-        }
-
-        if (array_key_exists('id_ano', $data)) {
-            $user->id_ano = $data['id_ano'];
-        }
-
         $user->save();
         return $user;
     }
