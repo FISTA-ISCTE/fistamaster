@@ -461,7 +461,6 @@ class apiController extends Controller
         $user->name = $data['name'];
         $user->email = $data['email'];
         $user->pontos = '0';
-        $user->provider = 'app';
         $user->password = Hash::make($data['password']);
         $user->save();
         return $user;
