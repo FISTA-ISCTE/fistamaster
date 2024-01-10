@@ -54,6 +54,14 @@
                         </x-nav-link>
                     </div>
                 @endif
+                @if (auth()->user() &&
+                        auth()->user()->hasRole('admin'))
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 1.5rem;">
+                        <x-nav-link href="{{ route('enviar.emails') }}" :active="request()->routeIs('enviar.emails')">
+                            {{ __('Emails📤') }}
+                        </x-nav-link>
+                    </div>
+                @endif
                 <!-- Navigation Links -->
                 @if (auth()->user() &&
                         auth()->user()->hasRole('user'))
