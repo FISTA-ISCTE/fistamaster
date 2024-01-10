@@ -183,7 +183,8 @@
                                     <form action="{{ route('toggle.mostrar', $empresa->id) }}" method="post">
                                         @csrf
                                         <div class="col-md-3 text-right">
-                                            <button type="submit" class="{{ $empresa->mostrar ? 'btn-nao-mostrar' : 'btn-mostrar' }}">
+                                            <button type="submit"
+                                                class="{{ $empresa->mostrar ? 'btn-nao-mostrar' : 'btn-mostrar' }}">
                                                 {{ $empresa->mostrar ? 'Desativar' : 'Ativar' }}
                                             </button>
                                         </div>
@@ -194,7 +195,8 @@
 
                                 </div>
                                 <form id="companyProfile" method="post"
-                                    action="{{ route('admin.empresa.infos.guardar', ['id' => $empresa->id]) }}" enctype="multipart/form-data">
+                                    action="{{ route('admin.empresa.infos.guardar', ['id' => $empresa->id]) }}"
+                                    enctype="multipart/form-data">
                                     @csrf
                                     @if (session('success'))
                                         <div class="alert alert-success">
@@ -205,22 +207,27 @@
 
                                         <!-- Logo da empresa -->
                                         <div class="col-md-4">
-                                            <div class="alert alert-warning" style="width: 80%;font-size:1rem;" role="alert">
-                                                Clica em cima da imagem para editar o logotipo e de seguida em em Guardar.
+                                            <div class="alert alert-warning" style="width: 80%;font-size:1rem;"
+                                                role="alert">
+                                                Clica em cima da imagem para editar o logotipo e de seguida em em
+                                                Guardar.
                                                 Tamanho do logotipo: <br>
-                                                <?php if (strcmp($empresa->plano,"silver") == 0) {
-                                                   echo "-Silver:90x80px<br>";
-                                                }?>
-                                                <?php if (strcmp($empresa->plano,"gold") == 0) {
-                                                    echo "-Gold:130x120px";
-                                                 }?>
-                                                 <?php if (strcmp($empresa->plano,"premium") == 0) {
-                                                    echo "-Premium:200x190px";
-                                                 }?>
+                                                <?php if (strcmp($empresa->plano, 'silver') == 0) {
+                                                    echo '-Silver:90x80px<br>';
+                                                } ?>
+                                                <?php if (strcmp($empresa->plano, 'gold') == 0) {
+                                                    echo '-Gold:130x120px';
+                                                } ?>
+                                                <?php if (strcmp($empresa->plano, 'premium') == 0) {
+                                                    echo '-Premium:200x190px';
+                                                } ?>
                                             </div>
                                             <div class="image-container position-relative">
                                                 <!-- Clique na imagem para mudar -->
-                                                <img src="{{ asset('storage/' . $empresa->avatar) }}" alt="Logotipo da Empresa" style="width: 300px; height: 150px;" class="img-fluid mb-2" onclick="document.getElementById('fileInput').click()">
+                                                <img src="{{ asset('storage/' . $empresa->avatar) }}"
+                                                    alt="Logotipo da Empresa" style="width: 300px; height: 150px;"
+                                                    class="img-fluid mb-2"
+                                                    onclick="document.getElementById('fileInput').click()">
 
                                                 <!-- Input de arquivo escondido -->
                                                 <input type="file" id="fileInput" name="avatar">
@@ -264,11 +271,29 @@
                                                 style="font-size:0.8rem;">
                                                 Outras Informações</h2>
                                             <textarea id="otherInfoInput" name="others" class="form-control mb-3" placeholder="Outras Informações">{{ $empresa->others }}</textarea>
-                                            @if (strcmp($empresa->plano,"premium")==0 || strcmp($empresa->plano,"diamond") ==0 )
-                                                A empresa escolheu o modelo de <?php if (strcmp($empresa->modelo_workshop,"ws_presencial")==0){  echo " Workshop"; }elseif(strcmp($empresa->modelo_workshop,"si")==0){  echo " Speed Interviews"; }
-                                            ?>
+                                            @if (strcmp($empresa->plano, 'premium') == 0 || strcmp($empresa->plano, 'diamond') == 0)
+                                                A empresa escolheu o modelo de <?php if (strcmp($empresa->modelo_workshop, 'ws_presencial') == 0) {
+                                                    echo ' Workshop';
+                                                } elseif (strcmp($empresa->modelo_workshop, 'si') == 0) {
+                                                    echo ' Speed Interviews';
+                                                }
+                                                ?>
                                             @endif
                                             <p></p>
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <select name="plano">
+                                                        <option @if (strcmp($empresa->plano, 'silver') == 0) selected @endif
+                                                            value="silver">Silver</option>
+                                                        <option @if (strcmp($empresa->plano, 'gold') == 0) selected @endif
+                                                            value="gold">Gold</option>
+                                                        <option @if (strcmp($empresa->plano, 'premium') == 0) selected @endif
+                                                            value="premium">Premium</option>
+                                                        <option @if (strcmp($empresa->plano, 'diamond') == 0) selected @endif
+                                                            value="diamond">Diamond</option>
+                                                    </select>
+                                                </div>
+                                            </div>
                                             <button type="submit" id="editBtn" class="btn"
                                                 style="margin-top:2%;background: linear-gradient(195deg, #00c4cc 0%, #008d84 100%);">Guardar</button>
 

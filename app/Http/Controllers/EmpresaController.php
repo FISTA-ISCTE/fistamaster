@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Empresa;
 use App\Models\Billing;
 use App\Models\Logistica;
+use App\Models\LogisticaSlots;
 use App\Models\Workshop;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
@@ -157,9 +158,11 @@ class EmpresaController extends Controller
                 if($request->opcaoCadeirasDia1 === '1')
                     $logistica->cadeiras_dia1 = $request->cadeiras_dia1;
                 else
-                $logistica->cadeiras_dia1 = null;
+                    $logistica->cadeiras_dia1 = null;
                 $logistica->mesa_stand_dia1 = $request->opcaoMesaStandDia1;
                 $logistica->num_almocos_dia1 = $request->num_almocos_dia1;
+                $logistica->montagem_id8 = $request->montagem_dia1;
+                $logistica->desmontagem_id8 = $request->desmontagem_dia1;
             }
             if(isset($empresa->dia2)){
                 $logistica->s_n_cadeiras_dia2 = $request->opcaoCadeirasDia2;
@@ -169,6 +172,8 @@ class EmpresaController extends Controller
                     $logistica->cadeiras_dia2 = null;
                 $logistica->mesa_stand_dia2 = $request->opcaoMesaStandDia2;
                 $logistica->num_almocos_dia2 = $request->num_almocos_dia2;
+                $logistica->montagem_id9 = $request->montagem_dia2;
+                $logistica->desmontagem_id9 = $request->desmontagem_dia2;
             }
             $logistica->save();
             session()->flash('success', 'Dados guardados com sucesso!');

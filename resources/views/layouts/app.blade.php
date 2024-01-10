@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <link rel="stylesheet" href="../assets/css/style.css">
+        <script src="https://cdn.tiny.cloud/1/ottxgcd0kf17okpgfktxhbnn8lbqh3smos8ua6xccnl84e4j/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -22,6 +23,7 @@
         @livewireStyles
     </head>
     <body class="font-sans antialiased">
+
         <x-banner />
 
         <div class="min-h-screen bg-gray-100">

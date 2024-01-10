@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PageController;
 use App\Models\Empresa;
+use App\Models\LogisticaSlots;
 use App\Models\Team;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Route;
@@ -93,7 +94,7 @@ Route::get('/sobre-nos', function () {
             'photo' => $team->user->profile_photo_url,
         ];
     });
-    return view('about')->with(['teamData'=> $teamData]);
+    return view('about')->with(['teamData' => $teamData]);
 })->name('about');
 
 Route::post('/registarEmpresa', [EmpresaController::class, 'registarempresa'])->name('registarEmpresasite');
@@ -105,6 +106,10 @@ Route::middleware([
 ])->group(function () {
 
     Route::middleware(['role:empresa'])->prefix('empresa')->group(function () {
+        Route::get('/workshop', function () {
+            return view('admin.empresas.workshop');
+        })->name('empresa.workshop');
+
         Route::get('/dashboard', function () {
             $company = Empresa::findOrFail(Auth::user()->id_empresa);
             return view('admin.empresas.dashboard')->with(['company' => $company]);
@@ -123,7 +128,12 @@ Route::middleware([
             $company = Auth::user()->id_empresa;
             $empresa = Empresa::where('id', $company)->first();
             $logistica = Logistica::where('id_empresa', $company)->first();
-            return view('admin.empresas.logistica')->with(['empresa' => $empresa, 'logistica' => $logistica]);
+            $slot_montagem1 = LogisticaSlots::where('tipo', "montagem")->where('dia', "1")->get();
+            $slot_desmontagem1 = LogisticaSlots::where('tipo', "desmontagem")->where('dia', "1")->get();
+            $slot_montagem2 = LogisticaSlots::where('tipo', "montagem")->where('dia', "2")->get();
+            $slot_desmontagem2 = LogisticaSlots::where('tipo', "desmontagem")->where('dia', "2")->get();
+            return view('admin.empresas.logistica')->with(['empresa' => $empresa, 'logistica' => $logistica, 'slot_montagem1' => $slot_montagem1, 'slot_montagem2' => $slot_montagem2, 'slot_desmontagem1' => $slot_desmontagem1, 'slot_desmontagem2' => $slot_desmontagem2]);
+
         })->name('empresa.logistica');
 
         Route::post('/logistica/guardar', [EmpresaController::class, 'guardarLogistica'])->name('empresa.logistica.guardar');
@@ -136,6 +146,10 @@ Route::middleware([
         Route::get('/emails-convites', function () {
             return view('admin.fista.email-empresas.view');
         })->name('enviar.emails.blade');
+
+        Route::get('/send-emails', function () {
+            return view('admin.fista.send_emails');
+        })->name('enviar.emails');
 
 
         Route::get('/dashboard', function () {
@@ -174,8 +188,6 @@ Route::middleware([
 
     // Rotas para usuários
     Route::middleware(['role:user'])->prefix('user')->group(function () {
-
-
         Route::get('/interesses', function () {
             return view('admin.user.interesses');
         })->name('user.interesses');

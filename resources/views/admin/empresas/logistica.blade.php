@@ -1,4 +1,5 @@
 <x-app-layout>
+
     <x-slot name="header">
         <h1 class="font-semibold text-xl text-gray-800 leading-tight" style="margin-left:1rem;font-size:1.5rem;">
             {{ __('Logística') }}
@@ -24,6 +25,7 @@
                 <div class="container emp-profile">
                     <form id="companyProfile" method="post" action="{{ route('empresa.logistica.guardar') }}">
                         @csrf
+
                         @if (isset($empresa->dia1))
                             <h1 class="font-semibold text-xl text-gray-800 leading-tight" style="font-size:1.5rem;">
                                 {{ __('Dia 28') }}
@@ -52,9 +54,8 @@
                                         @endif
                                         <label class="form-check-label" for="opcaoCadeirasDia1Nao">Não</label>
                                     </div>
-                                    <input style="width:40.5%;" type="text" name="cadeiras_dia1"
-                                        id="cadeiras_dia1" autocomplete="cadeiras_dia1" autofocus
-                                        placeholder="Número de Cadeiras"
+                                    <input style="width:40.5%;" type="text" @if ($logistica->s_n_cadeiras_dia1 == 0) disabled @endif name="cadeiras_dia1" id="cadeiras_dia1"
+                                        autocomplete="cadeiras_dia1" autofocus placeholder="Número de Cadeiras"
                                         value="@if (isset($logistica->cadeiras_dia1)) {{ $logistica->cadeiras_dia1 }} @endif">
                                 </div>
                             </div>
@@ -94,6 +95,41 @@
                                     autocomplete="num_almocos_dia1" autofocus placeholder="Número de almoços"
                                     value="@if (isset($logistica->num_almocos_dia1)) {{ $logistica->num_almocos_dia1 }} @endif">
                             </div>
+
+                            <div class="row" style="margin-top:1.2rem;">
+                                <div class="col-md-6">
+                                    <label>Montagem</label>
+                                    <select class="form-select" name="montagem_dia1">
+                                        <option value="" disabled selected>Selecione uma opção </option>
+                                        @foreach ($slot_montagem1 as $slot_montagem11)
+                                            @if (isset($logistica->montagem_id8))
+                                                <option selected value="{{ $slot_montagem11->id }}">
+                                                    {{ $slot_montagem11->slot }}</option>
+                                            @else
+                                                <option value="{{ $slot_montagem11->id }}">
+                                                    {{ $slot_montagem11->slot }}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Desmontagem</label>
+                                    <select class="form-select" name="desmontagem_dia1">
+                                        <option value="" disabled selected>Selecione uma opção </option>
+                                        @foreach ($slot_desmontagem1 as $slot_desmontagem11)
+                                            @if (isset($logistica->desmontagem_id8))
+                                                <option selected value="{{ $slot_desmontagem11->id }}">
+                                                    {{ $slot_desmontagem11->slot }}</option>
+                                            @else
+                                                <option value="{{ $slot_desmontagem11->id }}">
+                                                    {{ $slot_desmontagem11->slot }}</option>
+                                            @endif
+                                        @endforeach
+                                        <!-- Adicione mais opções aqui -->
+                                    </select>
+                                </div>
+                            </div>
+
                         @endif
 
                         @if (isset($empresa->dia2))
@@ -102,7 +138,8 @@
                                 {{ __('Dia 29') }}
                             </h1>
                             <div class="single-form">
-                                <h2 class="font-semibold text-xl text-gray-800 leading-tight" style="font-size:1.2rem;">
+                                <h2 class="font-semibold text-xl text-gray-800 leading-tight"
+                                    style="font-size:1.2rem;">
                                     São disponibilizadas 2 cadeiras, necessita de mais?</h2>
                                 <div class="row" style="margin:0">
                                     <div class="form-check form-check-inline">
@@ -125,7 +162,7 @@
                                         @endif
                                         <label class="form-check-label" for="opcaoCadeirasDia2Nao">Não</label>
                                     </div>
-                                    <input style="width:40.5%;" type="text" name="cadeiras_dia2"
+                                    <input style="width:40.5%;"   type="text" name="cadeiras_dia2"
                                         id="cadeiras_dia2" autocomplete="cadeiras_dia2" autofocus
                                         placeholder="(Se sim) Nº de Cadeiras extra"
                                         value="@if (isset($logistica->cadeiras_dia2)) {{ $logistica->cadeiras_dia2 }} @endif">
@@ -166,6 +203,34 @@
                                 <input type="text" name="num_almocos_dia2" id="num_almocos_dia2"
                                     autocomplete="num_almocos_dia2" autofocus placeholder="Número de almoços"
                                     value="@if (isset($logistica->num_almocos_dia2)) {{ $logistica->num_almocos_dia2 }} @endif">
+                            </div>
+                            <div class="row" style="margin-top:1.2rem;">
+                                <div class="col-md-6">
+                                    <label>Montagem</label>
+                                    <select class="form-select" name="montagem_dia2">
+                                        <option value="" disabled selected>Selecione uma opção </option>
+
+                                        @foreach ($slot_montagem2 as $slot_montagem22)
+                                            @if (isset($logistica->montagem_id9))
+                                                <option selected value="{{ $slot_montagem22->id }}">
+                                                    {{ $slot_montagem22->slot }}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Desmontagem</label>
+                                    <select class="form-select" name="desmontagem_dia2">
+                                        <option value="" disabled selected>Selecione uma opção </option>
+                                        @foreach ($slot_desmontagem2 as $slot_desmontagem22)
+                                            @if (isset($logistica->montagem_id9))
+                                                <option selected value="{{ $slot_desmontagem22->id }}">
+                                                    {{ $slot_desmontagem22->slot }} </option>
+                                            @endif
+                                        @endforeach
+                                        <!-- Adicione mais opções aqui -->
+                                    </select>
+                                </div>
                             </div>
                         @endif
 

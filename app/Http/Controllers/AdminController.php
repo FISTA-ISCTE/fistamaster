@@ -19,6 +19,7 @@ class AdminController extends Controller
         $empresa->linkedin = $request->linkedin ?? $empresa->linkedin;
         $empresa->description = $request->description ?? $empresa->description;
         $empresa->others = $request->others ?? $empresa->others;
+        $empresa->plano = $request->plano ?? $empresa->plano;
         if ($request->file('avatar')) {
             $file = $request->file('avatar');
             $filename = $empresa->id . time() . '.' . $file->getClientOriginalExtension();
