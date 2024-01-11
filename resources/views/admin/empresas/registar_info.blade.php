@@ -193,13 +193,13 @@
                                             <div class="col-sm-12">
                                                 <div class="single-form">
                                                     <label class="container" style="padding-left: 0rem !important;">
-                                                    <label id="workshoptext"><span style="display: inline; color: black">Workshop ou Speed Interview</span> </label>
+                                                    <label id="workshoptext"><span style="display: inline; color: black">Speed Interview</span> </label>
                                                     <input type="checkbox" value=1 name="workshop" id="workshopCheckbox">
                                                     <span class="checkmark"></span>
                                                     <div class="workshopselector" style="display:none; width: 100%;">
                                                         <select class="custom-select" type="text" name="workshop_option">
                                                             <option value="null" selected disabled>Selecionar Modelo</option>
-                                                            <option value="si">Speed Interviews</option>
+                                                            <option value="si" >Speed Interviews</option>
                                                         </select>
                                                     </div>
                                                 </label>
@@ -384,7 +384,7 @@ $day2premium = Empresa::where('plano', 'premium')
                 });
                 $extras.find('input[name="workshop"]').prop({
                     checked: false,
-                    disabled: false
+                    disabled: true
                 });
                 $extras.find('input[name="itspeedtalks"]').prop({
                     checked: false,
@@ -449,7 +449,7 @@ $day2premium = Empresa::where('plano', 'premium')
         //Desativar gold para dia 28 se tiver excedido o limite (34)
         var day1gold = {{ $day1gold }}
         if (selected == 'gold') {
-            if (day1gold >= 34) {
+            if (day1gold >= 3) {
                 $('#join_form #attending input[name="day1"]').attr({
                     disabled: true,
                     checked: false
@@ -488,7 +488,7 @@ $day2premium = Empresa::where('plano', 'premium')
         var day1premium = {{ $day1premium }}
 
         if (selected == 'premium') {
-            if (day1premium >= 10) {
+            if (day1premium >= 2) {
                 $('#join_form #attending input[name="day1"]').attr({
                     disabled: true,
                     checked: false

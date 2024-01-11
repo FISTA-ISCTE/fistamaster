@@ -29,6 +29,7 @@
             <div class="pricing-wrap">
                 <div class="section-title text-center">
                     <h2 class="title">Junte-se a nós. Esperamos a sua empresa neste fantástico evento anual!</h2>
+                    <p style="color: red">O dia 28 de fevereiro já está ESGOTADO!</p>
                 </div>
                 <!-- Modal Itspeed -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
