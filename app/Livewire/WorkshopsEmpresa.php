@@ -45,13 +45,9 @@ class WorkshopsEmpresa extends Component
         }
         if (isset($workshop->begin)) {
             $this->schedule = $workshop->begin;
-        }else{
-            $this->schedule = "";
         }
         if (isset($this->schedule)) {
             $this->data = "Inicio: " . $workshop->begin . " Fim: " . $workshop->end;
-        }else{
-            $this->data = "";
         }
         // Inicialize availableSchedules com horários disponíveis
         $this->availableSchedules = [
