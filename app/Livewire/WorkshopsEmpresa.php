@@ -28,14 +28,30 @@ class WorkshopsEmpresa extends Component
     {
         $empresa = Empresa::where("id", Auth::user()->id_empresa)->first();
         $workshop = Workshop::where("company", $empresa->nome_empresa)->first();
-
-        $this->title = $workshop->title;
-        $this->description = $workshop->description;
-        $this->requirements = $workshop->requirements;
-        $this->schedule = $workshop->begin;
-
+        if (isset($workshop->title)) {
+            $this->title = $workshop->title;
+        }else{
+            $this->title = "";
+        }
+        if (isset($workshop->description)) {
+            $this->description = $workshop->description;
+        }else{
+            $this->description = "";
+        }
+        if (isset($workshop->requirements)) {
+            $this->requirements = $workshop->requirements;
+        }else{
+            $this->requirements = "";
+        }
+        if (isset($workshop->begin)) {
+            $this->schedule = $workshop->begin;
+        }else{
+            $this->schedule = "";
+        }
         if (isset($this->schedule)) {
             $this->data = "Inicio: " . $workshop->begin . " Fim: " . $workshop->end;
+        }else{
+            $this->data = "";
         }
         // Inicialize availableSchedules com horários disponíveis
         $this->availableSchedules = [
