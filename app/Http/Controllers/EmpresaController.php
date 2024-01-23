@@ -160,9 +160,12 @@ class EmpresaController extends Controller
                 else
                     $logistica->cadeiras_dia1 = null;
                 $logistica->mesa_stand_dia1 = $request->opcaoMesaStandDia1;
-                $logistica->num_almocos_dia1 = $request->num_almocos_dia1;
                 $logistica->montagem_id8 = $request->montagem_dia1;
+                $logistica->info_montagem_1 = $request->info_montagem_1;
+                $logistica->info_desmontagem_1 = $request->info_desmontagem_1;
+                $logistica->n_pessoas_dia1 = $request->n_pessoas_dia1;
                 $logistica->desmontagem_id8 = $request->desmontagem_dia1;
+                $logistica->info_estacionamento_1 = $request->info_estacionamento_1;
             }
             if(isset($empresa->dia2)){
                 $logistica->s_n_cadeiras_dia2 = $request->opcaoCadeirasDia2;
@@ -171,9 +174,12 @@ class EmpresaController extends Controller
                 else
                     $logistica->cadeiras_dia2 = null;
                 $logistica->mesa_stand_dia2 = $request->opcaoMesaStandDia2;
-                $logistica->num_almocos_dia2 = $request->num_almocos_dia2;
+                $logistica->info_montagem_2 = $request->info_montagem_2;
+                $logistica->info_desmontagem_2 = $request->info_desmontagem_2;
                 $logistica->montagem_id9 = $request->montagem_dia2;
+                $logistica->n_pessoas_dia2 = $request->n_pessoas_dia2;
                 $logistica->desmontagem_id9 = $request->desmontagem_dia2;
+                $logistica->info_estacionamento_2 = $request->info_estacionamento_2;
             }
             $logistica->save();
             session()->flash('success', 'Dados guardados com sucesso!');

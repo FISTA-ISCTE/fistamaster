@@ -60,6 +60,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function empresa()
+    {
+        return $this->belongsTo('App\Models\Empresa', 'id_empresa');
+    }
 
     /**
      * The accessors to append to the model's array form.

@@ -109,13 +109,15 @@
                 @endif
 
                 @if (auth()->user() &&
-                        auth()->user()->hasRole('empresa'))
+                        auth()->user()->hasRole('empresa') && auth()->user()->empresa->modelo_workshop === "ws_presencial")
+
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-nav-link href="{{ route('empresa.logistica') }}" :active="request()->routeIs('empresa.logistica')">
-                            {{ __('Logistica') }}
+                        <x-nav-link href="{{ route('empresa.workshop') }}" :active="request()->routeIs('empresa.workshop')">
+                            {{ __('Workshop') }}
                         </x-nav-link>
                     </div>
                 @endif
+
 
                 <!-- Workshop caso exista-->
                 <!-- Backoffice alunos caso exista-->

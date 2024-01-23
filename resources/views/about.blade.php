@@ -599,35 +599,35 @@
                         </div>
                     </div>
                     <!---<div class="col-lg-4">
-                            <div class="solution-item solution-item-sm">
-                                <div class="solution-img">
-                                    <a href="#"><img src="assets/images/solution-img2.jpg" alt=""></a>
-                                </div>
-                                <div class="solution-content">
-                                    <div class="solution-title">
-                                        <h3 class="title"><a href="#">AfterMovie</a></h3>
+                                        <div class="solution-item solution-item-sm">
+                                            <div class="solution-img">
+                                                <a href="#"><img src="assets/images/solution-img2.jpg" alt=""></a>
+                                            </div>
+                                            <div class="solution-content">
+                                                <div class="solution-title">
+                                                    <h3 class="title"><a href="#">AfterMovie</a></h3>
+                                                </div>
+                                                <a class="play-btn popup-video"
+                                                    href="https://www.youtube.com/watch?time_continue=3&v=_X0eYtY8T_U"><i
+                                                        class="fas fa-play"></i></a>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <a class="play-btn popup-video"
-                                        href="https://www.youtube.com/watch?time_continue=3&v=_X0eYtY8T_U"><i
-                                            class="fas fa-play"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="solution-item solution-item-sm">
-                                <div class="solution-img">
-                                    <a href="#"><img src="assets/images/solution-img2.jpg" alt=""></a>
-                                </div>
-                                <div class="solution-content">
-                                    <div class="solution-title">
-                                        <h3 class="title"><a href="#">Teaser</a></h3>
-                                    </div>
-                                    <a class="play-btn popup-video"
-                                        href="https://www.youtube.com/watch?time_continue=3&v=_X0eYtY8T_U"><i
-                                            class="fas fa-play"></i></a>
-                                </div>
-                            </div>
-                        </div>--->
+                                    <div class="col-lg-4">
+                                        <div class="solution-item solution-item-sm">
+                                            <div class="solution-img">
+                                                <a href="#"><img src="assets/images/solution-img2.jpg" alt=""></a>
+                                            </div>
+                                            <div class="solution-content">
+                                                <div class="solution-title">
+                                                    <h3 class="title"><a href="#">Teaser</a></h3>
+                                                </div>
+                                                <a class="play-btn popup-video"
+                                                    href="https://www.youtube.com/watch?time_continue=3&v=_X0eYtY8T_U"><i
+                                                        class="fas fa-play"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>--->
                 </div>
                 <div class="row" style="margin-top:1rem;">
                     <div class="col-lg-12">
@@ -648,28 +648,64 @@
 
                             <div class="row">
                                 @foreach ($teamData as $data)
-                                    <div class="col-lg-3 col-sm-6">
-                                        <div class="single-team">
-                                            <div class="team-img">
-                                                <a href="#">
-                                                    <img src="{{ $data['photo'] }}" alt="" class="team-photo">
-                                                </a>
-                                            </div>
+                                    @if ($data['prioridade'] == 1)
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="single-team ">
+                                                <div class="team-img">
+                                                    <a href="#">
+                                                        <img src="{{ $data['photo'] }}" alt=""
+                                                            class="team-photo">
+                                                    </a>
+                                                </div>
 
-                                            <div class="team-content">
-                                                <h3 class="name"><a href="#"> {{ $data['user_name'] }}</a></h3>
-                                                <span class="designation">{{ $data['team_name'] }}</span>
-                                                <div class="team-social">
-                                                    <ul class="social">
-                                                        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                                                    </ul>
+                                                <div class="team-content">
+                                                    <h3 class="name"><a href="#"> {{ $data['user_name'] }}</a>
+                                                    </h3>
+                                                    <span class="designation">{{ $data['team_name'] }}</span>
+
+                                                    <div class="team-social">
+                                                        <ul class="social">
+                                                            @if (isset($data['linkedin']))
+                                                                <li><a href="{{ $data['linkedin'] }}"><i
+                                                                            class="fab fa-linkedin"></i></a></li>
+                                                            @endif
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    @endif
+                                    @if ($data['prioridade'] == 0)
+                                        <div class="col-lg-3 col-sm-6 team-toggle">
+                                            <div class="single-team ">
+                                                <div class="team-img">
+                                                    <a href="#">
+                                                        <img src="{{ $data['photo'] }}" alt=""
+                                                            class="team-photo">
+                                                    </a>
+                                                </div>
+
+                                                <div class="team-content">
+                                                    <h3 class="name"><a href="#"> {{ $data['user_name'] }}</a>
+                                                    </h3>
+                                                    <span class="designation">{{ $data['team_name'] }}</span>
+                                                    <div class="team-social">
+                                                        <ul class="social">
+                                                            <li><a href="{{ $data['linkedin'] }}"><i
+                                                                        class="fab fa-linkedin"></i></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
                                 @endforeach
 
                                 <style>
+                                    .team-toggle {
+                                        display: none;
+                                    }
+
                                     .team-photo {
                                         width: 100%;
                                         height: 323px;

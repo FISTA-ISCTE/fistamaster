@@ -54,15 +54,17 @@
                                         @endif
                                         <label class="form-check-label" for="opcaoCadeirasDia1Nao">Não</label>
                                     </div>
-                                    <input style="width:40.5%;" type="text" @if ($logistica->s_n_cadeiras_dia1 == 0) disabled @endif name="cadeiras_dia1" id="cadeiras_dia1"
-                                        autocomplete="cadeiras_dia1" autofocus placeholder="Número de Cadeiras"
+                                    <input style="width:40.5%;" type="text"
+                                        @if ($logistica->s_n_cadeiras_dia1 == 0) disabled @endif name="cadeiras_dia1"
+                                        id="cadeiras_dia1" autocomplete="cadeiras_dia1" autofocus
+                                        placeholder="Número de Cadeiras"
                                         value="@if (isset($logistica->cadeiras_dia1)) {{ $logistica->cadeiras_dia1 }} @endif">
                                 </div>
                             </div>
 
                             <div class="single-form" style="margin-top:2%">
                                 <h2 class="font-semibold text-xl text-gray-800 leading-tight" style="font-size:1.2rem;">
-                                    Necessita de mesa ou tem stand?</h2>
+                                    Necessita de mesa no stand? </h2>
                                 <div class="row" style="margin:0">
                                     <div class="form-check form-check-inline">
                                         @if (isset($logistica->mesa_stand_dia1) && $logistica->mesa_stand_dia1 === 'mesa')
@@ -72,7 +74,7 @@
                                             <input class="form-check-input" type="radio" name="opcaoMesaStandDia1"
                                                 id="opcaoMesaStandDia1Mesa" value="mesa">
                                         @endif
-                                        <label class="form-check-label" for="opcaoMesaStandDia1Mesa">Mesa</label>
+                                        <label class="form-check-label" for="opcaoMesaStandDia1Mesa">Sim</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         @if (isset($logistica->mesa_stand_dia1) && $logistica->mesa_stand_dia1 === 'stand')
@@ -82,20 +84,19 @@
                                             <input class="form-check-input" type="radio" name="opcaoMesaStandDia1"
                                                 id="opcaoMesaStandDia1Stand" value="stand">
                                         @endif
-                                        <label class="form-check-label" for="opcaoMesaStandDia1Stand">Stand</label>
+                                        <label class="form-check-label" for="opcaoMesaStandDia1Stand">Não</label>
                                     </div>
+                                    <input style="width:40.5%;" type="text" name="n_pessoas_dia1" id="n_pessoas_dia1"
+                                        autocomplete="n_pessoas_dia1" autofocus
+                                        placeholder="Numero de pessoas presentes no stand/mesa?"
+                                        value="@if (isset($logistica->n_pessoas_dia1)) {{ $logistica->n_pessoas_dia1 }} @endif">
+
+
                                 </div>
                             </div>
-
-                            <div class="single-form" style="margin-top:2%">
-                                <h2 class="font-semibold text-xl text-gray-800 leading-tight" style="font-size:1.2rem;">
-                                    Número de almoços (Almoços pagos no dia do evento, diretamente ao prestador de
-                                    serviço)</h2>
-                                <input type="text" name="num_almocos_dia1" id="num_almocos_dia1"
-                                    autocomplete="num_almocos_dia1" autofocus placeholder="Número de almoços"
-                                    value="@if (isset($logistica->num_almocos_dia1)) {{ $logistica->num_almocos_dia1 }} @endif">
-                            </div>
-
+                            <br>
+                            <hr>
+                            <br>
                             <div class="row" style="margin-top:1.2rem;">
                                 <div class="col-md-6">
                                     <label>Montagem</label>
@@ -127,6 +128,44 @@
                                         @endforeach
                                         <!-- Adicione mais opções aqui -->
                                     </select>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h2 class="font-semibold text-xl text-gray-800 leading-tight"
+                                        style="font-size:0.8rem;">Nome e Matricula</h2>
+                                    <input style="width:50%;" type="text" name="info_montagem_1"
+                                        id="info_montagem_1" autocomplete="info_montagem_1" autofocus
+                                        placeholder="Ex:Nome condutor;Matricula"
+                                        value="@if (isset($logistica->info_montagem_1)) {{ $logistica->info_montagem_1 }} @endif">
+                                </div>
+                                <div class="col-md-6">
+                                    <h2 class="font-semibold text-xl text-gray-800 leading-tight"
+                                        style="font-size:0.8rem;">Nome e Matricula</h2>
+                                    <input style="width:50%;" type="text" name="info_desmontagem_1"
+                                        id="info_desmontagem_1" autocomplete="info_desmontagem_1" autofocus
+                                        placeholder="Ex:Nome condutor;Matricula"
+                                        value="@if (isset($logistica->info_desmontagem_1)) {{ $logistica->info_desmontagem_1 }} @endif">
+                                </div>
+                            </div>
+                            <p><b><span style="color:red">*Nota:</span></b> Se for um prestador de serviço nas
+                                montagens e desmontagens é necessário inserir o nome e o numero da matrícula da empresa
+                                responsável
+                            </p>
+                            <br>
+                            <hr>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <h2 class="font-semibold text-xl text-gray-800 leading-tight"
+                                        style="font-size:1.2rem;">Estacionamento</h2>
+                                    <p><b><span style="color:red">*Nota:</span></b> Direito apenas a um estacionamento
+                                    </p>
+                                    <input type="text" name="info_estacionamento_1" id="info_estacionamento_1"
+                                        autocomplete="info_estacionamento_1" autofocus
+                                        placeholder="Ex:Nome condutor;Matricula"
+                                        value="@if (isset($logistica->info_estacionamento_1)) {{ $logistica->info_estacionamento_1 }} @endif">
                                 </div>
                             </div>
 
@@ -162,7 +201,7 @@
                                         @endif
                                         <label class="form-check-label" for="opcaoCadeirasDia2Nao">Não</label>
                                     </div>
-                                    <input style="width:40.5%;"   type="text" name="cadeiras_dia2"
+                                    <input style="width:40.5%;" type="text" name="cadeiras_dia2"
                                         id="cadeiras_dia2" autocomplete="cadeiras_dia2" autofocus
                                         placeholder="(Se sim) Nº de Cadeiras extra"
                                         value="@if (isset($logistica->cadeiras_dia2)) {{ $logistica->cadeiras_dia2 }} @endif">
@@ -171,7 +210,7 @@
 
                             <div class="single-form" style="margin-top:2%">
                                 <h2 class="font-semibold text-xl text-gray-800 leading-tight"
-                                    style="font-size:1.2rem;">Necessita de mesa ou tem stand?</h2>
+                                    style="font-size:1.2rem;">Necessita de mesa no stand? </h2>
                                 <div class="row" style="margin:0">
                                     <div class="form-check form-check-inline">
                                         @if (isset($logistica->mesa_stand_dia2) && $logistica->mesa_stand_dia2 === 'mesa')
@@ -193,20 +232,20 @@
                                         @endif
                                         <label class="form-check-label" for="opcaoMesaStandDia2Stand">Stand</label>
                                     </div>
+                                    <input style="width:40.5%;" type="text" name="n_pessoas_dia2"
+                                        id="n_pessoas_dia2" autocomplete="n_pessoas_dia2" autofocus
+                                        placeholder="Numero de pessoas presentes no stand/mesa?"
+                                        value="@if (isset($logistica->n_pessoas_dia2)) {{ $logistica->n_pessoas_dia2 }} @endif">
                                 </div>
                             </div>
+                            <br>
+                            <hr>
+                            <br>
 
-                            <div class="single-form" style="margin-top:2%">
-                                <h2 class="font-semibold text-xl text-gray-800 leading-tight"
-                                    style="font-size:1.2rem;">Número de almoços (Almoços pagos no dia do evento,
-                                    diretamente ao prestador de serviço)</h2>
-                                <input type="text" name="num_almocos_dia2" id="num_almocos_dia2"
-                                    autocomplete="num_almocos_dia2" autofocus placeholder="Número de almoços"
-                                    value="@if (isset($logistica->num_almocos_dia2)) {{ $logistica->num_almocos_dia2 }} @endif">
-                            </div>
                             <div class="row" style="margin-top:1.2rem;">
                                 <div class="col-md-6">
-                                    <label>Montagem</label>
+                                    <h2 class="font-semibold text-xl text-gray-800 leading-tight"
+                                        style="font-size:1.2rem;">Montagem</h2>
                                     <select class="form-select" name="montagem_dia2">
                                         <option value="" disabled selected>Selecione uma opção </option>
 
@@ -217,9 +256,11 @@
                                             @endif
                                         @endforeach
                                     </select>
+
                                 </div>
                                 <div class="col-md-6">
-                                    <label>Desmontagem</label>
+                                    <h2 class="font-semibold text-xl text-gray-800 leading-tight"
+                                        style="font-size:1.2rem;">Desmontagem</h2>
                                     <select class="form-select" name="desmontagem_dia2">
                                         <option value="" disabled selected>Selecione uma opção </option>
                                         @foreach ($slot_desmontagem2 as $slot_desmontagem22)
@@ -232,6 +273,44 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h2 class="font-semibold text-xl text-gray-800 leading-tight"
+                                        style="font-size:0.8rem;">Nome e Matricula</h2>
+                                    <input style="width:50%;" type="text" name="info_montagem_2"
+                                        id="info_montagem_2" autocomplete="info_montagem_2" autofocus
+                                        placeholder="Ex:Nome condutor;Matricula"
+                                        value="@if (isset($logistica->info_montagem_2)) {{ $logistica->info_montagem_2 }} @endif">
+                                </div>
+                                <div class="col-md-6">
+                                    <h2 class="font-semibold text-xl text-gray-800 leading-tight"
+                                        style="font-size:0.8rem;">Nome e Matricula</h2>
+                                    <input style="width:50%;" type="text" name="info_desmontagem_2"
+                                        id="info_desmontagem_2" autocomplete="info_desmontagem_2" autofocus
+                                        placeholder="Ex:Nome condutor;Matricula"
+                                        value="@if (isset($logistica->info_desmontagem_2)) {{ $logistica->info_desmontagem_2 }} @endif">
+                                </div>
+                            </div>
+                            <p><b><span style="color:red">*Nota:</span></b> Se for um prestador de serviço nas
+                                montagens e desmontagens é necessário inserir o nome e o numero da matrícula da empresa
+                                responsável
+                            </p>
+                            <br>
+                            <hr>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <h2 class="font-semibold text-xl text-gray-800 leading-tight"
+                                        style="font-size:1.2rem;">Estacionamento</h2>
+                                    <p><b><span style="color:red">*Nota:</span></b> Direito apenas a um estacionamento
+                                    </p>
+                                    <input type="text" name="info_estacionamento_2" id="info_estacionamento_2"
+                                        autocomplete="info_estacionamento_2" autofocus
+                                        placeholder="Ex:Nome condutor;Matricula"
+                                        value="@if (isset($logistica->info_estacionamento_2)) {{ $logistica->info_estacionamento_2 }} @endif">
+                                </div>
+                            </div>
+
                         @endif
 
                         <button type="submit" id="editBtn" class="btn"
