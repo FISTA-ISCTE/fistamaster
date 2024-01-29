@@ -26,6 +26,26 @@ use App\Models\Logistica;
 Route::get('/eventos', function () {
     return view('eventos');
 });
+
+Route::get('/acertar', function () {
+    // Busca todas as empresas
+    $empresas = Empresa::all();
+
+    foreach ($empresas as $empresa) {
+        // Verifica se já existe uma entrada na tabela logistica para esta empresa
+        $logisticaExistente = Logistica::where('id_empresa', $empresa->id)->first();
+
+        if (!$logisticaExistente) {
+            // Cria uma nova entrada na tabela logistica para a empresa
+            $logistica = new Logistica();
+            $logistica->id_empresa = $empresa->id;
+            // Defina aqui outras propriedades de Logistica, se necessário
+            $logistica->save();
+        }
+    }
+
+    return "Linhas de logística criadas/atualizadas para todas as empresas.";
+});
 Route::get('eventos/tecnologias', function () {
     return view('eventos.tecnologias');
 });
