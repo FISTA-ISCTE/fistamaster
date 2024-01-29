@@ -20,7 +20,7 @@
                         <div class="single-blog">
                             <div class="blog-image">
                                 <a data-toggle="modal" data-target="#workshopModal{{ $workshop->id }}">
-                                    <img src="{{ 'http://127.0.0.1:8000/storage/' . $workshop->image }}" alt=""
+                                    <img src="{{ 'https://fista.iscte-iul.pt/storage/' . $workshop->image }}" alt=""
                                         style="width: 416px; height: 247px; object-fit: cover;">
                                 </a>
                                 <div class="top-meta">

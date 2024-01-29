@@ -2,7 +2,7 @@
     <div class="single-blog-post single-blog">
 
         <div class="blog-image" style="justify-content: center;display: flex;">
-            <img src="{{ 'http://127.0.0.1:8000/storage/' . $workshop->image }}" alt=""
+            <img src="{{ 'https://fista.iscte-iul.pt/storage/' . $workshop->image }}" alt=""
                 style="width: 857px; height: 447px; object-fit: cover;">
             <div class="top-meta">
                 <span class="date"><span>
