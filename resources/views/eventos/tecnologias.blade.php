@@ -35,7 +35,7 @@
                                 <!-- Single Case Study Start -->
                                 <div class="single-case-study">
                                     <div class="case-study-img">
-                                        <a href="/concurso-de-ideias"><img
+                                        <a href="/ctf"><img
                                                 src="{{ asset('img/fotos/pessoa-trabalhando-html-no-computador.jpg') }}" alt=""></a>
                                     </div>
                                     <div class="case-study-content">
