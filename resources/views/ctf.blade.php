@@ -27,7 +27,7 @@
                                     pela Academia de Redes e Segurança da ISTA, é o desafio ideal para ti!</p>
                                 <p style="margin-top:20px;font-size: 18px;padding:0 2% 0 2%; color:black"> Sponsor:</p>
 
-                                <!--<img style="height: 3rem;" src="img/logos/GlobalLogo_NTTDATA_Black.png" alt="">-->
+                                <img style="height: 3rem;" src="img/logos/AF_Minsait_LOG_RGB_POS_vertical.png" alt="">
 
                                 <!--<p>
                                                             <a class="projeto" target="_blank" href="https://arquivo.pt/noFrame/replay/20220729095253/https://fista.iscte-iul.pt/img/concurso-ideias/Regulamento.pdf"><button class="btn-fista" style="display:block;margin-left:auto;margin-right:auto;margin-top:5%">Regulamento</button></a>
@@ -43,7 +43,7 @@
                             <div class="d-flex flex-wrap justify-content-around">
                                 <div class="pt-4 ">
                                     <a class="btn"
-                                        href="/brevemente">Regulamento</a>
+                                        href="https://fista.iscte-iul.pt/assets/files/Regulamento CTF.pdf">Regulamento</a>
                                 </div>
                                 <div class="pt-4 pb-4 pt-md-4 ">
 
