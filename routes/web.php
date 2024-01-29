@@ -27,6 +27,9 @@ Route::get('/eventos', function () {
     return view('eventos');
 });
 
+Route::get('/ctf', function () {
+    return view('ctf');
+});
 
 Route::get('eventos/tecnologias', function () {
     return view('eventos.tecnologias');
@@ -40,6 +43,8 @@ Route::get('/confirmacao', function () {
     return view('confirmacao');
 });
 Route::post('/resgistar-concurso-ideias', [PageController::class, 'resgistar_concurso_ideias'])->name('resgistar_concurso_ideias');
+
+Route::post('/resgistar-concurso-ctf', [PageController::class, 'resgistar_concurso_ctf'])->name('resgistar_concurso_ctf');
 
 Route::get('/concurso-de-ideias', function () {
     return view('concurso-ideias');

@@ -8,7 +8,7 @@
    <img src="img/Mascote_SemFundo.png" style="height:15rem;margin-top:5rem;" alt="Tekas-mascote FISTA">
 
    <div class="content" style="margin-left: 3rem;margin-right: 3rem">
-<h2> Estás inscrito no nosso concurso de ideias. <br> Envia para o nosso email: <a href="mailto:fista@iscte-iul.pt">fista@iscte-iul.pt</a> todos os documentos complementares.</h2>
+<h2> Estás inscrito no concurso. <br> Envia para o nosso email: <a href="mailto:fista@iscte-iul.pt">fista@iscte-iul.pt</a> alguma dúvida que tenhas.</h2>
 </div>
 
 <button onclick="goBack()" style="margin-top:3rem;" class="btn btn-light">
