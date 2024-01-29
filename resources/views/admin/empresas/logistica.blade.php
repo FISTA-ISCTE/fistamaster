@@ -168,6 +168,37 @@
                                         value="@if (isset($logistica->info_estacionamento_1)) {{ $logistica->info_estacionamento_1 }} @endif">
                                 </div>
                             </div>
+                            <br>
+                            <hr>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <h2 class="font-semibold text-xl text-gray-800 leading-tight"
+                                        style="font-size:1.2rem;">Slots Almoços</h2>
+                                    <!--<p><b><span style="color:red">*Nota:</span></b> -->
+                                    </p>
+
+                                    @if (!isset($logistica->almocos_dia1))
+                                        <select class="form-select" name="almocos_dia1">
+                                            <option value="" disabled selected>Selecione uma opção</option>
+
+                                            <option value="12h-13h" @if ($contagemAlmocos12h_dia1 > 25) disabled @endif>
+                                                12h00 - 13h00
+                                            </option>
+                                            <option value="13h-14h" @if ($contagemAlmocos13h_dia1 > 25) disabled @endif>
+                                                13h00 - 14h00
+                                            </option>
+                                        </select>
+                                    @else
+                                        <select class="form-select" style="display: none;" name="almocos_dia1">
+                                            <option value="{{ $logistica->almocos_dia1 }}">
+                                            </option>
+                                            <!-- Adicione mais opções aqui -->
+                                        </select>
+                                        <p>Almoços das {{ $logistica->almocos_dia1 }}</p>
+                                    @endif
+                                </div>
+                            </div>
 
                         @endif
 
@@ -308,6 +339,39 @@
                                         autocomplete="info_estacionamento_2" autofocus
                                         placeholder="Ex:Nome condutor;Matricula"
                                         value="@if (isset($logistica->info_estacionamento_2)) {{ $logistica->info_estacionamento_2 }} @endif">
+                                </div>
+                            </div>
+                            <br>
+                            <hr>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <h2 class="font-semibold text-xl text-gray-800 leading-tight"
+                                        style="font-size:1.2rem;">Almoços</h2>
+                                    <!--<p><b><span style="color:red">*Nota:</span></b> -->
+                                    </p>
+
+                                    @if (!isset($logistica->almocos_dia2))
+                                        <select class="form-select" name="almocos_dia2">
+                                            <option value="" disabled selected>Selecione uma opção</option>
+
+                                            <option value="12h-13h"
+                                                @if ($contagemAlmocos12h_dia2 >= 25) disabled @endif>
+                                                12h00 - 13h00
+                                            </option>
+                                            <option value="13h-14h"
+                                                @if ($contagemAlmocos13h_dia2 >= 25) disabled @endif>
+                                                13h00 - 14h00
+                                            </option>
+                                        </select>
+                                    @else
+                                        <select class="form-select" style="display: none;" name="almocos_dia1">
+                                            <option value="{{ $logistica->almocos_dia2 }}">
+                                            </option>
+                                            <!-- Adicione mais opções aqui -->
+                                        </select>
+                                        <p>Almoços das {{ $logistica->almocos_dia2 }}</p>
+                                    @endif
                                 </div>
                             </div>
 

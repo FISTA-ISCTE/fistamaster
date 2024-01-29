@@ -20,7 +20,7 @@
                                     <div class="single-blog-post single-blog">
                                         <div class="blog-image">
                                             <a href="blog-details.html"><img
-                                                    src="https://fista.iscte-iul.pt/storage/users/empresas/341699030911.png"
+                                                    src="https://fista.iscte-iul.pt/storage/users/empresas/341705508248.jpg"
                                                     alt=""></a>
                                             <div class="top-meta">
                                                 <span class="date"><span>08</span>Aug</span>
@@ -53,7 +53,7 @@
                                     <div class="single-blog-post single-blog">
                                         <div class="blog-image">
                                             <a href="blog-details.html"><img
-                                                    src="https://fista.iscte-iul.pt/storage/users/empresas/341699030911.png"
+                                                    src="https://fista.iscte-iul.pt/storage/users/empresas/341705508248.jpg"
                                                     alt=""></a>
                                             <div class="top-meta">
                                                 <span class="date"><span>08</span>Aug</span>
@@ -83,7 +83,7 @@
                                     <div class="single-blog-post single-blog">
                                         <div class="blog-image">
                                             <a href="blog-details.html"><img
-                                                    src="https://fista.iscte-iul.pt/storage/users/empresas/341699030911.png"
+                                                    src="https://fista.iscte-iul.pt/storage/users/empresas/341705508248.jpg"
                                                     alt=""></a>
                                             <div class="top-meta">
                                                 <span class="date"><span>08</span>Aug</span>

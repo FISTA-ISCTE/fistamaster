@@ -74,7 +74,7 @@
 
                 @if (auth()->user() &&
                         auth()->user()->hasRole('admin'))
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 1.5rem;">
                         <x-nav-link href="{{ route('admin.dashboard') }}" :active="request()->routeIs('admin.dashboard')">
                             {{ __('Dashboard') }}
                         </x-nav-link>
@@ -83,7 +83,7 @@
 
                 @if (auth()->user() &&
                         auth()->user()->hasRole('admin'))
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 1.5rem;">
                         <x-nav-link href="{{ route('admin.empresas') }}" :active="request()->routeIs('admin.empresas')">
                             {{ __('Empresas') }}
                         </x-nav-link>
@@ -92,7 +92,7 @@
 
                 @if (auth()->user() &&
                         auth()->user()->hasRole('empresa'))
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 1.5rem;">
                         <x-nav-link href="{{ route('empresa.dashboard') }}" :active="request()->routeIs('empresa.dashboard')">
                             {{ __('Dashboard') }}
                         </x-nav-link>
@@ -101,7 +101,7 @@
 
                 @if (auth()->user() &&
                         auth()->user()->hasRole('empresa'))
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 1.5rem;">
                         <x-nav-link href="{{ route('empresa.faturacao') }}" :active="request()->routeIs('empresa.faturacao')">
                             {{ __('Faturação') }}
                         </x-nav-link>
@@ -111,12 +111,31 @@
                 @if (auth()->user() &&
                         auth()->user()->hasRole('empresa') && auth()->user()->empresa->modelo_workshop === "ws_presencial")
 
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 1.5rem;">
                         <x-nav-link href="{{ route('empresa.workshop') }}" :active="request()->routeIs('empresa.workshop')">
                             {{ __('Workshop') }}
                         </x-nav-link>
                     </div>
                 @endif
+                @if (auth()->user() &&
+                        auth()->user()->hasRole('empresa') && auth()->user()->empresa->modelo_workshop === "si")
+
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 1.5rem;">
+                        <x-nav-link href="{{ route('empresa.itspeedtalks') }}" :active="request()->routeIs('empresa.itspeedtalks')">
+                            {{ __('It Speed Talks') }}
+                        </x-nav-link>
+                    </div>
+                @endif
+
+                @if (auth()->user() &&
+                        auth()->user()->hasRole('empresa'))
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 1.5rem;">
+                        <x-nav-link href="{{ route('empresa.logistica') }}" :active="request()->routeIs('empresa.logistica')">
+                            {{ __('Logistica') }}
+                        </x-nav-link>
+                    </div>
+                @endif
+
 
 
                 <!-- Workshop caso exista-->

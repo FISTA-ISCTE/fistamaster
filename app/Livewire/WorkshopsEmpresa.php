@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 
 class WorkshopsEmpresa extends Component
 {
+
     use WithFileUploads;
 
     public $title;
@@ -22,29 +23,37 @@ class WorkshopsEmpresa extends Component
     public $photoPreview;
     public $schedule;
     public $duration;
+    public $image;
     public $availableSchedules = []; // Horários disponíveis
 
     public function mount()
     {
         $empresa = Empresa::where("id", Auth::user()->id_empresa)->first();
         $workshop = Workshop::where("company", $empresa->nome_empresa)->first();
+        if (isset($workshop->image)) {
+            $this->image = "https://fista.iscte-iul.pt/storage/" . $workshop->image;
+        }
+
         if (isset($workshop->title)) {
             $this->title = $workshop->title;
-        }else{
+        } else {
             $this->title = "";
         }
         if (isset($workshop->description)) {
             $this->description = $workshop->description;
-        }else{
+        } else {
             $this->description = "";
         }
         if (isset($workshop->requirements)) {
             $this->requirements = $workshop->requirements;
-        }else{
+        } else {
             $this->requirements = "";
         }
         if (isset($workshop->begin)) {
             $this->schedule = $workshop->begin;
+        }
+        if (isset($workshop->atendees)) {
+            $this->atendees = $workshop->atendees;
         }
         if (isset($this->schedule)) {
             $this->data = "Inicio: " . $workshop->begin . " Fim: " . $workshop->end;
@@ -83,13 +92,9 @@ class WorkshopsEmpresa extends Component
 
     public function submit()
     {
+
         $this->validate([
-            'title' => 'required',
-            'description' => 'required',
-            'requirements' => 'required',
             'photo' => 'image|max:2024', // Validação de imagem
-            'schedule' => 'required',
-            'duration' => 'required',
         ]);
 
         // Tratamento dos horários
@@ -127,7 +132,7 @@ class WorkshopsEmpresa extends Component
         // Salva ou atualiza o registro no banco de dados
         $workshop->save();
 
-        session()->flash('success', 'Token inserido com sucesso!');
+        session()->flash('success', 'Workkshop registado com sucesso!');
         $this->reset(); // Resetar o formulário
         // Atualizar horários disponíveis
     }

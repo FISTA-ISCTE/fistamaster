@@ -11,19 +11,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon_fista.jpg') }}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- CSS
  ============================================ -->
 
     <!-- Icon Font CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/plugins/all.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('assets/css/plugins/flaticon.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins/flaticon.css') }}">
 
     <!-- Plugins CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/plugins/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('assets/css/plugins/swiper-bundle.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('assets/css/plugins/aos.css')}}">
-    <link rel="stylesheet" href="{{ asset('assets/css/plugins/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins/swiper-bundle.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins/aos.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins/magnific-popup.css') }}">
 
     <!-- JS  ============================================ -->
     <script src="{{ asset('assets/js/vendor/jquery-1.12.4.min.js') }}"></script>
@@ -43,7 +44,7 @@
     <script src="{{ asset('assets/js/plugins/jquery.magnific-popup.min.js') }}"></script>
 
     <!-- Main Style CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
     @livewireStyles
     <!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
@@ -72,12 +73,12 @@
 
                     <!-- Header Wrap Start  -->
                     <div class="header-wrap">
-                        <div class="header-logo logo-white" >
-                            <a class="logo-white"  href="/"><img style="padding: 1.5rem;" src="{{ asset('img/fista/branco_fista.png')}}"
-                                    alt=""></a>
+                        <div class="header-logo logo-white">
+                            <a class="logo-white" href="/"><img style="padding: 1.5rem;"
+                                    src="{{ asset('img/fista/branco_fista.png') }}" alt=""></a>
                         </div>
                         <div class="header-logo logo-black">
-                            <a class="logo-black" href="/"><img src="{{ asset('img/fista/original_fista.png')}}"
+                            <a class="logo-black" href="/"><img src="{{ asset('img/fista/original_fista.png') }}"
                                     alt=""></a>
                         </div>
 
@@ -145,7 +146,7 @@
                 <div class="offcanvas-header">
                     <!-- Offcanvas Logo Start -->
                     <div class="offcanvas-logo">
-                        <a href="/"><img src="{{ asset('img/fista/original_fista.png')}}" alt=""></a>
+                        <a href="/"><img src="{{ asset('img/fista/original_fista.png') }}" alt=""></a>
                     </div>
                     <!-- Offcanvas Logo End -->
                     <button type="button" class="close-btn" data-bs-dismiss="offcanvas"><i
@@ -201,7 +202,7 @@
             <!-- Footer content -->
             <!-- Footer Section Start -->
             <div class="section footer-section footer-section-04"
-                style="background-image: url({{ asset('assets/images/bg/footer-bg3.jpg')}});">
+                style="background-image: url({{ asset('assets/images/bg/footer-bg3.jpg') }});">
 
                 <div class="container">
                     <!-- Footer Widget Wrap Start -->
@@ -210,8 +211,8 @@
                             <div class="col-lg-3 col-sm-6">
                                 <!-- Footer Widget Start -->
                                 <div class="footer-widget-about">
-                                    <a class="footer-logo" href="/"><img src="{{ asset('img/fista/original_fista.png')}}"
-                                            alt="Logo"></a>
+                                    <a class="footer-logo" href="/"><img
+                                            src="{{ asset('img/fista/original_fista.png') }}" alt="Logo"></a>
 
                                     <!-- VAI SER O NOVO LOGO DO FISTA
                                     <a class="footer-logo" href="index.html"><img src="assets/images/logo.png" alt="Logo"></a>
@@ -354,28 +355,27 @@
 
     <!-- JS
     ============================================ -->
-    <script src="{{ asset('assets/js/vendor/jquery-1.12.4.min.js')}}"></script>
-    <script src="{{ asset('assets/js/vendor/modernizr-3.11.2.min.js')}}"></script>
+    <script src="{{ asset('assets/js/vendor/jquery-1.12.4.min.js') }}"></script>
+    <script src="{{ asset('assets/js/vendor/modernizr-3.11.2.min.js') }}"></script>
 
     <!-- Bootstrap JS -->
-    <script src="{{ asset('assets/js/plugins/popper.min.js')}}"></script>
-    <script src="{{ asset('assets/js/plugins/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('assets/js/plugins/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins/bootstrap.min.js') }}"></script>
 
     <!-- Plugins JS -->
-    <script src="{{ asset('assets/js/plugins/swiper-bundle.min.js')}}"></script>
-    <script src="{{ asset('assets/js/plugins/aos.js')}}"></script>
-    <script src="{{ asset('assets/js/plugins/waypoints.min.js')}}"></script>
-    <script src="{{ asset('assets/js/plugins/back-to-top.js')}}"></script>
-    <script src="{{ asset('assets/js/plugins/jquery.counterup.min.js')}}"></script>
-    <script src="{{ asset('assets/js/plugins/appear.min.js')}}"></script>
-    <script src="{{ asset('assets/js/plugins/jquery.magnific-popup.min.js')}}"></script>
-
+    <script src="{{ asset('assets/js/plugins/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins/aos.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins/waypoints.min.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins/back-to-top.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins/jquery.counterup.min.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins/appear.min.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins/jquery.magnific-popup.min.js') }}"></script>
 
     <!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
 
     @livewireScripts
     <!-- Main JS -->
-    <script src="{{ asset('assets/js/main.js')}}"></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
 </body>
 
 </html>

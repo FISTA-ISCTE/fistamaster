@@ -5,6 +5,7 @@ use App\Http\Controllers\PageController;
 use App\Models\Empresa;
 use App\Models\LogisticaSlots;
 use App\Models\Team;
+use App\Models\Workshop;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmpresaController;
@@ -55,6 +56,11 @@ Route::get('/', function () {
     $countdiamount = $empresasdiamond->count();
     return view('landing_page')->with(['empresasdiamount' => $empresasdiamond, 'countdiamount' => $countdiamount]);
 });
+Route::get('/workshops', function () {
+    $workshops = Workshop::where('show', 1)->get();
+    return view('workshops')->with(['workshops'=> $workshops]);
+})->name('workshops');
+
 Route::get('/empresas', function () {
     $empresaspremium = Empresa::where('plano', 'premium')->where('mostrar', '1')->get();
     $empresasdiamond = Empresa::where('plano', 'diamond')->where('mostrar', '1')->get();
@@ -116,6 +122,10 @@ Route::middleware([
             return view('admin.empresas.dashboard')->with(['company' => $company]);
         })->name('empresa.dashboard');
 
+        Route::get('/itspeedtalks', function () {
+            return view('admin.empresas.itspeedtalks');
+        })->name('empresa.itspeedtalks');
+
         Route::get('/faturacao', function () {
             $company = Auth::user()->id_empresa;
             $faturacao = Billing::where('id_empresa', $company)->first();
@@ -133,7 +143,12 @@ Route::middleware([
             $slot_desmontagem1 = LogisticaSlots::where('tipo', "desmontagem")->where('dia', "1")->get();
             $slot_montagem2 = LogisticaSlots::where('tipo', "montagem")->where('dia', "2")->get();
             $slot_desmontagem2 = LogisticaSlots::where('tipo', "desmontagem")->where('dia', "2")->get();
-            return view('admin.empresas.logistica')->with(['empresa' => $empresa, 'logistica' => $logistica, 'slot_montagem1' => $slot_montagem1, 'slot_montagem2' => $slot_montagem2, 'slot_desmontagem1' => $slot_desmontagem1, 'slot_desmontagem2' => $slot_desmontagem2]);
+
+            $contagemAlmocos12h_dia1 = Logistica::where("almocos_dia1", "12h-13h")->count();
+            $contagemAlmocos13h_dia1 = Logistica::where("almocos_dia1", "13h-14h")->count();
+            $contagemAlmocos12h_dia2 = Logistica::where("almocos_dia2", "12h-13h")->count();
+            $contagemAlmocos13h_dia2 = Logistica::where("almocos_dia2", "13h-14h")->count();
+            return view('admin.empresas.logistica')->with(['contagemAlmocos12h_dia1'=> $contagemAlmocos12h_dia1, 'contagemAlmocos13h_dia1'=> $contagemAlmocos13h_dia1, 'contagemAlmocos12h_dia2'=> $contagemAlmocos12h_dia2,'contagemAlmocos13h_dia2'=> $contagemAlmocos13h_dia2,'empresa' => $empresa, 'logistica' => $logistica, 'slot_montagem1' => $slot_montagem1, 'slot_montagem2' => $slot_montagem2, 'slot_desmontagem1' => $slot_desmontagem1, 'slot_desmontagem2' => $slot_desmontagem2]);
 
         })->name('empresa.logistica');
 
