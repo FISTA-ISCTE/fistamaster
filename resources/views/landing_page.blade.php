@@ -239,7 +239,7 @@
                                             alt=""></a>
                                 </div>
                                 <div class="service-text">
-                                    <h3 class="title"><a href="/brevemente">Workshops</a></h3>
+                                    <h3 class="title"><a href="/workshops">Workshops</a></h3>
                                 </div>
                             </div>
                             <!-- Service Item End -->
