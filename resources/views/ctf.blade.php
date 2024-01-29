@@ -23,16 +23,17 @@
                             <div>
                                 <p style="margin-top:20px;font-size: 23px;text-align:center;padding: 0 2% 0 2%">Gostavas de
                                     testar a tua criatividade, agilidade mental, conhecimento vários, trabalho de equipa e
-                                    resiliência, tudo numa competição contra-relógio? O Concurso CTF do FISTA23, organizado
+                                    resiliência, tudo numa competição contra-relógio? O Concurso CTF do FISTA24, organizado
                                     pela Academia de Redes e Segurança da ISTA, é o desafio ideal para ti!</p>
                                 <p style="margin-top:20px;font-size: 18px;padding:0 2% 0 2%; color:black"> Sponsor:</p>
 
                                 <img style="height: 3rem;" src="img/logos/AF_Minsait_LOG_RGB_POS_vertical.png"
                                     alt="">
+                                <img style="height: 3rem;" src="img/logos/academia.jpg" alt="">
 
                                 <!--<p>
-                                                                <a class="projeto" target="_blank" href="https://arquivo.pt/noFrame/replay/20220729095253/https://fista.iscte-iul.pt/img/concurso-ideias/Regulamento.pdf"><button class="btn-fista" style="display:block;margin-left:auto;margin-right:auto;margin-top:5%">Regulamento</button></a>
-                                                            </p>-->
+                                                                        <a class="projeto" target="_blank" href="https://arquivo.pt/noFrame/replay/20220729095253/https://fista.iscte-iul.pt/img/concurso-ideias/Regulamento.pdf"><button class="btn-fista" style="display:block;margin-left:auto;margin-right:auto;margin-top:5%">Regulamento</button></a>
+                                                                    </p>-->
                             </div>
                         </div>
                         <!--<p style="text-align: center;font-size: 50px;font-weight: bold;margin-top:20px">EM BREVE<hr/></p>-->
