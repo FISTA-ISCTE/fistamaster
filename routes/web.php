@@ -27,25 +27,7 @@ Route::get('/eventos', function () {
     return view('eventos');
 });
 
-Route::get('/acertar', function () {
-    // Busca todas as empresas
-    $empresas = Empresa::all();
 
-    foreach ($empresas as $empresa) {
-        // Verifica se já existe uma entrada na tabela logistica para esta empresa
-        $logisticaExistente = Logistica::where('id_empresa', $empresa->id)->first();
-
-        if (!$logisticaExistente) {
-            // Cria uma nova entrada na tabela logistica para a empresa
-            $logistica = new Logistica();
-            $logistica->id_empresa = $empresa->id;
-            // Defina aqui outras propriedades de Logistica, se necessário
-            $logistica->save();
-        }
-    }
-
-    return "Linhas de logística criadas/atualizadas para todas as empresas.";
-});
 Route::get('eventos/tecnologias', function () {
     return view('eventos.tecnologias');
 });
@@ -162,6 +144,7 @@ Route::middleware([
             $slot_montagem1 = LogisticaSlots::where('tipo', "montagem")->where('dia', "1")->get();
             $slot_desmontagem1 = LogisticaSlots::where('tipo', "desmontagem")->where('dia', "1")->get();
             $slot_montagem2 = LogisticaSlots::where('tipo', "montagem")->where('dia', "2")->get();
+
             $slot_desmontagem2 = LogisticaSlots::where('tipo', "desmontagem")->where('dia', "2")->get();
 
             $contagemAlmocos12h_dia1 = Logistica::where("almocos_dia1", "12h-13h")->count();

@@ -284,6 +284,9 @@
                                             @if (isset($logistica->montagem_id9))
                                                 <option selected value="{{ $slot_montagem22->id }}">
                                                     {{ $slot_montagem22->slot }}</option>
+                                            @else
+                                                <option value="{{ $slot_montagem22->id }}">
+                                                    {{ $slot_montagem22->slot }}</option>
                                             @endif
                                         @endforeach
                                     </select>
@@ -295,9 +298,12 @@
                                     <select class="form-select" name="desmontagem_dia2">
                                         <option value="" disabled selected>Selecione uma opção </option>
                                         @foreach ($slot_desmontagem2 as $slot_desmontagem22)
-                                            @if (isset($logistica->montagem_id9))
+                                            @if (isset($logistica->desmontagem_id9))
                                                 <option selected value="{{ $slot_desmontagem22->id }}">
-                                                    {{ $slot_desmontagem22->slot }} </option>
+                                                    {{ $slot_desmontagem22->slot }}</option>
+                                            @else
+                                                <option value="{{ $slot_desmontagem22->id }}">
+                                                    {{ $slot_desmontagem22->slot }}</option>
                                             @endif
                                         @endforeach
                                         <!-- Adicione mais opções aqui -->
