@@ -244,7 +244,7 @@
                             <!-- Service Item Start -->
                             <div class="service-item-03">
                                 <div class="service-img">
-                                    <a href="/brevemente"><img src="assets/images/brand/13150512855_0a2cd5075e_c.jpg"
+                                    <a href="/workshops"><img src="assets/images/brand/13150512855_0a2cd5075e_c.jpg"
                                             alt=""></a>
                                 </div>
                                 <div class="service-text">
