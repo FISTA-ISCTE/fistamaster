@@ -22,7 +22,7 @@
                             <!--<button onclick="window.location.href ='https://fista.iscte-iul.pt/storage/settings/November2020/Enunciado%20%20Concurso%20de%20Ideias%202021.pdf'" class="btn-fista" style="margin-bottom:10px;display: block;margin-left: auto;margin-right: auto">Conhece o enunciado!</button>-->
                             <div>
                                 <p style="margin-top:20px;font-size: 23px;text-align:center;padding: 0 2% 0 2%">Gostavas de
-                                    testar a tua criatividade, agilidade mental, conhecimento vários, trabalho de equipa e
+                                    testar a tua criatividade, agilidade mental, trabalho de equipa e
                                     resiliência, tudo numa competição contra-relógio? O Concurso CTF do FISTA24, organizado
                                     pela Academia de Redes e Segurança da ISTA, é o desafio ideal para ti!</p>
                                 <p style="margin-top:20px;font-size: 18px;padding:0 2% 0 2%; color:black"> Sponsor:</p>
