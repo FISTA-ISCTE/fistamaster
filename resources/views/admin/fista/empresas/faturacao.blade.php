@@ -166,7 +166,7 @@
                                             }
                                         </script>
 
-                                      <!--  <button class="btn"
+                                        <!--  <button class="btn"
                                             style="background-color:black; color:#fff">Logistica</button>-->
                                     </div>
                                 </div>
@@ -181,28 +181,40 @@
                                         <h2 class="font-semibold text-xl text-gray-800 leading-tight"
                                             style="font-size:0.8rem;">
                                             NIF</h2>
-                                        <input type="text" disabled name="website" id="webInput" class="form-control mb-3"
-                                            value="{{$fatura->nif}}" placeholder="Sem resposta">
+                                        <input type="text" disabled name="website" id="webInput"
+                                            class="form-control mb-3" value="{{ $fatura->nif }}"
+                                            placeholder="Sem resposta">
+
+                                            <h2 class="font-semibold text-xl text-gray-800 leading-tight"
+                                                style="font-size:0.8rem;">
+                                                PO</h2>
+                                            <input type="text" disabled name="website" id="webInput"
+                                                class="form-control mb-3" value="{{ $fatura->numeroOrdemCompra }}"
+                                                placeholder="Sem PO">
+
 
                                         <div class="row">
                                             <div class="col-md-8">
                                                 <h2 class="font-semibold text-xl text-gray-800 leading-tight"
                                                     style="font-size:0.8rem;">Nome de Empresa para Faturação</h2>
                                                 <input disabled type="text" name="website" id="webInput"
-                                                    class="form-control mb-3" value="{{$fatura->nome_fiscal}}" placeholder="Sem resposta">
+                                                    class="form-control mb-3" value="{{ $fatura->nome_fiscal }}"
+                                                    placeholder="Sem resposta">
                                             </div>
                                             <div class="col-md-8">
                                                 <h2 class="font-semibold text-xl text-gray-800 leading-tight"
                                                     style="font-size:0.8rem;">Morada</h2>
                                                 <input disabled type="text" name="website" id="webInput"
-                                                    class="form-control mb-3" value="{{$fatura->morada}}" placeholder="Sem resposta">
+                                                    class="form-control mb-3" value="{{ $fatura->morada }}"
+                                                    placeholder="Sem resposta">
                                             </div>
                                             <div class="col-md-8">
                                                 <h2 class="font-semibold text-xl text-gray-800 leading-tight"
                                                     style="font-size:0.8rem;">Pretende número de ordem de compra na
                                                     fatura?</h2>
                                                 <input disabled type="text" name="linkedin" id="liInput"
-                                                    class="form-control mb-3" value="{{$fatura->s_n_numeroOrdemCompra}}"
+                                                    class="form-control mb-3"
+                                                    value="{{ $fatura->s_n_numeroOrdemCompra }}"
                                                     placeholder="Sem resposta">
                                             </div>
 
@@ -210,19 +222,22 @@
                                                 <h2 class="font-semibold text-xl text-gray-800 leading-tight"
                                                     style="font-size:0.8rem;">Pretende faturação ainda em 2023?</h2>
                                                 <input type="text" disabled id="liInput" class="form-control mb-3"
-                                                value="{{$fatura->faturacao2023}}" placeholder="Sem resposta (1- sim, 0 é não)">
+                                                    value="{{ $fatura->faturacao2023 }}"
+                                                    placeholder="Sem resposta (1- sim, 0 é não)">
                                             </div>
                                             <div class="col-md-8">
                                                 <h2 class="font-semibold text-xl text-gray-800 leading-tight"
                                                     style="font-size:0.8rem;">Nome</h2>
                                                 <input type="text" disabled id="liInput" class="form-control mb-3"
-                                                value="{{$empresa->nome_user}}" placeholder="Sem resposta (1- sim, 0 é não)">
+                                                    value="{{ $empresa->nome_user }}"
+                                                    placeholder="Sem resposta (1- sim, 0 é não)">
                                             </div>
                                             <div class="col-md-8">
                                                 <h2 class="font-semibold text-xl text-gray-800 leading-tight"
                                                     style="font-size:0.8rem;">Email</h2>
                                                 <input type="text" disabled id="liInput" class="form-control mb-3"
-                                                value="{{$empresa->email}}" placeholder="Sem resposta (1- sim, 0 é não)">
+                                                    value="{{ $empresa->email }}"
+                                                    placeholder="Sem resposta (1- sim, 0 é não)">
                                             </div>
 
                                         </div>
