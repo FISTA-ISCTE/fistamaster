@@ -36,7 +36,7 @@
                                 <div class="single-case-study">
                                     <div class="case-study-img">
                                         <a href="/ctf"><img
-                                                src="{{ asset('img/fotos/pessoa-trabalhando-html-no-computador.jpg') }}" alt=""></a>
+                                                src="{{ asset('img/fotos/2.png') }}" alt=""></a>
                                     </div>
                                     <div class="case-study-content">
                                         <h3 class="title"><a href="/ctf">Concurso de CiberSegurança</a></h3>
