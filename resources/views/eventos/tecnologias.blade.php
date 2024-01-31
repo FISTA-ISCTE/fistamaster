@@ -17,9 +17,9 @@
                 <div class="case-study-content-wrap">
                     <div class="swiper-container case-study-active">
                         <div class="row justify-content-center">
-                            <div class="col-md-4">
+                            <div class="col-md-4" >
                                 <!-- Single Case Study Start -->
-                                <div class="single-case-study">
+                                <div class="single-case-study" style="margin-top:1.5rem;">
                                     <div class="case-study-img">
                                         <a href="/concurso-de-ideias"><img
                                                 src="{{ asset('img/conjunto/concurso_ideias.png') }}" alt=""></a>
@@ -31,9 +31,9 @@
                                 </div>
                                 <!-- Single Case Study End -->
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4" >
                                 <!-- Single Case Study Start -->
-                                <div class="single-case-study">
+                                <div class="single-case-study" style="margin-top:1.5rem;">
                                     <div class="case-study-img">
                                         <a href="/ctf"><img
                                                 src="{{ asset('img/fotos/2.png') }}" alt=""></a>
