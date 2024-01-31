@@ -328,7 +328,7 @@ function camposEmFalta($empresa, $faturacao, $logistica)
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="alert alert-warning" style="width: 100%;font-size:1rem;" role="alert">
-                Vizualisa <a href="https//fista.iscte-iul.pt/img/fista/Booklet_FISTA24.pdf">AQUI</a> o Booklet!
+                Vizualisa <a href="https://fista.iscte-iul.pt/img/fista/Booklet_FISTA24.pdf">AQUI</a> o Booklet!
             </div>
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <div style="margin-top:3rem;margin-bottom:3rem; position: relative;">
