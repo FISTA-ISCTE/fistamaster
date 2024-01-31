@@ -301,7 +301,7 @@
                                             @if (isset($logistica->desmontagem_id9) && $logistica->desmontagem_id9 == $slot_desmontagem22->id )
                                                 <option selected value="{{ $slot_desmontagem22->id }}">
                                                     {{ $slot_desmontagem22->slot }}</option>
-                                            @elseif (!isset($logistica->desmontagem_id9))
+                                            @else
                                                 <option value="{{ $slot_desmontagem22->id }}">
                                                     {{ $slot_desmontagem22->slot }}</option>
                                             @endif
