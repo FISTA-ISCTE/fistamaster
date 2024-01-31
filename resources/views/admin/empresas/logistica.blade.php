@@ -298,10 +298,10 @@
                                     <select class="form-select" name="desmontagem_dia2">
                                         <option value="" disabled selected>Selecione uma opção </option>
                                         @foreach ($slot_desmontagem2 as $slot_desmontagem22)
-                                            @if (isset($logistica->desmontagem_id9))
+                                            @if (isset($logistica->desmontagem_id9) && $logistica->desmontagem_id9 == $slot_desmontagem22->id )
                                                 <option selected value="{{ $slot_desmontagem22->id }}">
                                                     {{ $slot_desmontagem22->slot }}</option>
-                                            @else
+                                            @elseif (!isset($logistica->desmontagem_id9))
                                                 <option value="{{ $slot_desmontagem22->id }}">
                                                     {{ $slot_desmontagem22->slot }}</option>
                                             @endif
