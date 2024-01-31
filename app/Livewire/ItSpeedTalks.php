@@ -103,7 +103,7 @@ class ItSpeedTalks extends Component
             }
         }
 
-        session()->flash('success', 'Workshop registrado com sucesso!');
+        session()->flash('success', 'It Speed Talk registada com sucesso! Faz refresh a esta página e regista os oradores!');
         $this->reset(); // Resetar o formulário
     }
 
