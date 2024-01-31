@@ -148,7 +148,7 @@
                                 <h3 class="sub-title">Quem somos?</h3>
                                 <h2 class="title">Forum of Iscte School of Technology and Architecture</h2>
                             </div>
-                            <p class="text">O FISTA é o Fórum da ISTA que ocorre anualmento no Iscte. Este evento traz o
+                            <p class="text">O FISTA é o Fórum da ISTA que ocorre anualmente no Iscte. Este evento traz o
                                 mundo das empresas e ateliers à universidade. São dois dias de conferências, workshops,
                                 concursos, It Speed Talks, Speed Interviews e bancas de empresas nacionais e internacionais.
                             </p>
