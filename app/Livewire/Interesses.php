@@ -35,7 +35,7 @@ class Interesses extends Component
         $this->course = Auth::user()->id_curso;
         $existe = BackOfficeAluno::where('id_user', Auth::user()->id)->first();
         $back = BackOfficeAluno::where('id_user', Auth::user()->id)->first();
-        if (isset($existe->areainteresse1) && isset($existe->areainteresse2) && isset($existe->datanascimento) && isset($back->fulltime) && isset($back->estagioverao) && isset($back->parttime)) {
+        if (isset($existe->areainteresse1) && isset($existe->areainteresse2) && isset($existe->datanascimento) && (isset($back->fulltime) || isset($back->estagioverao) || isset($back->parttime))) {
             $this->interest1 = $existe->areainteresse1;
             $this->interest2 = $existe->areainteresse2;
             $this->birthdate = $existe->datanascimento;
