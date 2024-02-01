@@ -389,8 +389,10 @@
                                                     <span class="designation">{{ $data['team_name'] }}</span>
                                                     <div class="team-social">
                                                         <ul class="social">
-                                                            <li><a href="{{ $data['linkedin'] }}"><i
-                                                                        class="fab fa-linkedin"></i></a></li>
+                                                            @if (isset($data['linkedin']))
+                                                                <li><a href="{{ $data['linkedin'] }}"><i
+                                                                            class="fab fa-linkedin"></i></a></li>
+                                                            @endif
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -696,35 +698,35 @@
                         </div>
                     </div>
                     <!---<div class="col-lg-4">
-                                                    <div class="solution-item solution-item-sm">
-                                                        <div class="solution-img">
-                                                            <a href="#"><img src="assets/images/solution-img2.jpg" alt=""></a>
-                                                        </div>
-                                                        <div class="solution-content">
-                                                            <div class="solution-title">
-                                                                <h3 class="title"><a href="#">AfterMovie</a></h3>
+                                                        <div class="solution-item solution-item-sm">
+                                                            <div class="solution-img">
+                                                                <a href="#"><img src="assets/images/solution-img2.jpg" alt=""></a>
                                                             </div>
-                                                            <a class="play-btn popup-video"
-                                                                href="https://www.youtube.com/watch?time_continue=3&v=_X0eYtY8T_U"><i
-                                                                    class="fas fa-play"></i></a>
+                                                            <div class="solution-content">
+                                                                <div class="solution-title">
+                                                                    <h3 class="title"><a href="#">AfterMovie</a></h3>
+                                                                </div>
+                                                                <a class="play-btn popup-video"
+                                                                    href="https://www.youtube.com/watch?time_continue=3&v=_X0eYtY8T_U"><i
+                                                                        class="fas fa-play"></i></a>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-lg-4">
-                                                    <div class="solution-item solution-item-sm">
-                                                        <div class="solution-img">
-                                                            <a href="#"><img src="assets/images/solution-img2.jpg" alt=""></a>
-                                                        </div>
-                                                        <div class="solution-content">
-                                                            <div class="solution-title">
-                                                                <h3 class="title"><a href="#">Teaser</a></h3>
+                                                    <div class="col-lg-4">
+                                                        <div class="solution-item solution-item-sm">
+                                                            <div class="solution-img">
+                                                                <a href="#"><img src="assets/images/solution-img2.jpg" alt=""></a>
                                                             </div>
-                                                            <a class="play-btn popup-video"
-                                                                href="https://www.youtube.com/watch?time_continue=3&v=_X0eYtY8T_U"><i
-                                                                    class="fas fa-play"></i></a>
+                                                            <div class="solution-content">
+                                                                <div class="solution-title">
+                                                                    <h3 class="title"><a href="#">Teaser</a></h3>
+                                                                </div>
+                                                                <a class="play-btn popup-video"
+                                                                    href="https://www.youtube.com/watch?time_continue=3&v=_X0eYtY8T_U"><i
+                                                                        class="fas fa-play"></i></a>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </div>--->
+                                                    </div>--->
                 </div>
                 <div class="row" style="margin-top:1rem;">
                     <div class="col-lg-12">
