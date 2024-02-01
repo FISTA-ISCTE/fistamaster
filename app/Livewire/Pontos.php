@@ -53,7 +53,10 @@ class Pontos extends Component
         } else {
             // Verifica se o token existe como token_pessoal na tabela User
             $user_com_token = User::where('token_pessoal', $this->token)->first();
-
+            if ( $user_com_token->id === Auth::user()->id ) {
+                session()->flash('error', 'Querias?😂 Token Inválido!');
+                return;
+            }
             if ($user_com_token) {
                 $user = Auth::user();
                 $user->pontos += 50; // Adiciona 50 pontos
