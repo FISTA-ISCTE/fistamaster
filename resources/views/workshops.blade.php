@@ -52,8 +52,7 @@
                                         <span><i class="fa fa-clock"></i>
                                             @php
                                                 $date = new DateTime($workshop->begin);
-                                                $date2 = new DataTime($workshop->end);
-                                                echo $date->format('H') . 'h' . $date->format('i') . '-' . $date2->format('H') . 'h' . $date2->format('i');
+                                                echo $date->format('H') . 'h' . $date->format('i');
                                             @endphp</span>
                                     </div>
                                     <h3 class="title"><a data-toggle="modal"
