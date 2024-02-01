@@ -50,7 +50,7 @@
                         auth()->user()->hasRole('user'))
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 1.5rem;">
                         <x-nav-link href="{{ route('user.pontos') }}" :active="request()->routeIs('user.pontos')">
-                            {{ __('Tokens') }}
+                            {{ __('FISTA GO') }}
                         </x-nav-link>
                     </div>
                 @endif

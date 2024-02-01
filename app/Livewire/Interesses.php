@@ -5,6 +5,7 @@ namespace App\Livewire;
 use App\Models\Ano;
 use App\Models\BackOfficeAluno;
 use App\Models\Curso;
+use App\Models\Log_Token;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 use Livewire\WithFileUploads;
@@ -66,6 +67,13 @@ class Interesses extends Component
             $this->file->storeAs('users/cv', $filename, 'public');
             if ($user->file === null) {
                 $user->pontos += 1000;
+                $insert_ponto = new Log_Token([
+                    'id_user' => $user->id,
+                    'token' => "CURRICULO",
+                    'tipo' => "Upload do CV",
+                    'pontos' => 1000,
+                ]);
+                $insert_ponto->save();
             }
             $user->file = 'users/cv/' . $filename;
 

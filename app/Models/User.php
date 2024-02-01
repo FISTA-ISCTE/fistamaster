@@ -47,7 +47,7 @@ class User extends Authenticatable
             $model->uuid = (string) Uuid::generate(4);
 
             // Gera um token pessoal com 6 dígitos em letras maiúsculas
-            $model->token_pessoal = Str::upper(Str::random(5));
+            $model->token_pessoal = Str::upper(Str::random(6));
         });
     }
     protected $hidden = [
