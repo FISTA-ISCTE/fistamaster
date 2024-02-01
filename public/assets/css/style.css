@@ -715,7 +715,7 @@ textarea:-ms-input-placeholder {
   top: 0;
   background: #ffffff;
   width: 100%;
-  z-index: 999;
+  z-index: 500;
 }
 
 @media only screen and (max-width: 991px) {

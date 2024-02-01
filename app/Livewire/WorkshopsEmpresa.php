@@ -132,7 +132,7 @@ class WorkshopsEmpresa extends Component
         // Salva ou atualiza o registro no banco de dados
         $workshop->save();
 
-        session()->flash('success', 'Workkshop registado com sucesso!');
+        session()->flash('success', 'Workshop registado com sucesso!');
         $this->reset(); // Resetar o formulário
         // Atualizar horários disponíveis
     }

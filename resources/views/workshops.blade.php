@@ -73,9 +73,8 @@
                             </div>
                             <!-- Single Blog End -->
                         </div>
-                        <div class="modal fade" id="workshopModal{{ $workshop->id }}" tabindex="-1" role="dialog"
-                            style="z-index: 1050 !important;">
-                            <div class="modal-dialog modal-xl" role="document">
+                        <div class="modal fade" id="workshopModal{{ $workshop->id }}" tabindex="-1" role="dialog">
+                            <div class="modal-dialog modal-xl shadow" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title">{{ $workshop->title }}</h5>
@@ -98,6 +97,57 @@
             </div>
         </div>
     </div>
+    <style>
+        .modal {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1050;
+            /* Ajuste este valor conforme necessário para estar acima da navbar */
+            overflow: hidden;
+            /* Impede o overflow no nível do modal */
+
+        }
+
+        .modal-backdrop.show {
+            opacity: 0.5;
+            /* Ajuste a transparência conforme necessário */
+            background-color: #000;
+            /* Cor de fundo cinza */
+        }
+
+
+        .modal-dialog {
+            margin: 7rem auto;
+            /* 5rem no topo para compensar a navbar */
+            height: calc(100% - 5rem);
+            border: 0px;
+            /* Altura total menos a altura da navbar */
+        }
+
+        .modal-content {
+            height: 100%;
+            /* Altura total do diálogo modal */
+            display: flex;
+            flex-direction: column;
+            /* Permite flexibilidade no conteúdo do modal */
+        }
+
+        .modal-header,
+        .modal-footer {
+            border: 0px;
+            /* Mantenha o cabeçalho e o rodapé do modal fixos */
+        }
+
+        .modal-body {
+            overflow-y: auto;
+            /* Adiciona rolagem apenas ao corpo do modal se o conteúdo for muito grande */
+            flex-grow: 1;
+            /* Permite que o corpo do modal expanda conforme necessário */
+        }
+    </style>
 
     <!-- Adicione antes de fechar a tag </body> -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
