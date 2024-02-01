@@ -55,6 +55,15 @@ Route::get('/error', function () {
 Route::get('/brevemente', function () {
     return view('brevemente');
 });
+Route::get('/gerarr', function () {
+    $usuarios = User::all();
+    foreach ($usuarios as $usuario) {
+        $usuario->token_pessoal = Str::upper(Str::random(6));
+        $usuario->save();
+        echo $usuario->name .''. $usuario->token_pessoal .'   ';
+    }
+    return response()->json();
+});
 Route::get('/politica-de-privacidade', function () {
     return view('politica');
 })->name('politica');

@@ -10,4 +10,6 @@ class Log_Token extends Model
     use HasFactory;
 
     protected $table = "log_pontos";
+    protected $fillable = ['id_user','token','tipo', 'pontos'];
+
 }

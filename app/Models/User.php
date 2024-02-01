@@ -11,6 +11,7 @@ use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 use Webpatser\Uuid\Uuid;
+use Illuminate\Support\Str;
 
 class User extends Authenticatable
 {
@@ -42,7 +43,11 @@ class User extends Authenticatable
     {
         parent::boot();
         self::creating(function ($model) {
+            // Gera um UUID
             $model->uuid = (string) Uuid::generate(4);
+
+            // Gera um token pessoal com 6 dígitos em letras maiúsculas
+            $model->token_pessoal = Str::upper(Str::random(5));
         });
     }
     protected $hidden = [
