@@ -7,7 +7,7 @@ $logistica = Logistica::where('id_empresa', $company->id)->first();
 
 function progressoEmpresa($empresa, $faturacao, $logistica)
 {
-    $count = 9;
+    $count = 8;
     $camposPreenchidos = 0;
     //acrescentar campos do dashboard
     if (isset($empresa->avatar)) {
