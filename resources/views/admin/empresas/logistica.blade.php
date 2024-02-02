@@ -54,10 +54,9 @@
                                         @endif
                                         <label class="form-check-label" for="opcaoCadeirasDia1Nao">Não</label>
                                     </div>
-                                    <input style="width:40.5%;" type="text"
-                                        @if ($logistica->s_n_cadeiras_dia1 == 0) disabled @endif name="cadeiras_dia1"
+                                    <input style="width:40.5%;" type="text" name="cadeiras_dia1"
                                         id="cadeiras_dia1" autocomplete="cadeiras_dia1" autofocus
-                                        placeholder="Número de Cadeiras"
+                                        placeholder="(Se sim) Número de Cadeiras"
                                         value="@if (isset($logistica->cadeiras_dia1)) {{ $logistica->cadeiras_dia1 }} @endif">
                                 </div>
                             </div>
@@ -387,48 +386,6 @@
                             style="margin-top:2%;background: linear-gradient(195deg, #00c4cc 0%, #008d84 100%);">Guardar</button>
                     </form>
                 </div>
-
-                <script>
-                    const cadeirasDia1Sim = document.querySelector('input[name="opcaoCadeirasDia1"][value="1"]');
-                    const cadeirasDia1Nao = document.querySelector('input[name="opcaoCadeirasDia1"][value="0"]');
-                    const cadeiras_dia1 = document.getElementById('cadeiras_dia1');
-
-                    if (cadeirasDia1Sim.checked)
-                        cadeiras_dia1.style.display = 'block';
-
-                    // Add a change event listener to the radio buttons
-                    cadeirasDia1Sim.addEventListener('change', function() {
-                        if (this.checked) {
-                            cadeiras_dia1.style.display = 'block';
-                        }
-                    });
-
-                    cadeirasDia1Nao.addEventListener('change', function() {
-                        if (this.checked) {
-                            cadeiras_dia1.style.display = 'none';
-                        }
-                    });
-
-                    const cadeirasDia2Sim = document.querySelector('input[name="opcaoCadeirasDia2"][value="1"]');
-                    const cadeirasDia2Nao = document.querySelector('input[name="opcaoCadeirasDia2"][value="0"]');
-                    const cadeiras_dia2 = document.getElementById('cadeiras_dia2');
-
-                    if (cadeirasDia2Sim.checked)
-                        cadeiras_dia2.style.display = 'block';
-
-                    // Add a change event listener to the radio buttons
-                    cadeirasDia2Sim.addEventListener('change', function() {
-                        if (this.checked) {
-                            cadeiras_dia2.style.display = 'block';
-                        }
-                    });
-
-                    cadeirasDia2Nao.addEventListener('change', function() {
-                        if (this.checked) {
-                            cadeiras_dia2.style.display = 'none';
-                        }
-                    });
-                </script>
 
             </div>
         </div>

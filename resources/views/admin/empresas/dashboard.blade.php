@@ -62,9 +62,7 @@ function progressoEmpresa($empresa, $faturacao, $logistica)
             if (isset($logistica->mesa_stand_dia1)) {
                 $camposPreenchidos += 1;
             }
-            if (isset($logistica->num_almocos_dia1)) {
-                $camposPreenchidos += 1;
-            }
+
         }
     }
 
@@ -83,9 +81,7 @@ function progressoEmpresa($empresa, $faturacao, $logistica)
             if (isset($logistica->mesa_stand_dia2)) {
                 $camposPreenchidos += 1;
             }
-            if (isset($logistica->num_almocos_dia2)) {
-                $camposPreenchidos += 1;
-            }
+
         }
     }
 
@@ -153,9 +149,7 @@ function camposEmFalta($empresa, $faturacao, $logistica)
                 if (!isset($logistica->mesa_stand_dia1)) {
                     array_push($campos, 'Se necessita de mesa ou tem stand para o dia 28');
                 }
-                if (!isset($logistica->num_almocos_dia1)) {
-                    array_push($campos, 'Número de almoços para dia 28');
-                }
+
             }
 
             if (isset($empresa->dia2)) {
@@ -169,9 +163,7 @@ function camposEmFalta($empresa, $faturacao, $logistica)
                 if (!isset($logistica->mesa_stand_dia2)) {
                     array_push($campos, 'Se necessita de mesa ou tem stand para o dia 29');
                 }
-                if (!isset($logistica->num_almocos_dia2)) {
-                    array_push($campos, 'Número de almoços para dia 29');
-                }
+
             }
         }
 
