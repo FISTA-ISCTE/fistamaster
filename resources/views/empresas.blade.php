@@ -45,68 +45,70 @@
             background-color: #1EC4BD;
             border-color: #1EC4BD;
         }
-
     </style>
 
 
-    <div class="container mt-5" >
+    <div class="container mt-5">
 
 
         <!-- <div class="row pb-4 justify-content-center">
-            <div class="col-auto">
+                <div class="col-auto">
 
-                <button class="btn-filter">
-                    <h4 id="filter">28</h4>
-                    <p>Fevereiro</p>
-                </button>
-                <button class="btn-filter">
-                    <h4>28</h4>
-                    <p>Fevereiro
-                    </p>
-                </button>
-                <button class="btn btn-primary">
-                    <h4>28</h4>
-                    <p>Fevereiro
-                    </p>
-                </button>
+                    <button class="btn-filter">
+                        <h4 id="filter">28</h4>
+                        <p>Fevereiro</p>
+                    </button>
+                    <button class="btn-filter">
+                        <h4>28</h4>
+                        <p>Fevereiro
+                        </p>
+                    </button>
+                    <button class="btn btn-primary">
+                        <h4>28</h4>
+                        <p>Fevereiro
+                        </p>
+                    </button>
+                </div>
+
+
+            </div> -->
+
+
+        <div class="row justify-content-center pb-4">
+
+            <div class="col-md-3 p-0 d-flex justify-content-center">
+
+                <div class="form-check p-0 ">
+                    <label class="form-check-label" style="line-height:1.25;display:inline-flex" for="exampleRadios1">
+                        Todos os dias
+                    </label>
+                    <input class="form-check-input" style="margin-left:0.5rem" type="radio" onclick="filterData('todos')"
+                        name="exampleRadios">
+                </div>
+            </div>
+            <div class="col-md-3 p-0 d-flex justify-content-center">
+
+                <div class="form-check p-0 ">
+                    <label class="form-check-label" style="line-height:1.25;display:inline-flex" for="exampleRadios1">
+                        28 Fevereiro
+                    </label>
+                    <input class="form-check-input" style="margin-left:0.5rem" type="radio" onclick="filterData('dia1')"
+                        name="exampleRadios">
+                </div>
+            </div>
+            <div class="col-md-3 p-0 d-flex justify-content-center">
+
+                <div class="form-check p-0">
+                    <label class="form-check-label" style="line-height:1.25;display:inline-flex" for="exampleRadios1">
+                        29 Fevereiro
+                    </label>
+                    <input class="form-check-input" style="margin-left:0.5rem" type="radio" onclick="filterData('dia2')"
+                        name="exampleRadios">
+                </div>
             </div>
 
 
-        </div> -->
-
-
-    <div class="row justify-content-center pb-4">
-
-        <div class="col-md-3 p-0 d-flex justify-content-center">
-
-            <div class="form-check p-0 ">
-                <label class="form-check-label" style="line-height:1.25;display:inline-flex" for="exampleRadios1">
-                    Todos os dias
-                </label>
-                <input class="form-check-input" style="margin-left:0.5rem" type="radio" onclick="filterData('todos')" name="exampleRadios" >
-            </div>
         </div>
-        <div class="col-md-3 p-0 d-flex justify-content-center">
-
-            <div class="form-check p-0 ">
-                <label class="form-check-label" style="line-height:1.25;display:inline-flex" for="exampleRadios1">
-                    28 Fevereiro
-                </label>
-                <input class="form-check-input" style="margin-left:0.5rem" type="radio" onclick="filterData('dia1')" name="exampleRadios">
-            </div>
-        </div>
-        <div class="col-md-3 p-0 d-flex justify-content-center">
-
-            <div class="form-check p-0">
-                <label class="form-check-label" style="line-height:1.25;display:inline-flex" for="exampleRadios1">
-                    29 Fevereiro
-                </label>
-                <input class="form-check-input" style="margin-left:0.5rem" type="radio" onclick="filterData('dia2')" name="exampleRadios" >
-            </div>
-        </div>
-
-
-    </div>
 
 
 
@@ -119,37 +121,37 @@
 
 
         <!-- <div class="row justify-content-center pb-4"> -->
-<!--
-        <div class="row">
+        <!--
+            <div class="row">
 
-            <ul style="display:flex;padding:0;margin:0; list-style:none;">
-                <li>
-                    <button class="btn">
-                        <p style="font-size: 2rem;bold;margin:0">28</p>
-                        <p style="font-size: 0.7rem; margin:0">fevereiro</p>
-                    </button>
-                </li>
-                <li>
-                    <button  >
-                        <p style="font-size: 2rem;bold;margin:0">28</p>
-                        <span style="font-size: 0.7rem; margin:0">fevereiro</span>
-                    </button>
-                </li>
-                <li>
-                    <a href="#" type="button"   >
-                        <p style="font-size: 2rem;bold;margin:0">28</p>
-                        <p style="font-size: 0.7rem; margin:0">fevereiro</p>
-                    </a>
-                </li>
-            </ul>
-        </div> -->
-            <!-- <div class="col-auto">
-                -->
-                <!-- <button class="btn btn-primary btn-sm" onclick="filterData('todos')">Todos os dias</button> -->
+                <ul style="display:flex;padding:0;margin:0; list-style:none;">
+                    <li>
+                        <button class="btn">
+                            <p style="font-size: 2rem;bold;margin:0">28</p>
+                            <p style="font-size: 0.7rem; margin:0">fevereiro</p>
+                        </button>
+                    </li>
+                    <li>
+                        <button  >
+                            <p style="font-size: 2rem;bold;margin:0">28</p>
+                            <span style="font-size: 0.7rem; margin:0">fevereiro</span>
+                        </button>
+                    </li>
+                    <li>
+                        <a href="#" type="button"   >
+                            <p style="font-size: 2rem;bold;margin:0">28</p>
+                            <p style="font-size: 0.7rem; margin:0">fevereiro</p>
+                        </a>
+                    </li>
+                </ul>
+            </div> -->
+        <!-- <div class="col-auto">
+                    -->
+        <!-- <button class="btn btn-primary btn-sm" onclick="filterData('todos')">Todos os dias</button> -->
 
-                <!-- <button class="btn btn-primary btn-sm" onclick="filterData('dia1')"></button>
-                <button class="btn btn-primary btn-sm" onclick="filterData('dia2')">Dia 29</button> -->
-            <!-- </div> -->
+        <!-- <button class="btn btn-primary btn-sm" onclick="filterData('dia1')"></button>
+                    <button class="btn btn-primary btn-sm" onclick="filterData('dia2')">Dia 29</button> -->
+        <!-- </div> -->
         <!-- </div> -->
         @if ($countdiamount != 0)
             <h2
@@ -159,18 +161,15 @@
             <div class="row justify-content-center" style="margin:0;margin-bottom:10%">
                 <!-- Premium Logo -->
                 @foreach ($empresasdiamount as $empresadiamount)
-                    @if (isset($empresadiamount->dia1))
-                        <div  class='col-md-4 text-center column cars calendario-dia1'
-                            style="margin-left: auto;margin-right: auto; padding:10px;">
-                    @elseif (isset($empresadiamount->dia2))
-                        <div  class='col-md-4 text-center column cars calendario-dia2'
-                            style="margin-left: auto;margin-right: auto; padding:10px;">
-                    @endif
-                            <a <?php if (!empty($empresadiamount->website)) {
-                                echo "href='$empresadiamount->website'";
-                            } ?> style="width:100%;padding-left:7%;padding-right:7%">
-                                <div class="card" data-toggle="tooltip" data-placement="bottom"
-                                    title="
+                    <div class='col-md-4 text-center column cars
+                @isset($empresadiamount->dia1) calendario-dia1 @endisset
+                @isset($empresadiamount->dia2) calendario-dia2 @endisset'
+                        style="margin-left: auto; margin-right: auto; padding: 10px;">
+                        <a <?php if (!empty($empresadiamount->website)) {
+                            echo "href='$empresadiamount->website'";
+                        } ?> style="width:100%;padding-left:7%;padding-right:7%">
+                            <div class="card" data-toggle="tooltip" data-placement="bottom"
+                                title="
                                 <?php
 
                                 if (is_null($empresadiamount->dia1) && is_null($empresadiamount->dia2)) {
@@ -186,14 +185,14 @@
                                 }
                                 ?>
                                 "
-                                    style="margin-bottom:15px;width:100%;-webkit-box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);">
-                                    <img src="{{ asset('storage/' . $empresadiamount->avatar) }}" class="imgEmpresaDiamond"
-                                        style="object-fit:contain">
+                                style="margin-bottom:15px;width:100%;-webkit-box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.51);">
+                                <img src="{{ asset('storage/' . $empresadiamount->avatar) }}" class="imgEmpresaDiamond"
+                                    style="object-fit:contain">
 
 
-                                </div>
-                            </a>
-                        </div>
+                            </div>
+                        </a>
+                    </div>
                 @endforeach
                 <!-- ... repetir conforme necessário ... -->
             </div>
@@ -207,11 +206,13 @@
             <div class="row justify-content-center" style="margin:0;margin-bottom:5%">
                 <!-- Premium Logo -->
                 @foreach ($empresaspremium as $empresapremium)
-                    @isset($empresapremium -> dia1)
-                        <div class='col-md-3 text-center calendario-dia1' style="margin-left: auto;margin-right: auto; padding:10px;">
-                    @else
-                        <div class='col-md-3 text-center calendario-dia2' style="margin-left: auto;margin-right: auto; padding:10px;">
-                    @endisset
+                    @isset($empresapremium->dia1)
+                        <div class='col-md-3 text-center calendario-dia1'
+                            style="margin-left: auto;margin-right: auto; padding:10px;">
+                        @else
+                            <div class='col-md-3 text-center calendario-dia2'
+                                style="margin-left: auto;margin-right: auto; padding:10px;">
+                            @endisset
                             <a <?php if (!empty($empresapremium->website)) {
                                 echo "href='$empresapremium->website'";
                             } ?> style="width:100%;padding-left:7%;padding-right:7%">
@@ -251,12 +252,11 @@
             <div class="row justify-content-center" style="margin:0;margin-bottom:5%">
                 <!-- Gold Logo -->
                 @foreach ($empresasgold as $empresagold)
-                    @isset($empresagold -> dia1)
-
+                    @isset($empresagold->dia1)
                         <div class='col-md-3 d-flex justify-content-center calendario-dia1'>
-                    @else
-                        <div class='col-md-3 d-flex justify-content-center calendario-dia2'>
-                    @endisset
+                        @else
+                            <div class='col-md-3 d-flex justify-content-center calendario-dia2'>
+                            @endisset
                             <a <?php if (!empty($empresagold->website)) {
                                 echo "href='$empresagold->website'";
                             } ?> style="width:100%;padding-left:7%;padding-right:7%">
@@ -297,11 +297,13 @@
             <div class="row justify-content-center" style="margin:0">
                 <!-- Silver Logos -->
                 @foreach ($empresassilver as $empresasilver)
-                    @isset($empresasilver ->dia1)
-                        <div class='col-md-2 d-flex justify-content-center calendario-dia1' style="margin-left: auto;margin-right: auto;">
-                    @else
-                        <div class='col-md-2 d-flex justify-content-center calendario-dia2' style="margin-left: auto;margin-right: auto;">
-                    @endisset
+                    @isset($empresasilver->dia1)
+                        <div class='col-md-2 d-flex justify-content-center calendario-dia1'
+                            style="margin-left: auto;margin-right: auto;">
+                        @else
+                            <div class='col-md-2 d-flex justify-content-center calendario-dia2'
+                                style="margin-left: auto;margin-right: auto;">
+                            @endisset
                             <a <?php if (!empty($empresasilver->website)) {
                                 echo "href='$empresasilver->website'";
                             } ?> style="width:100%;padding-left:7%;padding-right:7%">
@@ -379,7 +381,7 @@
             var allElements = document.querySelectorAll('[class^="calendario-"]');
             console.log(elementsDay2);
 
-            switch(category){
+            switch (category) {
                 case "todos":
                     console.log(allElements);
                     elementsDay1.forEach(function(element) {
