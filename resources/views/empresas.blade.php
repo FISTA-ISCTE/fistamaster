@@ -159,13 +159,13 @@
             <div class="row justify-content-center" style="margin:0;margin-bottom:10%">
                 <!-- Premium Logo -->
                 @foreach ($empresasdiamount as $empresadiamount)
-                    @isset ($empresadiamount-> dia1)
+                    @if (isset($empresadiamount->dia1))
                         <div  class='col-md-4 text-center column cars calendario-dia1'
                             style="margin-left: auto;margin-right: auto; padding:10px;">
-                    @else
+                    @elseif (isset($empresadiamount->dia2))
                         <div  class='col-md-4 text-center column cars calendario-dia2'
                             style="margin-left: auto;margin-right: auto; padding:10px;">
-                    @endisset
+                    @endif
                             <a <?php if (!empty($empresadiamount->website)) {
                                 echo "href='$empresadiamount->website'";
                             } ?> style="width:100%;padding-left:7%;padding-right:7%">
