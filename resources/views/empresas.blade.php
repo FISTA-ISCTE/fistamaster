@@ -52,26 +52,26 @@
 
 
         <!-- <div class="row pb-4 justify-content-center">
-                <div class="col-auto">
+                    <div class="col-auto">
 
-                    <button class="btn-filter">
-                        <h4 id="filter">28</h4>
-                        <p>Fevereiro</p>
-                    </button>
-                    <button class="btn-filter">
-                        <h4>28</h4>
-                        <p>Fevereiro
-                        </p>
-                    </button>
-                    <button class="btn btn-primary">
-                        <h4>28</h4>
-                        <p>Fevereiro
-                        </p>
-                    </button>
-                </div>
+                        <button class="btn-filter">
+                            <h4 id="filter">28</h4>
+                            <p>Fevereiro</p>
+                        </button>
+                        <button class="btn-filter">
+                            <h4>28</h4>
+                            <p>Fevereiro
+                            </p>
+                        </button>
+                        <button class="btn btn-primary">
+                            <h4>28</h4>
+                            <p>Fevereiro
+                            </p>
+                        </button>
+                    </div>
 
 
-            </div> -->
+                </div> -->
 
 
         <div class="row justify-content-center pb-4">
@@ -122,35 +122,35 @@
 
         <!-- <div class="row justify-content-center pb-4"> -->
         <!--
-            <div class="row">
+                <div class="row">
 
-                <ul style="display:flex;padding:0;margin:0; list-style:none;">
-                    <li>
-                        <button class="btn">
-                            <p style="font-size: 2rem;bold;margin:0">28</p>
-                            <p style="font-size: 0.7rem; margin:0">fevereiro</p>
-                        </button>
-                    </li>
-                    <li>
-                        <button  >
-                            <p style="font-size: 2rem;bold;margin:0">28</p>
-                            <span style="font-size: 0.7rem; margin:0">fevereiro</span>
-                        </button>
-                    </li>
-                    <li>
-                        <a href="#" type="button"   >
-                            <p style="font-size: 2rem;bold;margin:0">28</p>
-                            <p style="font-size: 0.7rem; margin:0">fevereiro</p>
-                        </a>
-                    </li>
-                </ul>
-            </div> -->
+                    <ul style="display:flex;padding:0;margin:0; list-style:none;">
+                        <li>
+                            <button class="btn">
+                                <p style="font-size: 2rem;bold;margin:0">28</p>
+                                <p style="font-size: 0.7rem; margin:0">fevereiro</p>
+                            </button>
+                        </li>
+                        <li>
+                            <button  >
+                                <p style="font-size: 2rem;bold;margin:0">28</p>
+                                <span style="font-size: 0.7rem; margin:0">fevereiro</span>
+                            </button>
+                        </li>
+                        <li>
+                            <a href="#" type="button"   >
+                                <p style="font-size: 2rem;bold;margin:0">28</p>
+                                <p style="font-size: 0.7rem; margin:0">fevereiro</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div> -->
         <!-- <div class="col-auto">
-                    -->
+                        -->
         <!-- <button class="btn btn-primary btn-sm" onclick="filterData('todos')">Todos os dias</button> -->
 
         <!-- <button class="btn btn-primary btn-sm" onclick="filterData('dia1')"></button>
-                    <button class="btn btn-primary btn-sm" onclick="filterData('dia2')">Dia 29</button> -->
+                        <button class="btn btn-primary btn-sm" onclick="filterData('dia2')">Dia 29</button> -->
         <!-- </div> -->
         <!-- </div> -->
         @if ($countdiamount != 0)
@@ -161,7 +161,12 @@
             <div class="row justify-content-center" style="margin:0;margin-bottom:10%">
                 <!-- Premium Logo -->
                 @foreach ($empresasdiamount as $empresadiamount)
-                    <div class="col-md-4 text-center column cars <?php if(isset($empresadiamount->dia1)){ echo "calendario-dia1";} if(isset($empresadiamount->dia1)){ echo "calendario-dia2";} ?>"
+                    <div class="col-md-4 text-center column cars <?php if (isset($empresadiamount->dia1)) {
+                        echo 'calendario-dia1';
+                    }
+                    if (isset($empresadiamount->dia2)) {
+                        echo ' calendario-dia2';
+                    } ?>"
                         style="margin-left: auto; margin-right: auto; padding: 10px;">
                         <a <?php if (!empty($empresadiamount->website)) {
                             echo "href='$empresadiamount->website'";
@@ -204,13 +209,15 @@
             <div class="row justify-content-center" style="margin:0;margin-bottom:5%">
                 <!-- Premium Logo -->
                 @foreach ($empresaspremium as $empresapremium)
-                    @isset($empresapremium->dia1)
-                        <div class='col-md-3 text-center calendario-dia1'
+
+                        <div class="col-md-3 text-center <?php if (isset($empresapremium->dia1)) {
+                            echo 'calendario-dia1';
+                        }
+                        if (isset($empresapremium->dia2)) {
+                            echo 'calendario-dia2';
+                        } ?>"
                             style="margin-left: auto;margin-right: auto; padding:10px;">
-                        @else
-                            <div class='col-md-3 text-center calendario-dia2'
-                                style="margin-left: auto;margin-right: auto; padding:10px;">
-                            @endisset
+
                             <a <?php if (!empty($empresapremium->website)) {
                                 echo "href='$empresapremium->website'";
                             } ?> style="width:100%;padding-left:7%;padding-right:7%">
@@ -250,11 +257,14 @@
             <div class="row justify-content-center" style="margin:0;margin-bottom:5%">
                 <!-- Gold Logo -->
                 @foreach ($empresasgold as $empresagold)
-                    @isset($empresagold->dia1)
-                        <div class='col-md-3 d-flex justify-content-center calendario-dia1'>
-                        @else
-                            <div class='col-md-3 d-flex justify-content-center calendario-dia2'>
-                            @endisset
+
+                        <div class="col-md-3 d-flex justify-content-center <?php if (isset($empresagold->dia1)) {
+                            echo 'calendario-dia1';
+                        }
+                        if (isset($empresagold->dia2)) {
+                            echo 'calendario-dia2';
+                        } ?>">
+
                             <a <?php if (!empty($empresagold->website)) {
                                 echo "href='$empresagold->website'";
                             } ?> style="width:100%;padding-left:7%;padding-right:7%">
@@ -295,13 +305,15 @@
             <div class="row justify-content-center" style="margin:0">
                 <!-- Silver Logos -->
                 @foreach ($empresassilver as $empresasilver)
-                    @isset($empresasilver->dia1)
-                        <div class='col-md-2 d-flex justify-content-center calendario-dia1'
+
+                        <div class="col-md-2 d-flex justify-content-center <?php if (isset($empresasilver->dia1)) {
+                            echo 'calendario-dia1';
+                        }
+                        if (isset($empresasilver->dia2)) {
+                            echo 'calendario-dia2';
+                        } ?>"
                             style="margin-left: auto;margin-right: auto;">
-                        @else
-                            <div class='col-md-2 d-flex justify-content-center calendario-dia2'
-                                style="margin-left: auto;margin-right: auto;">
-                            @endisset
+
                             <a <?php if (!empty($empresasilver->website)) {
                                 echo "href='$empresasilver->website'";
                             } ?> style="width:100%;padding-left:7%;padding-right:7%">
@@ -376,12 +388,10 @@
             // Get all data items
             var elementsDay1 = document.querySelectorAll('.calendario-dia1');
             var elementsDay2 = document.querySelectorAll('.calendario-dia2');
-            var allElements = document.querySelectorAll('[class^="calendario-"]');
-            console.log(elementsDay2);
+            var bothDays = document.querySelectorAll('.calendario-dia1.calendario-dia2');
 
             switch (category) {
                 case "todos":
-                    console.log(allElements);
                     elementsDay1.forEach(function(element) {
                         element.style.setProperty('display', 'block', 'important');
                     });
@@ -394,7 +404,12 @@
                         element.style.setProperty('display', 'block', 'important');
                     });
                     elementsDay2.forEach(function(element) {
-                        element.style.setProperty('display', 'none', 'important');
+                        if (!element.classList.contains('calendario-dia1')) {
+                            element.style.setProperty('display', 'none', 'important');
+                        }
+                    });
+                    bothDays.forEach(function(element) {
+                        element.style.setProperty('display', 'block', 'important');
                     });
                     break;
                 case "dia2":
@@ -402,7 +417,12 @@
                         element.style.setProperty('display', 'block', 'important');
                     });
                     elementsDay1.forEach(function(element) {
-                        element.style.setProperty('display', 'none', 'important');
+                        if (!element.classList.contains('calendario-dia2')) {
+                            element.style.setProperty('display', 'none', 'important');
+                        }
+                    });
+                    bothDays.forEach(function(element) {
+                        element.style.setProperty('display', 'block', 'important');
                     });
                     break;
             }
