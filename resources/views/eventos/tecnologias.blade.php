@@ -36,10 +36,24 @@
                                 <div class="single-case-study" style="margin-top:1.5rem;">
                                     <div class="case-study-img">
                                         <a href="/ctf"><img
-                                                src="{{ asset('img/fotos/2.png') }}" alt=""></a>
+                                                src="{{ asset('img/fotos/concurso_ctf2.jpg') }}" alt=""></a>
                                     </div>
                                     <div class="case-study-content">
                                         <h3 class="title"><a href="/ctf">Concurso de CiberSegurança</a></h3>
+
+                                    </div>
+                                </div>
+                                <!-- Single Case Study End -->
+                            </div>
+                            <div class="col-md-4" >
+                                <!-- Single Case Study Start -->
+                                <div class="single-case-study" style="margin-top:1.5rem;">
+                                    <div class="case-study-img">
+                                        <a href="/ctf"><img
+                                                src="{{ asset('assets/images/brand/13150512855_0a2cd5075e_c.jpg') }}" alt=""></a>
+                                    </div>
+                                    <div class="case-study-content">
+                                        <h3 class="title"><a href="/workshops">Workshops</a></h3>
 
                                     </div>
                                 </div>
