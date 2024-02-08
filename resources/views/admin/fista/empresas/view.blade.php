@@ -155,13 +155,19 @@
                             <div class="container mt-5 emp-profile">
                                 <div class="row" style="margin-bottom:2rem;">
                                     <!-- Botões à esquerda -->
-                                    <div class="col-md-9">
+                                    <div class="col-md-1">
                                         <a href="{{ route('fatura.empresas', ['id' => $empresa->id]) }}"
                                             class="btn  mr-2" style="background-color:black;color:#fff">Faturação</a>
                                         <!--<button class="btn"
                                             style="background-color:black; color:#fff">Logistica</button>-->
                                     </div>
-
+                                    <div class="col-md-1">
+                                        <a href="{{ route('logistica.empresas', ['id' => $empresa->id]) }}"
+                                            class="btn  mr-2" style="background-color:black;color:#fff">Logistica</a>
+                                        <!--<button class="btn"
+                                            style="background-color:black; color:#fff">Logistica</button>-->
+                                    </div>
+<div class="col-md-7"></div>
                                     <!-- Botão à direita -->
                                     <style>
                                         .btn-mostrar {

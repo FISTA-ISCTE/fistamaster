@@ -91,6 +91,15 @@
                 @endif
 
                 @if (auth()->user() &&
+                        auth()->user()->hasRole('admin'))
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 1.5rem;">
+                        <x-nav-link href="{{ route('itspeedtalks.empresas') }}" :active="request()->routeIs('itspeedtalks.empresas')">
+                            {{ __('It Speed Talks') }}
+                        </x-nav-link>
+                    </div>
+                @endif
+
+                @if (auth()->user() &&
                         auth()->user()->hasRole('empresa'))
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 1.5rem;">
                         <x-nav-link href="{{ route('empresa.dashboard') }}" :active="request()->routeIs('empresa.dashboard')">

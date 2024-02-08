@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PageController;
 use App\Models\Empresa;
+use App\Models\ItSpeed;
 use App\Models\LogisticaSlots;
 use App\Models\Team;
 use App\Models\Workshop;
@@ -208,6 +209,12 @@ Route::middleware([
 
             return view('admin.fista.empresas.logistica')->with(['logistica' => $logistica, 'empresa' => $empresa, 'slot_montagem1' => $slot_montagem1, 'slot_montagem2' => $slot_montagem2, 'slot_desmontagem1' => $slot_desmontagem1, 'slot_desmontagem2' => $slot_desmontagem2]);
         })->name('logistica.empresas');
+
+        Route::get('/itspeedtalks', function () {
+
+            $itspeedtalks = ItSpeed::all();
+            return view('admin.fista.itspeedtalks')->with(['itspeedtalks' => $itspeedtalks]);
+        })->name('itspeedtalks.empresas');
 
         Route::post('/toggle-mostrar/{id}', [AdminController::class, 'toggleMostrar'])->name('toggle.mostrar');
 

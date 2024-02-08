@@ -33,10 +33,7 @@
                     <input type="file" wire:model="ppt"
                         style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
                 @endif
-                <!-- Dropdown para Selecionar a Slot -->
 
-
-                <!-- Mostrando Detalhes da Slot Selecionada -->
                 @if ($selectedSlot)
                     @php
                         $slotSelecionada = $slots->firstWhere('id', $selectedSlot);
