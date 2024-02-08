@@ -419,7 +419,7 @@
                                             style="font-size:1.2rem;">Montagem</h2>
                                         <p><b>Horário:</b>
                                             @foreach ($slot_montagem2 as $slot_montagem22)
-                                                @if (isset($logistica->montagem_id9) && $slot_montagem11->id == $logistica->montagem_id2)
+                                                @if (isset($logistica->montagem_id9) && $slot_montagem22->id == $logistica->montagem_id2)
                                                     {{ $slot_montagem22->slot }}
                                                 @endif
                                             @endforeach
