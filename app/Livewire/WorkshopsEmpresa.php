@@ -62,11 +62,9 @@ class WorkshopsEmpresa extends Component
         $this->availableSchedules = [
             '2024-02-20 09:00:00' => '20 de Fevereiro, 09:00 - 12:30',
             '2024-02-20 14:30:00' => '20 de Fevereiro, 14:30 - 16:00',
-            '2024-02-20 16:00:00' => '20 de Fevereiro, 16:00 - 17:30',
 
             '2024-02-21 09:00:00' => '21 de Fevereiro, 09:00 - 12:30',
             '2024-02-21 14:30:00' => '21 de Fevereiro, 14:30 - 16:00',
-            '2024-02-21 16:00:00' => '21 de Fevereiro, 16:00 - 17:30',
 
             '2024-02-27 09:00:00' => '27 de Fevereiro, 09:00 - 12:30',
             '2024-02-27 14:30:00' => '27 de Fevereiro, 14:30 - 16:00',
