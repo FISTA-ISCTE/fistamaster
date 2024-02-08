@@ -55,7 +55,9 @@ class ItSpeedTalks extends Component
         if ($it) {
             $this->titulo_it = $it->titulo;
             $this->descricao = $it->descricao;
-            $this->ppt_url = "https://fista.iscte-iul.pt/storage/" . $it->ppt;
+            if ($it->ppt) {
+                $this->ppt_url = "https://fista.iscte-iul.pt/storage/" . $it->ppt;
+            }
         }
         $slot_empresa = SlotsIt::where("id_empresa", $empresa->id)->first();
 

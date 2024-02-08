@@ -1,5 +1,4 @@
 <x-app-layout>
-
     <x-slot name="header">
         <h1 class="font-semibold text-xl text-gray-800 leading-tight" style="margin-left:1rem;font-size:1.5rem;">
             {{ __('👋 Olá, ') }}<span style="font-size:1.8rem;">{{ Auth::user()->name }}</span>
@@ -184,86 +183,123 @@
                                             style="font-size:1.5rem;">
                                             {{ __('Dia 28') }}
                                         </h1>
-                                        <div class="single-form">
-                                            <h2 class="font-semibold text-xl text-gray-800 leading-tight"
-                                                style="font-size:1.2rem;">São disponibilizadas 2 cadeiras, necessita de
-                                                mais?</h2>
-                                            <div class="row" style="margin:0">
-                                                <div class="form-check form-check-inline">
-                                                    @if (isset($logistica->s_n_cadeiras_dia1) && $logistica->s_n_cadeiras_dia1 === 1)
-                                                        <input class="form-check-input" type="radio"
-                                                            name="opcaoCadeirasDia1" id="opcaoCadeirasDia1Sim"
-                                                            value="1" checked>
-                                                    @else
-                                                        <input class="form-check-input" type="radio"
-                                                            name="opcaoCadeirasDia1" id="opcaoCadeirasDia1Sim"
-                                                            value="1">
-                                                    @endif
-                                                    <label class="form-check-label"
-                                                        for="opcaoCadeirasDia1Sim">Sim</label>
-                                                </div>
-                                                <div class="form-check form-check-inline">
-                                                    @if (isset($logistica->s_n_cadeiras_dia1) && $logistica->s_n_cadeiras_dia1 === 0)
-                                                        <input class="form-check-input" type="radio"
-                                                            name="opcaoCadeirasDia1" id="opcaoCadeirasDia1Nao"
-                                                            value="0" checked>
-                                                    @else
-                                                        <input class="form-check-input" type="radio"
-                                                            name="opcaoCadeirasDia1" id="opcaoCadeirasDia1Nao"
-                                                            value="0">
-                                                    @endif
-                                                    <label class="form-check-label"
-                                                        for="opcaoCadeirasDia1Nao">Não</label>
-                                                </div>
-                                                <input style="width:88.5%; display:none" type="text"
-                                                    name="cadeiras_dia1" id="cadeiras_dia1" autocomplete="cadeiras_dia1"
-                                                    autofocus placeholder="Número de Cadeiras"
-                                                    value="@if (isset($logistica->cadeiras_dia1)) {{ $logistica->cadeiras_dia1 }} @endif">
-                                            </div>
-                                        </div>
-
-                                        <div class="single-form" style="margin-top:2%">
-                                            <h2 class="font-semibold text-xl text-gray-800 leading-tight"
-                                                style="font-size:1.2rem;">Necessita de mesa ou tem stand?</h2>
-                                            <div class="row" style="margin:0">
-                                                <div class="form-check form-check-inline">
-                                                    @if (isset($logistica->mesa_stand_dia1) && $logistica->mesa_stand_dia1 === 'mesa')
-                                                        <input class="form-check-input" type="radio"
-                                                            name="opcaoMesaStandDia1" id="opcaoMesaStandDia1Mesa"
-                                                            value="mesa" checked>
-                                                    @else
-                                                        <input class="form-check-input" type="radio"
-                                                            name="opcaoMesaStandDia1" id="opcaoMesaStandDia1Mesa"
-                                                            value="mesa">
-                                                    @endif
-                                                    <label class="form-check-label"
-                                                        for="opcaoMesaStandDia1Mesa">Mesa</label>
-                                                </div>
-                                                <div class="form-check form-check-inline">
-                                                    @if (isset($logistica->mesa_stand_dia1) && $logistica->mesa_stand_dia1 === 'stand')
-                                                        <input class="form-check-input" type="radio"
-                                                            name="opcaoMesaStandDia1" id="opcaoMesaStandDia1Stand"
-                                                            value="stand" checked>
-                                                    @else
-                                                        <input class="form-check-input" type="radio"
-                                                            name="opcaoMesaStandDia1" id="opcaoMesaStandDia1Stand"
-                                                            value="stand">
-                                                    @endif
-                                                    <label class="form-check-label"
-                                                        for="opcaoMesaStandDia1Stand">Stand</label>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="single-form">
+                                                    <h2 class="font-semibold text-xl text-gray-800 leading-tight"
+                                                        style="font-size:1.2rem;">São disponibilizadas 2 cadeiras,
+                                                        necessita de mais?</h2>
+                                                    <div class="row" style="margin:0">
+                                                        <div class="form-check form-check-inline">
+                                                            @if (isset($logistica->s_n_cadeiras_dia1) && $logistica->s_n_cadeiras_dia1 === 1)
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="opcaoCadeirasDia1" id="opcaoCadeirasDia1Sim"
+                                                                    value="1" checked>
+                                                            @else
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="opcaoCadeirasDia1" id="opcaoCadeirasDia1Sim"
+                                                                    value="1">
+                                                            @endif
+                                                            <label class="form-check-label"
+                                                                for="opcaoCadeirasDia1Sim">Sim</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            @if (isset($logistica->s_n_cadeiras_dia1) && $logistica->s_n_cadeiras_dia1 === 0)
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="opcaoCadeirasDia1" id="opcaoCadeirasDia1Nao"
+                                                                    value="0" checked>
+                                                            @else
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="opcaoCadeirasDia1" id="opcaoCadeirasDia1Nao"
+                                                                    value="0">
+                                                            @endif
+                                                            <label class="form-check-label"
+                                                                for="opcaoCadeirasDia1Nao">Não</label>
+                                                        </div>
+                                                        <input style="width:40%;" type="text" name="cadeiras_dia1"
+                                                            id="cadeiras_dia1" disabled autocomplete="cadeiras_dia1"
+                                                            autofocus placeholder="Número de Cadeiras"
+                                                            value="@if (isset($logistica->cadeiras_dia1)) {{ $logistica->cadeiras_dia1 }} @endif">
+                                                    </div>
                                                 </div>
                                             </div>
+                                            <div class="row" style="margin-top:2%;">
+                                                <div class="single-form">
+                                                    <h2 class="font-semibold text-xl text-gray-800 leading-tight"
+                                                        style="font-size:1.2rem;">Necessita de mesa no stand?</h2>
+                                                    <div class="row" style="margin:0">
+                                                        <div class="form-check form-check-inline">
+                                                            @if (isset($logistica->mesa_stand_dia1) && $logistica->mesa_stand_dia1 === 'mesa')
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="opcaoMesaStandDia1"
+                                                                    id="opcaoMesaStandDia1Mesa" value="mesa" checked>
+                                                            @else
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="opcaoMesaStandDia1"
+                                                                    id="opcaoMesaStandDia1Mesa" value="mesa">
+                                                            @endif
+                                                            <label class="form-check-label"
+                                                                for="opcaoMesaStandDia1Mesa">Sim</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            @if (isset($logistica->mesa_stand_dia1) && $logistica->mesa_stand_dia1 === 'stand')
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="opcaoMesaStandDia1"
+                                                                    id="opcaoMesaStandDia1Stand" value="stand" checked>
+                                                            @else
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="opcaoMesaStandDia1"
+                                                                    id="opcaoMesaStandDia1Stand" value="stand">
+                                                            @endif
+                                                            <label style="margin-right:rem;" class="form-check-label"
+                                                                for="opcaoMesaStandDia1Stand">Não</label>
+                                                            <input style="width:50%;" type="text"
+                                                                name="n_pessoas_dia1" id="n_pessoas_dia1"
+                                                                autocomplete="n_pessoas_dia1" autofocus
+                                                                placeholder="Numero de pessoas presentes no stand/mesa?"
+                                                                value="@if (isset($logistica->n_pessoas_dia1)) {{ $logistica->n_pessoas_dia1 }} @endif">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-
                                         <div class="single-form" style="margin-top:2%">
                                             <h2 class="font-semibold text-xl text-gray-800 leading-tight"
-                                                style="font-size:1.2rem;">Número de almoços (Almoços pagos no dia do
-                                                evento, diretamente ao prestador de serviço)</h2>
-                                            <input type="text" name="num_almocos_dia1" id="num_almocos_dia1"
-                                                autocomplete="num_almocos_dia1" autofocus
-                                                placeholder="Número de almoços"
-                                                value="@if (isset($logistica->num_almocos_dia1)) {{ $logistica->num_almocos_dia1 }} @endif">
+                                                style="font-size:1.2rem;">Montagem</h2>
+                                            <p><b>Horário:</b>
+                                                @foreach ($slot_montagem1 as $slot_montagem11)
+                                                    @if (isset($logistica->montagem_id8) && $slot_montagem11->id == $logistica->montagem_id8)
+                                                        {{ $slot_montagem11->slot }}
+                                                    @endif
+                                                @endforeach
+                                            </p>
+                                            <p><b>Nome e MAtricula:</b>
+                                                @if (isset($logistica->info_montagem_1))
+                                                    {{ $logistica->info_montagem_1 }}
+                                                @else
+                                                    Sem dados!
+                                                @endif
+                                            </p>
                                         </div>
+                                        <div class="single-form" style="margin-top:2%; margin-left:5rem;">
+                                            <h2 class="font-semibold text-xl text-gray-800 leading-tight"
+                                                style="font-size:1.2rem;">Desmontagem</h2>
+                                            <p><b>Horário:
+                                                    @foreach ($slot_desmontagem1 as $slot_desmontagem11)
+                                                        @if (isset($logistica->desmontagem_id8) && $slot_desmontagem11->id == $logistica->desmontagem_id8)
+                                                            {{ $slot_desmontagem11->slot }}
+                                                        @endif
+                                                    @endforeach
+                                                </b> </p>
+                                            <p><b>Nome e Matricula:</b>
+                                                @if (isset($logistica->info_desmontagem_1))
+                                                    {{ $logistica->info_desmontagem_1 }}
+                                                @else
+                                                    Sem dados!
+                                                @endif
+                                            </p>
+                                        </div>
+
                                     @endif
 
                                     @if (isset($empresa->dia2))

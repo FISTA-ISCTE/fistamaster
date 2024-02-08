@@ -118,7 +118,7 @@
                     </div>
                 @endif
                 @if (auth()->user() &&
-                        auth()->user()->hasRole('empresa') && auth()->user()->empresa->modelo_workshop === "si")
+                        auth()->user()->hasRole('empresa') && (auth()->user()->empresa->plano === "premium" || auth()->user()->empresa->plano === "diamond"))
 
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 1.5rem;">
                         <x-nav-link href="{{ route('empresa.itspeedtalks') }}" :active="request()->routeIs('empresa.itspeedtalks')">

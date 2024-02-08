@@ -201,7 +201,12 @@ Route::middleware([
         Route::get('/empresas/logistica/{id}', function ($id) {
             $empresa = Empresa::find($id);
             $logistica = Logistica::where('id_empresa', $id)->first();
-            return view('admin.fista.empresas.logistica')->with(['logistica' => $logistica, 'empresa' => $empresa]);
+            $slot_montagem1 = LogisticaSlots::where('tipo', "montagem")->where('dia', "1")->get();
+            $slot_desmontagem1 = LogisticaSlots::where('tipo', "desmontagem")->where('dia', "1")->get();
+            $slot_montagem2 = LogisticaSlots::where('tipo', "montagem")->where('dia', "2")->get();
+            $slot_desmontagem2 = LogisticaSlots::where('tipo', "desmontagem")->where('dia', "2")->get();
+
+            return view('admin.fista.empresas.logistica')->with(['logistica' => $logistica, 'empresa' => $empresa, 'slot_montagem1' => $slot_montagem1, 'slot_montagem2' => $slot_montagem2, 'slot_desmontagem1' => $slot_desmontagem1, 'slot_desmontagem2' => $slot_desmontagem2]);
         })->name('logistica.empresas');
 
         Route::post('/toggle-mostrar/{id}', [AdminController::class, 'toggleMostrar'])->name('toggle.mostrar');
