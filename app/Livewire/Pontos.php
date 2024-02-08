@@ -21,12 +21,13 @@ class Pontos extends Component
     }
     public function save()
     {
+        $token_sem = preg_replace('/\s+/', '', $this->token);
         // Validação e autorização
-        $empresa_token = Tokens::where('token', $this->token)->first();
+        $empresa_token = Tokens::where('token', $token_sem)->first();
 
         // Verifica se o token já foi registrado
         $log_pontos = Log_Token::where('id_user', Auth::user()->id)
-            ->where('token', $this->token)
+            ->where('token', $token_sem)
             ->first();
 
         if (isset($log_pontos)) {
@@ -52,7 +53,7 @@ class Pontos extends Component
             return;
         } else {
             // Verifica se o token existe como token_pessoal na tabela User
-            $user_com_token = User::where('token_pessoal', $this->token)->first();
+            $user_com_token = User::where('token_pessoal', $token_sem)->first();
 
             if ( !isset($user_com_token) || $user_com_token->id === Auth::user()->id ) {
                 session()->flash('error', 'Querias?😂 Token Inválido!');
@@ -69,7 +70,7 @@ class Pontos extends Component
                 $user_com_token->save();
                 $insert_ponto2 = new Log_Token([
                     'id_user' => $user_com_token->id,
-                    'token' => $this->token,
+                    'token' => $token_sem,
                     'tipo' => $descricao2,
                     'pontos' => 50
                 ]);
@@ -77,7 +78,7 @@ class Pontos extends Component
 
                 $insert_ponto = new Log_Token([
                     'id_user' => $user->id,
-                    'token' => $this->token,
+                    'token' => $token_sem,
                     'tipo' => $descricao,
                     'pontos' => 50
                 ]);
