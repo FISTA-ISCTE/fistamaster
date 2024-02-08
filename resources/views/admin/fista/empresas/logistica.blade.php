@@ -438,7 +438,7 @@
                                         <p><b>Horário:</b>
                                             @foreach ($slot_desmontagem2 as $slot_desmontagem22)
                                                 @if (isset($logistica->desmontagem_id9) && $slot_desmontagem22->id == $logistica->desmontagem_id9)
-                                                    {{ $slot_desmontagem11->slot }}
+                                                    {{ $slot_desmontagem22->slot }}
                                                 @endif
                                             @endforeach
                                         </p>
