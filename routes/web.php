@@ -13,6 +13,8 @@ use App\Http\Controllers\EmailController;
 use App\Models\Billing;
 use App\Models\Logistica;
 
+use App\Models\Arquitetura;
+use Carbon\Carbon;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +29,17 @@ Route::get('/eventos', function () {
     return view('eventos');
 });
 
+Route::get('/arquitetura_expo', function () {
+    return view('exposicao_arquitetura');
+});
+
+
+
+
+Route::get('/feed', function () {
+    return view('feed');
+});
+
 Route::get('/ctf', function () {
     return view('ctf');
 });
@@ -34,6 +47,32 @@ Route::get('/ctf', function () {
 Route::get('eventos/tecnologias', function () {
     return view('eventos.tecnologias');
 });
+
+Route::get('/arquitetura_conferencias', function () {
+    $year = date('Y');
+    $pastyears = Arquitetura::distinct()->where('ano', '!=', $year)->orderBy('ano','desc')->pluck('ano');
+    $lastconferences = Arquitetura::where('tipo', 'conferencia')->where('ano','!=',$year)->get(['ano', 'avatar']);
+    $presentconferences = Arquitetura::where('tipo','conferencia')->where('ano',$year)->get(['avatar']);
+
+
+    return view('conferencias_arquitetura')->with(['pastyears' => $pastyears,'presentyear'=>$year,'lastconferences'=>$lastconferences,'presentconferences'=>$presentconferences]);
+});
+
+
+Route::get('/arquitetura_workshops', function () {
+    $lastYear = date('Y')-1;
+    $lastYearWorkshops = Arquitetura::where('tipo', 'workshop')->where('ano', $lastYear)->get(['avatar']);
+    
+    return view('workshops_arquitetura')->with(['lastYearWorkshops' => $lastYearWorkshops]);
+});
+
+Route::get('/arquitetura_exposição', function () {
+    $lastYear = date('Y')-1;
+    $lastYearWorkshops = Arquitetura::where('tipo', 'exposicao')->where('ano', $lastYear)->get(['avatar']);
+    
+    return view('exposicao_arquitetura')->with(['lastYearWorkshops' => $lastYearWorkshops]);
+});
+
 Route::get('eventos/arquitetura', function () {
     return view('eventos.arquitetura');
 });

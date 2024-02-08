@@ -23,7 +23,7 @@
                                                                                                             alunos projetam e constrõem uma instalação que modifique o espaço selecionado.</p>
                 </div>
                 <div class="col-lg-6 col-md-12 align-self-end">
-                    <img src="https://arquivo.pt/noFrame/replay/20220729095301im_/https://fista.iscte-iul.pt/img/concurso-ideias/img_ideia.png"
+                    <img src="arquitetura/Workshop/2023/11.jpg"
                         style="display:block;margin-top:30px;margin-left:auto;margin-right:auto">
                 </div>
             </div>
@@ -37,42 +37,18 @@
             <h1 style="font-size:40px;line-height: 1;font-weight: bold;">Vê como correu a última edição</h1>
            
         </div>
-        <div class="row mt-4 justify-content-center">
+        <div class="row mt-5 justify-content-center">
             <div class="col-md-11">
 
                 <ul class="card-slider">
-                    <li>
-                        <img class="carousel-image" style="width:180px;height:250px;"src="https://placehold.co/600x300" alt="Card Title">
-                        
-                    </li>
-                    <li>
-                        <img class="carousel-image"style="width:180px;height:250px;" src="https://placehold.co/600x300" alt="Card Title">
-                        
-                    </li>
-                    <li>
-                        <img class="carousel-image" style="width:180px;height:250px;"src="https://placehold.co/600x300" alt="Card Title">
-                        
-                    </li>
-                    <li>
-                        <img class="carousel-image" style="width:180px;height:250px;"src="https://placehold.co/600x300" alt="Card Title">
-                        
-                    </li>
-                    <li>
-                        <img class="carousel-image"style="180px;height:250px;" src="https://placehold.co/600x300" alt="Card Title">
-                        
-                    </li>
-                    <li>
-                        <img class="carousel-image" style="width:180px;height:250px;" src="https://placehold.co/600x300" alt="Card Title">
-                        
-                    </li>
-                    <li>
-                        <img class="carousel-image" style="width:180px;height:250px;" src="https://placehold.co/600x300" alt="Card Title">
-                        
-                    </li>
-                    <li>
-                        <img class="carousel-image" style="width:180px;height:250px;" src="https://placehold.co/600x300" alt="Card Title">
-                        
-                    </li>
+                    @foreach($lastYearWorkshops as $cartaz)
+
+                        <li>
+                            <img class="carousel-image"style="width:180px;height:250px;" src="{{asset($cartaz->avatar)}}" alt="Card Title">
+                            
+                        </li>
+                    @endforeach
+                    
                     
                 </ul>
             </div>

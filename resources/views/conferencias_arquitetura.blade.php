@@ -23,8 +23,7 @@
                                                                                                             um catálogo elaborado pelos alunos, compilando os diferentes elementos produzidos.</p>
                 </div>
                 <div class="col-lg-6 col-md-12 align-self-end">
-                    <img src="https://arquivo.pt/noFrame/replay/20220729095301im_/https://fista.iscte-iul.pt/img/concurso-ideias/img_ideia.png"
-                        style="display:block;margin-top:30px;margin-left:auto;margin-right:auto">
+                    <img src="/arquitetura/conferencias/2024/6.jpg" style="display:block;margin-top:30px;margin-left:auto;margin-right:auto">
                 </div>
             </div>
         </div>
@@ -58,43 +57,17 @@
             
 
         </div>
-        <div class="row mt-4 justify-content-center">
+      
+        <div class="row mt-5 justify-content-center">
             <div class="col-md-11">
 
                 <ul class="card-slider">
-                    <li>
-                        <img class="carousel-image" style="width:180px;height:250px;"src="https://placehold.co/600x300" alt="Card Title">
-                        
-                    </li>
-                    <li>
-                        <img class="carousel-image"style="width:180px;height:250px;" src="https://placehold.co/600x300" alt="Card Title">
-                        
-                    </li>
-                    <li>
-                        <img class="carousel-image" style="width:180px;height:250px;"src="https://placehold.co/600x300" alt="Card Title">
-                        
-                    </li>
-                    <li>
-                        <img class="carousel-image" style="width:180px;height:250px;"src="https://placehold.co/600x300" alt="Card Title">
-                        
-                    </li>
-                    <li>
-                        <img class="carousel-image"style="180px;height:250px;" src="https://placehold.co/600x300" alt="Card Title">
-                        
-                    </li>
-                    <li>
-                        <img class="carousel-image" style="width:180px;height:250px;" src="https://placehold.co/600x300" alt="Card Title">
-                        
-                    </li>
-                    <li>
-                        <img class="carousel-image" style="width:180px;height:250px;" src="https://placehold.co/600x300" alt="Card Title">
-                        
-                    </li>
-                    <li>
-                        <img class="carousel-image" style="width:180px;height:250px;" src="https://placehold.co/600x300" alt="Card Title">
-                        
-                    </li>
-                    
+                    @foreach($presentconferences as $presentconference)
+                        <li>
+                            <img class="carousel-image" style="width:180px;height:250px;"src="{{asset($presentconference->avatar)}}" alt="Card Title">
+                            
+                        </li>
+                    @endforeach
                 </ul>
             </div>
         </div>
@@ -107,49 +80,27 @@
         <div class="row justify-content-start">
             <h1 style="font-size:40px;line-height: 1;font-weight: bold;">Vê os cartazes das últimas edições</h1>
         
+        </div>
         
-            <h1 style="font-size:30px;line-height: 1;font-weight: lighter;margin-left:40px; padding: 2rem 0;">Edição 2023</h1>
-        </div>
-        <div class="row mt-4 justify-content-center">
-            <div class="col-md-11">
+        @foreach($pastyears as $pastyear)
 
-                <ul class="card-slider">
-                    <li>
-                        <img class="carousel-image" style="width:180px;height:250px;"src="https://placehold.co/600x300" alt="Card Title">
-                        
-                    </li>
-                    <li>
-                        <img class="carousel-image"style="width:180px;height:250px;" src="https://placehold.co/600x300" alt="Card Title">
-                        
-                    </li>
-                    <li>
-                        <img class="carousel-image" style="width:180px;height:250px;"src="https://placehold.co/600x300" alt="Card Title">
-                        
-                    </li>
-                    <li>
-                        <img class="carousel-image" style="width:180px;height:250px;"src="https://placehold.co/600x300" alt="Card Title">
-                        
-                    </li>
-                    <li>
-                        <img class="carousel-image"style="180px;height:250px;" src="https://placehold.co/600x300" alt="Card Title">
-                        
-                    </li>
-                    <li>
-                        <img class="carousel-image" style="width:180px;height:250px;" src="https://placehold.co/600x300" alt="Card Title">
-                        
-                    </li>
-                    <li>
-                        <img class="carousel-image" style="width:180px;height:250px;" src="https://placehold.co/600x300" alt="Card Title">
-                        
-                    </li>
-                    <li>
-                        <img class="carousel-image" style="width:180px;height:250px;" src="https://placehold.co/600x300" alt="Card Title">
-                        
-                    </li>
-                    
-                </ul>
+            <h1 style="font-size:30px;line-height: 1;font-weight: lighter;margin-left:40px; padding: 2rem 0;">Edição {{$pastyear}}</h1>
+            <div class="row mt-5 justify-content-center">
+                <div class="col-md-11">
+
+                    <ul class="card-slider">
+                        @foreach($lastconferences as $lastconference)
+                            @if($lastconference->ano == $pastyear)
+                                <li>
+                                    <img class="carousel-image" style="width:180px;height:250px;"src="{{asset($lastconference->avatar)}}" alt="Card Title">
+                                    
+                                </li>
+                            @endif
+                        @endforeach
+                    </ul>
+                </div>
             </div>
-        </div>
+        @endforeach
     </div>
   
 </section>           
