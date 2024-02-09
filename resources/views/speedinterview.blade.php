@@ -29,9 +29,9 @@
 
                             <div class="blog-content">
                                 <div class="blog-meta">
-                                    <span><i class="fa fa-check-double"></i>
+                                    <span>
                                         @if ($speedinterviews->lugares_disponiveis != 0)
-                                            {{ $speedinterviews->lugares_disponiveis }} Vagas
+
                                         @else
                                             ESGOTADO
                                         @endif
