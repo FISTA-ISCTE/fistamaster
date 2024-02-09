@@ -24,16 +24,31 @@ class SpeedInForm extends Component
     {
         // Aqui você pode inicializar suas listas de anos e cursos, por exemplo:
         $this->anos = [
-            ['id' => 1, 'nome' => '2021'],
-            ['id' => 2, 'nome' => '2022'],
-            ['id' => 3, 'nome' => '2023'],
-            ['id' => 4, 'nome' => '2024'],
+            ['id' => 1, 'nome' => '1ºano'],
+            ['id' => 2, 'nome' => '2ºano'],
+            ['id' => 3, 'nome' => '3ºano'],
+            ['id' => 4, 'nome' => '4ºano'],
+            ['id' => 5, 'nome' => '1ºano de Mestrado'],
+            ['id' => 6, 'nome' => '2ºano de Mestrado'],
+            ['id' => 7, 'nome' => 'Outro'],
+            ['id' => 8, 'nome' => 'Não Aplicável'],
         ];
 
         $this->cursos = [
-            ['id' => 1, 'nome' => 'Curso A'],
-            ['id' => 2, 'nome' => 'Curso B'],
-            ['id' => 3, 'nome' => 'Curso C'],
+            ['id' => 1, 'nome' => 'Engenharia Informática'],
+            ['id' => 2, 'nome' => 'Informática e Gestão de Empresas'],
+            ['id' => 3, 'nome' => 'Eng. de Telecomunicações e Informática'],
+
+            ['id' => 4, 'nome' => 'Ciência de Dados'],
+            ['id' => 12, 'nome' => 'Iscte Sintra'],
+            ['id' => 5, 'nome' => 'Arquitetura'],
+
+            ['id' => 8, 'nome' => 'Professor / Docente'],
+            ['id' => 9, 'nome' => 'Alumni'],
+            ['id' => 10, 'nome' => 'Outro (Publico Geral)'],
+
+            ['id' => 11, 'nome' => 'Não docente'],
+            ['id' => 7, 'nome' => 'Escola Secundária']
         ];
         $user = auth()->user();
         // Carrega os dados existentes do usuário autenticado
