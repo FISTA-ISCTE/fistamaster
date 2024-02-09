@@ -8,16 +8,20 @@
                     <h3 class="sub-title">Concursos, Conferências, Workshops</h3>
                     <h2 class="title">Tecnologias</h2>
                 </div>
-                <style>.single-case-study .case-study-img img {
-                    width: 100%;   /* Define a largura da imagem para 100% do container */
-                    height: 15rem !important;  /* Mantém a proporção da imagem ajustando a altura automaticamente */
-                    object-fit: cover; /* Isso garante que a imagem cubra todo o espaço sem distorcer */
-                }
+                <style>
+                    .single-case-study .case-study-img img {
+                        width: 100%;
+                        /* Define a largura da imagem para 100% do container */
+                        height: 15rem !important;
+                        /* Mantém a proporção da imagem ajustando a altura automaticamente */
+                        object-fit: cover;
+                        /* Isso garante que a imagem cubra todo o espaço sem distorcer */
+                    }
                 </style>
                 <div class="case-study-content-wrap">
                     <div class="swiper-container case-study-active">
                         <div class="row justify-content-center">
-                            <div class="col-md-4" >
+                            <div class="col-md-4">
                                 <!-- Single Case Study Start -->
                                 <div class="single-case-study" style="margin-top:1.5rem;">
                                     <div class="case-study-img">
@@ -31,12 +35,12 @@
                                 </div>
                                 <!-- Single Case Study End -->
                             </div>
-                            <div class="col-md-4" >
+                            <div class="col-md-4">
                                 <!-- Single Case Study Start -->
                                 <div class="single-case-study" style="margin-top:1.5rem;">
                                     <div class="case-study-img">
-                                        <a href="/ctf"><img
-                                                src="{{ asset('img/fotos/concurso_ctf2.jpg') }}" alt=""></a>
+                                        <a href="/ctf"><img src="{{ asset('img/fotos/concurso_ctf2.jpg') }}"
+                                                alt=""></a>
                                     </div>
                                     <div class="case-study-content">
                                         <h3 class="title"><a href="/ctf">Concurso de CiberSegurança</a></h3>
@@ -45,16 +49,16 @@
                                 </div>
                                 <!-- Single Case Study End -->
                             </div>
-                            <div class="col-md-4" >
+                            <div class="col-md-4">
                                 <!-- Single Case Study Start -->
                                 <div class="single-case-study" style="margin-top:1.5rem;">
                                     <div class="case-study-img">
-                                        <a href="/ctf"><img
-                                                src="{{ asset('assets/images/brand/13150512855_0a2cd5075e_c.jpg') }}" alt=""></a>
+                                        <a href="/workshops"><img
+                                                src="{{ asset('assets/images/brand/13150512855_0a2cd5075e_c.jpg') }}"
+                                                alt=""></a>
                                     </div>
                                     <div class="case-study-content">
                                         <h3 class="title"><a href="/workshops">Workshops</a></h3>
-
                                     </div>
                                 </div>
                                 <!-- Single Case Study End -->

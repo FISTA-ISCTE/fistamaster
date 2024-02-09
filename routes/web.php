@@ -5,6 +5,7 @@ use App\Http\Controllers\PageController;
 use App\Models\Empresa;
 use App\Models\ItSpeed;
 use App\Models\LogisticaSlots;
+use App\Models\SpeedInterview;
 use App\Models\Team;
 use App\Models\Workshop;
 use Illuminate\Foundation\Auth\User;
@@ -69,7 +70,10 @@ Route::get('/workshops', function () {
     $workshops = Workshop::where('show', 1)->get();
     return view('workshops')->with(['workshops'=> $workshops]);
 })->name('workshops');
-
+Route::get('/speed-interviews', function () {
+    $speedinterview = SpeedInterview::where('mostrar', 1)->get();
+    return view('speedinterview')->with(['speedinterview'=> $speedinterview]);
+})->name('speedinterview');
 Route::get('/empresas', function () {
     $empresaspremium = Empresa::where('plano', 'premium')->where('mostrar', '1')->get();
     $empresasdiamond = Empresa::where('plano', 'diamond')->where('mostrar', '1')->get();

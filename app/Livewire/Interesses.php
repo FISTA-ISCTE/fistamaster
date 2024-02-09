@@ -76,9 +76,8 @@ class Interesses extends Component
                 $insert_ponto->save();
             }
             $user->file = 'users/cv/' . $filename;
-
-
         }
+
         if (isset($this->course) || isset($this->year)) {
             $user->id_curso = $this->course;
             $user->id_ano = $this->year;
