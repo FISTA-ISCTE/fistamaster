@@ -46,16 +46,14 @@
                     </a>
                 </div>
                 <!-- Navigation Links -->
-                @if (auth()->user() &&
-                        auth()->user()->hasRole('user'))
+                @if (auth()->user() && auth()->user()->hasRole('user'))
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 1.5rem;">
                         <x-nav-link href="{{ route('user.pontos') }}" :active="request()->routeIs('user.pontos')">
                             {{ __('FISTA GO') }}
                         </x-nav-link>
                     </div>
                 @endif
-                @if (auth()->user() &&
-                        auth()->user()->hasRole('admin'))
+                @if (auth()->user() && auth()->user()->hasRole('admin'))
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 1.5rem;">
                         <x-nav-link href="{{ route('enviar.emails') }}" :active="request()->routeIs('enviar.emails')">
                             {{ __('Emails📤') }}
@@ -63,8 +61,7 @@
                     </div>
                 @endif
                 <!-- Navigation Links -->
-                @if (auth()->user() &&
-                        auth()->user()->hasRole('user'))
+                @if (auth()->user() && auth()->user()->hasRole('user'))
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 1.5rem;">
                         <x-nav-link href="{{ route('user.interesses') }}" :active="request()->routeIs('user.interesses')">
                             {{ __('Interesses') }}
@@ -72,8 +69,7 @@
                     </div>
                 @endif
 
-                @if (auth()->user() &&
-                        auth()->user()->hasRole('admin'))
+                @if (auth()->user() && auth()->user()->hasRole('admin'))
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 1.5rem;">
                         <x-nav-link href="{{ route('admin.dashboard') }}" :active="request()->routeIs('admin.dashboard')">
                             {{ __('Dashboard') }}
@@ -81,17 +77,21 @@
                     </div>
                 @endif
 
-                @if (auth()->user() &&
-                        auth()->user()->hasRole('admin'))
+                @if (auth()->user() && auth()->user()->hasRole('admin'))
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 1.5rem;">
                         <x-nav-link href="{{ route('admin.empresas') }}" :active="request()->routeIs('admin.empresas')">
                             {{ __('Empresas') }}
                         </x-nav-link>
                     </div>
                 @endif
-
-                @if (auth()->user() &&
-                        auth()->user()->hasRole('admin'))
+                @if (auth()->user() && auth()->user()->hasRole('admin'))
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 1.5rem;">
+                        <x-nav-link href="{{ route('admin.documentos') }}" :active="request()->routeIs('admin.documentos')">
+                            {{ __('Documentos') }}
+                        </x-nav-link>
+                    </div>
+                @endif
+                @if (auth()->user() && auth()->user()->hasRole('admin'))
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 1.5rem;">
                         <x-nav-link href="{{ route('itspeedtalks.empresas') }}" :active="request()->routeIs('itspeedtalks.empresas')">
                             {{ __('It Speed Talks') }}
@@ -99,8 +99,7 @@
                     </div>
                 @endif
 
-                @if (auth()->user() &&
-                        auth()->user()->hasRole('empresa'))
+                @if (auth()->user() && auth()->user()->hasRole('empresa'))
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 1.5rem;">
                         <x-nav-link href="{{ route('empresa.dashboard') }}" :active="request()->routeIs('empresa.dashboard')">
                             {{ __('Dashboard') }}
@@ -108,8 +107,7 @@
                     </div>
                 @endif
 
-                @if (auth()->user() &&
-                        auth()->user()->hasRole('empresa'))
+                @if (auth()->user() && auth()->user()->hasRole('empresa'))
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 1.5rem;">
                         <x-nav-link href="{{ route('empresa.faturacao') }}" :active="request()->routeIs('empresa.faturacao')">
                             {{ __('Faturação') }}
@@ -118,8 +116,8 @@
                 @endif
 
                 @if (auth()->user() &&
-                        auth()->user()->hasRole('empresa') && auth()->user()->empresa->modelo_workshop === "ws_presencial")
-
+                        auth()->user()->hasRole('empresa') &&
+                        auth()->user()->empresa->modelo_workshop === 'ws_presencial')
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 1.5rem;">
                         <x-nav-link href="{{ route('empresa.workshop') }}" :active="request()->routeIs('empresa.workshop')">
                             {{ __('Workshop') }}
@@ -127,8 +125,8 @@
                     </div>
                 @endif
                 @if (auth()->user() &&
-                        auth()->user()->hasRole('empresa') && (auth()->user()->empresa->plano === "premium" || auth()->user()->empresa->plano === "diamond"))
-
+                        auth()->user()->hasRole('empresa') &&
+                        (auth()->user()->empresa->plano === 'premium' || auth()->user()->empresa->plano === 'diamond'))
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 1.5rem;">
                         <x-nav-link href="{{ route('empresa.itspeedtalks') }}" :active="request()->routeIs('empresa.itspeedtalks')">
                             {{ __('It Speed Talks') }}
@@ -136,8 +134,7 @@
                     </div>
                 @endif
 
-                @if (auth()->user() &&
-                        auth()->user()->hasRole('empresa'))
+                @if (auth()->user() && auth()->user()->hasRole('empresa'))
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 1.5rem;">
                         <x-nav-link href="{{ route('empresa.logistica') }}" :active="request()->routeIs('empresa.logistica')">
                             {{ __('Logistica') }}
@@ -287,8 +284,7 @@
 
     <!-- Responsive Navigation Menu -->
     <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
-        @if (auth()->user() &&
-                auth()->user()->hasRole('admin'))
+        @if (auth()->user() && auth()->user()->hasRole('admin'))
             <div class="pt-2 pb-3 space-y-1">
                 <x-responsive-nav-link href="{{ route('admin.dashboard') }}" :active="request()->routeIs('dashboard')">
                     {{ __('Dashboard') }}
