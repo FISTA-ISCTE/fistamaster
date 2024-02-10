@@ -192,6 +192,11 @@ Route::middleware([
             $empresas = Empresa::all();
             return view('admin.fista.empresas')->with(['empresas' => $empresas]);
         })->name('admin.empresas');
+        Route::get('/documentos', function () {
+            $empresas = Empresa::all();
+            return view('admin.fista.documentos')->with(['empresas' => $empresas]);
+        })->name('admin.documentos');
+
         Route::get('/empresas/{id}', function ($id) {
             $empresa = Empresa::find($id);
             return view('admin.fista.empresas.view')->with(['empresa' => $empresa]);
