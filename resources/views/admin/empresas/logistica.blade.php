@@ -85,7 +85,7 @@
                                         @endif
                                         <label class="form-check-label" for="opcaoMesaStandDia1Stand">Não</label>
                                     </div>
-                                    <input style="width:40.5%;" type="text" name="n_pessoas_dia1" id="n_pessoas_dia1"
+                                    <input style="width:40.5%;" type="number" name="n_pessoas_dia1" id="n_pessoas_dia1"
                                         autocomplete="n_pessoas_dia1" autofocus
                                         placeholder="Numero de pessoas presentes no stand/mesa?"
                                         value="@if (isset($logistica->n_pessoas_dia1)) {{ $logistica->n_pessoas_dia1 }} @endif">
@@ -262,7 +262,7 @@
                                         @endif
                                         <label class="form-check-label" for="opcaoMesaStandDia2Stand">Stand</label>
                                     </div>
-                                    <input style="width:40.5%;" type="text" name="n_pessoas_dia2"
+                                    <input style="width:40.5%;" type="number" name="n_pessoas_dia2"
                                         id="n_pessoas_dia2" autocomplete="n_pessoas_dia2" autofocus
                                         placeholder="Numero de pessoas presentes no stand/mesa?"
                                         value="@if (isset($logistica->n_pessoas_dia2)) {{ $logistica->n_pessoas_dia2 }} @endif">
