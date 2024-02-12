@@ -108,6 +108,14 @@
                 @endif
 
                 @if (auth()->user() && auth()->user()->hasRole('empresa'))
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 1.5rem;">
+                    <x-nav-link href="{{ route('empresa.seats') }}" :active="request()->routeIs('empresa.seats')">
+                        {{ __('Stands') }}
+                    </x-nav-link>
+                </div>
+            @endif
+
+                @if (auth()->user() && auth()->user()->hasRole('empresa'))
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 1.5rem;">
                         <x-nav-link href="{{ route('empresa.faturacao') }}" :active="request()->routeIs('empresa.faturacao')">
                             {{ __('Faturação') }}

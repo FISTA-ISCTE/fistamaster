@@ -63,6 +63,20 @@
                                 </div>
                                 <!-- Single Case Study End -->
                             </div>
+                            <div class="col-md-4">
+                                <!-- Single Case Study Start -->
+                                <div class="single-case-study" style="margin-top:1.5rem;">
+                                    <div class="case-study-img">
+                                        <a href="/speed-interviews"><img
+                                                src="{{ asset('assets/images/brand/52738049116_d7bf9fb4dd_c.jpg') }}"
+                                                alt=""></a>
+                                    </div>
+                                    <div class="case-study-content">
+                                        <h3 class="title"><a href="/speed-interviews">Speed Interview</a></h3>
+                                    </div>
+                                </div>
+                                <!-- Single Case Study End -->
+                            </div>
                         </div>
 
                         <!-- Add Pagination -->

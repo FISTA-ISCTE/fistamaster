@@ -126,6 +126,15 @@ Route::middleware([
 ])->group(function () {
 
     Route::middleware(['role:empresa'])->prefix('empresa')->group(function () {
+        Route::get('/seats', function () {
+            return view('admin.empresas.seats-map');
+        })->name('empresa.seats');
+        Route::get('/seats28', function () {
+            return view('admin.empresas.seats-map28');
+        })->name('empresa.seats28');
+        Route::get('/seats29', function () {
+            return view('admin.empresas.seats-map29');
+        })->name('empresa.seats29');
         Route::get('/workshop', function () {
             return view('admin.empresas.workshop');
         })->name('empresa.workshop');
