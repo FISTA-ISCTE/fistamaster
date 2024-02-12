@@ -45,7 +45,7 @@
                             <div class="d-flex flex-wrap justify-content-around">
                                 <div class="pt-4 ">
                                     <a class="btn"
-                                        href="https://fista.iscte-iul.pt/assets/files/Regulamento CTF.pdf">Regulamento</a>
+                                        href="https://fista.iscte-iul.pt/assets/files/Regulamento CTF2.pdf">Regulamento</a>
                                 </div>
                                 <div class="pt-4 pb-4 pt-md-4 ">
 
