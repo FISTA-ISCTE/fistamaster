@@ -5,7 +5,7 @@
             <button wire:click="selectSeat({{ $seat->id }})" class="seat {{ $seat->occupied ? 'occupied' : '' }}"
                 style="position: absolute; top: {{ $seat->top }}%; left: {{ $seat->left }}%;">
                 @if ($seat->occupied)
-                    <img src="http://127.0.0.1:8000/storage/{{ $seat->avatar }}" alt="Ocupado">
+                    <img src="https://fista.iscte-iul.pt/storage/{{ $seat->avatar }}" alt="Ocupado">
                 @else
                     <img src="/img/fotos/check-mark.png" style="width: 2rem;" alt="Livre">
                 @endif
