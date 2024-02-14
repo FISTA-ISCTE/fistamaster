@@ -235,7 +235,7 @@ Route::middleware([
             return view('admin.fista.dashboard')->with(['usersWithoutRoleXCount' => $usersWithoutRoleXCount, 'empresasCount' => $empresasCount, 'sessions' => $sessions]);
         })->name('admin.dashboard');
         Route::get('/empresas', function () {
-            $empresas = Empresa::where("mostrar", 1)->get();
+            $empresas = Empresa::paginate(10);
             return view('admin.fista.empresas')->with(['empresas' => $empresas]);
         })->name('admin.empresas');
         Route::get('/documentos', function () {
