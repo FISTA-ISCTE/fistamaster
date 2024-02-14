@@ -5,6 +5,7 @@ use App\Http\Controllers\PageController;
 use App\Models\Empresa;
 use App\Models\ItSpeed;
 use App\Models\LogisticaSlots;
+use App\Models\Programas;
 use App\Models\SpeedInterview;
 use App\Models\Team;
 use App\Models\Workshop;
@@ -27,6 +28,42 @@ use App\Models\Logistica;
 */
 Route::get('/eventos', function () {
     return view('eventos');
+});
+
+Route::get('/programa', function () {
+    $programas = Programas::all()->sortBy('horaInicio');
+
+    foreach ($programas as $programa) {
+        $dias[] = $programa->dia;
+    }
+
+    $dias = array_unique($dias);
+    usort($dias, function ($time1, $time2) {
+        if (strtotime($time1) > strtotime($time2)) {
+            return 1;
+        } elseif (strtotime($time1) < strtotime($time2)) {
+            return -1;
+        } else {
+            return 0;
+        }
+    });
+
+    foreach ($dias as $dia) {
+        if (date('d') == date('d', strtotime($dia))) {
+            $activeDia = date('d', strtotime($dia));
+            break;
+        } else {
+            $activeDia = date('d', strtotime($dias[0]));
+        }
+    }
+    return view('programa', ['dias' => $dias, 'activeDia' => $activeDia, 'programas' => $programas]);
+});
+
+Route::get('/eventos', function () {
+    return view('eventos');
+});
+Route::get('/conferencias', function () {
+    return view('conferencias');
 });
 
 Route::get('/ctf', function () {
@@ -68,11 +105,11 @@ Route::get('/', function () {
 });
 Route::get('/workshops', function () {
     $workshops = Workshop::where('show', 1)->get();
-    return view('workshops')->with(['workshops'=> $workshops]);
+    return view('workshops')->with(['workshops' => $workshops]);
 })->name('workshops');
 Route::get('/speed-interviews', function () {
     $speedinterview = SpeedInterview::where('mostrar', 1)->get();
-    return view('speedinterview')->with(['speedinterview'=> $speedinterview]);
+    return view('speedinterview')->with(['speedinterview' => $speedinterview]);
 })->name('speedinterview');
 Route::get('/empresas', function () {
     $empresaspremium = Empresa::where('plano', 'premium')->where('mostrar', '1')->get();
@@ -111,7 +148,7 @@ Route::get('/sobre-nos', function () {
             'user_name' => $team->user->name, // Assumindo que 'name' é um campo na tabela User
             'linkedin' => $team->user->linkedin, // Assumindo que 'linkedin' é um campo na tabela User
             'photo' => $team->user->profile_photo_url,
-            'prioridade'=> $team->prioridade,
+            'prioridade' => $team->prioridade,
         ];
     });
     return view('about')->with(['teamData' => $teamData]);
@@ -171,7 +208,7 @@ Route::middleware([
             $contagemAlmocos13h_dia1 = Logistica::where("almocos_dia1", "13h-14h")->count();
             $contagemAlmocos12h_dia2 = Logistica::where("almocos_dia2", "12h-13h")->count();
             $contagemAlmocos13h_dia2 = Logistica::where("almocos_dia2", "13h-14h")->count();
-            return view('admin.empresas.logistica')->with(['contagemAlmocos12h_dia1'=> $contagemAlmocos12h_dia1, 'contagemAlmocos13h_dia1'=> $contagemAlmocos13h_dia1, 'contagemAlmocos12h_dia2'=> $contagemAlmocos12h_dia2,'contagemAlmocos13h_dia2'=> $contagemAlmocos13h_dia2,'empresa' => $empresa, 'logistica' => $logistica, 'slot_montagem1' => $slot_montagem1, 'slot_montagem2' => $slot_montagem2, 'slot_desmontagem1' => $slot_desmontagem1, 'slot_desmontagem2' => $slot_desmontagem2]);
+            return view('admin.empresas.logistica')->with(['contagemAlmocos12h_dia1' => $contagemAlmocos12h_dia1, 'contagemAlmocos13h_dia1' => $contagemAlmocos13h_dia1, 'contagemAlmocos12h_dia2' => $contagemAlmocos12h_dia2, 'contagemAlmocos13h_dia2' => $contagemAlmocos13h_dia2, 'empresa' => $empresa, 'logistica' => $logistica, 'slot_montagem1' => $slot_montagem1, 'slot_montagem2' => $slot_montagem2, 'slot_desmontagem1' => $slot_desmontagem1, 'slot_desmontagem2' => $slot_desmontagem2]);
 
         })->name('empresa.logistica');
 
