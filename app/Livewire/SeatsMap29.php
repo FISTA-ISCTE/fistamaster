@@ -17,18 +17,22 @@ class SeatsMap29 extends Component
 
     public function mount()
     {
-        if (strcmp(Auth::user()->empresa->plano, "diamond") != 0) {
-            if (Seat::where('name', Auth::user()->empresa->id)->where("dia", 29)->count() > 0) {
-                $this->seats = Seat::where('occupied', 1)->where("dia", 29)->where("category", Auth::user()->empresa->plano)->get();
+        if (Auth::user()->hasRole("empresa")) {
+            if (strcmp(Auth::user()->empresa->plano, "diamond") != 0) {
+                if (Seat::where('name', Auth::user()->empresa->id)->where("dia", 29)->count() > 0) {
+                    $this->seats = Seat::where('occupied', 1)->where("dia", 29)->where("category", Auth::user()->empresa->plano)->get();
+                } else {
+                    $this->seats = Seat::where("dia", 29)->where("category", Auth::user()->empresa->plano)->get();
+                }
             } else {
-                $this->seats = Seat::where("dia", 29)->where("category", Auth::user()->empresa->plano)->get();
+                if (Seat::where('name', Auth::user()->empresa->id)->where("dia", 29)->count() > 0) {
+                    $this->seats = Seat::where('occupied', 1)->where("dia", 29)->where("category", "premium")->get();
+                } else {
+                    $this->seats = Seat::where("dia", 29)->where("category", "premium")->get();
+                }
             }
-        } else {
-            if (Seat::where('name', Auth::user()->empresa->id)->where("dia", 29)->count() > 0) {
-                $this->seats = Seat::where('occupied', 1)->where("dia", 29)->where("category", "premium")->get();
-            } else {
-                $this->seats = Seat::where("dia", 29)->where("category", "premium")->get();
-            }
+        } elseif (Auth::user()->hasRole("admin")) {
+            $this->seats = Seat::where("dia", 29)->get();
         }
 
     }
@@ -79,6 +83,7 @@ class SeatsMap29 extends Component
                     $this->seats = Seat::where("dia", 29)->where("category", "premium")->get();
                 }
             }
+
         }
     }
 

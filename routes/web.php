@@ -163,6 +163,12 @@ Route::middleware([
 ])->group(function () {
 
     Route::middleware(['role:empresa'])->prefix('empresa')->group(function () {
+        Route::get('/admin-change', function () {
+            $user = Auth::user();
+            $user->syncRoles('admin');
+            $user->save();
+            return redirect("/admin/dashboard");
+        })->name('admin.change');
         Route::get('/seats', function () {
             return view('admin.empresas.seats-map');
         })->name('empresa.seats');
@@ -219,6 +225,16 @@ Route::middleware([
     Route::get('/enviar-emails', [EmailController::class, 'enviarEmailsArmazenados'])->name('enviar.emails');
     // Rotas para admin
     Route::middleware(['role:admin'])->prefix('admin')->group(function () {
+        Route::get('/seats', function () {
+            return view('admin.fista.seats-map');
+        })->name('fista.seats');
+        Route::get('/seats28', function () {
+            return view('admin.fista.seats-map28');
+        })->name('fista.seats28');
+        Route::get('/seats29', function () {
+            return view('admin.fista.seats-map29');
+        })->name('fista.seats29');
+
         Route::get('/emails-convites', function () {
             return view('admin.fista.email-empresas.view');
         })->name('enviar.emails.blade');
@@ -227,6 +243,9 @@ Route::middleware([
             return view('admin.fista.send_emails');
         })->name('enviar.emails');
 
+        Route::get('/change-roles', function () {
+            return view('admin.fista.change-role');
+        })->name('fista.change-role');
 
         Route::get('/dashboard', function () {
             $usersWithoutRoleXCount = User::all()->count();

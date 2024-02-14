@@ -167,7 +167,7 @@
                                         <!--<button class="btn"
                                             style="background-color:black; color:#fff">Logistica</button>-->
                                     </div>
-<div class="col-md-7"></div>
+                                    <div class="col-md-7"></div>
                                     <!-- Botão à direita -->
                                     <style>
                                         .btn-mostrar {
@@ -312,6 +312,8 @@
                                         </div>
                                     </div>
                                 </form>
+                                @livewire('empresa-users', ['empresaId' => $empresa->id])
+
 
                             </div>
                         </div>

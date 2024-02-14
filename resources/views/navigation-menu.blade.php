@@ -108,12 +108,19 @@
                 @endif
 
                 @if (auth()->user() && auth()->user()->hasRole('empresa'))
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 1.5rem;">
-                    <x-nav-link href="{{ route('empresa.seats') }}" :active="request()->routeIs('empresa.seats')">
-                        {{ __('Stands') }}
-                    </x-nav-link>
-                </div>
-            @endif
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 1.5rem;">
+                        <x-nav-link href="{{ route('empresa.seats') }}" :active="request()->routeIs('empresa.seats')">
+                            {{ __('Stands') }}
+                        </x-nav-link>
+                    </div>
+                @endif
+                @if (auth()->user() && auth()->user()->hasRole('admin'))
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 1.5rem;">
+                        <x-nav-link href="{{ route('fista.seats') }}" :active="request()->routeIs('fista.seats')">
+                            {{ __('Stands') }}
+                        </x-nav-link>
+                    </div>
+                @endif
 
                 @if (auth()->user() && auth()->user()->hasRole('empresa'))
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 1.5rem;">
@@ -250,7 +257,20 @@
                             <x-dropdown-link href="{{ route('profile.show') }}">
                                 {{ __('Perfil') }}
                             </x-dropdown-link>
-
+                            @if (auth()->user() && auth()->user()->hasRole('empresa'))
+                                @if (auth()->user()->role_id == 2)
+                                    <x-dropdown-link href="{{ route('admin.change') }}">
+                                        {{ __('Alterar para Admin') }}
+                                    </x-dropdown-link>
+                                @endif
+                            @endif
+                            @if (auth()->user() && auth()->user()->hasRole('admin'))
+                                @if (auth()->user()->role_id == 2)
+                                    <x-dropdown-link href="{{ route('fista.change-role') }}">
+                                        {{ __('Alterar para Empresa') }}
+                                    </x-dropdown-link>
+                                @endif
+                            @endif
                             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                                 <x-dropdown-link href="{{ route('api-tokens.index') }}">
                                     {{ __('API Tokens') }}
