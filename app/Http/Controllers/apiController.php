@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\CheckInConferencia;
+use App\Models\Log_Token;
+use App\Models\Tokens;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -35,11 +38,11 @@ class apiController extends Controller
 
         if (Auth::attempt($loginDetails)) {
             $user = Auth::user();
-
+            $roleName = $user->getRoleNames()->first();
                 return response()->json(['message' => 'login successful',
                     'user' => $user,
+                    'role' => $roleName,
                     'code' => 200]);
-
         } else {
             return response()->json(['message' => 'wrong login', 'code' => 501]);
         }
@@ -79,67 +82,78 @@ class apiController extends Controller
 
     }
 
-   /* public function insertToken(Request $request)
+    public function insertToken(Request $request)
     {
         $postInput = file_get_contents('php://input');
         $data = json_decode($postInput, true);
         $uuid = $request->only('id');
         $token = $data["token"];
-        $User = User::where('uuid', $uuid)->first();
-        $log_pontos = Log_ponto::where('id_user', $User->id)->where('token', $token)->first();
-        $empresa_token = Tokens_ponto::where('token', $token)->first();
-        $insert_ponto = new Log_ponto;
-        if (empty($empresa_token)) {
-            return response()->json(['message' => 'Token Inválido!', 'code' => 300]);
+        $user = User::where('uuid', $uuid)->first();
+        $token_sem = preg_replace('/\s+/', '', $token);
+        // Validação e autorização
+        $empresa_token = Tokens::where('token', $token_sem)->first();
 
+        // Verifica se o token já foi registrado
+        $log_pontos = Log_Token::where('id_user', $user->id)
+            ->where('token', $token_sem)
+            ->first();
+
+        if (isset($log_pontos)) {
+            return response()->json(['message' => 'Token já Introduzido!', 'code' => 304]);
+        }
+
+        // Se o token existir na tabela Tokens
+        if ($empresa_token) {
+            $user->pontos += $empresa_token->pontos;
+            $user->save();
+
+            $insert_ponto = new Log_Token([
+                'id_user' => $user->id,
+                'token' => $token,
+                'tipo' => $empresa_token->descricao,
+                'pontos' => $empresa_token->pontos
+            ]);
+            $insert_ponto->save();
+            return response()->json(['message' => 'Token Válido!', 'pontos' => $user->pontos, 'code' => 200]);
         } else {
-            //return $empresa_token;
-            if (strcmp($empresa_token->token, $token) == 0) {
-                # code..
-                if (!empty($log_pontos->token)) {
-                    if (strcmp($log_pontos->token, $token) == 0) {
+            // Verifica se o token existe como token_pessoal na tabela User
+            $user_com_token = User::where('token_pessoal', $token_sem)->first();
 
-                        return response()->json(['message' => 'Token já Introduzido!', 'code' => 304]);
-                    } else {
+            if ( !isset($user_com_token) || $user_com_token->id === $user->id ) {
 
-                        $insert_ponto->id_user = $User->id;
-                        $insert_ponto->token = $token;
-                        $insert_ponto->tipo = $empresa_token->descricao;
-                        $insert_ponto->pontos = $empresa_token->pontos;
-                        $insert_ponto->save();
-                        //Codigo invalido
+                return response()->json(['message' => 'Token Inválido!', 'code' => 300]);
+            }
+            if ($user_com_token) {
+                $user->pontos += 50; // Adiciona 50 pontos
+                $user->save();
 
-                        $pontosint = $User->pontos;
-                        $total = $pontosint + $empresa_token->pontos;
-                        $User->pontos = $total;
-                        $User->save();
+                $descricao = "Convidado de " . $user_com_token->name; // Nome do usuário que tem o token
+                $descricao2 = "Código colocado por " . $user->name;
+                $user_com_token->pontos +=50;
+                $user_com_token->save();
+                $insert_ponto2 = new Log_Token([
+                    'id_user' => $user_com_token->id,
+                    'token' => $token_sem,
+                    'tipo' => $descricao2,
+                    'pontos' => 50
+                ]);
+                $insert_ponto2->save();
 
-                    }
-                } else {
-                    $insert_ponto->id_user = $User->id;
-                    $insert_ponto->token = $token;
-                    $insert_ponto->tipo = $empresa_token->descricao;
-                    $insert_ponto->pontos = $empresa_token->pontos;
-                    $insert_ponto->save();
-                    //Codigo invalido
-
-                    $pontosint = $User->pontos;
-                    $total = $pontosint + $empresa_token->pontos;
-                    $User->pontos = $total;
-                    $User->save();
-                    if ($User->pontos == 0) {
-                        return response()->json(['message' => 'Token Inválido!', 'code' => 300]);
-
-                    }
-                    return response()->json(['message' => 'Token Válido!', 'pontos' => $User->pontos, 'code' => 200]);
-                }
+                $insert_ponto = new Log_Token([
+                    'id_user' => $user->id,
+                    'token' => $token_sem,
+                    'tipo' => $descricao,
+                    'pontos' => 50
+                ]);
+                $insert_ponto->save();
+                return response()->json(['message' => 'Token Válido!', 'pontos' => $user->pontos, 'code' => 200]);
             } else {
                 return response()->json(['message' => 'Token Inválido!', 'code' => 300]);
             }
         }
-        return response()->json(['message' => 'Token Válido!', 'pontos' => $User->pontos, 'code' => 200]);
     }
 
+/*
     public function sendpost(Request $request)
     {
         $feed = Feed::orderBy('id', 'desc')->get();
@@ -339,7 +353,7 @@ class apiController extends Controller
             }
         }
     }
-
+*/
     public function checkinConferencia(Request $request)
     {
         $postInput = file_get_contents('php://input');
@@ -357,12 +371,12 @@ class apiController extends Controller
             $pontos = $user->pontos;
             $user->pontos = $pontos + 200;
             $user->save();
-            return response()->json(['message' => 'Checkin feito com sucesso!', 'nome' => $user->first_name . ' ' . $user->last_name, 'code' => 200]);
+            return response()->json(['message' => 'Checkin feito com sucesso!', 'nome' => $user->name, 'code' => 200]);
         } else {
-            return response()->json(['message' => 'Checkin já efetuado!', 'nome' => $user->first_name . ' ' . $user->last_name, 'code' => 300]);
+            return response()->json(['message' => 'Checkin já efetuado!', 'nome' => $user->name, 'code' => 300]);
         }
     }
-
+/*
     public function checkinKeynote(Request $request)
     {
         $postInput = file_get_contents('php://input');
