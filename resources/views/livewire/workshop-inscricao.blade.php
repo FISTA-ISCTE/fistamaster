@@ -1,8 +1,8 @@
 <div style="display: flex; justify-content: center; align-items: center; margin-top: 1.5rem; margin-bottom: 1.5rem;">
     @if (auth()->check()) <!-- Verifica se o usuário está logado -->
-        @if (!is_null($workshop->url))
+        @if (!is_null($workshop->link))
             <!-- Verifica se há um link para o workshop -->
-            <a href="{{ $workshop->url }}" target="_blank" class="btn btn-primary">
+            <a href="{{ $workshop->link }}" target="_blank" class="btn btn-primary">
                 Inscrever
             </a>
         @else
