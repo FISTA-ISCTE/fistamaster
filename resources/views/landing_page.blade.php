@@ -270,11 +270,11 @@
                             <!-- Service Item Start -->
                             <div class="service-item-03">
                                 <div class="service-img">
-                                    <a href="/brevemente"><img src="img/conjunto/fotoconferencias2.3.jpg"
+                                    <a href="/conferencias"><img src="img/conjunto/fotoconferencias2.3.jpg"
                                             alt=""></a>
                                 </div>
                                 <div class="service-text">
-                                    <h3 class="title"><a href="/brevemente">Conferências</a></h3>
+                                    <h3 class="title"><a href="/conferencias">Conferências</a></h3>
                                 </div>
                             </div>
                             <!-- Service Item End -->

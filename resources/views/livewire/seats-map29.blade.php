@@ -1,6 +1,6 @@
 <div>
     <div class="seats-map-container" style="position: relative; width: 100%;">
-        <img src="/img/fotos/dia_29.jpg" alt="Mapa de Assentos" style="width: 100%; height: auto;" class="mapa-imagem">
+        <img src="/img/fotos/stand29.jpg" alt="Mapa de Assentos" style="width: 100%; height: auto;" class="mapa-imagem">
         @foreach ($seats as $seat)
             <button wire:click="selectSeat({{ $seat->id }})" class="seat {{ $seat->occupied ? 'occupied' : '' }}"
                 style="position: absolute; top: {{ $seat->top }}%; left: {{ $seat->left }}%;">

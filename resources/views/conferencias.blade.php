@@ -22,10 +22,11 @@
                             <!-- Choose Us Item Start -->
                             <div class="choose-us-item">
                                 <div class="choose-us-img">
-                                    <a href="choose-us.html"><img src="assets/images/choose-us1.jpg" alt=""></a>
+                                    <a href="choose-us.html"><img src="assets/images/kaizen3.jpg" alt=""></a>
                                     <div class="choose-us-content">
                                         <h3 class="title">"Por trás das odds"</h3>
-                                        <p>Às 11h de dia 22 de fevereiro, a conferência irá mergulhar no universo da Kaizen Gaming, a empresa por trás da Betano e patrocinadora oficial do EURO2024.</p>
+                                        <p>Às 11h de dia 22 de fevereiro, a conferência irá mergulhar no universo da Kaizen
+                                            Gaming, a empresa por trás da Betano e patrocinadora oficial do EURO2024.</p>
                                     </div>
                                 </div>
                             </div>
@@ -35,12 +36,12 @@
                             <!-- Choose Us Item Start -->
                             <div class="choose-us-item">
                                 <div class="choose-us-img">
-                                    <a href="choose-us.html"><img src="assets/images/choose-us2.jpg" alt=""></a>
+                                    <a href="choose-us.html"><img src="assets/images/scp2.jpg" alt=""></a>
                                     <div class="choose-us-content">
-                                        <h3 class="title">Information Database Security</h3>
-                                        <p>Accelerate innovation with world-class tech teams We’ll match you to an entire
-                                            remote
-                                            team of incredible freelance talent for all your software development needs.</p>
+                                        <h3 class="title">"Além do Campo"</h3>
+                                        <p>O Coordenador de Observação e Análise do Sporting CP, irá revelar
+                                            insights exclusivos sobre as táticas que impulsionam e interligam o futebol ao
+                                            mundo das tecnologias!</p>
                                     </div>
                                 </div>
                             </div>

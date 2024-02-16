@@ -6632,7 +6632,7 @@ textarea:-ms-input-placeholder {
   position: absolute;
   left: 0;
   top: 50%;
-  background: linear-gradient(-160deg, #43baff 0%, #7141b1 100%);
+  background: linear-gradient(-180deg, #00b3b5  0%, #00928a 100%);
   width: 3px;
   height: 50px;
   transform: translateY(-50%);

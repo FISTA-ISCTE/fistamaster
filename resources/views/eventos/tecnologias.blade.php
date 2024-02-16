@@ -77,6 +77,20 @@
                                 </div>
                                 <!-- Single Case Study End -->
                             </div>
+                            <div class="col-md-4">
+                                <!-- Single Case Study Start -->
+                                <div class="single-case-study" style="margin-top:1.5rem;">
+                                    <div class="case-study-img">
+                                        <a href="/conferencias"><img
+                                                src="{{ asset('img/conjunto/fotoconferencias2.3.jpg') }}"
+                                                alt=""></a>
+                                    </div>
+                                    <div class="case-study-content">
+                                        <h3 class="title"><a href="/conferencias">Conferências</a></h3>
+                                    </div>
+                                </div>
+                                <!-- Single Case Study End -->
+                            </div>
                         </div>
 
                         <!-- Add Pagination -->
