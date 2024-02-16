@@ -12,7 +12,7 @@
 </div>
 
 
-<section style="width:100%; padding:5rem 0;">
+<section style="width:100%; padding:3rem 0;">
     <div style="padding-top:0px;background-color:white">
         <div class="container">
             <div class="row" style="margin:0">
@@ -23,14 +23,14 @@
                                                                                                             um catálogo elaborado pelos alunos, compilando os diferentes elementos produzidos.</p>
                 </div>
                 <div class="col-lg-6 col-md-12 align-self-end">
-                    <img src="/arquitetura/conferencias/2024/6.jpg" style="display:block;margin-top:30px;margin-left:auto;margin-right:auto">
+                    <img src="/arquitetura/conferencias/2024/capa.png" style="display:block;margin-top:30px;margin-left:auto;margin-right:auto">
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section style="width:100%;padding:5rem 0;">
+<section style="width:100%;padding:3rem 0;">
     <div class="container">
         <div class="row justify-content-start">
             <h1 style="font-size:40px;line-height: 1;font-weight: bold;">Os nossos convidados</h1>
@@ -58,7 +58,7 @@
 
         </div>
       
-        <div class="row mt-5 justify-content-center">
+        <!-- <div class="row mt-5 justify-content-center">
             <div class="col-md-11">
 
                 <ul class="card-slider">
@@ -70,12 +70,12 @@
                     @endforeach
                 </ul>
             </div>
-        </div>
+        </div> -->
     </div>
 </section>
 
 
-<section style="width:100%;padding:5rem 0;">
+<section style="width:100%;padding:3rem 0;">
     <div class="container">
         <div class="row justify-content-start">
             <h1 style="font-size:40px;line-height: 1;font-weight: bold;">Vê os cartazes das últimas edições</h1>
@@ -85,7 +85,7 @@
         @foreach($pastyears as $pastyear)
 
             <h1 style="font-size:30px;line-height: 1;font-weight: lighter;margin-left:40px; padding: 2rem 0;">Edição {{$pastyear}}</h1>
-            <div class="row mt-5 justify-content-center">
+            <div class="row mt-4 mb-4 justify-content-center">
                 <div class="col-md-11">
 
                     <ul class="card-slider">
