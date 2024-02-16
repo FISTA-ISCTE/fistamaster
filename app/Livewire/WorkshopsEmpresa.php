@@ -102,7 +102,6 @@ class WorkshopsEmpresa extends Component
         }
 
         $end = $begin->copy()->addMinutes($this->duration);
-        $this->photoPreview = $this->photo->temporaryUrl();
 
         // Busca a empresa associada ao usuário autenticado
         $empresa = Empresa::where("id", Auth::user()->id_empresa)->first();
