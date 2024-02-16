@@ -91,9 +91,7 @@ class WorkshopsEmpresa extends Component
     public function submit()
     {
 
-        $this->validate([
-            'photo' => 'image|max:2024', // Validação de imagem
-        ]);
+
 
         // Tratamento dos horários
         $begin = Carbon::createFromFormat('Y-m-d H:i:s', $this->schedule);
@@ -125,7 +123,10 @@ class WorkshopsEmpresa extends Component
         $workshop->end = $end;
         $workshop->atendees = $this->atendees;
         $workshop->company = $empresa->nome_empresa; // Assegura que a empresa está associada ao workshop
-        $workshop->image = $this->photo->store('photos', 'public'); // Armazenar foto
+        if (isset($this->photo) || $this->photo != null) {
+            $workshop->image = $this->photo->store('photos', 'public'); // Armazenar foto
+        }
+
 
         // Salva ou atualiza o registro no banco de dados
         $workshop->save();
