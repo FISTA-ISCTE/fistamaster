@@ -1,16 +1,24 @@
 <div style="display: flex; justify-content: center; align-items: center; margin-top: 1.5rem; margin-bottom: 1.5rem;">
-    @if (auth()->check())  <!-- Verifica se o usuário está logado -->
-        @if ($workshop->spotsavailable > 0)
-            <button wire:click="inscrever" class="btn btn-primary">
-                {{ $estaInscrito ? 'Desinscrever' : 'Inscrever-se no Workshop' }}
-            </button>
+    @if (auth()->check()) <!-- Verifica se o usuário está logado -->
+        @if (!is_null($workshop->url))
+            <!-- Verifica se há um link para o workshop -->
+            <a href="{{ $workshop->url }}" target="_blank" class="btn btn-primary">
+                Inscrever
+            </a>
         @else
-            <button class="btn btn-secondary" disabled>Esgotado</button>
-        @endif
-    @else
-    <a href="/login?redirect=/workshops" class="btn btn-primary">Faça o login para se inscrever</a>
+            @if ($workshop->spotsavailable > 0)
+                <button wire:click="inscrever" class="btn btn-primary">
+                    {{ $estaInscrito ? 'Desinscrever' : 'Inscrever-se no Workshop' }}
+                </button>
+            @else
+                <button class="btn btn-secondary" disabled>Esgotado</button>
+            @endif
+        @else
+            <a href="/login?redirect=/workshops" class="btn btn-primary">Faça o login para se inscrever</a>
 
+        @endif
     @endif
+
 
     @if (session()->has('success'))
         <div class="alert alert-success">
