@@ -10,7 +10,7 @@
     </div>
 @endif
 
-<div style="display: flex; justify-content: center; align-items: center;" >
+<div style="display: flex; justify-content: center; align-items: center;">
     <form wire:submit.prevent="submit"
         style="width: 50%; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); padding: 20px; border-radius: 8px; display: flex; flex-direction: column; gap: 20px;margin:1.5rem">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight" style="font-size:1rem;">
@@ -41,8 +41,8 @@
             <input type="number" wire:model="duration" placeholder="Duração (em minutos)"
                 style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
         @else
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight" style="font-size:1rem;">
-           O teu Horário é: </h2>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight" style="font-size:1rem;">
+                O teu Horário é: </h2>
             <p>{{ $data }}</p>
 
         @endif
@@ -50,7 +50,10 @@
             Numero total de alunos: </h2>
         <input type="number" wire:model="atendees" placeholder="Numero total de alunos:"
             style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight" style="font-size:1rem;">
+            Link URL (opcional) </h2>
+        <input type="text" wire:model="url" placeholder="Link URL (opcional)">
         <button type="submit"
-        style="color:white;width:50%;border-radius:5px; font-weight: bold; font-size:1.2rem; padding:1rem; margin-top:2%;background: linear-gradient(195deg, #00c4cc 0%, #008d84 100%);">Enviar</button>
+            style="color:white;width:50%;border-radius:5px; font-weight: bold; font-size:1.2rem; padding:1rem; margin-top:2%;background: linear-gradient(195deg, #00c4cc 0%, #008d84 100%);">Enviar</button>
     </form>
 </div>

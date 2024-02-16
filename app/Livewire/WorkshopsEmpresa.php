@@ -18,6 +18,7 @@ class WorkshopsEmpresa extends Component
     public $description;
     public $requirements;
     public $photo;
+    public $url;
     public $atendees;
     public $data;
     public $photoPreview;
@@ -92,7 +93,10 @@ class WorkshopsEmpresa extends Component
     {
 
 
-
+        $this->validate([
+            'url' => 'nullable|url', // Verifica se o campo é um URL válido, mas é opcional
+            // Inclua as validações para os outros campos aqui
+        ]);
         // Tratamento dos horários
         $begin = Carbon::createFromFormat('Y-m-d H:i:s', $this->schedule);
         if (!$begin) {
@@ -120,6 +124,7 @@ class WorkshopsEmpresa extends Component
         $workshop->requirements = $this->requirements;
         $workshop->begin = $begin;
         $workshop->end = $end;
+        $workshop->link = $this->url;
         $workshop->atendees = $this->atendees;
         $workshop->company = $empresa->nome_empresa; // Assegura que a empresa está associada ao workshop
         if (isset($this->photo) || $this->photo != null) {
