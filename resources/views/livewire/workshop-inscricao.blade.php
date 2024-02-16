@@ -13,10 +13,11 @@
             @else
                 <button class="btn btn-secondary" disabled>Esgotado</button>
             @endif
-        @else
-            <a href="/login?redirect=/workshops" class="btn btn-primary">Faça o login para se inscrever</a>
-
         @endif
+    @else
+        <a href="/login?redirect=/workshops" class="btn btn-primary">Faça o login para se inscrever</a>
+
+
     @endif
 
 
