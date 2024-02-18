@@ -150,7 +150,7 @@ Route::get('/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-tecas', function (
 
 
 Route::get('/workshops', function () {
-    $workshops = Workshop::where('show', 1)->get();
+    $workshops = Workshop::where('show', 1)->orderBy('begin', 'desc')->get();
     return view('workshops')->with(['workshops' => $workshops]);
 })->name('workshops');
 Route::get('/speed-interviews', function () {
