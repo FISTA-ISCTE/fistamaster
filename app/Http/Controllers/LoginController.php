@@ -36,6 +36,13 @@ class LoginController extends Controller
             'email' => 'The provided credentials do not match our records.',
         ]);
     }
+    protected function redirectTo()
+    {
+        // Isso redirecionará o usuário para a página que ele estava tentando acessar antes do login
+        // ou para a rota padrão '/' se nenhuma página anterior estiver disponível
+        return redirect()->intended('/')->getTargetUrl();
+    }
+
 
     public function logout(Request $request)
     {

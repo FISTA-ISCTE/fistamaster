@@ -69,12 +69,40 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Models\Empresa', 'id_empresa');
     }
+    public static function verificarTokenTemporario($token)
+    {
+        // Assume que você tem uma relação definida no modelo User para tokens temporários
+        $tokenTemporario = TokenTemporario::where('token', $token)
+                                          ->where('expires_at', '>', now())
+                                          ->first();
 
+        if ($tokenTemporario && $tokenTemporario->user_id == auth()->id()) {
+            // Token é válido e pertence ao usuário autenticado
+            return true;
+        }
+
+        // Token inválido ou expirado
+        return false;
+    }
     /**
      * The accessors to append to the model's array form.
      *
      * @var array<int, string>
      */
+    public function gerarTokenTemporario()
+    {
+        $token = Str::random(40); // Gera uma string aleatória de 40 caracteres
+
+        // Aqui você deve salvar o token em algum lugar associado ao usuário
+        // Por exemplo, em uma tabela de tokens temporários no banco de dados
+        $tokenTemporario = new TokenTemporario; // Supõe que você tenha uma classe/modelo TokenTemporario
+        $tokenTemporario->user_id = $this->id;
+        $tokenTemporario->token = $token;
+        $tokenTemporario->expires_at = now()->addMinutes(10); // Define um tempo de expiração para o token
+        $tokenTemporario->save();
+
+        return $token;
+    }
     protected $appends = [
         'profile_photo_url',
     ];

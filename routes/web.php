@@ -3,12 +3,15 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PageController;
 use App\Models\Empresa;
+use Illuminate\Http\Request;
 use App\Models\ItSpeed;
+use App\Models\Log_Token;
 use App\Models\LogisticaSlots;
 use App\Models\Programas;
 use App\Models\SpeedInterview;
 use App\Models\Team;
 use App\Models\Workshop;
+use GuzzleHttp\Middleware;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmpresaController;
@@ -103,6 +106,49 @@ Route::get('/', function () {
     $countdiamount = $empresasdiamond->count();
     return view('landing_page')->with(['empresasdiamount' => $empresasdiamond, 'countdiamount' => $countdiamount]);
 });
+
+Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/tecas', function () {
+    // Verifica se o usuário está autenticado
+    if (Auth::check()) {
+        // Gera um token temporário para o usuário ou utiliza um existente
+        $tokenTemporario = Auth::user()->gerarTokenTemporario();
+        return redirect("/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-tecas?token={$tokenTemporario}");
+    }
+})->middleware('auth');
+
+// Rota para acessar o recurso com o token temporário
+Route::get('/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-tecas', function (Request $request) {
+    $token = $request->query('token');
+    // Verifica o token temporário e permite acesso ao recurso
+    if (\App\Models\User::verificarTokenTemporario($token)) {
+        $user = Auth::user();
+
+        // Verifica se o token já foi inserido para este usuário
+        $tokenExistente = Log_Token::where('id_user', $user->id)
+            ->where('token', $token)
+            ->first();
+
+        if ($tokenExistente) {
+            abort(403,'Já lês-te o QR code!');
+        } else {
+            $user->pontos += 6;
+            $user->save();
+            $novoToken = new Log_Token();
+            $novoToken->id_user = $user->id;
+            $novoToken->token = $token;
+            $novoToken->pontos = 6;
+            $novoToken->tipo = 'Pontos oferecidos pelo Tecas';
+            $novoToken->save();
+
+        }
+        return view('tcas');
+
+    } else {
+        abort(403,'QR Code expirado!'); // Acesso negado
+    }
+});
+
+
 Route::get('/workshops', function () {
     $workshops = Workshop::where('show', 1)->get();
     return view('workshops')->with(['workshops' => $workshops]);

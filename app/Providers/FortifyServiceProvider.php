@@ -36,7 +36,7 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
 
         RateLimiter::for('login', function (Request $request) {
-            $throttleKey = Str::transliterate(Str::lower($request->input(Fortify::username())).'|'.$request->ip());
+            $throttleKey = Str::transliterate(Str::lower($request->input(Fortify::username())) . '|' . $request->ip());
 
             return Limit::perMinute(5)->by($throttleKey);
         });
@@ -46,7 +46,7 @@ class FortifyServiceProvider extends ServiceProvider
         });
 
         $this->app->singleton(LoginResponseContract::class, function ($app) {
-            return new class($app->make(StatefulGuard::class)) implements LoginResponseContract {
+            return new class ($app->make(StatefulGuard::class)) implements LoginResponseContract {
                 protected $guard;
 
                 public function __construct(StatefulGuard $guard)
@@ -58,6 +58,13 @@ class FortifyServiceProvider extends ServiceProvider
                 {
                     $user = $this->guard->user();
 
+                    // Verifica se existe uma URL pretendida na sessão e redireciona para lá
+                    $intendedUrl = session()->pull('url.intended', false);
+                    if ($intendedUrl) {
+                        return redirect($intendedUrl);
+                    }
+
+                    // Lógica baseada nos papéis do usuário
                     if ($user->hasRole('admin')) {
                         return redirect()->route('admin.dashboard');
                     }
@@ -68,6 +75,7 @@ class FortifyServiceProvider extends ServiceProvider
 
                     return redirect('/user/profile');
                 }
+
             };
         });
     }
