@@ -131,12 +131,12 @@ Route::get('/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-tecas', function (
         if ($tokenExistente) {
             abort(403,'Já lês-te o QR code!');
         } else {
-            $user->pontos += 6;
+            $user->pontos += 100;
             $user->save();
             $novoToken = new Log_Token();
             $novoToken->id_user = $user->id;
             $novoToken->token = $token;
-            $novoToken->pontos = 6;
+            $novoToken->pontos = 100;
             $novoToken->tipo = 'Pontos oferecidos pelo Tecas';
             $novoToken->save();
 
