@@ -15,6 +15,8 @@ use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\EmailController;
 use App\Models\Billing;
 use App\Models\Logistica;
+use App\Models\Curso;
+use App\Models\Users;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,6 +61,27 @@ Route::get('/programa', function () {
     return view('programa', ['dias' => $dias, 'activeDia' => $activeDia, 'programas' => $programas]);
 });
 
+Route::get('/concurso_matematica', function () {
+    return view('concurso_matematica');
+});
+
+Route::get('/corrida de cursos', function () {
+    $cursos = Curso::where('id', '<', 6)->get();
+    $n_alunos = [645,589,356,432,300];
+    $count_cursos=[];
+    $aux = [];
+    foreach($cursos as $curso){
+        $counter = Users::where('id_curso', $curso->id)->count();
+        $countCursos[] = $counter;
+        $percentage = ($counter/$n_alunos[$curso->id - 1])*100;
+        $aux []= $percentage;
+    }
+    $cursoAfrente = array_keys($aux, max($aux))[0];
+
+    return view('corrida_cursos',['countCursos' => $countCursos,'cursos' => $cursos, 'aux'=> $aux, 'cursoAfrente'=>$cursoAfrente]);
+});
+
+
 Route::get('/eventos', function () {
     return view('eventos');
 });
@@ -84,6 +107,9 @@ Route::get('/confirmacao', function () {
 Route::post('/resgistar-concurso-ideias', [PageController::class, 'resgistar_concurso_ideias'])->name('resgistar_concurso_ideias');
 
 Route::post('/resgistar-concurso-ctf', [PageController::class, 'resgistar_concurso_ctf'])->name('resgistar_concurso_ctf');
+
+Route::post('/resgistar-concurso-matematica', [PageController::class, 'resgistar_concurso_matematica'])->name('resgistar_concurso_matematica');
+
 
 Route::get('/concurso-de-ideias', function () {
     return view('concurso-ideias');
