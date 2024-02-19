@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/swiper-bundle.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/aos.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins/lightslider.min.css') }}">
 
     <!-- JS  ============================================ -->
     <script src="{{ asset('assets/js/vendor/jquery-1.12.4.min.js') }}"></script>
@@ -94,7 +95,6 @@
                                 <li><a href="/empresas">Empresas</a>
                                 </li>
                                 <li><a href="/sobre-nos">Sobre Nós</a></li>
-                                <li><a href="/programa">Programa</a></li>
                                 <!-- <li>
                                     <a href="#">Programa</a>
                                 </li>
@@ -164,7 +164,6 @@
                             <li><a href="/empresas">Empresas</a>
                             </li>
                             <li><a href="/sobre-nos">Sobre Nós</a></li>
-                            <li><a href="/programa">Programa</a></li>
                             <!-- <li>
                                     <a href="#">Programa</a>
                                 </li>-->
@@ -224,12 +223,14 @@
                                     </p>
                                     <div class="footer-social">
                                         <ul class="social">
-
+                                            <li><a href="https://www.facebook.com/fista.iscte"><i
+                                                        class="fab fa-facebook-f"></i></a></li>
                                             <li><a href="https://www.instagram.com/fista.iscte/"><i
                                                         class="fab fa-instagram"></i></a></li>
                                             <li><a href="https://www.linkedin.com/company/fista"><i
                                                         class="fab fa-linkedin-in"></i></a></li>
-
+                                            <li><a href="https://www.youtube.com/channel/UCCNbJIiznD05DrHuhwe-InQ"><i
+                                                        class="fab fa-youtube"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -258,7 +259,7 @@
                                     <div class="widget-link">
                                         <ul class="link">
                                             <li><a href="/brevemente">Oradores</a></li>
-                                            <li><a href="/workshops">Workshops</a></li>
+                                            <li><a href="/brevemente">Workshops</a></li>
                                             <li><a href="/empresas">Empresas</a></li>
                                             <li><a href="/eventos">Concursos</a></li>
                                         </ul>
@@ -370,6 +371,7 @@
     <script src="{{ asset('assets/js/plugins/jquery.counterup.min.js') }}"></script>
     <script src="{{ asset('assets/js/plugins/appear.min.js') }}"></script>
     <script src="{{ asset('assets/js/plugins/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins/lightslider.min.js') }}"></script>
 
     <!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
 

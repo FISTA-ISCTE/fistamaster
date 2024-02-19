@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PageController;
+use App\Models\Arquitetura;
 use App\Models\Empresa;
 use Illuminate\Http\Request;
 use App\Models\ItSpeed;
@@ -123,7 +124,7 @@ Route::get('/arquitetura_workshops', function () {
     return view('workshops_arquitetura')->with(['lastYearWorkshops' => $lastYearWorkshops]);
 });
 
-Route::get('/arquitetura_exposição', function () {
+Route::get('/arquitetura_exposicao', function () {
     $lastYear = date('Y')-1;
     $lastYearWorkshops = Arquitetura::where('tipo', 'exposicao')->where('ano', $lastYear)->get(['avatar']);
 
