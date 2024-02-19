@@ -42,6 +42,7 @@ Route::post('login', [apiController::class, 'authlogin']);
 Route::post('curso', [apiController::class, 'update']);
 Route::post('ano', [apiController::class, 'updateAno']);
 
+
 /*
 Route::post('token', 'apiController@insertToken');
 Route::post('workshopinscrever', 'apiController@inscrever');
