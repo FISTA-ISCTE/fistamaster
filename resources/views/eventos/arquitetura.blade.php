@@ -24,6 +24,32 @@
                             </div>
                             <!-- Single Case Study End -->
                         </div>
+                        <div class="col-md-4">
+                            <!-- Single Case Study Start -->
+                            <div class="single-case-study">
+                                <div class="case-study-img">
+                                    <a href="/arquitetura_conferencias"><img src="{{ asset('arquitetura/52723325495_c23030dd88_c.jpg')}}" alt=""></a>
+                                </div>
+                                <div class="case-study-content">
+                                    <h3 class="title"><a href="/arquitetura_conferencias">Conferências</a></h3>
+
+                                </div>
+                            </div>
+                            <!-- Single Case Study End -->
+                        </div>
+                        <div class="col-md-4">
+                            <!-- Single Case Study Start -->
+                            <div class="single-case-study">
+                                <div class="case-study-img">
+                                    <a href="/arquitetura_exposicao"><img src="{{ asset('arquitetura/52731919844_c875c2b7c7_c.jpg')}}" alt=""></a>
+                                </div>
+                                <div class="case-study-content">
+                                    <h3 class="title"><a href="/arquitetura_exposicao">Exposição- Saber Fazer</a></h3>
+
+                                </div>
+                            </div>
+                            <!-- Single Case Study End -->
+                        </div>
                     </div>
 
                     <!-- Add Pagination -->
