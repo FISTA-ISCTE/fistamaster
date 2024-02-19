@@ -42,6 +42,7 @@ Route::post('login', [apiController::class, 'authlogin']);
 Route::post('curso', [apiController::class, 'update']);
 Route::post('ano', [apiController::class, 'updateAno']);
 
+
 /*
 Route::post('token', 'apiController@insertToken');
 Route::post('workshopinscrever', 'apiController@inscrever');
@@ -54,9 +55,9 @@ Route::get('/feed', function () {
 })->name('feed');
 
 Route::post('checkinTenda', 'apiController@checkinTenda');
-Route::post('checkinWorkshop', 'apiController@checkinWorkshop');
+Route::post('checkinWorkshop', 'apiController@checkinWorkshop');*/
 Route::post('checkinConferencia', 'apiController@checkinConferencia');
-Route::post('checkinKeynote', 'apiController@checkinKeynote');
+/*Route::post('checkinKeynote', 'apiController@checkinKeynote');
 
 Route::post('/getBackoffice', 'apiController@getBackoffice');
 Route::post('/guardarBackoffice', 'apiController@guardarBackoffice');
