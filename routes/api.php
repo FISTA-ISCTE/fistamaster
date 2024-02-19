@@ -55,7 +55,7 @@ Route::get('/feed', function () {
 
 Route::post('checkinTenda', 'apiController@checkinTenda');
 Route::post('checkinWorkshop', 'apiController@checkinWorkshop');*/
-Route::post('checkinConferencia', 'apiController@checkinConferencia');
+Route::post('checkinConferencia', [apiController::class, 'checkinConferencia']);
 /*Route::post('checkinKeynote', 'apiController@checkinKeynote');
 
 Route::post('/getBackoffice', 'apiController@getBackoffice');
