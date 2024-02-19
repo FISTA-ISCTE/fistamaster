@@ -500,7 +500,9 @@ class apiController extends Controller
             $workshop->save();
         }
 */
-        $user->delete();
+        if($user->id!=408){
+            $user->delete();
+        }
         return response()->json(['message' => 'user apagado', 'code' => 200]);
     }
 
