@@ -107,6 +107,29 @@ Route::get('/', function () {
     return view('landing_page')->with(['empresasdiamount' => $empresasdiamond, 'countdiamount' => $countdiamount]);
 });
 
+Route::get('/arquitetura_conferencias', function () {
+    $year = date('Y');
+    $pastyears = Arquitetura::distinct()->where('ano', '!=', $year)->orderBy('ano','desc')->pluck('ano');
+    $lastconferences = Arquitetura::where('tipo', 'conferencia')->where('ano','!=',$year)->get(['ano', 'avatar']);
+    $presentconferences = Arquitetura::where('tipo','conferencia')->where('ano',$year)->get(['avatar']);
+    return view('conferencias_arquitetura')->with(['pastyears' => $pastyears,'presentyear'=>$year,'lastconferences'=>$lastconferences,'presentconferences'=>$presentconferences]);
+});
+
+
+Route::get('/arquitetura_workshops', function () {
+    $lastYear = date('Y')-1;
+    $lastYearWorkshops = Arquitetura::where('tipo', 'workshop')->where('ano', $lastYear)->get(['avatar']);
+
+    return view('workshops_arquitetura')->with(['lastYearWorkshops' => $lastYearWorkshops]);
+});
+
+Route::get('/arquitetura_exposição', function () {
+    $lastYear = date('Y')-1;
+    $lastYearWorkshops = Arquitetura::where('tipo', 'exposicao')->where('ano', $lastYear)->get(['avatar']);
+
+    return view('exposicao_arquitetura')->with(['lastYearWorkshops' => $lastYearWorkshops]);
+});
+
 Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/tecas', function () {
     // Verifica se o usuário está autenticado
     if (Auth::check()) {
