@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PageController;
 use App\Models\Arquitetura;
+use App\Models\Curso;
 use App\Models\Empresa;
 use Illuminate\Http\Request;
 use App\Models\ItSpeed;
@@ -61,6 +62,26 @@ Route::get('/programa', function () {
         }
     }
     return view('programa', ['dias' => $dias, 'activeDia' => $activeDia, 'programas' => $programas]);
+});
+Route::get('/concurso-matematica', function () {
+    return view('concurso_matematica');
+});
+Route::post('/resgistar-concurso-matematica', [PageController::class, 'resgistar_concurso_matematica'])->name('resgistar_concurso_matematica');
+
+Route::get('/corrida-de-cursos', function () {
+    $cursos = Curso::where('id', '<', 6)->get();
+    $n_alunos = [645,589,356,432,300];
+    $count_cursos=[];
+    $aux = [];
+    foreach($cursos as $curso){
+        $counter = \App\Models\User::where('id_curso', $curso->id)->count();
+        $countCursos[] = $counter;
+        $percentage = ($counter/$n_alunos[$curso->id - 1])*100;
+        $aux []= $percentage;
+    }
+    $cursoAfrente = array_keys($aux, max($aux))[0];
+
+    return view('corrida_cursos',['countCursos' => $countCursos,'cursos' => $cursos, 'aux'=> $aux, 'cursoAfrente'=>$cursoAfrente]);
 });
 
 Route::get('/eventos', function () {
