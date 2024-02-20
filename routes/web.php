@@ -245,7 +245,7 @@ Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/workshop/3', function () {
     // Verifica se o usuário está autenticado
     if (Auth::check()) {
         // Gera um token temporário para o usuário ou utiliza um existente
-        $tokenTemporario = 2;
+        $tokenTemporario = 3;
         return redirect("/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-workshops?token={$tokenTemporario}");
     }
 })->middleware('auth');
