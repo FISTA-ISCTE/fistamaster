@@ -53,6 +53,20 @@
                                 <!-- Single Case Study Start -->
                                 <div class="single-case-study" style="margin-top:1.5rem;">
                                     <div class="case-study-img">
+                                        <a href="/concurso-matematica"><img src="{{ asset('img/fotos/concurso_ctf2.jpg') }}"
+                                                alt=""></a>
+                                    </div>
+                                    <div class="case-study-content">
+                                        <h3 class="title"><a href="/concurso-matematica">Concurso de Matemática</a></h3>
+
+                                    </div>
+                                </div>
+                                <!-- Single Case Study End -->
+                            </div>
+                            <div class="col-md-4">
+                                <!-- Single Case Study Start -->
+                                <div class="single-case-study" style="margin-top:1.5rem;">
+                                    <div class="case-study-img">
                                         <a href="/workshops"><img
                                                 src="{{ asset('assets/images/brand/13150512855_0a2cd5075e_c.jpg') }}"
                                                 alt=""></a>
@@ -87,6 +101,21 @@
                                     </div>
                                     <div class="case-study-content">
                                         <h3 class="title"><a href="/conferencias">Conferências</a></h3>
+                                    </div>
+                                </div>
+
+                                <!-- Single Case Study End -->
+                            </div>
+                            <div class="col-md-4">
+                                <!-- Single Case Study Start -->
+                                <div class="single-case-study" style="margin-top:1.5rem;">
+                                    <div class="case-study-img">
+                                        <a href="/corrida-de-cursos"><img src="{{ asset('img/fotos/mat.jpg') }}"
+                                                alt=""></a>
+                                    </div>
+                                    <div class="case-study-content">
+                                        <h3 class="title"><a href="/corrida-de-cursos">Corrida de Cursos</a></h3>
+
                                     </div>
                                 </div>
                                 <!-- Single Case Study End -->

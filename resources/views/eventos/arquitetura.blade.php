@@ -50,6 +50,20 @@
                             </div>
                             <!-- Single Case Study End -->
                         </div>
+                        <div class="col-md-4">
+                            <!-- Single Case Study Start -->
+                            <div class="single-case-study" style="margin-top:1.5rem;">
+                                <div class="case-study-img">
+                                    <a href="/corrida-de-cursos"><img src="{{ asset('img/fotos/mat.jpg') }}"
+                                            alt=""></a>
+                                </div>
+                                <div class="case-study-content">
+                                    <h3 class="title"><a href="/corrida-de-cursos">Corrida de Cursos</a></h3>
+
+                                </div>
+                            </div>
+                            <!-- Single Case Study End -->
+                        </div>
                     </div>
 
                     <!-- Add Pagination -->
