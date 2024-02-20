@@ -345,7 +345,6 @@ Route::middleware([
             $contagemAlmocos13h_dia1 = Logistica::where("almocos_dia1", "13h-14h")->count();
             $contagemAlmocos12h_dia2 = Logistica::where("almocos_dia2", "12h-13h")->count();
             $contagemAlmocos13h_dia2 = Logistica::where("almocos_dia2", "13h-14h")->count();
-            dd($logistica);
             return view('admin.empresas.logistica')->with(['contagemAlmocos12h_dia1' => $contagemAlmocos12h_dia1, 'contagemAlmocos13h_dia1' => $contagemAlmocos13h_dia1, 'contagemAlmocos12h_dia2' => $contagemAlmocos12h_dia2, 'contagemAlmocos13h_dia2' => $contagemAlmocos13h_dia2, 'empresa' => $empresa, 'logistica' => $logistica, 'slot_montagem1' => $slot_montagem1, 'slot_montagem2' => $slot_montagem2, 'slot_desmontagem1' => $slot_desmontagem1, 'slot_desmontagem2' => $slot_desmontagem2]);
 
         })->name('empresa.logistica');

@@ -54,9 +54,8 @@
                                         @endif
                                         <label class="form-check-label" for="opcaoCadeirasDia1Nao">Não</label>
                                     </div>
-                                    <input style="width:40.5%;" type="text" name="cadeiras_dia1"
-                                        id="cadeiras_dia1" autocomplete="cadeiras_dia1" autofocus
-                                        placeholder="(Se sim) Número de Cadeiras"
+                                    <input style="width:40.5%;" type="text" name="cadeiras_dia1" id="cadeiras_dia1"
+                                        autocomplete="cadeiras_dia1" autofocus placeholder="(Se sim) Número de Cadeiras"
                                         value="@if (isset($logistica->cadeiras_dia1)) {{ $logistica->cadeiras_dia1 }} @endif">
                                 </div>
                             </div>
@@ -88,7 +87,7 @@
                                     <input style="width:40.5%;" type="number" name="n_pessoas_dia1" id="n_pessoas_dia1"
                                         autocomplete="n_pessoas_dia1" autofocus
                                         placeholder="Numero de pessoas presentes no stand/mesa?"
-                                        value="@if (isset($logistica->n_pessoas_dia1)) {{$logistica->n_pessoas_dia1 }} @endif">
+                                        value="@if (isset($logistica->n_pessoas_dia1)) {{ $logistica->n_pessoas_dia1 }} @endif">
 
 
                                 </div>
@@ -297,7 +296,7 @@
                                     <select class="form-select" name="desmontagem_dia2">
                                         <option value="" disabled selected>Selecione uma opção </option>
                                         @foreach ($slot_desmontagem2 as $slot_desmontagem22)
-                                            @if (isset($logistica->desmontagem_id9) && $logistica->desmontagem_id9 == $slot_desmontagem22->id )
+                                            @if (isset($logistica->desmontagem_id9) && $logistica->desmontagem_id9 == $slot_desmontagem22->id)
                                                 <option selected value="{{ $slot_desmontagem22->id }}">
                                                     {{ $slot_desmontagem22->slot }}</option>
                                             @else
