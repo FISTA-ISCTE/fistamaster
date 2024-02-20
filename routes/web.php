@@ -241,6 +241,15 @@ Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/workshop/2', function () {
         return redirect("/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-workshops?token={$tokenTemporario}");
     }
 })->middleware('auth');
+Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/workshop/', function () {
+    // Verifica se o usuário está autenticado
+    if (Auth::check()) {
+        // Gera um token temporário para o usuário ou utiliza um existente
+        $tokenTemporario = 2;
+        return redirect("/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-workshops?token={$tokenTemporario}");
+    }
+})->middleware('auth');
+
 
 // Rota para acessar o recurso com o token temporário
 Route::get('/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-workshops', function (Request $request) {
@@ -257,6 +266,10 @@ Route::get('/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-workshops', functi
         if ($tokenExistente) {
             abort(403,'Já lês-te o QR code!');
         } else {
+            $presenca = new \App\Models\WorkshopPresenca;
+            $presenca->id_user = $user->id;
+            $presenca->id_workshop = $id_workshop;
+            $presenca->save();
             $user->pontos += 300;
             $user->save();
             $novoToken = new Log_Token();
