@@ -88,7 +88,7 @@
                                     <input style="width:40.5%;" type="number" name="n_pessoas_dia1" id="n_pessoas_dia1"
                                         autocomplete="n_pessoas_dia1" autofocus
                                         placeholder="Numero de pessoas presentes no stand/mesa?"
-                                        value="@if (isset($logistica->n_pessoas_dia1)) {{ $logistica->n_pessoas_dia1 }} @endif">
+                                        value="@if (isset($logistica->n_pessoas_dia1)) {{$logistica->n_pessoas_dia1 }} @endif">
 
 
                                 </div>

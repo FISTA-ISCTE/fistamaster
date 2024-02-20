@@ -163,10 +163,12 @@ class EmpresaController extends Controller
                 $logistica->montagem_id8 = $request->montagem_dia1;
                 $logistica->info_montagem_1 = $request->info_montagem_1;
                 $logistica->info_desmontagem_1 = $request->info_desmontagem_1;
+
                 $logistica->n_pessoas_dia1 = $request->n_pessoas_dia1;
                 $logistica->desmontagem_id8 = $request->desmontagem_dia1;
                 $logistica->info_estacionamento_1 = $request->info_estacionamento_1;
                 $logistica->almocos_dia1 = $request->almocos_dia1;
+               $logistica->save();
             }
             if(isset($empresa->dia2)){
                 $logistica->s_n_cadeiras_dia2 = $request->opcaoCadeirasDia2;
@@ -182,8 +184,9 @@ class EmpresaController extends Controller
                 $logistica->desmontagem_id9 = $request->desmontagem_dia2;
                 $logistica->info_estacionamento_2 = $request->info_estacionamento_2;
                 $logistica->almocos_dia2 = $request->almocos_dia2;
+                $logistica->save();
             }
-            $logistica->save();
+
             session()->flash('success', 'Dados guardados com sucesso!');
         }
         return redirect()->route('empresa.logistica');
