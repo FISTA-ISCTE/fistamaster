@@ -95,9 +95,8 @@
                                 <li><a href="/empresas">Empresas</a>
                                 </li>
                                 <li><a href="/sobre-nos">Sobre Nós</a></li>
-                                <!-- <li>
-                                    <a href="#">Programa</a>
-                                </li>
+                                <li><a href="/programa">Programa</a></li>
+                                <!--
                                 <li><a href="#">Atividades</a>
                                     <ul class="sub-menu">
                                         <li><a href="/concurso-de-ideias">Concurso de Ideias</a></li>
@@ -158,15 +157,10 @@
                 <div class="offcanvas-body">
                     <div class="offcanvas-menu">
                         <ul class="main-menu">
-                            <li class="active-menu">
-                                <a href="/eventos">Evento</a>
-                            </li>
-                            <li><a href="/empresas">Empresas</a>
-                            </li>
+                            <li class="active-menu"><a href="/eventos">Evento</a></li>
+                            <li><a href="/empresas">Empresas</a></li>
                             <li><a href="/sobre-nos">Sobre Nós</a></li>
-                            <!-- <li>
-                                    <a href="#">Programa</a>
-                                </li>-->
+                            <li><a href="/programa">Programa</a></li>
                             <!-- <li><a href="#">Oradores</a>
                                     <ul class="sub-menu">
                                         <li><a href="blog.html">IT Speed Talks</a></li>
