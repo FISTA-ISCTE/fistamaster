@@ -241,7 +241,7 @@ Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/workshop/2', function () {
         return redirect("/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-workshops?token={$tokenTemporario}");
     }
 })->middleware('auth');
-Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/workshop/', function () {
+Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/workshop/3', function () {
     // Verifica se o usuário está autenticado
     if (Auth::check()) {
         // Gera um token temporário para o usuário ou utiliza um existente
@@ -279,7 +279,7 @@ Route::get('/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-workshops', functi
             $novoToken->tipo = 'Wokshop';
             $novoToken->save();
         }
-        return view('tcas');
+        return view('tcas2');
     }else {
         abort(403,'QR Code expirado!'); // Acesso negado
     }

@@ -14,6 +14,7 @@
             <div class="choose-us-wrap">
                 <div class="section-title text-center">
                     <h3 class="sub-title">Dia 22 de Fevereiro no Grande Auditório, Iscte</h3>
+                    <h5>Não é necessário inscrição!</h5>
                     <h2 class="title">Conferências</h2>
                 </div>
                 <div class="choose-us-content-wrap">
@@ -22,7 +23,7 @@
                             <!-- Choose Us Item Start -->
                             <div class="choose-us-item">
                                 <div class="choose-us-img">
-                                    <a href="choose-us.html"><img src="assets/images/kaizen3.jpg" alt=""></a>
+                                    <a><img src="assets/images/kaizen3.jpg" alt=""></a>
                                     <div class="choose-us-content">
                                         <h3 class="title">"Por trás das odds"</h3>
                                         <p>Às 11h de dia 22 de fevereiro, a conferência irá mergulhar no universo da Kaizen
@@ -36,7 +37,7 @@
                             <!-- Choose Us Item Start -->
                             <div class="choose-us-item">
                                 <div class="choose-us-img">
-                                    <a href="choose-us.html"><img src="assets/images/scp2.jpg" alt=""></a>
+                                    <a><img src="assets/images/scp2.jpg" alt=""></a>
                                     <div class="choose-us-content">
                                         <h3 class="title">"Além do Campo"</h3>
                                         <p>O Coordenador de Observação e Análise do Sporting CP, irá revelar
