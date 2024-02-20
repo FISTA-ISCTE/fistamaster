@@ -250,7 +250,6 @@ Route::get('/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-workshops', functi
     if (!\App\Models\WorkshopPresenca::where('id_user',$user->id)->where('id_workshop',$id_workshop)->first()) {
         // Verifica se o token já foi inserido para este usuário
         $tokentotal = $id_workshop.''.$user->uuid;
-        dd($tokentotal);
         $tokenExistente = Log_Token::where('id_user', $user->id)
             ->where('token', $tokentotal)
             ->first();
