@@ -5,6 +5,7 @@ use App\Http\Controllers\PageController;
 use App\Models\Arquitetura;
 use App\Models\Curso;
 use App\Models\Empresa;
+use App\Models\Tokens;
 use Illuminate\Http\Request;
 use App\Models\ItSpeed;
 use App\Models\Log_Token;
@@ -71,18 +72,18 @@ Route::post('/resgistar-concurso-matematica', [PageController::class, 'resgistar
 
 Route::get('/corrida-de-cursos', function () {
     $cursos = Curso::where('id', '<', 6)->get();
-    $n_alunos = [645,589,356,432,300];
-    $count_cursos=[];
+    $n_alunos = [645, 589, 356, 432, 300];
+    $count_cursos = [];
     $aux = [];
-    foreach($cursos as $curso){
+    foreach ($cursos as $curso) {
         $counter = \App\Models\User::where('id_curso', $curso->id)->count();
         $countCursos[] = $counter;
-        $percentage = ($counter/$n_alunos[$curso->id - 1])*100;
-        $aux []= $percentage;
+        $percentage = ($counter / $n_alunos[$curso->id - 1]) * 100;
+        $aux[] = $percentage;
     }
     $cursoAfrente = array_keys($aux, max($aux))[0];
 
-    return view('corrida_cursos',['countCursos' => $countCursos,'cursos' => $cursos, 'aux'=> $aux, 'cursoAfrente'=>$cursoAfrente]);
+    return view('corrida_cursos', ['countCursos' => $countCursos, 'cursos' => $cursos, 'aux' => $aux, 'cursoAfrente' => $cursoAfrente]);
 });
 
 Route::get('/eventos', function () {
@@ -132,22 +133,22 @@ Route::get('/', function () {
 
 Route::get('/arquitetura_conferencias', function () {
     $year = date('Y');
-    $pastyears = Arquitetura::distinct()->where('ano', '!=', $year)->orderBy('ano','desc')->pluck('ano');
-    $lastconferences = Arquitetura::where('tipo', 'conferencia')->where('ano','!=',$year)->get(['ano', 'avatar']);
-    $presentconferences = Arquitetura::where('tipo','conferencia')->where('ano',$year)->get(['avatar']);
-    return view('conferencias_arquitetura')->with(['pastyears' => $pastyears,'presentyear'=>$year,'lastconferences'=>$lastconferences,'presentconferences'=>$presentconferences]);
+    $pastyears = Arquitetura::distinct()->where('ano', '!=', $year)->orderBy('ano', 'desc')->pluck('ano');
+    $lastconferences = Arquitetura::where('tipo', 'conferencia')->where('ano', '!=', $year)->get(['ano', 'avatar']);
+    $presentconferences = Arquitetura::where('tipo', 'conferencia')->where('ano', $year)->get(['avatar']);
+    return view('conferencias_arquitetura')->with(['pastyears' => $pastyears, 'presentyear' => $year, 'lastconferences' => $lastconferences, 'presentconferences' => $presentconferences]);
 });
 
 
 Route::get('/arquitetura_workshops', function () {
-    $lastYear = date('Y')-1;
+    $lastYear = date('Y') - 1;
     $lastYearWorkshops = Arquitetura::where('tipo', 'workshop')->where('ano', $lastYear)->get(['avatar']);
 
     return view('workshops_arquitetura')->with(['lastYearWorkshops' => $lastYearWorkshops]);
 });
 
 Route::get('/arquitetura_exposicao', function () {
-    $lastYear = date('Y')-1;
+    $lastYear = date('Y') - 1;
     $lastYearWorkshops = Arquitetura::where('tipo', 'exposicao')->where('ano', $lastYear)->get(['avatar']);
 
     return view('exposicao_arquitetura')->with(['lastYearWorkshops' => $lastYearWorkshops]);
@@ -175,7 +176,7 @@ Route::get('/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-tecas', function (
             ->first();
 
         if ($tokenExistente) {
-            abort(403,'Já lês-te o QR code!');
+            abort(403, 'Já lês-te o QR code!');
         } else {
             $user->pontos += 100;
             $user->save();
@@ -190,7 +191,7 @@ Route::get('/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-tecas', function (
         return view('tcas');
 
     } else {
-        abort(403,'QR Code expirado!'); // Acesso negado
+        abort(403, 'QR Code expirado!'); // Acesso negado
     }
 });
 
@@ -216,7 +217,7 @@ Route::get('/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-outos', function (
             ->first();
 
         if ($tokenExistente) {
-            abort(403,'Já lês-te o QR code!');
+            abort(403, 'Já lês-te o QR code!');
         } else {
             $user->pontos += 75;
             $user->save();
@@ -228,8 +229,8 @@ Route::get('/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-outos', function (
             $novoToken->save();
         }
         return view('tcas');
-    }else {
-        abort(403,'QR Code expirado!'); // Acesso negado
+    } else {
+        abort(403, 'QR Code expirado!'); // Acesso negado
     }
 });
 
@@ -241,30 +242,28 @@ Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/workshop/2', function () {
         return redirect("/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-workshops?token={$tokenTemporario}");
     }
 })->middleware('auth');
+
 Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/workshop/3', function () {
-    // Verifica se o usuário está autenticado
+
     if (Auth::check()) {
-        // Gera um token temporário para o usuário ou utiliza um existente
         $tokenTemporario = 3;
         return redirect("/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-workshops?token={$tokenTemporario}");
     }
 })->middleware('auth');
-
 
 // Rota para acessar o recurso com o token temporário
 Route::get('/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-workshops', function (Request $request) {
     $id_workshop = $request->query('token');
     $user = Auth::user();
     // Verifica o token temporário e permite acesso ao recurso
-    if (!\App\Models\WorkshopPresenca::where('id_user',$user->id)->where('id_workshop',$id_workshop)->first()) {
+    if (!\App\Models\WorkshopPresenca::where('id_user', $user->id)->where('id_workshop', $id_workshop)->first()) {
         // Verifica se o token já foi inserido para este usuário
-        $tokentotal = $id_workshop.''.$user->uuid;
+        $tokentotal = $id_workshop . '' . $user->uuid;
         $tokenExistente = Log_Token::where('id_user', $user->id)
             ->where('token', $tokentotal)
             ->first();
-
         if ($tokenExistente) {
-            abort(403,'Já lês-te o QR code!');
+            abort(403, 'Já lês-te o QR code!');
         } else {
             $presenca = new \App\Models\WorkshopPresenca;
             $presenca->id_user = $user->id;
@@ -280,10 +279,49 @@ Route::get('/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-workshops', functi
             $novoToken->save();
         }
         return view('tcas2');
-    }else {
-        abort(403,'QR Code expirado!'); // Acesso negado
+    } else {
+        abort(403, 'QR Code expirado!'); // Acesso negado
     }
 });
+
+use Illuminate\Support\Str;
+
+Route::get('/gerar-os-tokens', function () {
+    $empresas = Empresa::all(); // Recupera todas as empresas
+
+    foreach ($empresas as $empresa) {
+        $token = new Tokens; // Supondo que Tokens seja o modelo para salvar os tokens no banco de dados
+
+        // Gera uma string aleatória de 6 caracteres em maiúscula
+        $token->token = Str::upper(Str::random(6));
+        $token->pontos = 50;
+        // Define uma descrição para o token (ajuste conforme necessário)
+        $token->descricao = "empresa";
+
+        // Associa o token à empresa específica, se necessário
+        // Por exemplo, se houver uma coluna `empresa_id` no modelo Tokens
+        $token->empresa_id = $empresa->id;
+
+        $token->save(); // Salva o token no banco de dados
+    }
+
+    return "Tokens gerados com sucesso!";
+})->name('gerar_tokens');
+
+Route::get('/gerar-os-tokens-jogos', function () {
+    $empresas = Empresa::all(); // Recupera todas as empresas
+
+    foreach ($empresas as $empresa) {
+        $token = new Tokens;
+        $token->token = Str::upper(Str::random(6));
+        $token->pontos = 50;
+        $token->descricao = "jogo";
+        $token->empresa_id = $empresa->id;
+        $token->save();
+    }
+
+    return "Tokens gerados com sucesso!";
+})->name('gerar_tokens');
 
 Route::get('/workshops', function () {
     $workshops = Workshop::where('show', 1)->orderBy('begin', 'asc')->get();
