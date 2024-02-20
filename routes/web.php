@@ -300,11 +300,9 @@ Route::get('/gerar-os-tokens', function () {
 
         // Associa o token à empresa específica, se necessário
         // Por exemplo, se houver uma coluna `empresa_id` no modelo Tokens
-        $token->empresa_id = $empresa->id;
-
+        $token->id_empresa = $empresa->id;
         $token->save(); // Salva o token no banco de dados
     }
-
     return "Tokens gerados com sucesso!";
 })->name('gerar_tokens');
 
