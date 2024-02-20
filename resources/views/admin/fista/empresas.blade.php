@@ -29,6 +29,8 @@
                                             </th>
                                             <th class="w-2/12 text-left py-3 px-4 uppercase font-semibold text-sm">Nome
                                             </th>
+                                            <th class="w-2/12 text-left py-3 px-4 uppercase font-semibold text-sm">Almocos Extras
+                                            </th>
                                             <th class="w-1/12 text-left py-3 px-4 uppercase font-semibold text-sm">Plano
                                             </th>
                                             <th class="w-1/12 text-left py-3 px-4 uppercase font-semibold text-sm">Valor
@@ -59,11 +61,11 @@
                                             <tr>
                                                 <td class="w-1/12 text-left py-3 px-4">{{ $empresa->id }}</td>
                                                 <td class="w-2/12 text-left py-3 px-4">{{ $empresa->nome_empresa }}</td>
+                                                <td class="w-1/12 text-left py-3 px-4">{{ $empresa->almocos_extra }}</td>
                                                 <td class="w-1/12 text-left py-3 px-4">{{ $empresa->plano }}</td>
                                                 <td class="w-1/12 text-left py-3 px-4">{{ $empresa->total }}</td>
                                                 <td class="w-1/12 text-left py-3 px-4">{{ $empresa->dia1 }}</td>
                                                 <td class="w-1/12 text-left py-3 px-4">{{ $empresa->dia2 }}</td>
-
                                                 <td class="w-2/12 text-left py-3 px-4">{{ $empresa->cvs }}</td>
                                                 <td class="w-1/12 text-left py-3 px-4">{{ $empresa->worshop }}</td>
                                                 <td class="w-1/12 text-left py-3 px-4">{{ $empresa->cocktail }}</td>
