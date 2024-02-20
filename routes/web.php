@@ -286,40 +286,6 @@ Route::get('/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-workshops', functi
 
 use Illuminate\Support\Str;
 
-Route::get('/gerar-os-tokens', function () {
-    $empresas = Empresa::all(); // Recupera todas as empresas
-
-    foreach ($empresas as $empresa) {
-        $token = new Tokens; // Supondo que Tokens seja o modelo para salvar os tokens no banco de dados
-
-        // Gera uma string aleatória de 6 caracteres em maiúscula
-        $token->token = Str::upper(Str::random(6));
-        $token->pontos = 50;
-        // Define uma descrição para o token (ajuste conforme necessário)
-        $token->descricao = "empresa";
-
-        // Associa o token à empresa específica, se necessário
-        // Por exemplo, se houver uma coluna `empresa_id` no modelo Tokens
-        $token->id_empresa = $empresa->id;
-        $token->save(); // Salva o token no banco de dados
-    }
-    return "Tokens gerados com sucesso!";
-})->name('gerar_tokens');
-
-Route::get('/gerar-os-tokens-jogos', function () {
-    $empresas = Empresa::all(); // Recupera todas as empresas
-
-    foreach ($empresas as $empresa) {
-        $token = new Tokens;
-        $token->token = Str::upper(Str::random(6));
-        $token->pontos = 50;
-        $token->descricao = "jogo";
-        $token->id_empresa = $empresa->id;
-        $token->save();
-    }
-
-    return "Tokens gerados com sucesso!";
-})->name('gerar_tokens');
 
 Route::get('/workshops', function () {
     $workshops = Workshop::where('show', 1)->orderBy('begin', 'asc')->get();

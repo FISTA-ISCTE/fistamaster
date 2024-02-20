@@ -340,7 +340,14 @@
                 <x-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
                     {{ __('Perfil') }}
                 </x-responsive-nav-link>
-
+                @if (auth()->user() && auth()->user()->hasRole('user'))
+                    <x-responsive-nav-link href="{{ route('user.interesses') }}" :active="request()->routeIs('user.interesses')">
+                        {{ __('Interesses') }}
+                    </x-responsive-nav-link>
+                    <x-responsive-nav-link href="{{ route('user.pontos') }}" :active="request()->routeIs('user.pontos')">
+                        {{ __('FISTA GO') }}
+                    </x-responsive-nav-link>
+                @endif
                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                     <x-responsive-nav-link href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">
                         {{ __('API Tokens') }}
