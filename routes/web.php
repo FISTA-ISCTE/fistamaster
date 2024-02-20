@@ -314,7 +314,7 @@ Route::get('/gerar-os-tokens-jogos', function () {
         $token->token = Str::upper(Str::random(6));
         $token->pontos = 50;
         $token->descricao = "jogo";
-        $token->empresa_id = $empresa->id;
+        $token->id_empresa = $empresa->id;
         $token->save();
     }
 
