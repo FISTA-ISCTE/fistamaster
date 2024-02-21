@@ -34,7 +34,7 @@
                                     <tbody class="text-gray-700">
                                         @foreach ($empresas as $empresa)
                                         <tr>
-                                            <td class="text-left py-3 px-4">{{$empresa->si->empresas}}</td>
+                                            <td class="text-left py-3 px-4">{{$empresa->si->empresas}} {{$empresa->si->begin}}</td>
                                             <td class="text-left py-3 px-4">{{$empresa->user->name}}</td>
                                             <td class="text-left py-3 px-4">{{$empresa->user->email}}</td>
                                             <td class="text-left py-3 px-4">{{$empresa->user->ano->designacao}}</td>
