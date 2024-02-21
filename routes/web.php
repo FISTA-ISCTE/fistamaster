@@ -209,15 +209,11 @@ Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/outos', function () {
 // Rota para acessar o recurso com o token temporário
 Route::get('/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-outos', function (Request $request) {
     $token = $request->query('token');
-    // Verifica o token temporário e permite acesso ao recurso
     if (\App\Models\User::verificarTokenTemporario($token)) {
         $user = Auth::user();
-
-        // Verifica se o token já foi inserido para este usuário
         $tokenExistente = Log_Token::where('id_user', $user->id)
             ->where('token', $token)
             ->first();
-
         if ($tokenExistente) {
             abort(403, 'Já lês-te o QR code!');
         } else {
@@ -235,7 +231,6 @@ Route::get('/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-outos', function (
         abort(403, 'QR Code expirado!'); // Acesso negado
     }
 });
-
 Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/workshop/24', function () {
     // Verifica se o usuário está autenticado
     if (Auth::check()) {
@@ -244,7 +239,6 @@ Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/workshop/24', function () {
         return redirect("/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-workshops?token={$tokenTemporario}");
     }
 })->middleware('auth');
-
 Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/workshop/22', function () {
 
     if (Auth::check()) {
@@ -253,7 +247,7 @@ Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/workshop/22', function () {
     }
 })->middleware('auth');
 
-// Rota para acessar o recurso com o token temporário
+
 Route::get('/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-workshops', function (Request $request) {
     $id_workshop = $request->query('token');
     $user = Auth::user();
