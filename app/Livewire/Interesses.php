@@ -123,7 +123,6 @@ class Interesses extends Component
                             }
                         }
                     }
-
                 }
 
 
@@ -167,12 +166,9 @@ class Interesses extends Component
                             }
                         }
                     }
-
                 }
                 $back->save();
             }
-
-
         }
 
         $user->save();
