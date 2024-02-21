@@ -22,6 +22,7 @@ use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\EmailController;
 use App\Models\Billing;
 use App\Models\Logistica;
+use Maatwebsite\Excel\Facades\Excel;
 
 /*
 |--------------------------------------------------------------------------
@@ -431,6 +432,9 @@ Route::middleware([
             $empresas= SiInscricao::all();
             return view('admin.fista.inscricoes.speedinterview')->with(['empresas'=> $empresas]);
         })->name('inscricoes.speedinterview');
+        Route::get('/export/siinscricoes', function () {
+            return Excel::download(new SiInscricao, 'siinscricoes.xlsx');
+        })->name('export.siinscricoes');
         Route::get('/send-emails', function () {
             return view('admin.fista.send_emails');
         })->name('enviar.emails');

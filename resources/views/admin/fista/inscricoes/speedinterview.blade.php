@@ -20,29 +20,38 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="table-responsive">
+                                <a href="{{ route('export.siinscricoes') }}" class="btn btn-success">
+                                    Exportar para Excel
+                                </a>
                                 <table class="table table-bordered">
                                     <thead class="bg-dark text-white">
                                         <tr>
                                             <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Tipo</th>
-                                            <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Nome aluno</th>
+                                            <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Nome aluno
+                                            </th>
                                             <th class="text-left py-3 px-4 uppercase font-semibold text-sm">email</th>
                                             <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Ano</th>
                                             <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Curso</th>
-                                            <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Download(CV)</th>
+                                            <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Download(CV)
+                                            </th>
                                         </tr>
                                     </thead>
                                     <tbody class="text-gray-700">
                                         @foreach ($empresas as $empresa)
-                                        <tr>
-                                            <td class="text-left py-3 px-4">{{$empresa->si->empresas}} {{$empresa->si->begin}}</td>
-                                            <td class="text-left py-3 px-4">{{$empresa->user->name}}</td>
-                                            <td class="text-left py-3 px-4">{{$empresa->user->email}}</td>
-                                            <td class="text-left py-3 px-4">{{$empresa->user->ano->designacao}}</td>
-                                            <td class="text-left py-3 px-4">{{$empresa->user->curso->designacao}}</td>
-                                            <td class="text-left py-3 px-4">
-                                                <a href="https://fista.iscte-iul.pt/storage/{{$empresa->user->file}}" download="CV-{{$empresa->user->name}}">Download</a>
-                                            </td>
-                                        </tr>
+                                            <tr>
+                                                <td class="text-left py-3 px-4">{{ $empresa->si->empresas }}
+                                                    {{ $empresa->si->begin }}</td>
+                                                <td class="text-left py-3 px-4">{{ $empresa->user->name }}</td>
+                                                <td class="text-left py-3 px-4">{{ $empresa->user->email }}</td>
+                                                <td class="text-left py-3 px-4">{{ $empresa->user->ano->designacao }}
+                                                </td>
+                                                <td class="text-left py-3 px-4">{{ $empresa->user->curso->designacao }}
+                                                </td>
+                                                <td class="text-left py-3 px-4">
+                                                    <a href="https://fista.iscte-iul.pt/storage/{{ $empresa->user->file }}"
+                                                        download="CV-{{ $empresa->user->name }}">Download</a>
+                                                </td>
+                                            </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
@@ -52,4 +61,4 @@
                 </div>
             </div>
         </div>
-    </x-app-layout>
+</x-app-layout>
