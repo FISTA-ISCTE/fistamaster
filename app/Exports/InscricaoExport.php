@@ -11,8 +11,7 @@ class InscricaoExport implements FromQuery, WithHeadings, WithMapping
 {
     public function query()
     {
-        // Certifique-se de ajustar a consulta conforme necessário para incluir todas as relações relevantes
-        return SiInscricao::all();
+        return SiInscricao::query()->with(['user', 'user.ano', 'user.curso']);
     }
 
     public function headings(): array
