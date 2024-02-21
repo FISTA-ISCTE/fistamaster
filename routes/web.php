@@ -5,6 +5,7 @@ use App\Http\Controllers\PageController;
 use App\Models\Arquitetura;
 use App\Models\Curso;
 use App\Models\Empresa;
+use App\Models\SiInscricao;
 use App\Models\Tokens;
 use Illuminate\Http\Request;
 use App\Models\ItSpeed;
@@ -295,10 +296,7 @@ Route::get('/speed-interviews', function () {
     $speedinterview = SpeedInterview::where('mostrar', 1)->get();
     return view('speedinterview')->with(['speedinterview' => $speedinterview]);
 })->name('speedinterview');
-Route::get('/pequeno-almoco', function () {
-    $speedinterview = SpeedInterview::where('mostrar', 1)->get();
-    return view('pequenoalmoco')->with(['speedinterview' => $speedinterview]);
-})->name('speedinterview');
+
 
 Route::get('/empresas', function () {
     $empresaspremium = Empresa::where('plano', 'premium')->where('mostrar', '1')->get();
@@ -428,6 +426,11 @@ Route::middleware([
             return view('admin.fista.email-empresas.view');
         })->name('enviar.emails.blade');
 
+        /**************************** Speed Interview *********************************** */
+        Route::get('/inscricoes/speedinterviews', function () {
+            $empresas= SiInscricao::all();
+            return view('admin.fista.inscricoes.speedinterview');
+        })->name('inscricoes.speedinterview');
         Route::get('/send-emails', function () {
             return view('admin.fista.send_emails');
         })->name('enviar.emails');

@@ -18,8 +18,6 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-body">
-                            <h2 class="text-center mb-5">BREVEMENTE MAIS ADD-ONS</h2>
-
                             <div class="table-responsive">
                                 <table class="table table-bordered">
                                     <thead class="bg-dark text-white">

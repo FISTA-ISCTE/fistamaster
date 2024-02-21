@@ -69,6 +69,14 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Models\Empresa', 'id_empresa');
     }
+    public function curso()
+    {
+        return $this->belongsTo('App\Models\Curso', 'id_curso');
+    }
+    public function ano()
+    {
+        return $this->belongsTo('App\Models\Ano', 'id_ano');
+    }
     public static function verificarTokenTemporario($token)
     {
         // Assume que você tem uma relação definida no modelo User para tokens temporários
