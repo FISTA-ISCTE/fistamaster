@@ -39,7 +39,6 @@
                                             <td class="text-left py-3 px-4">{{$empresa->user->email}}</td>
                                             <td class="text-left py-3 px-4">{{$empresa->user->ano->designacao}}</td>
                                             <td class="text-left py-3 px-4">{{$empresa->user->curso->designacao}}</td>
-                                            <td class="text-left py-3 px-4">{{$empresa->user->email}}</td>
                                             <td class="text-left py-3 px-4">
                                                 <a href="https://fista.iscte-iul.pt/storage/{{$empresa->user->file}}" download="CV-{{$empresa->user->name}}">Download</a>
                                             </td>

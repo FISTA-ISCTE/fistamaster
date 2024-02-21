@@ -148,6 +148,13 @@
                         </x-nav-link>
                     </div>
                 @endif
+                @if (auth()->user() && auth()->user()->hasRole('admin'))
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 1.5rem;">
+                        <x-nav-link href="{{ route('inscricoes.speedinterview') }}" :active="request()->routeIs('inscricoes.speedinterview')">
+                            {{ __('Inscricoes') }}
+                        </x-nav-link>
+                    </div>
+                @endif
 
                 @if (auth()->user() && auth()->user()->hasRole('empresa'))
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-left: 1.5rem;">
