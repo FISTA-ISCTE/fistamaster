@@ -47,10 +47,10 @@
                                 <div class="pt-4 ">
                                     <a class="btn" href="assets/files/Regulamento Concurso de ideias - FISTA24.pdf">Regulamento</a>
                                 </div>
-                                <div class="pt-4 pb-4 pt-md-4 ">
+                                <!-- <div class="pt-4 pb-4 pt-md-4 ">
 
                                     <a id="openRegistarEquipa" class="btn" href="#">Registar Equipa</a>
-                                </div>
+                                </div> -->
 
                             </div>
                         </div>

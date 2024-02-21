@@ -17,4 +17,10 @@ class Programas extends Model
                 $result = mysql_query($sql);
                 return $result;      */
     }
+    public static function eventforAll($dia, $hora)
+    {
+
+        $events = Programas::where("dia", "=", $dia)->where("horaInicio","=", $hora)->where("tipo", "")->get();
+        return $events;
+    }
 }
