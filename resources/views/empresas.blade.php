@@ -69,10 +69,7 @@
                             </p>
                         </button>
                     </div>
-
-
                 </div> -->
-
 
         <div class="row justify-content-center pb-4">
 
@@ -80,14 +77,13 @@
 
                 <div class="form-check p-0 ">
                     <label class="form-check-label" style="line-height:1.25;display:inline-flex" for="exampleRadios1">
-                        Todos os dias
+                        Todos as empresas
                     </label>
                     <input class="form-check-input" style="margin-left:0.5rem" type="radio" onclick="filterData('todos')"
                         name="exampleRadios">
                 </div>
             </div>
             <div class="col-md-3 p-0 d-flex justify-content-center">
-
                 <div class="form-check p-0 ">
                     <label class="form-check-label" style="line-height:1.25;display:inline-flex" for="exampleRadios1">
                         28 Fevereiro

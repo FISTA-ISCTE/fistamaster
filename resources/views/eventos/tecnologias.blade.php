@@ -86,7 +86,7 @@
                                                 alt=""></a>
                                     </div>
                                     <div class="case-study-content">
-                                        <h3 class="title"><a href="/speed-interviews">Speed Interview</a></h3>
+                                        <h3 class="title"><a href="/speed-interviews">Speed Interview e Pequeno-Almoço</a></h3>
                                     </div>
                                 </div>
                                 <!-- Single Case Study End -->
