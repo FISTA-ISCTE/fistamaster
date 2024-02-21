@@ -3,39 +3,41 @@
 namespace App\Exports;
 
 use App\Models\SiInscricao;
-use Maatwebsite\Excel\Concerns\FromQuery;
+use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\WithMapping;
 
-class InscricaoExport implements FromQuery, WithHeadings, WithMapping
+class InscricaoExport implements FromCollection, WithHeadings, WithMapping
 {
-    public function query()
+    public function collection()
     {
-        return SiInscricao::query()->with(['user', 'user.ano', 'user.curso']);
+        // Carrega as empresas com suas relações necessárias. Ajuste conforme necessário.
+        return SiInscricao::with('user', 'user.ano', 'user.curso')->get();
     }
 
     public function headings(): array
     {
+        // Cabeçalhos conforme sua tabela HTML
         return [
             'Tipo',
-            'Nome do Aluno',
+            'Nome aluno',
             'Email',
             'Ano',
             'Curso',
-            'Download CV',
+            'Download(CV)',
         ];
     }
 
-    public function map($inscricao): array
+    public function map($empresa): array
     {
-        // Ajuste os acessos de propriedade conforme as relações e campos reais do seu modelo
+        // Mapeamento dos dados para cada linha, ajuste de acordo com suas relações/necessidades
         return [
-            $inscricao->tipo, // Supondo que 'tipo' seja um campo diretamente no modelo SiInscricao
-            $inscricao->aluno->name,
-            $inscricao->aluno->email,
-            $inscricao->aluno->ano->designacao,
-            $inscricao->aluno->curso->designacao,
-            $inscricao->aluno->file ? url('storage/'.$inscricao->aluno->file) : null, // Ajuste conforme a lógica de armazenamento do seu arquivo
+            $empresa->si->empresas . ' ' . $empresa->si->begin, // Ajuste conforme sua estrutura de dados
+            $empresa->user->name,
+            $empresa->user->email,
+            $empresa->user->ano->designacao,
+            $empresa->user->curso->designacao,
+            'https://fista.iscte-iul.pt/storage/' . $empresa->user->file, // Ajuste o caminho conforme necessário
         ];
     }
 }
