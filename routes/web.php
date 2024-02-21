@@ -429,7 +429,7 @@ Route::middleware([
         /**************************** Speed Interview *********************************** */
         Route::get('/inscricoes/speedinterviews', function () {
             $empresas= SiInscricao::all();
-            return view('admin.fista.inscricoes.speedinterview');
+            return view('admin.fista.inscricoes.speedinterview')->with(['empresas'=> $empresas]);
         })->name('inscricoes.speedinterview');
         Route::get('/send-emails', function () {
             return view('admin.fista.send_emails');
