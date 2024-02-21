@@ -292,11 +292,11 @@ Route::get('/workshops', function () {
     return view('workshops')->with(['workshops' => $workshops]);
 })->name('workshops');
 Route::get('/speed-interviews', function () {
-    $speedinterview = SpeedInterview::where('mostrar', 1)->where('empresas','si')->get();
+    $speedinterview = SpeedInterview::where('mostrar', 1)->get();
     return view('speedinterview')->with(['speedinterview' => $speedinterview]);
 })->name('speedinterview');
 Route::get('/pequeno-almoco', function () {
-    $speedinterview = SpeedInterview::where('mostrar', 1)->where('empresas'."pa")->get();
+    $speedinterview = SpeedInterview::where('mostrar', 1)->get();
     return view('pequenoalmoco')->with(['speedinterview' => $speedinterview]);
 })->name('speedinterview');
 
