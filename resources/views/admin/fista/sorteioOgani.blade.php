@@ -6,7 +6,7 @@
         <div class="row justify-content-start">
             <div class="col-lg-6 col-md-12 text-center">
 
-                <h1 style="font-size:60px;color: #1ec4bd;font-weight: bold;padding-top:8.5rem;">Concurso de ideias</h1>
+                <h1 style="font-size:1.7rem;color: #1ec4bd;font-weight: bold;padding-top:8.5rem;">Sorteio</h1>
             </div>
         </div>
         <!-- <h1 style="font-size:60px;color: #1ec4bd;font-weight: bold;padding-top:8.5rem;">Concurso de ideias</h1> -->
@@ -16,7 +16,7 @@
 
 
             <div class="col-md-3">
-                <p>{{$checkinconfs->user->name}}</p>
+                <h4>{{$checkinconfs->user->name}}</h4>
             </div>
             @endforeach
         </div>
