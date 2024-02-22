@@ -403,7 +403,7 @@
                                                         <label style="margin-right:rem;" class="form-check-label"
                                                             for="opcaoMesaStandDia2Stand">Não</label>
                                                         @if (isset($logistica->n_pessoas_dia2))
-                                                            <p>{{ $logistica->n_pessoas_dia2 }}</p>
+                                                            <p> Numero de Pessoas:{{ $logistica->n_pessoas_dia2 }}</p>
                                                         @endif
                                                     </div>
                                                 </div>
