@@ -3,9 +3,11 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PageController;
 use App\Models\Arquitetura;
+use App\Models\CheckInConferencia;
 use App\Models\Curso;
 use App\Models\Empresa;
 use App\Models\SiInscricao;
+use App\Models\Sorteio;
 use App\Models\Tokens;
 use Illuminate\Http\Request;
 use App\Models\ItSpeed;
@@ -205,6 +207,7 @@ Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/outos', function () {
         return redirect("/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-outos?token={$tokenTemporario}");
     }
 })->middleware('auth');
+
 
 // Rota para acessar o recurso com o token temporário
 Route::get('/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-outos', function (Request $request) {
@@ -416,6 +419,10 @@ Route::middleware([
         Route::get('/seats29', function () {
             return view('admin.fista.seats-map29');
         })->name('fista.seats29');
+        Route::get('/sorteiosC', function () {
+            $checkinconf = CheckInConferencia::where('tipo','1')->get();
+            return view('admin.fista.sorteioOrgani')->with(['checkinconf'=>$checkinconf]);
+        });
 
         Route::get('/emails-convites', function () {
             return view('admin.fista.email-empresas.view');
