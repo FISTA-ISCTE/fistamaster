@@ -25,7 +25,7 @@
         </form>
 
         @if (isset($vencedor))
-            <h2>O vencedor é: {{ $vencedor->nome }}</h2>
+            <h2>O vencedor é: {{ $vencedor->user->name }}</h2>
         @endif
 
     </div>
