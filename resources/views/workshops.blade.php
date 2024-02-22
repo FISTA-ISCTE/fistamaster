@@ -82,6 +82,9 @@
                                             <span><i class="fa fa-check-double"></i> {{ $workshop->spotsavailable }}
                                                 Vagas</span>
                                         </div>
+                                        <div class="blog-meta" style="margin-left:4rem;">
+                                            <span><i class="fa fa-check-double"></i> {{ $workshop->room }}</span>
+                                        </div>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
