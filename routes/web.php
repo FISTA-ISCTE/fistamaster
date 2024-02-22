@@ -421,7 +421,7 @@ Route::middleware([
             return view('admin.fista.seats-map29');
         })->name('fista.seats29');
         Route::get('/sorteiosC', function () {
-            $checkinconf = CheckInConferencia::where('tipo','1')->get();
+            $checkinconf = CheckInConferencia::where('tipo','2')->get();
             return view('admin.fista.sorteioOgani')->with(['checkinconf'=>$checkinconf]);
         });
         Route::get('/sorteiosS', function () {
