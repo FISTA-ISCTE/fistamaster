@@ -253,11 +253,9 @@
                                                         @endif
                                                         <label style="margin-right:rem;" class="form-check-label"
                                                             for="opcaoMesaStandDia1Stand">Não</label>
-                                                        <input style="width:50%;" type="text"
-                                                            name="n_pessoas_dia1" id="n_pessoas_dia1"
-                                                            autocomplete="n_pessoas_dia1" disabled autofocus
-                                                            placeholder="Numero de pessoas presentes no stand/mesa?"
-                                                            value="@if (isset($logistica->n_pessoas_dia1)) {{ $logistica->n_pessoas_dia1 }} @endif">
+                                                        @if (isset($logistica->n_pessoas_dia1))
+                                                            <p>{{ $logistica->n_pessoas_dia1 }}</p>
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>
@@ -404,11 +402,9 @@
                                                         @endif
                                                         <label style="margin-right:rem;" class="form-check-label"
                                                             for="opcaoMesaStandDia2Stand">Não</label>
-                                                        <input style="width:50%;" type="text"
-                                                            name="n_pessoas_dia2" id="n_pessoas_dia2"
-                                                            autocomplete="n_pessoas_dia2" disabled autofocus
-                                                            placeholder="Numero de pessoas presentes no stand/mesa?"
-                                                            value="@if (isset($logistica->n_pessoas_dia2)) {{ $logistica->n_pessoas_dia2 }} @endif">
+                                                        @if (isset($logistica->n_pessoas_dia2))
+                                                            <p>{{ $logistica->n_pessoas_dia2 }}</p>
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>
