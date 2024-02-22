@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\SorteioController;
 use App\Models\Arquitetura;
 use App\Models\CheckInConferencia;
 use App\Models\Curso;
@@ -423,7 +424,7 @@ Route::middleware([
             $checkinconf = CheckInConferencia::where('tipo','1')->get();
             return view('admin.fista.sorteioOgani')->with(['checkinconf'=>$checkinconf]);
         });
-
+        Route::post('/sortear', [SorteioController::class, 'sortear'])->name('sortear');
         Route::get('/emails-convites', function () {
             return view('admin.fista.email-empresas.view');
         })->name('enviar.emails.blade');
