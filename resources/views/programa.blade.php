@@ -221,13 +221,13 @@
     <div class="container" style="margin-bottom: 10rem;">
         <div class="mb-4" style="margin-top:auto;margin-left:auto;margin-top:10%">
             <div class="row" style="height:0%">
-                <h1 style="font-family:'Myriad Pro 1';font-size:55px;color:#666666;margin-left:1rem">Programa
+                <h1 style="font-size:50px;;margin-left:1rem">Programa
                 </h1>
             </div>
 
         </div>
 
-        <div class="program container" style="margin-top:10%;overflow-x:scroll">
+        <div class="program container" style="margin-top:5%;overflow-x:scroll">
             <div class="cont">
                 <div class="line" id="diasUnicos" style="justify-content:center;height: 10rem;">
                     @foreach ($dias as $dia)
