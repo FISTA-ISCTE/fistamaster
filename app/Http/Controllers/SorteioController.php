@@ -11,6 +11,6 @@ class SorteioController extends Controller
     {
         $vencedor = CheckInConferencia::where('tipo','1')->inRandomOrder()->first();
 
-        return view('sorteioOrgani', compact('vencedor'));
+        return view('admin.fista.sorteioOgani', compact('vencedor'));
     }
 }
