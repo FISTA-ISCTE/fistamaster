@@ -16,7 +16,7 @@
 
 
             <div class="col-md-3">
-                <p>{{$$checkinconfs->user->name}}</p>
+                <p>{{$checkinconfs->user->name}}</p>
             </div>
             @endforeach
         </div>
