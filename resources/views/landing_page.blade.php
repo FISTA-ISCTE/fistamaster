@@ -719,7 +719,7 @@
 
     <div class="section techwix-service-section-04 " style="margin-top:2.5rem;">
         <div class="container">
-            <h1 style="font-size:2.5rem;font-weight:bold;color:#1EC4BD;text-align:center;">Parceiros de Comunicação</h1>
+            <h1 style="font-size:2.5rem;font-weight:bold;color:#1EC4BD;text-align:center;">Banda</h1>
 
             <div class="service-wrap">
 
