@@ -9,7 +9,7 @@ class SorteioController extends Controller
 {
     public function sortear()
     {
-        $vencedor = CheckInConferencia::where('tipo','1')->inRandomOrder()->first();
+        $vencedor = CheckInConferencia::where('tipo','2')->inRandomOrder()->first();
 
         return view('admin.fista.sorteioOgani', compact('vencedor'));
     }
