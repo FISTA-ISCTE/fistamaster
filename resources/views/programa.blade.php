@@ -269,163 +269,170 @@
                                     </div>
                                 </div>
                                 @foreach (App\Models\Programas::horasDias($dia) as $hora)
-                                    <div class="row" style="padding: 5px; display: flex;">
-                                        <div class="col-2">
-                                            <div class="card-time">
-                                                <h3>{{ date('H:i', strtotime($hora['horaInicio'])) }}</h3>
-                                            </div>
+                                <div class="row" style="padding: 5px; display: flex;">
+                                    <div class="col-2">
+                                        <div class="card-time">
+                                            <h3>{{ date('H:i', strtotime($hora['horaInicio'])) }}</h3>
                                         </div>
+                                    </div>
 
-                                        @foreach ($programas as $programa)
-                                            @if ($programa->dia == $dia && $programa->horaInicio == $hora['horaInicio'])
-                                                @if ($programa->tipo == 'TECH')
-                                                    @if ($programa->speedTalkId == 1)
-                                                        @if ($programa->id == 17)
-                                                            <a class="col-3" style="color:black"
-                                                                href="/programaItSpeedTalks">
-                                                                <div>
-                                                                    <div class="cardProg">
-                                                                        <h3 style="text-align:center;font-weight:bold">
-                                                                            {{ $programa->titulo }}</h3>
-                                                                        <h5 style="text-align: center;">
-                                                                            {{ $programa->sala }}</h5>
-                                                                        <!-- <p style="font-size:14px;text-align:center">Clica
-                                                                            aqui para veres o horário!</p> -->
-                                                                    </div>
-                                                                </div>
-                                                            </a>
-                                                        @else
-                                                            <a class="col-5" style="color:black"
-                                                                href="/programaItSpeedTalks">
-                                                                <div>
-                                                                    <div class="cardProg">
-                                                                        <h3 style="text-align:center;font-weight:bold">
-                                                                            {{ $programa->titulo }}</h3>
-                                                                        <h5 style="text-align: center;">
-                                                                            {{ $programa->sala }}</h5>
-                                                                        <!-- <p style="font-size:14px;text-align:center">Clica
-                                                                            aqui para veres o horário!</p> -->
-                                                                    </div>
-                                                                </div>
-                                                            </a>
+
+                                        @if(App\Models\Programas::eventforAll($dia, $hora['horaInicio'])->isEmpty())
+                                            <div class="col-5">
+                                                <div class="row">
+                                                    @foreach ($programas as $programa)
+                                                        @if ($programa->dia == $dia && $programa->horaInicio == $hora['horaInicio'])
+                                                            @if ($programa->tipo == 'TECH')
+                                                                @if ($programa->speedTalkId == 1)
+                                                                    @if ($programa->id == 17)
+                                                                        <a class="col" style="color:black"
+                                                                            href="/programaItSpeedTalks">
+                                                                            <div>
+                                                                                <div class="cardProg">
+                                                                                    <h3 style="text-align:center;font-weight:bold">
+                                                                                        {{ $programa->titulo }}</h3>
+                                                                                    <h5 style="text-align: center;">
+                                                                                        {{ $programa->sala }}</h5>
+                                                                                    <!-- <p style="font-size:14px;text-align:center">Clica
+                                                                                        aqui para veres o horário!</p> -->
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                    @else
+                                                                        <a class="col" style="color:black"
+                                                                            href="/programaItSpeedTalks">
+                                                                            <div>
+                                                                                <div class="cardProg">
+                                                                                    <h3 style="text-align:center;font-weight:bold">
+                                                                                        {{ $programa->titulo }}</h3>
+                                                                                    <h5 style="text-align: center;">
+                                                                                        {{ $programa->sala }}</h5>
+                                                                                    <!-- <p style="font-size:14px;text-align:center">Clica
+                                                                                        aqui para veres o horário!</p> -->
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                    @endif
+                                                                @elseif ($programa->keynoteId == 1)
+                                                                    <a href="/keynote" class="col">
+                                                                        <div style="color:black">
+                                                                            <div class="cardProg">
+                                                                                <p
+                                                                                    style="text-align:center;font-weight:bold; color:#1EC4BD">
+                                                                                    KEYNOTE</p>
+                                                                                <h3 style="text-align:center;font-weight:bold">
+                                                                                    {!! nl2br(e($programa->titulo)) !!}
+                                                                                   </h3>
+                                                                                @if ($programa->keynoteId == 1)
+                                                                                    <h4 style="text-align:center;">{{ $programa->descricao }}</h4>
+                                                                                @endif
+                                                                                <h5 style="text-align: center;">{{ $programa->sala }}
+                                                                                </h5>
+                                                                            </div>
+                                                                        </div>
+                                                                    </a>
+                                                                @else
+                                                                    <!-- ESTAVA COM O ID 25 -->
+                                                                    @if ($programa->id == 101)
+                                                                        <a class="col" style="color:black"
+                                                                            href="/apresentacaoprojetos">
+                                                                            <div>
+                                                                                <div class="cardProg">
+                                                                                    <h3 style="text-align:center;font-weight:bold">
+                                                                                        {{ $programa->titulo }}</h3>
+                                                                                    <h5 style="text-align: center;">
+
+                                                                                        {{ $programa->sala }}</h5>
+                                                                                    <!-- <p style="font-size:14px;text-align:center">Clica
+                                                                                        aqui para saberes mais!</p> -->
+
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                    @elseif ($programa->id == 7)
+                                                                        <div class="col" style="color:black">
+                                                                            <div class="cardProg">
+                                                                                <h3 style="text-align:center;font-weight:bold">
+                                                                                    {{ $programa->titulo }}</h3>
+                                                                                @if ($programa->keynoteId == 1)
+                                                                                    <h4>{{ $programa->descricao }}</h4>
+                                                                                @endif
+                                                                                <h5 style="text-align: center;">{{ $programa->sala }}
+                                                                                </h5>
+                                                                            </div>
+                                                                        </div>
+                                                                    <!-- ESTAVA COM ID 33 -->
+                                                                    @elseif($programa->id == 100)
+                                                                        <div class="col">
+                                                                            <div class="cardProg">
+                                                                                <h3 style="text-align:center;font-weight:bold">
+                                                                                    {{ $programa->titulo }}</h3>
+                                                                                @if ($programa->keynoteId == 1)
+                                                                                    <h4>{{ $programa->descricao }}</h4>
+                                                                                @endif
+                                                                                <h5 style="text-align: center;">{{ $programa->sala }}
+                                                                                </h5>
+                                                                            </div>
+                                                                        </div>
+                                                                    @else
+                                                                        <a class="col" href="{{$programa->hrefTo}}" style="color:black">
+                                                                            <div class="cardProg">
+                                                                                <h3 style="text-align:center;font-weight:bold">
+                                                                                    {!! nl2br(e($programa->titulo)) !!}</h3>
+                                                                                @if ($programa->keynoteId == 1)
+                                                                                    <h4>{{ $programa->descricao }}</h4>
+                                                                                @endif
+                                                                                <h5 style="text-align: center; margin-top:5px;">
+                                                                                    {{ date('H:i', strtotime($programa->horaInicio)) }}-{{ date('H:i', strtotime($programa->horaFim)) }}
+                                                                                    <br>
+                                                                                    {{ $programa->sala }}
+                                                                                </h5>
+                                                                            </div>
+                                                                        </a>
+                                                                    @endif
+                                                                @endif
+                                                            @endif
                                                         @endif
-                                                    @elseif ($programa->keynoteId == 1)
-                                                        <a href="/keynote" class="col-5">
-                                                            <div style="color:black">
-                                                                <div class="cardProg">
-                                                                    <p
-                                                                        style="text-align:center;font-weight:bold; color:#1EC4BD">
-                                                                        KEYNOTE</p>
-                                                                    <h3 style="text-align:center;font-weight:bold">
-                                                                        $programa->titulo))</h3>
-                                                                    @if ($programa->keynoteId == 1)
-                                                                        <h4 style="text-align:center;">{{ $programa->descricao }}</h4>
-                                                                    @endif
-                                                                    <h5 style="text-align: center;">{{ $programa->sala }}
-                                                                    </h5>
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                    @else
-                                                        @if ($programa->id == 25)
-                                                            <a class="col-5" style="color:black"
-                                                                href="/apresentacaoprojetos">
-                                                                <div>
-                                                                    <div class="cardProg">
-                                                                        <h3 style="text-align:center;font-weight:bold">
-                                                                            {{ $programa->titulo }}</h3>
-                                                                        <h5 style="text-align: center;">
-                                                                            {{ $programa->sala }}</h5>
-                                                                        <!-- <p style="font-size:14px;text-align:center">Clica
-                                                                            aqui para saberes mais!</p> -->
+                                                    @endforeach
 
-                                                                    </div>
-                                                                </div>
-                                                            </a>
-                                                        @elseif ($programa->id == 12)
-                                                            <div class="col-3">
-                                                                <div class="cardProg">
-                                                                    <h3 style="text-align:center;font-weight:bold">
-                                                                        {{ $programa->titulo }}</h3>
-                                                                    <h5 style="text-align: center;">{{ $programa->sala }}
-                                                                    </h5>
+                                                </div>
+                                            </div>
+                                        @endif
 
-                                                                </div>
-                                                            </div>
-                                                        @elseif ($programa->id == 7)
-                                                            <div class="col-5" style="color:black">
-                                                                <div class="cardProg">
-                                                                    <h3 style="text-align:center;font-weight:bold">
-                                                                        {{ $programa->titulo }}</h3>
-                                                                    @if ($programa->keynoteId == 1)
-                                                                        <h4>{{ $programa->descricao }}</h4>
-                                                                    @endif
-                                                                    <h5 style="text-align: center;">{{ $programa->sala }}
-                                                                    </h5>
-                                                                </div>
-                                                            </div>
-                                                        @else
-                                                            <div class="col-5" style="color:#black">
-                                                                <div class="cardProg">
-                                                                    <h3 style="text-align:center;font-weight:bold">
-                                                                        {{$programa->titulo}}</h3>
-                                                                    @if ($programa->keynoteId == 1)
-                                                                        <h4>{{ $programa->descricao }}</h4>
-                                                                    @endif
-                                                                    <h5 style="text-align: center;">{{ $programa->sala }}
-                                                                    </h5>
-                                                                </div>
-                                                            </div>
-                                                        @endif
-                                                    @endif
-                                                @endif
-                                            @endif
-                                        @endforeach
+                                        <!-- PARA TODOS  -->
                                         @foreach ($programas as $programa)
                                             @if ($programa->dia == $dia && $programa->horaInicio == $hora['horaInicio'])
                                                 @if ($programa->tipo == null)
-                                                    @if ($programa->id == 30)
-                                                        <div class="col-7" style="color:black">
-                                                            <div class="cardProg" style="box-shadow: 2px 2px 1px 2px #c3f8fd">
-                                                                <h3 style="text-align: center;font-weight:bold">
-                                                                    @if ($programa->titulo == null)
-                                                                        TBD
-                                                                    @else
-                                                                        {{ $programa->titulo }}
-                                                                    @endif
-                                                                </h3>
-                                                                <h5 style="text-align: center;">{{ $programa->sala }}</h5>
-                                                            </div>
+                                                    <div class="col-10" style="color:black">
+                                                        <div class="cardProg" style="box-shadow: 2px 2px 1px 2px #c3f8fd">
+                                                            <h3 style="text-align: center;font-weight:bold">
+                                                                @if ($programa->titulo == null)
+                                                                    TBD
+                                                                @else
+                                                                    {{ $programa->titulo }}
+                                                                @endif
+                                                            </h3>
+                                                            <h5 style="text-align: center;">{{ $programa->sala }}</h5>
                                                         </div>
-                                                    @else
-                                                        <div class="col-10" style="color:black">
-                                                            <div class="cardProg" style="box-shadow: 2px 2px 1px 2px #c3f8fd">
-                                                                <h3 style="text-align: center;font-weight:bold">
-                                                                    @if ($programa->titulo == null)
-                                                                        TBD
-                                                                    @else
-                                                                        {{ $programa->titulo }}
-                                                                    @endif
-                                                                </h3>
-                                                                <h5 style="text-align: center;">{{ $programa->sala }}</h5>
-                                                            </div>
-                                                        </div>
-                                                    @endif
+                                                    </div>
                                                 @endif
                                             @endif
                                         @endforeach
+
+                                        <!-- ARQUITETURA -->
+
                                         @foreach ($programas as $programa)
                                             @if ($programa->dia == $dia && $programa->horaInicio == $hora['horaInicio'])
                                                 @if ($programa->tipo == 'ARQ')
-                                                    @if (App\Models\Programas::where('dia', $programa->dia)->where('horaInicio', $programa->horaInicio)->where('tipo', 'TECH')->get()->isEmpty())
+                                                    <!-- @if (App\Models\Programas::where('dia', $programa->dia)->where('horaInicio', $programa->horaInicio)->where('tipo', 'TECH')->get()->isEmpty())
                                                         <div class="col-5"></div>
-                                                    @endif
+                                                    @endif -->
                                                     @if ($programa->keynoteId == 1)
                                                         <a href="/keynote" class="col-5">
                                                             <div style="color:black">
                                                                 <div class="cardProg" style="box-shadow: 2px 2px 1px 2px #ff6d01">
                                                                     <p
-                                                                        style="text-align:center;font-weight:bold; color:#1EC4BD">
+                                                                        style="text-align:center;font-weight:bold; color:#ff6d01">
                                                                         KEYNOTE</p>
                                                                     <h3 style="text-align: center;font-weight:bold">
                                                                         @if ($programa->titulo == null)
@@ -434,29 +441,17 @@
                                                                             {{ $programa->titulo }}
                                                                         @endif
                                                                     </h3>
-                                                                    <h5 style="text-align: center;">{{ $programa->sala }}
+                                                                    <h5 style="text-align: center; margin-top:5px;">
+                                                                        {{ date('H:i', strtotime($programa->horaInicio)) }}-{{ date('H:i', strtotime($programa->horaFim)) }}
+                                                                        <br>
+                                                                        {{ $programa->sala }}
                                                                     </h5>
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                    @elseif($programa->id == 11)
-                                                        <a href="https://videoconf-colibri.zoom.us/j/96147706384"
-                                                            class="col-5">
-                                                            <div>
-                                                                <div class="cardProg" style="box-shadow: 2px 2px 1px 2px #ff6d01">
-                                                                    <h3 style="text-align:center;font-weight:bold">
-                                                                        {{ $programa->titulo }}</h3>
-                                                                    <h5 style="text-align: center;">{{ $programa->sala }}
-                                                                    </h5>
-                                                                    <!-- <p style="font-size:14px;text-align:center">Clica aqui
-                                                                        para acederes à conferência online!</p> -->
-
                                                                 </div>
                                                             </div>
                                                         </a>
                                                     @else
                                                         <div class="col-5" style="color:black">
-                                                            <div class="cardProg">
+                                                            <div class="cardProg" style="box-shadow: 2px 2px 1px 2px #ff6d01">
                                                                 <h3 style="text-align: center;font-weight:bold">
                                                                     @if ($programa->titulo == null)
                                                                         TBD
@@ -464,7 +459,11 @@
                                                                         {{ $programa->titulo }}
                                                                     @endif
                                                                 </h3>
-                                                                <h5 style="text-align: center;">{{ $programa->sala }}</h5>
+                                                                <h5 style="text-align: center; margin-top:5px;">
+                                                                    {{ date('H:i', strtotime($programa->horaInicio)) }}-{{ date('H:i', strtotime($programa->horaFim)) }}
+                                                                    <br>
+                                                                    {{ $programa->sala }}
+                                                                </h5>
                                                             </div>
                                                         </div>
                                                     @endif
@@ -592,7 +591,7 @@
                                                                             </div>
                                                                         </div>
                                                                     @else
-                                                                        <div class="col" style="color:black">
+                                                                        <a class="col" href="{{$programa->hrefTo}}" style="color:black">
                                                                             <div class="cardProg">
                                                                                 <h3 style="text-align:center;font-weight:bold">
                                                                                     {!! nl2br(e($programa->titulo)) !!}</h3>
@@ -605,7 +604,7 @@
                                                                                     {{ $programa->sala }}
                                                                                 </h5>
                                                                             </div>
-                                                                        </div>
+                                                                        </a>
                                                                     @endif
                                                                 @endif
                                                             @endif
@@ -620,7 +619,7 @@
                                         @foreach ($programas as $programa)
                                             @if ($programa->dia == $dia && $programa->horaInicio == $hora['horaInicio'])
                                                 @if ($programa->tipo == null)
-                                                    <div class="col-10" style="color:black">
+                                                    <div class="col-10" style="color:black;">
                                                         <div class="cardProg" style="box-shadow: 2px 2px 1px 2px #c3f8fd">
                                                             <h3 style="text-align: center;font-weight:bold">
                                                                 @if ($programa->titulo == null)
