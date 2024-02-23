@@ -271,7 +271,7 @@
                                                 @endif
                                             @endforeach
                                         </p>
-                                        <p><b>Nome e MAtricula:</b>
+                                        <p><b>Nome e Matricula:</b>
                                             @if (isset($logistica->info_montagem_1))
                                                 {{ $logistica->info_montagem_1 }}
                                             @else
