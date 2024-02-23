@@ -349,7 +349,8 @@
                                                                                 </div>
                                                                             </div>
                                                                         </a>
-                                                                    @elseif ($programa->id == 7)
+                                                                    <!-- ESTAVA COM O ID 7 -->
+                                                                    @elseif ($programa->id == 102)
                                                                         <div class="col" style="color:black">
                                                                             <div class="cardProg">
                                                                                 <h3 style="text-align:center;font-weight:bold">
@@ -599,8 +600,11 @@
                                                                                     <h4>{{ $programa->descricao }}</h4>
                                                                                 @endif
                                                                                 <h5 style="text-align: center; margin-top:5px;">
-                                                                                    {{ date('H:i', strtotime($programa->horaInicio)) }}-{{ date('H:i', strtotime($programa->horaFim)) }} 
-                                                                                    <br>
+                                                                                    {{ date('H:i', strtotime($programa->horaInicio)) }}
+                                                                                    @if($programa->horaFim)
+                                                                                    -{{ date('H:i', strtotime($programa->horaFim)) }} 
+                                                                                    @endif
+                                                                                     <br>
                                                                                     {{ $programa->sala }}
                                                                                 </h5>
                                                                             </div>
