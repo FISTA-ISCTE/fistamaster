@@ -47,6 +47,7 @@
 
                         <div class="hero-btn" data-aos="fade-up" data-aos-delay="1000">
                             <a class="btn" href="/become-a-partner">Registar Empresa</a>
+                            <a class="btn" style="margin-left:1.5rem;" href="/registar-user">Registar Aluno</a>
                         </div>
                     </div>
                     <!-- Hero Content End -->
