@@ -442,7 +442,6 @@ Route::middleware([
             return view('admin.fista.inscricoes.ctf')->with(['ctfInscritos'=> $ctfInscritos]);
         })->name('inscricoes.ctf');
 
-
         /**************************** Concurso de Matemática *************************************** */
         Route::get('/inscricoes/matematica', function () {
             $matematicaInscritos = ConcursosInscricao::where('tipo_concurso','Matematica')->get();
@@ -454,6 +453,8 @@ Route::middleware([
             $empresas= SiInscricao::all();
             return view('admin.fista.inscricoes.speedinterview')->with(['empresas'=> $empresas]);
         })->name('inscricoes.speedinterview');
+
+
         Route::get('/export/siinscricoes', function () {
             return Excel::download(new SiInscricao, 'siinscricoes.xlsx');
         })->name('export.siinscricoes');
