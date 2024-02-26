@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\SorteioController;
+use App\Mail\EmailSends;
 use App\Models\Arquitetura;
 use App\Models\CheckInConferencia;
 use App\Models\Curso;
@@ -327,6 +328,27 @@ Route::get('/registarEmpresa/{name?}', function ($name = null) {
     return view('admin.empresas.registar_info');
 })->name('registarEmpresa');
 
+Route::get('/email-estacionamento', function () {
+    $selectedCompanies = Empresa::where("plano", "premium")->inRandomOrder()->limit(7)->get();
+    $selectedCompanyIds = $selectedCompanies->pluck('id');
+
+    foreach ($selectedCompanies as $company) {
+        // Enviar email para a empresa com o número 1
+        Mail::to($company->email)->send(new EmailSends("Boa noite, é com satisfação que informamos que foi selecionado(a) para utilizar o Estacionamento 1. Com os melhores cumprimentos.", "FISTA24 - Estacionamento 1"));
+    }
+
+    // Seleciona as restantes empresas que não foram escolhidas
+    $remainingCompanies = Empresa::whereNotIn('id', $selectedCompanyIds)->get();
+
+    foreach ($remainingCompanies as $company) {
+        // Enviar email para a empresa com um número ou mensagem diferente, por exemplo, número 3
+        Mail::to($company->email)->send(new EmailSends("Boa noite, é com satisfação que informamos que foi selecionado(a) para utilizar o Estacionamento 1. Com os melhores cumprimentos.", "FISTA24 - Estacionamento 4"));
+    }
+
+    session()->flash('message', 'Emails enviados com sucesso para todas as empresas.');
+});
+
+
 Route::get('/sobre-nos', function () {
     $teams = Team::with('user')->get();
 
@@ -423,12 +445,12 @@ Route::middleware([
             return view('admin.fista.seats-map29');
         })->name('fista.seats29');
         Route::get('/sorteiosC', function () {
-            $checkinconf = CheckInConferencia::where('tipo','2')->get();
-            return view('admin.fista.sorteioOgani')->with(['checkinconf'=>$checkinconf]);
+            $checkinconf = CheckInConferencia::where('tipo', '2')->get();
+            return view('admin.fista.sorteioOgani')->with(['checkinconf' => $checkinconf]);
         });
         Route::get('/sorteiosS', function () {
-            $checkinconf = CheckInConferencia::where('tipo','1')->get();
-            return view('admin.fista.sorteiosOgani')->with(['checkinconf'=>$checkinconf]);
+            $checkinconf = CheckInConferencia::where('tipo', '1')->get();
+            return view('admin.fista.sorteiosOgani')->with(['checkinconf' => $checkinconf]);
         });
         Route::post('/sortear', [SorteioController::class, 'sortear'])->name('sortear');
         Route::get('/emails-convites', function () {
@@ -438,26 +460,28 @@ Route::middleware([
 
         /**************************** CTF *********************************************** */
         Route::get('/inscricoes/ctfinscricoes', function () {
-            $ctfInscritos = ConcursosInscricao::where('tipo_concurso','Ideias')->get();
-            return view('admin.fista.inscricoes.ctf')->with(['ctfInscritos'=> $ctfInscritos]);
+            $ctfInscritos = ConcursosInscricao::where('tipo_concurso', 'Ideias')->get();
+            return view('admin.fista.inscricoes.ctf')->with(['ctfInscritos' => $ctfInscritos]);
         })->name('inscricoes.ctf');
 
         /**************************** Concurso de Matemática *************************************** */
         Route::get('/inscricoes/matematica', function () {
-            $matematicaInscritos = ConcursosInscricao::where('tipo_concurso','Matematica')->get();
-            return view('admin.fista.inscricoes.matematica')->with(['matematicaInscritos'=> $matematicaInscritos]);
+            $matematicaInscritos = ConcursosInscricao::where('tipo_concurso', 'Matematica')->get();
+            return view('admin.fista.inscricoes.matematica')->with(['matematicaInscritos' => $matematicaInscritos]);
         })->name('inscricoes.concursomatematica');
 
         /**************************** Speed Interview *********************************** */
         Route::get('/inscricoes/speedinterviews', function () {
-            $empresas= SiInscricao::all();
-            return view('admin.fista.inscricoes.speedinterview')->with(['empresas'=> $empresas]);
+            $empresas = SiInscricao::all();
+            return view('admin.fista.inscricoes.speedinterview')->with(['empresas' => $empresas]);
         })->name('inscricoes.speedinterview');
+
 
 
         Route::get('/export/siinscricoes', function () {
             return Excel::download(new SiInscricao, 'siinscricoes.xlsx');
         })->name('export.siinscricoes');
+
         Route::get('/send-emails', function () {
             return view('admin.fista.send_emails');
         })->name('enviar.emails');
