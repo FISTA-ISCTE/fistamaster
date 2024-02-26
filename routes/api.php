@@ -45,26 +45,26 @@ Route::post('curso', [apiController::class, 'update']);
 Route::post('ano', [apiController::class, 'updateAno']);
 
 
-Route::post('token', 'apiController@insertToken');
+Route::post('token', [apiController::class, 'insertToken']);
 /*
 Route::post('workshopinscrever', 'apiController@inscrever');
 Route::post('jaInscrito', 'apiController@jaisncrito');
 Route::post('workshopdesinscrever', 'apiController@desinscrever');
 */
-Route::post('gametoken', 'apiController@tokengame');
-Route::post('gamepontos', 'apiController@pontosgame');
+Route::post('gametoken', [apiController::class, 'tokengame']);
+Route::post('gamepontos', [apiController::class, 'pontosgame']);
 Route::get('/feed', function () {
     return Feed::all();
 })->name('feed');
 /*
 Route::post('checkinWorkshop', 'apiController@checkinWorkshop');
 */
-Route::post('checkinTenda', 'apiController@checkinTenda');
+Route::post('checkinTenda', [apiController::class, 'checkinTenda']);
 //Route::post('checkinConferencia', [apiController::class, 'checkinConferencia']);
 /*Route::post('checkinKeynote', 'apiController@checkinKeynote');
 */
-Route::post('/getBackoffice', 'apiController@getBackoffice');
-Route::post('/guardarBackoffice', 'apiController@guardarBackoffice');
+Route::post('/getBackoffice',[apiController::class, 'getBackoffice']);
+Route::post('/guardarBackoffice', [apiController::class, 'guardarBackoffice']);
 
 
 Route::post('registar', [apiController::class, 'registar']);
