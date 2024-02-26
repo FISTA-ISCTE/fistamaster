@@ -26,6 +26,8 @@ use App\Http\Controllers\EmailController;
 use App\Models\Billing;
 use App\Models\Logistica;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Models\ConcursosInscricao;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -432,6 +434,27 @@ Route::middleware([
         Route::get('/emails-convites', function () {
             return view('admin.fista.email-empresas.view');
         })->name('enviar.emails.blade');
+
+
+
+
+
+
+        /**************************** CTF *********************************************** */
+        Route::get('/inscricoes/ctfinscricoes', function () {
+            $ctfInscritos = ConcursosInscricao::where('tipo_concurso','Ideias')->get();
+            return view('admin.fista.inscricoes.ctf')->with(['ctfInscritos'=> $ctfInscritos]);
+        })->name('inscricoes.ctf');
+
+
+        /**************************** Concurso de Matemática *************************************** */
+        Route::get('/inscricoes/matematica', function () {
+            $matematicaInscritos = ConcursosInscricao::where('tipo_concurso','Matematica')->get();
+            return view('admin.fista.inscricoes.matematica')->with(['matematicaInscritos'=> $matematicaInscritos]);
+        })->name('inscricoes.concursomatematica');
+
+        
+        
 
         /**************************** Speed Interview *********************************** */
         Route::get('/inscricoes/speedinterviews', function () {
