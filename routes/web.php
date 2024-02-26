@@ -32,6 +32,13 @@ Route::get('/eventos', function () {
     return view('eventos');
 });
 
+
+Route::get('/confirmar_cv', function () {
+    return view('confirmar_cv');
+});
+
+
+
 Route::get('/programa', function () {
     $programas = Programas::all()->sortBy('horaInicio');
 
