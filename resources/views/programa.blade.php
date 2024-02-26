@@ -596,6 +596,7 @@
                                                                             <div class="cardProg">
                                                                                 <h3 style="text-align:center;font-weight:bold">
                                                                                     {!! nl2br(e($programa->titulo)) !!}</h3>
+
                                                                                 @if ($programa->keynoteId == 1)
                                                                                     <h4>{{ $programa->descricao }}</h4>
                                                                                 @endif
@@ -623,15 +624,21 @@
                                         @foreach ($programas as $programa)
                                             @if ($programa->dia == $dia && $programa->horaInicio == $hora['horaInicio'])
                                                 @if ($programa->tipo == null)
-                                                    <div class="col-10" style="color:black;">
+                                                    <div class="col-10" style="color:black;cursor:default">
                                                         <div class="cardProg" style="box-shadow: 2px 2px 1px 2px #c3f8fd">
                                                             <h3 style="text-align: center;font-weight:bold">
                                                                 @if ($programa->titulo == null)
                                                                     TBD
                                                                 @else
-                                                                    {{ $programa->titulo }}
+                                                                    {!! nl2br(e($programa->titulo)) !!}
+                                                                    
                                                                 @endif
                                                             </h3>
+                                                            @if($programa->id == 44)
+                                                            <div class="py-2" style="text-align: center;">
+                                                                <img src="img/logos/tree_fish.jpg" alt="Image" style="max-width: 8%; height: auto;">
+                                                            </div>
+                                                            @endif
                                                             <h5 style="text-align: center;">{{ $programa->sala }}</h5>
                                                         </div>
                                                     </div>
