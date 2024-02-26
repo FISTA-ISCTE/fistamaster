@@ -11,9 +11,9 @@
 
                 <p style="margin-top:20px;font-size: 23px;text-align:center;padding: 0 2% 0 2%">
                     Neste momento, é <strong style="color:#1EC4BD "> {{$cursos[$cursoAfrente]->designacao}}</strong> que está na frente da corrida!!
-                
+
                     Qual será o curso que vai marcar a maior presença no FISTA24? Será que é o teu? <br>
-                    Não deixes o teu curso ficar para trás nesta corrida!! 
+                    Não deixes o teu curso ficar para trás nesta corrida!!
                 </p>
             </div>
         </div>
@@ -41,11 +41,11 @@
 
 
 
-            <h3 style="font-size:25px; color:rgb(76,77,86);font-weight:600;margin-bottom:30px;" >Convida mais colegas teus para participarem de forma a mostrar qual o curso que mais presença tem no FISTA.</h3>
+            <h3 style="font-size:25px; color:rgb(76,77,86);font-weight:600;margin-bottom:30px; text-align:center;" >Convida mais colegas teus para participarem de forma a mostrar qual o curso que mais presença tem no FISTA.</h3>
                 <div class="hero-btn aos-init aos-animate text-center" data-aos="fade-up" data-aos-delay="1000">
                     <a class="btn" style="font-size:1.3rem !important" href="/registar-user">Regista-te AQUI</a>
                 </div>
-    
+
             <div style="width:100%;height:40px;"></div>
         </div>
 	</div>
