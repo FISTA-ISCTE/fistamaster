@@ -71,11 +71,9 @@
 
                     <ul class="card-slider">
                         @foreach ($lastYearWorkshops as $cartaz)
-                            <li>
-                                <img class="carousel-image"style="width:180px;height:250px;"
-                                    src="{{ asset($cartaz->avatar) }}" alt="Card Title">
-
-                            </li>
+                        <li>
+                            <img class="carousel-image" style="width:180px; height:250px; object-fit: cover;" src="{{ asset($cartaz->avatar) }}" alt="Card Title">
+                        </li>
                         @endforeach
 
 
