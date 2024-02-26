@@ -32,8 +32,8 @@ class ItSpeedTalks extends Component
 
         $this->idEmpresa = Auth::user()->id_empresa;
 
-        // Busca uma instância de ItSpeed associada à empresa
-        // Isso pressupõe que existe uma relação 'um para um' entre Empresa e ItSpeed
+
+        +
         $itSpeed = ItSpeed::where('id_empresa', $this->idEmpresa)->first();
 
         // Se existe um registro ItSpeed associado à empresa, use seu ID

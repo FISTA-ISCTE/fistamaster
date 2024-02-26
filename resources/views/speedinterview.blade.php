@@ -93,7 +93,16 @@
                                                     @endphp</span>
                                             </div>
                                         </div>
+                                        <div class="row" >
+                                            @auth
+                                                @livewire('speed-in-form', ['siId' => $speedinterviews->id])
+                                            @else
 
+                                                <a href="/login?redirect=/workshops" style="width: 50% ;margin-top:3rem; margin-left:5rem;" class="btn btn-primary">Faça o login para
+                                                    se inscrever</a>
+                                            @endauth
+
+                                        </div>
 
                                         <div class="blog-content" style="margin-top: 2rem !important;">
                                             <h3 class="title">{{ $speedinterviews->nome }} </h3>
