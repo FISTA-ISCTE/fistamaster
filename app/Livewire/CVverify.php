@@ -33,6 +33,7 @@ class CVverify extends Component
             if($cvState == 'good' ){
                 $user->update(['cv_verify' => 1]);
             }else if($cvState == 'bad'){
+                $user->decrement('pontos', 10000);
                 $user->update(['cv_verify' => 0]);
             }
         }
