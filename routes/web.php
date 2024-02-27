@@ -8,6 +8,7 @@ use App\Models\Arquitetura;
 use App\Models\CheckInConferencia;
 use App\Models\Curso;
 use App\Models\Empresa;
+use App\Models\Feed;
 use App\Models\SiInscricao;
 use App\Models\Sorteio;
 use App\Models\Tokens;
@@ -581,7 +582,8 @@ Route::middleware([
         })->name('user.pontos');
 
         Route::get('/feed-a', function () {
-            return view('admin.user.feed');
+            $feeds= Feed::all();
+            return view('admin.user.feed')->with(['feeds' => $feeds]);
         })->name('user.feed');
 
     });

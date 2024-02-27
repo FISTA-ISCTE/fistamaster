@@ -6,222 +6,103 @@
             </h1>
         </div>
     </x-slot>
+
+    <style>
+    .round-container {
+        width: 70px; /* Set maximum width */
+        height: 70px; /* Set your desired height */
+        max-width: 100%; /* Ensure it doesn't exceed the maximum width */
+        border-radius: 50%; /* Make it round */
+        overflow: hidden; /* Ensure content doesn't overflow */
+        background: #FFFFFF;
+        position: relative;
+        box-sizing: border-box;
+        border: 2px solid transparent;
+        /* background: linear-gradient(to right, #ff6600, #33ccff); */
+        background: linear-gradient(195deg, #00c4cc 0%, #008d84 100%);
+        border-image-slice: 1;
+    }
+
+    .icon-link i {
+    transition: transform 0.3s ease;
+    }
+
+    .icon-link:hover i {
+        transform: scale(1.2);
+    }
+    </style>
     <div class="card">
-        <div class="container" style="margin-left:1rem;margin-right:1rem;">
+        <div class="container">
             <div class="section blog-standard-section section-padding-02" style="margin-top:3rem; margin-bottom:3rem;">
                 <div class="container">
                     <!-- Blog Standard Wrap Start -->
                     <div class="blog-standard-wrap">
-                        <div class="row">
+                        <div class="row justify-content-center">
                             <div class="col-xl-8 col-lg-8">
                                 <!-- Blog Post Wrap Start -->
-                                <div class="blog-post-wrap">
-                                    <!-- Single Blog Start -->
-                                    <div class="single-blog-post single-blog">
-                                        <div class="blog-image">
-                                            <a href="blog-details.html"><img
-                                                    src="https://fista.iscte-iul.pt/storage/users/empresas/341705508248.jpg"
-                                                    alt=""></a>
-                                            <div class="top-meta">
-                                                <span class="date"><span>08</span>Aug</span>
-                                            </div>
-                                        </div>
-                                        <div class="blog-content">
-                                            <div class="blog-meta">
-                                                <span class="tag"><i class="far fa-bookmark"></i> Diamond</span>
-                                                <span><i class="fas fa-user"></i> <button
-                                                        class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
-                                                        <img class="h-8 w-8 rounded-full object-cover"
-                                                            src="{{ Auth::user()->profile_photo_url }}"
-                                                            alt="{{ Auth::user()->name }}" />
-                                                    </button></span>
+                                @foreach($feeds as $feed)
+                                    <div class="blog-post-wrap" style="padding:0px 0px 100px;">
+                                        <!-- Single Blog Start -->
+                                        <div class="row" style="display:flex; align-items:center;">
+                                            <div class="round-container" >
 
-                                            </div>
-                                            <h3 class="title"><a href="blog-details.html">How to become a
-                                                    successful businessman </a></h3>
-                                            <p class="text">Accelerate innovation with world-class tech teams
-                                                We’ll match you to an entire remote team of incredible freelance
-                                                talent for all your software development needs.</p>
-                                            <div class="blog-btn">
-                                                <a class="blog-btn-link" href="blog-details.html">Read Full <i
-                                                        class="fas fa-long-arrow-alt-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Single Blog End -->
-                                    <!-- Single Blog Start -->
-                                    <div class="single-blog-post single-blog">
-                                        <div class="blog-image">
-                                            <a href="blog-details.html"><img
-                                                    src="https://fista.iscte-iul.pt/storage/users/empresas/341705508248.jpg"
+                                                <a style="background:#ffffff; display: flex; justify-content: center; align-items: center; height: 100%;" href="blog-details.html"><img style="width:100px;"
+                                                    src="../{{$feed->empresa->avatar}}"
                                                     alt=""></a>
-                                            <div class="top-meta">
-                                                <span class="date"><span>08</span>Aug</span>
                                             </div>
-                                        </div>
-                                        <div class="blog-content">
-                                            <div class="blog-meta">
-                                                <span class="tag"><i class="far fa-bookmark"></i> Technology /
-                                                    Business</span>
-                                                <span><i class="fas fa-user"></i> <a href="#">Andrew
-                                                        Paker</a></span>
-                                                <span><i class="far fa-comments"></i> 0 Comments</span>
-                                            </div>
-                                            <h3 class="title"><a href="blog-details.html">Who Needs Extract Value
-                                                    From Data?</a></h3>
-                                            <p class="text">Accelerate innovation with world-class tech teams
-                                                We’ll match you to an entire remote team of incredible freelance
-                                                talent for all your software development needs.</p>
-                                            <div class="blog-btn">
-                                                <a class="blog-btn-link" href="blog-details.html">Read Full <i
-                                                        class="fas fa-long-arrow-alt-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Single Blog End -->
-                                    <!-- Single Blog Start -->
-                                    <div class="single-blog-post single-blog">
-                                        <div class="blog-image">
-                                            <a href="blog-details.html"><img
-                                                    src="https://fista.iscte-iul.pt/storage/users/empresas/341705508248.jpg"
-                                                    alt=""></a>
-                                            <div class="top-meta">
-                                                <span class="date"><span>08</span>Aug</span>
-                                            </div>
-                                        </div>
-                                        <div class="blog-content">
-                                            <div class="blog-meta">
-                                                <span class="tag"><i class="far fa-bookmark"></i> Technology /
-                                                    Business</span>
-                                                <span><i class="fas fa-user"></i> <a href="#">Andrew
-                                                        Paker</a></span>
-                                                <span><i class="far fa-comments"></i> 0 Comments</span>
-                                            </div>
-                                            <h3 class="title"><a href="blog-details.html">Back up your database,
-                                                    store in a safe</a></h3>
-                                            <p class="text">Accelerate innovation with world-class tech teams
-                                                We’ll match you to an entire remote team of incredible freelance
-                                                talent for all your software development needs.</p>
-                                            <div class="blog-btn">
-                                                <a class="blog-btn-link" href="blog-details.html">Read Full <i
-                                                        class="fas fa-long-arrow-alt-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Single Blog End -->
-                                    <!-- Page Pagination Start -->
-                                    <div class="techwix-pagination">
-                                        <ul class="pagination justify-content-center">
-                                            <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
-                                            <li><a href="blog-standard.html">1</a></li>
-                                            <li><a class="active" href="blog-standard.html">2</a></li>
-                                            <li><a href="blog-standard.html">3</a></li>
-                                            <li><span>...</span></li>
-                                            <li><a href="blog-standard.html"><i class="fa fa-angle-right"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- Page Pagination End -->
-                                </div>
-                                <!-- Blog Post Wrap Ed -->
-                            </div>
-                            <div class="col-xl-3 col-lg-4">
-                                <!-- Blog Sidebar Start -->
-                                <div class="blog-sidebar">
-                                    <!-- Sidebar Widget Start -->
-                                    <div class="sidebar-widget sidebar-widget-1">
-                                        <!-- Widget Search Form Start -->
-                                        <form class="search-form" action="#">
-                                            <input type="text" placeholder="Write your keyword...">
-                                            <button type="submit"><i class="fas fa-search"></i></button>
-                                        </form>
-                                        <!-- Widget Search Form End -->
-                                    </div>
-                                    <!-- Sidebar Widget End -->
+                                            <h1 style="font-size:30px; padding-left:15px;">{{$feed->empresa->nome_empresa}}</h1>
 
-                                    <!-- Sidebar Widget Start -->
-                                    <div class="sidebar-widget">
-                                        <!-- Widget Title Start -->
-                                        <div class="widget-title">
-                                            <h3 class="title">Popular Posts</h3>
                                         </div>
-                                        <!-- Widget Title End -->
-                                        <!-- Widget Recent Post Start -->
-                                        <div class="recent-posts">
-                                            <ul>
-                                                <li>
-                                                    <a class="post-link" href="blog-details.html">
-                                                        <div class="post-thumb">
-                                                            <img src="assets/images/blog/r-post1.jpg" alt="">
-                                                        </div>
-                                                        <div class="post-text">
-                                                            <h4 class="title">How Wireless Technology is Changing
-                                                                Business</h4>
-                                                            <span class="post-meta"><i
-                                                                    class="far fa-calendar-alt"></i>
-                                                                May 15,
-                                                                2020</span>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a class="post-link" href="blog-details.html">
-                                                        <div class="post-thumb">
-                                                            <img src="assets/images/blog/r-post2.jpg" alt="">
-                                                        </div>
-                                                        <div class="post-text">
-                                                            <h4 class="title">How Wireless Technology is Changing
-                                                                Business</h4>
-                                                            <span class="post-meta"><i
-                                                                    class="far fa-calendar-alt"></i>
-                                                                May 15,
-                                                                2020</span>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a class="post-link" href="blog-details.html">
-                                                        <div class="post-thumb">
-                                                            <img src="assets/images/blog/r-post3.jpg" alt="">
-                                                        </div>
-                                                        <div class="post-text">
-                                                            <h4 class="title">How Wireless Technology is Changing
-                                                                Business</h4>
-                                                            <span class="post-meta"><i
-                                                                    class="far fa-calendar-alt"></i>
-                                                                May 15,
-                                                                2020</span>
-                                                        </div>
-                                                    </a>
+                                        <div class="single-blog-post single-blog" style="margin-top:30px">
+                                            <div class="blog-image">
+                                                <a href="blog-details.html"><img
+                                                        src="../{{$feed->avatar1}}"
+                                                        alt=""></a>
+                                                <div class="top-meta">
+                                                    <span class="date"><span>{{ date('d', $feed->created_at->timestamp) }}</span>{{ date('M', $feed->created_at->timestamp) }}</span>
+                                                </div>
+                                            </div>
+                                            <div class="blog-content" style="background-color: rgba(255, 255, 255, 0.8);border-radius:10px;padding: 15px 35px 0px;margin-top:-35px;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.20);">
+
+                                                <div class="blog-meta">
+                                                    <div class="row">
+
+                                                        <span class="col tag" style="font-size:15px"><i class="far fa-bookmark"></i> {{$feed->empresa->plano}}</span>
+                                                        <span class="col align-self-end tag team-social text-right" style="margin-right:0px;">
+                                                            <a href="{{$feed->empresa->linkedin}}" alt=""class="icon-link"><i class="fab fa-linkedin" style="font-size:18px"></i></a>
+                                                            <a href="{{$feed->empresa->website}}" class="icon-link"><i class="fab fas fa-globe" style="font-size:18px"></i></a>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <h3 class="title"><a href="#0">{{$feed->titulo}}</a></h3>
+                                                <p class="text">{{$feed->descricao}}</p>
+
+
+                                                <!-- <div class="blog-btn">
+                                                    <a class="blog-btn-link" onclick="toggleIconAndText()" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" href="#">Read Full <i
+                                                            class="fas fa-long-arrow-alt-down"></i></a>
+                                                </div> -->
+                                            </div>
+                                        </div>
+                                        <!-- Single Blog End -->
+
+                                        <!-- Page Pagination Start -->
+                                        <!-- <div class="techwix-pagination">
+                                            <ul class="pagination justify-content-center">
+                                                <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                                                <li><a href="blog-standard.html">1</a></li>
+                                                <li><a class="active" href="blog-standard.html">2</a></li>
+                                                <li><a href="blog-standard.html">3</a></li>
+                                                <li><span>...</span></li>
+                                                <li><a href="blog-standard.html"><i class="fa fa-angle-right"></i></a>
                                                 </li>
                                             </ul>
-                                        </div>
-                                        <!-- Widget Recent Post End -->
+                                        </div> -->
+                                        <!-- Page Pagination End -->
                                     </div>
 
-                                    <!-- Sidebar Widget Start -->
-                                    <div class="sidebar-widget">
-                                        <!-- Widget Title Start -->
-                                        <div class="widget-title">
-                                            <h3 class="title">Categories</h3>
-                                        </div>
-                                        <!-- Widget Title End -->
-                                        <!-- Widget Category Start -->
-                                        <ul class="category">
-                                            <li class="cate-item"><a href="blog.html"><i class="flaticon-next"></i>
-                                                    Technology <span class="post-count">3</span></a></li>
-                                            <li class="cate-item"><a href="blog.html"><i class="flaticon-next"></i>
-                                                    Innovation <span class="post-count">5</span></a></li>
-                                            <li class="cate-item"><a href="blog.html"><i class="flaticon-next"></i>
-                                                    Learning <span class="post-count">3</span></a></li>
-                                            <li class="cate-item"><a href="blog.html"><i class="flaticon-next"></i>
-                                                    Information <span class="post-count">3</span></a></li>
-                                        </ul>
-                                        <!-- Widget Category End -->
-                                    </div>
-                                    <!-- Sidebar Widget End -->
-                                </div>
-                                <!-- Blog Sidebar End -->
+                                @endforeach
+                                <!-- Blog Post Wrap Ed -->
                             </div>
                         </div>
                     </div>
@@ -231,6 +112,7 @@
             <!-- Blog Standard End -->
         </div>
     </div>
+
 
 
 
