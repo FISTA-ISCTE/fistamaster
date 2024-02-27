@@ -46,7 +46,7 @@
                                         <div class="row" style="display:flex; align-items:center;">
                                             <div class="round-container" >
 
-                                                <a style="background:#ffffff; display: flex; justify-content: center; align-items: center; height: 100%;" href="blog-details.html"><img style="width:100px;"
+                                                <a style="background:#ffffff; display: flex; justify-content: center; align-items: center; height: 100%;cursor:default;" href="#0"><img style="width:100px;"
                                                     src="../storage/{{$feed->empresa->avatar}}"
                                                     alt=""></a>
                                             </div>
