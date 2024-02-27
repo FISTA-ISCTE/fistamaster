@@ -37,6 +37,7 @@
         .cargo {
             top: 80%;
             left: 9.7rem;
+            color:black;
             text-transform: uppercase;
         }
 
@@ -75,7 +76,7 @@
             <div class="qr-code">
                 {!! QrCode::size(200)->generate('Conteúdo do QR Code Aqui') !!}
             </div>
-            <h3 class="cargo" style="color:#ffffff;"> Teste </h3>
+            <p class="cargo" style="font-size:1rem"> Teste </p>
         </div>
     </div>
 
