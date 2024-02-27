@@ -12,6 +12,7 @@
             <thead>
                 <tr>
                     <th>Nome do Workshop</th>
+                    <th>Nome da Empresa</th>
                     <th>QR Code</th>
 
                 </tr>
@@ -20,6 +21,7 @@
                 @foreach ($workshops as $workshop)
                     <tr>
                         <td>{{ $workshop->title }}</td>
+                        <td><b>{{ $workshop->company }}</b></td>
                         <td>
                             {!! QrCode::size(200)->generate(
                                 'https://fista.iscte-iul.pt/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/workshop/' . $workshop->id,
