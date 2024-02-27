@@ -334,7 +334,9 @@ Route::get('/email-estacionamento', function () {
 
     foreach ($selectedCompanies as $company) {
         // Enviar email para a empresa com o número 1
-        Mail::to($company->email)->send(new EmailSends("Boa noite, é com satisfação que informamos que foi selecionado(a) para utilizar o Estacionamento 1. Com os melhores cumprimentos.", "FISTA24 - Estacionamento 1"));
+        Mail::to($company->email)->send(new EmailSends("Bom dia, Gostaríamos de pedir desculpas pelo equívoco na nossa última comunicação a respeito do acesso ao estacionamento para o nosso evento. Para esclarecer, o acesso ao parque de estacionamento no Edifício 1 é realizado pela Rua Branca Edmée Marques. Deverá virar logo a seguir à direita, entrando diretamente no parque. Para mais informações consulte o Booklet.   Lamentamos qualquer transtorno causado e agradecemos a sua compreensão.
+
+        Com os melhores cumprimentos.", "(RETIFICAÇÃO) FISTA24 - Estacionamento 1"));
     }
 
     // Seleciona as restantes empresas que não foram escolhidas
@@ -342,7 +344,7 @@ Route::get('/email-estacionamento', function () {
 
     foreach ($remainingCompanies as $company) {
         // Enviar email para a empresa com um número ou mensagem diferente, por exemplo, número 3
-        Mail::to($company->email)->send(new EmailSends("Boa noite, é com satisfação que informamos que foi selecionado(a) para utilizar o Estacionamento 1. Com os melhores cumprimentos.", "FISTA24 - Estacionamento 4"));
+        Mail::to($company->email)->send(new EmailSends("Boa dia, Gostaríamos de pedir desculpas pelo equívoco na nossa última comunicação a respeito do acesso ao estacionamento para o nosso evento. Para esclarecer, O acesso ao parque de estacionamento do Edifício 4 é realizado pela Avenida das Forças Armadas, virando à direita Rua Helena Félix e no fim da rua virar à esquerda entrando diretamente no parque de estacionamento. Para mais informações consulte o Booklet.   Lamentamos qualquer transtorno causado e agradecemos a sua compreensão. Com os melhores cumprimentos.", "(RETIFICAÇÃO)FISTA24 - Estacionamento 4"));
     }
 
     session()->flash('message', 'Emails enviados com sucesso para todas as empresas.');
