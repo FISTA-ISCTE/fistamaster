@@ -41,7 +41,7 @@
 
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="/entrar">
+                    <a href="https://fista.iscte-iul.pt">
                         <x-application-mark class="block h-9 w-auto" />
                     </a>
                 </div>
