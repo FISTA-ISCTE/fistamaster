@@ -203,6 +203,42 @@ Route::get('/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-tecas', function (
     }
 });
 
+Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/concurso_ctf', function () {
+    // Verifica se o usuário está autenticado
+    if (Auth::check()) {
+        // Gera um token temporário para o usuário ou utiliza um existente
+        $tokenTemporario = Auth::user()->gerarTokenTemporario();
+        return redirect("/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-concurso_ctf?token={$tokenTemporario}");
+    }
+})->middleware('auth');
+
+
+// Rota para acessar o recurso com o token temporário
+Route::get('/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-concurso_ctf', function (Request $request) {
+    $token = $request->query('token');
+    if (\App\Models\User::verificarTokenTemporario($token)) {
+        $user = Auth::user();
+        $tokenExistente = Log_Token::where('id_user', $user->id)
+            ->where('token', $token)
+            ->first();
+        if ($tokenExistente) {
+            abort(403, 'Já lês-te o QR code!');
+        } else {
+            $user->pontos += 500;
+            $user->save();
+            $novoToken = new Log_Token();
+            $novoToken->id_user = $user->id;
+            $novoToken->token = $token;
+            $novoToken->pontos = 75;
+            $novoToken->tipo = 'Participacao do Concurso CTF';
+            $novoToken->save();
+        }
+        return view('tcas');
+    } else {
+        abort(403, 'QR Code expirado!'); // Acesso negado
+    }
+});
+
 Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/outos', function () {
     // Verifica se o usuário está autenticado
     if (Auth::check()) {
