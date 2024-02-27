@@ -74,7 +74,7 @@
                                                         </span>
                                                     </div>
                                                 </div>
-                                                <h3 class="title"><a href="#0">{{$feed->titulo}}</a></h3>
+                                                <h3 class="title"><a href="#0" style="cursor:default">{{$feed->titulo}}</a></h3>
                                                 <p class="text">{{$feed->descricao}}</p>
 
 
