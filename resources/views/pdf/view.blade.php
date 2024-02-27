@@ -63,7 +63,7 @@
             /* Adjust these values to center the QR Code */
             top: 53%;
             /* Center vertically */
-            left: 17%;
+            left: 19%;
             /* Center horizontally */
             transform: translate(-50%, -50%);
             /* Adjust based on QR size to center exactly */
