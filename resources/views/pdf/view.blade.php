@@ -75,7 +75,7 @@
     </style>
     <div class="">
         <div class="masthead-subheading">
-            <img src="img/qr.jpg" class="img-responsive"
+            <img src="img/pdf2.jpg" class="img-responsive"
                 style="width:23rem;height:33rem;border-width:1px; border-style:solid; border-color:#2f7fb0;" />
             <h2 style="color:#e6d753;">TESTE</h2>
             <h3 class="cargo" style="color:#ffffff;"> Teste </h3>
