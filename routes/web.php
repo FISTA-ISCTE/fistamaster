@@ -367,6 +367,10 @@ Route::get('/registarEmpresa/{name?}', function ($name = null) {
     return view('admin.empresas.registar_info');
 })->name('registarEmpresa');
 
+Route::get('/pdf', function () {
+    return view('pdf.view');
+})->name('pdf');
+
 
 Route::get('/sobre-nos', function () {
     $teams = Team::with('user')->get();
