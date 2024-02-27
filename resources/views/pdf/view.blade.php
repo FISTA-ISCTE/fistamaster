@@ -37,7 +37,7 @@
         .cargo {
             top: 80%;
             left: 9.7rem;
-            color:black;
+            color: black;
             text-transform: uppercase;
         }
 
@@ -70,16 +70,18 @@
         }
     </style>
     @foreach ($tokens as $token)
-    <div class="row">
-        <div class="masthead-subheading">
-            <img src="img/pdf2.jpg" class="img-responsive"
-                style="width:23rem;height:33rem;border-width:1px; border-style:solid; border-color:#2f7fb0;" />
-            <div class="qr-code">
-                {!! QrCode::size(200)->generate($token->token) !!}
-            </div>
-            <h3 class="cargo" style="font-size:1rem;width:8rem"> {{$token->empresa->nome_empresa}}</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="masthead-subheading">
+                    <img src="img/pdf2.jpg" class="img-responsive"
+                        style="width:23rem;height:33rem;border-width:1px; border-style:solid; border-color:#2f7fb0;" />
+                    <div class="qr-code">
+                        {!! QrCode::size(200)->generate($token->token) !!}
+                    </div>
+                    <h3 class="cargo" style="font-size:1rem;width:8rem"> {{ $token->empresa->nome_empresa }}</h3>
+                </div>
+            </div>e
         </div>
-    </div>
     @endforeach
 
 
