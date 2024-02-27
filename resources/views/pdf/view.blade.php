@@ -63,7 +63,7 @@
             /* Adjust these values to center the QR Code */
             top: 53%;
             /* Center vertically */
-            left: 19%;
+            left: 21%;
             /* Center horizontally */
             transform: translate(-50%, -50%);
             /* Adjust based on QR size to center exactly */
@@ -78,7 +78,7 @@
                 <div class="qr-code">
                     {!! QrCode::size(200)->generate($token->token) !!}
                 </div>
-                <h3 class="cargo" style="font-size:1rem;width:8rem"> {{ $token->empresa->nome_empresa }}</h3>
+                <h3 class="cargo" style="font-size:0.9rem;width:8rem"> {{ $token->empresa->nome_empresa }}</h3>
             </div>
         </div>
     </div>
