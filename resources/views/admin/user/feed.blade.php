@@ -55,14 +55,14 @@
                                         </div>
                                         <div class="single-blog-post single-blog" style="margin-top:30px">
                                             <div class="blog-image">
-                                                <a href="blog-details.html"><img style="width:100%; height: auto;"
+                                                <a href="blog-details.html"><img
                                                         src="../{{$feed->avatar1}}"
                                                         alt=""></a>
                                                 <div class="top-meta">
                                                     <span class="date"><span>{{ date('d', $feed->created_at->timestamp) }}</span>{{ date('M', $feed->created_at->timestamp) }}</span>
                                                 </div>
                                             </div>
-                                            <div class="blog-content" style="background-color: rgba(255, 255, 255, 0.8);border-radius:10px;padding: 15px 35px 0px;margin-top:-35px;">
+                                            <div class="blog-content" style="background-color: rgba(255, 255, 255, 0.8);border-radius:10px;padding: 15px 35px 0px;margin-top:-35px;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.20);">
                                                 
                                                 <div class="blog-meta">
                                                     <div class="row">
@@ -114,38 +114,7 @@
     </div>
     
 
-    <script>
-        const imageContainer = document.getQueryElements('imageContainer');
-        const image = document.getElementById('image');
-        const canvas = document.getElementById('canvas');
-        const context = canvas.getContext('2d');
-
-        // Set the canvas size to match the image
-        canvas.width = image.width;
-        canvas.height = image.height;
-
-        // Draw the image onto the canvas
-        context.drawImage(image, 0, 0, image.width, image.height);
-
-        // Function to get the color of a pixel at specified coordinates
-        function getPixelColor(x, y) {
-            const imageData = context.getImageData(x, y, 1, 1);
-            const pixel = imageData.data;
-
-            const color = `rgb(${pixel[0]}, ${pixel[1]}, ${pixel[2]})`;
-            return color;
-        }
-
-        // Example: Get the color of a pixel at coordinates (10, 10)
-        const pixelColor = getPixelColor(10, 10);
-        console.log('Pixel Color:', pixelColor);
-
-        // Set the background color of the container to the color of the pixel at (10, 10)
-        imageContainer.style.backgroundColor = pixelColor;
-
-        
-        
-    </script>
+    
 
 
 </x-app-layout>
