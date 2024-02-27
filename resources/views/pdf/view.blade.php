@@ -76,7 +76,7 @@
             <div class="qr-code">
                 {!! QrCode::size(200)->generate('Conteúdo do QR Code Aqui') !!}
             </div>
-            <p class="cargo" style="font-size:1rem"> Teste </p>
+            <h3 class="cargo" style="font-size:1rem"> Teste </h3>
         </div>
     </div>
 
