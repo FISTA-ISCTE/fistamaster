@@ -73,7 +73,7 @@
     <div class="row">
         <div class="col-md-6">
             <div class="masthead-subheading">
-                <img src="htps://fista.iscte-iul.pt/img/pdf2.jpg" class="img-responsive"
+                <img src="https://fista.iscte-iul.pt/img/pdf2.jpg" class="img-responsive"
                     style="width:23rem;height:33rem;border-width:1px; border-style:solid; border-color:#2f7fb0;" />
                 <div class="qr-code">
                     {!! QrCode::size(200)->generate($token->token) !!}
