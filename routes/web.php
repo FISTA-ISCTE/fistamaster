@@ -12,6 +12,7 @@ use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\EmailController;
 use App\Models\Billing;
 use App\Models\Logistica;
+use App\Models\Feed;
 
 use App\Models\Arquitetura;
 use Carbon\Carbon;
@@ -260,7 +261,8 @@ Route::middleware([
         })->name('user.pontos');
 
         Route::get('/feed-a', function () {
-            return view('admin.user.feed');
+            $feeds= Feed::all();
+            return view('admin.user.feed')->with(['feeds' => $feeds]);
         })->name('user.feed');
 
     });

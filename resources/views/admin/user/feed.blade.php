@@ -32,80 +32,76 @@
     }
     </style>
     <div class="card">
-        <div class="container" style="margin-left:1rem;margin-right:1rem;">
+        <div class="container">
             <div class="section blog-standard-section section-padding-02" style="margin-top:3rem; margin-bottom:3rem;">
                 <div class="container">
                     <!-- Blog Standard Wrap Start -->
                     <div class="blog-standard-wrap">
-                        <div class="row">
+                        <div class="row justify-content-center">
                             <div class="col-xl-8 col-lg-8">
                                 <!-- Blog Post Wrap Start -->
-                                <div class="blog-post-wrap">
-                                    <!-- Single Blog Start -->
-                                    <div class="row" style="display:flex; align-items:center;">
-                                        <div class="round-container" >
+                                @foreach($feeds as $feed)
+                                    <div class="blog-post-wrap" style="padding:0px 0px 100px;">
+                                        <!-- Single Blog Start -->
+                                        <div class="row" style="display:flex; align-items:center;">
+                                            <div class="round-container" >
 
-                                            <a style="background:#ffffff; display: flex; justify-content: center; align-items: center; height: 100%;" href="blog-details.html"><img style="width:100px;"
-                                                src="https://fista.iscte-iul.pt/storage/users/empresas/10001706634128.png"
-                                                alt=""></a>
-                                        </div>
-                                        <h1 style="font-size:30px; padding-left:15px;">Delloite</h1>
-                                        
-                                    </div>
-                                    <div class="single-blog-post single-blog">
-                                        <div class="blog-image">
-                                            <a href="blog-details.html"><img
-                                                    src="https://fista.iscte-iul.pt/storage/users/empresas/10001706634128.png"
+                                                <a style="background:#ffffff; display: flex; justify-content: center; align-items: center; height: 100%;" href="blog-details.html"><img style="width:100px;"
+                                                    src="../{{$feed->empresa->avatar}}"
                                                     alt=""></a>
-                                            <div class="top-meta">
-                                                <span class="date"><span>08</span>Aug</span>
                                             </div>
-                                        </div>
-                                        <div class="blog-content">
+                                            <h1 style="font-size:30px; padding-left:15px;">{{$feed->empresa->nome_empresa}}</h1>
                                             
-                                            <div class="blog-meta">
-                                                <div class="row">
-
-                                                    <span class="col tag" style="font-size:15px"><i class="far fa-bookmark"></i> Diamond</span>
-                                                    <span class="col align-self-end tag team-social text-right" >
-                                                        <a href="https://www.linkedin.com/in/" alt="https://www.linkedin.com/in/"class="icon-link"><i class="fab fa-linkedin" style="font-size:18px"></i></a>
-                                                        <a href="https://www.linkedin.com/in/" class="icon-link"><i class="fab fas fa-globe" style="font-size:18px"></i></a>                                                        
-                                                    </span>
+                                        </div>
+                                        <div class="single-blog-post single-blog" style="margin-top:30px">
+                                            <div class="blog-image">
+                                                <a href="blog-details.html"><img style="width:100%; height: auto;"
+                                                        src="../{{$feed->avatar1}}"
+                                                        alt=""></a>
+                                                <div class="top-meta">
+                                                    <span class="date"><span>{{ date('d', $feed->created_at->timestamp) }}</span>{{ date('M', $feed->created_at->timestamp) }}</span>
                                                 </div>
                                             </div>
-                                            <h3 class="title"><a href="blog-details.html">How to become a
-                                                    successful businessman </a></h3>
-                                            <p class="text">Accelerate innovation with world-class tech teams
-                                                We’ll match you to an entire remote team of incredible freelance
-                                                talent for all your software development needs.</p>
+                                            <div class="blog-content" style="background-color: rgba(255, 255, 255, 0.8);border-radius:10px;padding: 15px 35px 0px;margin-top:-35px;">
+                                                
+                                                <div class="blog-meta">
+                                                    <div class="row">
 
-                                            <p id="collapseExample" class="collapse text" aria-labelledby="collapse1" >Accelerate innovation with world-class tech teams
-                                                We’ll match you to an entire remote team of incredible freelance
-                                                talent for all your software development needs!!!!
+                                                        <span class="col tag" style="font-size:15px"><i class="far fa-bookmark"></i> {{$feed->empresa->plano}}</span>
+                                                        <span class="col align-self-end tag team-social text-right" style="margin-right:0px;">
+                                                            <a href="{{$feed->empresa->linkedin}}" alt=""class="icon-link"><i class="fab fa-linkedin" style="font-size:18px"></i></a>
+                                                            <a href="{{$feed->empresa->website}}" class="icon-link"><i class="fab fas fa-globe" style="font-size:18px"></i></a>                                                        
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <h3 class="title"><a href="#0">{{$feed->titulo}}</a></h3>
+                                                <p class="text">{{$feed->descricao}}</p>
 
-                                            </p>
-                                            <div class="blog-btn">
-                                                <a class="blog-btn-link" onclick="toggleIconAndText()" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" href="#">Read Full <i
-                                                        class="fas fa-long-arrow-alt-down"></i></a>
+                                                
+                                                <!-- <div class="blog-btn">
+                                                    <a class="blog-btn-link" onclick="toggleIconAndText()" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" href="#">Read Full <i
+                                                            class="fas fa-long-arrow-alt-down"></i></a>
+                                                </div> -->
                                             </div>
                                         </div>
+                                        <!-- Single Blog End -->
+                                        
+                                        <!-- Page Pagination Start -->
+                                        <!-- <div class="techwix-pagination">
+                                            <ul class="pagination justify-content-center">
+                                                <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                                                <li><a href="blog-standard.html">1</a></li>
+                                                <li><a class="active" href="blog-standard.html">2</a></li>
+                                                <li><a href="blog-standard.html">3</a></li>
+                                                <li><span>...</span></li>
+                                                <li><a href="blog-standard.html"><i class="fa fa-angle-right"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div> -->
+                                        <!-- Page Pagination End -->
                                     </div>
-                                    <!-- Single Blog End -->
                                     
-                                    <!-- Page Pagination Start -->
-                                    <div class="techwix-pagination">
-                                        <ul class="pagination justify-content-center">
-                                            <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
-                                            <li><a href="blog-standard.html">1</a></li>
-                                            <li><a class="active" href="blog-standard.html">2</a></li>
-                                            <li><a href="blog-standard.html">3</a></li>
-                                            <li><span>...</span></li>
-                                            <li><a href="blog-standard.html"><i class="fa fa-angle-right"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- Page Pagination End -->
-                                </div>
+                                @endforeach
                                 <!-- Blog Post Wrap Ed -->
                             </div>
                         </div>
@@ -116,7 +112,7 @@
             <!-- Blog Standard End -->
         </div>
     </div>
-
+    
 
     <script>
         const imageContainer = document.getQueryElements('imageContainer');
@@ -147,23 +143,8 @@
         // Set the background color of the container to the color of the pixel at (10, 10)
         imageContainer.style.backgroundColor = pixelColor;
 
-        <script>
-        function toggleIconAndText(button) {
-            const icon = button.querySelector('.i');
-            const buttonText = document.querySelector('.blog-btn-link');
-
-            if (icon.classList.contains('fa-long-arrow-alt-down')) {
-            icon.classList.remove('fa-long-arrow-alt-down');
-            icon.classList.add('fa-long-arrow-alt-up');
-            buttonText.textContent = 'Read Less';
-            } else {
-            icon.classList.remove('fa-long-arrow-alt-up');
-            icon.classList.add('fa-long-arrow-alt-down');
-            buttonText.textContent = 'Read Full';
-            }
-        }
-</script>
-
+        
+        
     </script>
 
 
