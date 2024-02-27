@@ -352,6 +352,7 @@ Route::get('/confirmacao-empresa', function () {
 Route::get('/entrar', function () {
     return view('login');
 })->name('entrar')->middleware('redirectIfAuthenticated');
++
 Route::get('/registar-user', function () {
     return view('admin.user.register');
 })->name('registar_user')->middleware('redirectIfAuthenticated');
@@ -362,17 +363,6 @@ Route::get('/become-a-partner', function () {
 Route::get('/registarEmpresa/{name?}', function ($name = null) {
     return view('admin.empresas.registar_info');
 })->name('registarEmpresa');
-
-Route::get('/email-estacionamento', function () {
-    $selectedCompanies = Empresa::where("plano", "premium")->inRandomOrder()->limit(7)->get();
-    foreach ($selectedCompanies as $company) {
-        $company->estacionamento = 1;
-        $company->save();
-        //Mail::to($company->email)->send(new EmailSends("Bom dia, Gostaríamos de pedir desculpas pelo equívoco na nossa última comunicação a respeito do acesso ao estacionamento para o nosso evento. Para esclarecer, o acesso ao parque de estacionamento no Edifício 1 é realizado pela Rua Branca Edmée Marques. Deverá virar logo a seguir à direita, entrando diretamente no parque. Para mais informações consulte o Booklet. Lamentamos qualquer transtorno causado e agradecemos a sua compreensão. Com os melhores cumprimentos.", "(RETIFICAÇÃO) FISTA24 - Estacionamento 1"));
-    }
-
-    session()->flash('message', 'Emails enviados com sucesso para todas as empresas e coluna estacionamento atualizada.');
-});
 
 
 Route::get('/sobre-nos', function () {
