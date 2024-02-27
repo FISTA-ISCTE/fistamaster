@@ -368,7 +368,7 @@ Route::get('/registarEmpresa/{name?}', function ($name = null) {
 })->name('registarEmpresa');
 
 Route::get('/pdf/{id}', function ($id) {
-    $token= Tokens::where('descricao',"jogo")->where('id_empresa',$id)->get();
+    $token= Tokens::where('descricao',"jogo")->where('id_empresa',$id)->first();
     return view('pdf.view')->with(['token'=> $token]);
 })->name('pdf');
 
