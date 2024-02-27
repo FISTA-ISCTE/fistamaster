@@ -6,9 +6,9 @@
     </x-slot>
 
     <div>
-        <div class="mt-10 sm:mt-0">
+        <div class="mt-10 sm:mt-0" style="display: flex; justify-content: center; align-items: center;margin-top:3rem;">
             <h3 class="text-lg font-medium leading-6 text-gray-900">O teu QR Code:</h3>
-            <div class="mt-2">
+            <div class="mt-2" style="display: flex; justify-content: center; align-items: center;">
                 {!! QrCode::size(200)->generate(Auth::user()->uuid) !!}
             </div>
         </div>
