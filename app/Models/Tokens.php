@@ -10,5 +10,9 @@ class Tokens extends Model
     use HasFactory;
 
     protected $table = "tokens_pontos";
+    public function empresa()
+    {
+        return $this->belongsTo('App\Models\Empresa', 'id_empresa');
+    }
 
 }
