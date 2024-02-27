@@ -238,18 +238,11 @@ Route::get('/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-outos', function (
         abort(403, 'QR Code expirado!'); // Acesso negado
     }
 });
-Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/workshop/24', function () {
-    // Verifica se o usuário está autenticado
-    if (Auth::check()) {
-        // Gera um token temporário para o usuário ou utiliza um existente
-        $tokenTemporario = 24;
-        return redirect("/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-workshops?token={$tokenTemporario}");
-    }
-})->middleware('auth');
-Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/workshop/22', function () {
+
+Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/workshop/{{$id}}', function ($id) {
 
     if (Auth::check()) {
-        $tokenTemporario = 22;
+        $tokenTemporario = $id;
         return redirect("/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-workshops?token={$tokenTemporario}");
     }
 })->middleware('auth');
@@ -437,6 +430,12 @@ Route::middleware([
     Route::get('/enviar-emails', [EmailController::class, 'enviarEmailsArmazenados'])->name('enviar.emails');
     // Rotas para admin
     Route::middleware(['role:admin'])->prefix('admin')->group(function () {
+
+        Route::get('/workshops', function () {
+            $workshops = Workshop::where('show', 1)->orderBy('begin', 'asc')->get();
+            return view('admin.fista.workshops')->with(['workshops' => $workshops]);
+        })->name('workshops');
+
         Route::get('/seats', function () {
             return view('admin.fista.seats-map');
         })->name('fista.seats');
