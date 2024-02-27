@@ -47,7 +47,7 @@
                                             <div class="round-container" >
 
                                                 <a style="background:#ffffff; display: flex; justify-content: center; align-items: center; height: 100%;" href="blog-details.html"><img style="width:100px;"
-                                                    src="../{{$feed->empresa->avatar}}"
+                                                    src="../storage/{$feed->empresa->avatar}}"
                                                     alt=""></a>
                                             </div>
                                             <h1 style="font-size:30px; padding-left:15px;">{{$feed->empresa->nome_empresa}}</h1>
