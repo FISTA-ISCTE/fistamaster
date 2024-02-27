@@ -24,6 +24,8 @@
                                         <tr>
                                             <th class="w-1/12 text-left py-3 px-4 uppercase font-semibold text-sm">ID
                                             </th>
+                                            <th class="w-1/12 text-left py-3 px-4 uppercase font-semibold text-sm">
+                                                Telemovel</th>
                                             <th class="w-2/12 text-left py-3 px-4 uppercase font-semibold text-sm">Nome
                                             </th>
                                             <th class="w-2/12 text-left py-3 px-4 uppercase font-semibold text-sm">
@@ -58,6 +60,7 @@
                                         @foreach ($empresas as $empresa)
                                             <tr>
                                                 <td class="w-1/12 text-left py-3 px-4">{{ $empresa->id }}</td>
+                                                <td class="w-1/12 text-left py-3 px-4">{{ $empresa->telemovel }}</td>
                                                 <td class="w-2/12 text-left py-3 px-4">{{ $empresa->nome_empresa }}</td>
                                                 <td class="w-1/12 text-left py-3 px-4">{{ $empresa->almocos_extra }}</td>
                                                 <td class="w-1/12 text-left py-3 px-4">{{ $empresa->plano }}</td>
