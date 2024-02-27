@@ -35,7 +35,7 @@
         }
 
         .cargo {
-            top: 85%;
+            top: 77%;
             left: 13.7rem;
             text-transform: uppercase;
         }
