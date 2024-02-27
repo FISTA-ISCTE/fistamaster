@@ -171,8 +171,7 @@ return [
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
-        Barryvdh\DomPDF\ServiceProvider::class,
-        SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
+
     ])->toArray(),
 
     /*
@@ -187,9 +186,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        'PDF' => Barryvdh\DomPDF\Facade::class,
-        'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
-        // 'Example' => App\Facades\Example::class,
+
     ])->toArray(),
 
 ];
