@@ -35,7 +35,7 @@
         }
 
         .cargo {
-            top: 7.7rem;
+            top: 60%;
             left: 13.7rem;
             text-transform: uppercase;
         }
@@ -71,10 +71,7 @@
             <div class="qr-code">
                 {!! QrCode::size(200)->generate('Conteúdo do QR Code Aqui') !!}
             </div>
-            <h2 style="color:#e6d753;">TESTE</h2>
             <h3 class="cargo" style="color:#ffffff;"> Teste </h3>
-
-            <h3 class="nome" style="color:#ffffff;">teste</h3>
         </div>
     </div>
 
