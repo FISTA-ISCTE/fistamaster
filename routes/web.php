@@ -238,15 +238,6 @@ Route::get('/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-outos', function (
         abort(403, 'QR Code expirado!'); // Acesso negado
     }
 });
-use SimpleSoftwareIO\QrCode\Facades\QrCode;
-Route::get('/download-qr/{id}', function ($id) {
-    $url = "https://fista.iscte-iul.pt/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/workshop/" . $id;
-    $qrCode = QrCode::format('png')->size(200)->generate($url); // Gera o QR Code
-    $qrCodeName = 'workshop-' . $id . '.png'; // Nome do arquivo
-    return response()->streamDownload(function () use ($qrCode) {
-        echo $qrCode;
-    }, $qrCodeName);
-})->middleware('auth'); // Adicione qualquer middleware conforme necessário
 
 Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/workshop/{{$id}}', function ($id) {
 

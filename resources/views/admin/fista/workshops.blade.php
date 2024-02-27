@@ -13,23 +13,19 @@
                 <tr>
                     <th>Nome do Workshop</th>
                     <th>QR Code</th>
-                    <th>Download</th>
+
                 </tr>
             </thead>
             <tbody>
                 @foreach ($workshops as $workshop)
                     <tr>
-                        <td>{{ $workshop->tittle }}</td>
+                        <td>{{ $workshop->title }}</td>
                         <td>
                             {!! QrCode::size(200)->generate(
                                 'https://fista.iscte-iul.pt/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/workshop/' . $workshop->id,
                             ) !!}
                         </td>
-                        <td>
-                            <a href="{{ url('/download-qr/' . $workshop->id) }}" class="btn btn-primary">Download QR
-                                Code</a>
 
-                        </td>
                     </tr>
                 @endforeach
             </tbody>
