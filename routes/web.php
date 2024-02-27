@@ -233,7 +233,7 @@ Route::get('/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-concurso_ctf', fun
             $novoToken->tipo = 'Participacao do Concurso CTF';
             $novoToken->save();
         }
-        return view('tcas');
+        return view('tcas3');
     } else {
         abort(403, 'QR Code expirado!'); // Acesso negado
     }
