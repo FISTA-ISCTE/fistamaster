@@ -55,7 +55,7 @@
                                         </div>
                                         <div class="single-blog-post single-blog" style="margin-top:30px">
                                             <div class="blog-image">
-                                                <a href=""><img
+                                                <a href="#0"><img
                                                         src="../storage/{{$feed->avatar1}}"
                                                         alt=""></a>
                                                 <div class="top-meta">
@@ -75,7 +75,7 @@
                                                     </div>
                                                 </div>
                                                 <h3 class="title"><a href="#0" style="cursor:default">{{$feed->titulo}}</a></h3>
-                                                <p class="text">{{$feed->descricao}}</p>
+                                                <p class="text" style="cursor:default">{{$feed->descricao}}</p>
 
 
                                                 <!-- <div class="blog-btn">
