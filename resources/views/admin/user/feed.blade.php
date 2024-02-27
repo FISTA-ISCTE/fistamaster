@@ -43,7 +43,7 @@
                                 @foreach($feeds as $feed)
                                     <div class="blog-post-wrap" style="padding:0px 0px 100px;">
                                         <!-- Single Blog Start -->
-                                        <div class="row" style="display:flex; align-items:center;">
+                                        <div class="row" style="display:flex; align-items:center;cursor:default;">
                                             <div class="round-container" >
 
                                                 <a style="background:#ffffff; display: flex; justify-content: center; align-items: center; height: 100%;cursor:default;" href="#0"><img style="width:100px;"
@@ -55,7 +55,7 @@
                                         </div>
                                         <div class="single-blog-post single-blog" style="margin-top:30px">
                                             <div class="blog-image">
-                                                <a href="blog-details.html"><img
+                                                <a href=""><img
                                                         src="../storage/{{$feed->avatar1}}"
                                                         alt=""></a>
                                                 <div class="top-meta">
