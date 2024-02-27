@@ -13,6 +13,5 @@ class Tokens extends Model
     public function empresa()
     {
         return $this->belongsTo('App\Models\Empresa', 'id_empresa');
-    }
-
+    }
 }
