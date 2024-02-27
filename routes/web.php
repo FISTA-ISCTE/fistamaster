@@ -353,7 +353,7 @@ Route::get('/confirmacao-empresa', function () {
 Route::get('/entrar', function () {
     return view('login');
 })->name('entrar')->middleware('redirectIfAuthenticated');
-+
+
 Route::get('/registar-user', function () {
     return view('admin.user.register');
 })->name('registar_user')->middleware('redirectIfAuthenticated');
