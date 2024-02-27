@@ -28,6 +28,8 @@ use App\Models\Billing;
 use App\Models\Logistica;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Models\ConcursosInscricao;
+use Barryvdh\DomPDF\Facade as PDF;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 
 
@@ -365,7 +367,16 @@ Route::get('/registarEmpresa/{name?}', function ($name = null) {
     return view('admin.empresas.registar_info');
 })->name('registarEmpresa');
 
+Route::get('/gerar-pdf', function () {
+    $nome = 'Nome Exemplo'; // Substitua por seu dado dinâmico conforme necessário
+    $data = [
+        'nome' => $nome,
+        'qrCode' => QrCode::size(100)->generate('Conteúdo do QR Code')
+    ];
 
+    $pdf = PDF::loadView('pdf.view', $data);
+    return $pdf->download('exemplo.pdf');
+});
 
 Route::get('/sobre-nos', function () {
     $teams = Team::with('user')->get();
