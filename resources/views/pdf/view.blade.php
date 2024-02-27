@@ -77,7 +77,7 @@
         <div class="masthead-subheading">
             <img src="img/pdf2.jpg" class="img-responsive"
                 style="width:23rem;height:33rem;border-width:1px; border-style:solid; border-color:#2f7fb0;" />
-                <img class="imgB1" src="{{$foto}}" style="width:9.5rem;height:10rem !important;">
+                <img class="imgB1" src="" style="width:9.5rem;height:10rem !important;">
                 {!! QrCode::size(200)->generate('Conteúdo do QR Code Aqui') !!}
                 <h2 style="color:#e6d753;">TESTE</h2>
             <h3 class="cargo" style="color:#ffffff;"> Teste </h3>
