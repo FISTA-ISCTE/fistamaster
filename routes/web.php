@@ -239,14 +239,20 @@ Route::get('/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-outos', function (
     }
 });
 
-Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/workshop/{$id}', function ($id) {
+Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/workshop/24', function () {
 
     if (Auth::check()) {
-        $tokenTemporario = $id;
+        $tokenTemporario = 24;
         return redirect("/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-workshops?token={$tokenTemporario}");
     }
 })->middleware('auth');
+Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/workshop/26', function () {
 
+    if (Auth::check()) {
+        $tokenTemporario = 26;
+        return redirect("/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-workshops?token={$tokenTemporario}");
+    }
+})->middleware('auth');
 
 Route::get('/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-workshops', function (Request $request) {
     $id_workshop = $request->query('token');
