@@ -239,7 +239,7 @@ Route::get('/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-outos', function (
     }
 });
 
-Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/workshop/{{$id}}', function ($id) {
+Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/workshop/{$id}', function ($id) {
 
     if (Auth::check()) {
         $tokenTemporario = $id;
