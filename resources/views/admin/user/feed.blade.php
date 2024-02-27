@@ -56,7 +56,7 @@
                                         <div class="single-blog-post single-blog" style="margin-top:30px">
                                             <div class="blog-image">
                                                 <a href="blog-details.html"><img
-                                                        src="../storage/{{$feed->empresa->avatar}}"
+                                                        src="../storage/{{$feed->avatar1}}"
                                                         alt=""></a>
                                                 <div class="top-meta">
                                                     <span class="date"><span>{{ date('d', $feed->created_at->timestamp) }}</span>{{ date('M', $feed->created_at->timestamp) }}</span>
