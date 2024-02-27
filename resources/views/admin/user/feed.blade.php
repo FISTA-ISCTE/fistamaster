@@ -62,7 +62,7 @@
                                                     <span class="date"><span>{{ date('d', $feed->created_at->timestamp) }}</span>{{ date('M', $feed->created_at->timestamp) }}</span>
                                                 </div>
                                             </div>
-                                            <div class="blog-content" style="background-color: rgba(255, 255, 255, 0.8);border-radius:10px;padding: 15px 35px 0px;margin-top:-35px;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.20);">
+                                            <div class="blog-content" style="background-color: rgba(255, 255, 255);border-radius:10px;padding: 15px 35px 0px;margin-top:-35px;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.20);">
 
                                                 <div class="blog-meta">
                                                     <div class="row">
@@ -76,7 +76,6 @@
                                                 </div>
                                                 <h3 class="title"><a href="#0" style="cursor:default">{{$feed->titulo}}</a></h3>
                                                 <p class="text" style="cursor:default">{{$feed->descricao}}</p>
-
 
                                                 <!-- <div class="blog-btn">
                                                     <a class="blog-btn-link" onclick="toggleIconAndText()" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" href="#">Read Full <i
