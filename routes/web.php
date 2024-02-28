@@ -338,6 +338,7 @@ Route::get('/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-conferencia', func
     $id_workshop = $request->query('token');
     $user = Auth::user();
     // Verifica o token temporário e permite acesso ao recurso
+    dd(\App\Models\CheckInConferencia::where('id_user', $user->id)->where('tipo', $id_workshop)->first());
     if (!\App\Models\CheckInConferencia::where('id_user', $user->id)->where('tipo', $id_workshop)->first()) {
         // Verifica se o token já foi inserido para este usuário
         $tokentotal = $id_workshop . '' . $user->uuid;
