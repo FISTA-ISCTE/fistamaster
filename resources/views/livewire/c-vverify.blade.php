@@ -1,4 +1,4 @@
-<div>
+<div class="col-lg-11 col-md-12" style="width:90%;margin-bottom:30px;">
     {{-- Care about people's approval and you will be their prisoner. --}}
 
     @if ($currentUser)

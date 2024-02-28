@@ -2,10 +2,10 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-start">
-        <div class="col-lg-7 col-md-12 ">
+    <div class="row justify-content-center">
+        <div class="col-lg-11 col-md-12 ">
 
-            <h1 style="font-size:55px;color: #1ec4bd;font-weight: bold;padding-top:8.5rem;">Verificação de CV
+            <h1 style="font-size:55px;color: #1ec4bd;font-weight: bold;padding:3.5rem 0 2rem;">Verificação de CV
             </h1>
         </div>
 
