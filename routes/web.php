@@ -72,6 +72,11 @@ Route::get('/concurso_matematica', function () {
     return view('concurso_matematica');
 });
 
+Route::get('/fistago', function () {
+    $users = User::orderBy('pontos', 'desc')->limit(5)->get();
+    return view('classificacao',['users' => $users]);
+});
+
 Route::get('/corrida de cursos', function () {
     $cursos = Curso::where('id', '<', 6)->get();
     $n_alunos = [645,589,356,432,300];
