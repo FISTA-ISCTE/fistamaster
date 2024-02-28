@@ -336,6 +336,7 @@ Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/conferencia/3', function () {
 
 Route::get('/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-conferencia', function (Request $request) {
     $id_workshop = $request->query('token');
+    dd($id_workshop);
     $user = Auth::user();
     // Verifica o token temporário e permite acesso ao recurso
     dd(\App\Models\CheckInConferencia::where('id_user', $user->id)->where('tipo', $id_workshop)->first());
