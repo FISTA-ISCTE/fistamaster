@@ -326,6 +326,9 @@ Route::get('/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-workshops', functi
         abort(403, 'QR Code expirado!'); // Acesso negado
     }
 });
+Route::get('/confirmar_cv', function () {
+    return view('admin.fista.confirmar_cv');
+});
 Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/conferencia/3', function () {
 
     if (Auth::check()) {
