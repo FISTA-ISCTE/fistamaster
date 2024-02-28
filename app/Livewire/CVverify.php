@@ -3,14 +3,14 @@
 namespace App\Livewire;
 
 use Livewire\Component;
-use App\Models\Users;
+use App\Models\User;
 
 class CVverify extends Component
 {
 
     public $users;
     public $currentUserIndex=0;
-    
+
 
     public function mount()
     {
@@ -20,7 +20,7 @@ class CVverify extends Component
 
     public function loadUsers()
     {
-        $this->users = Users::whereNotNull("file")->whereNull("cv_verify")->get(); // Fetch all users from the database
+        $this->users = User::whereNotNull("file")->whereNull("cv_verify")->get(); // Fetch all users from the database
     }
 
 
@@ -44,7 +44,7 @@ class CVverify extends Component
 
     public function loadNextUser()
     {
-        
+
         if ($this->currentUserIndex < count($this->users)) {
             $this->currentUserIndex++;
         }
