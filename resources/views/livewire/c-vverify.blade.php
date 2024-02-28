@@ -16,7 +16,7 @@
         </div>
         <div>
 
-            <embed src="{{$currentUser->file}}" type="application/pdf" width="100%" height="950px" />
+            <embed src="https://fista.iscte-iul.pt/storage/{{$currentUser->file}}" type="application/pdf" width="100%" height="950px" />
 
 
         </div>
