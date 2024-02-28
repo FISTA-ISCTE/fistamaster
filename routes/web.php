@@ -333,7 +333,34 @@ Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/conferencia/3', function () {
         return redirect("/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-conferencia?token={$tokenTemporario}");
     }
 })->middleware('auth');
+Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/conferencia/4', function () {
 
+    if (Auth::check()) {
+        $tokenTemporario = 4;
+        return redirect("/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-conferencia?token={$tokenTemporario}");
+    }
+})->middleware('auth');
+Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/conferencia/5', function () {
+
+    if (Auth::check()) {
+        $tokenTemporario = 5;
+        return redirect("/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-conferencia?token={$tokenTemporario}");
+    }
+})->middleware('auth');
+Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/conferencia/6', function () {
+
+    if (Auth::check()) {
+        $tokenTemporario = 6;
+        return redirect("/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-conferencia?token={$tokenTemporario}");
+    }
+})->middleware('auth');
+Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/conferencia/7', function () {
+
+    if (Auth::check()) {
+        $tokenTemporario = 7;
+        return redirect("/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-conferencia?token={$tokenTemporario}");
+    }
+})->middleware('auth');
 Route::get('/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-conferencia', function (Request $request) {
     $id_workshop = $request->query('token');
     dd($id_workshop);
