@@ -10,13 +10,13 @@
             <div class="col-4  d-flex justify-content-around">
                 <button id="notvalid" wire:click="cvChecked('bad')" class="btn btn-notvalid" ><i class="fa fa-times" aria-hidden="true"></i></button>
                 <button id="valid" wire:click="cvChecked('good')" class="btn btn-valid" href="#"><i class="fa fa-check" aria-hidden="true"></i></button>
-                
-                
+
+
             </div>
         </div>
         <div>
-    
-            <embed src="{{$currentUser->file}}" type="application/pdf" width="100%" height="950px" />
+
+            <embed src="storage/{{$currentUser->file}}" type="application/pdf" width="100%" height="950px" />
 
 
         </div>
