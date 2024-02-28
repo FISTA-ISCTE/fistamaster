@@ -379,13 +379,13 @@ Route::get('/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-conferencia', func
         } else {
             $ch = new CheckInConferencia;
             $ch->id_user = $user->id;
-            $ch->tipo=$id_workshop;
+            $ch->tipo = $id_workshop;
             $ch->save();
             $user->pontos += 500;
             $user->save();
             $novoToken = new Log_Token();
             $novoToken->id_user = $user->id;
-            $novoToken->token = "Conerencia".$id_workshop.$user->id;
+            $novoToken->token = "Conerencia" . $id_workshop . $user->id;
             $novoToken->pontos = 500;
             $novoToken->tipo = 'Conferencia';
             $novoToken->save();
@@ -439,8 +439,8 @@ Route::get('/registarEmpresa/{name?}', function ($name = null) {
 })->name('registarEmpresa');
 
 Route::get('/pdf/{id}', function ($id) {
-    $token= Tokens::where('descricao',"jogo")->where('id_empresa',$id)->first();
-    return view('pdf.view')->with(['token'=> $token]);
+    $token = Tokens::where('descricao', "jogo")->where('id_empresa', $id)->first();
+    return view('pdf.view')->with(['token' => $token]);
 })->name('pdf');
 
 
@@ -530,6 +530,10 @@ Route::middleware([
     Route::get('/enviar-emails', [EmailController::class, 'enviarEmailsArmazenados'])->name('enviar.emails');
     // Rotas para admin
     Route::middleware(['role:admin'])->prefix('admin')->group(function () {
+
+        Route::get('/confirmar_cv', function () {
+            return view('admin.fista.confirmar_cv');
+        });
 
         Route::get('/workshops', function () {
             $workshops = Workshop::where('show', 1)->orderBy('begin', 'asc')->get();
@@ -652,7 +656,7 @@ Route::middleware([
         })->name('user.pontos');
 
         Route::get('/feed-a', function () {
-            $feeds= Feed::all();
+            $feeds = Feed::all();
             return view('admin.user.feed')->with(['feeds' => $feeds]);
         })->name('user.feed');
 
