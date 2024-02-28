@@ -8,7 +8,6 @@ use App\Models\Arquitetura;
 use App\Models\CheckInConferencia;
 use App\Models\Curso;
 use App\Models\Empresa;
-use App\Models\Feed;
 use App\Models\SiInscricao;
 use App\Models\Sorteio;
 use App\Models\Tokens;
@@ -286,6 +285,8 @@ Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/workshop/24', function () {
         return redirect("/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-workshops?token={$tokenTemporario}");
     }
 })->middleware('auth');
+
+
 Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/workshop/26', function () {
 
     if (Auth::check()) {
@@ -321,6 +322,41 @@ Route::get('/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-workshops', functi
             $novoToken->save();
         }
         return view('tcas2');
+    } else {
+        abort(403, 'QR Code expirado!'); // Acesso negado
+    }
+});
+Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/conferencia/3', function () {
+
+    if (Auth::check()) {
+        $tokenTemporario = 3;
+        return redirect("/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-conferencia?token={$tokenTemporario}");
+    }
+})->middleware('auth');
+
+Route::get('/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-conferencia', function (Request $request) {
+    $id_workshop = $request->query('token');
+    $user = Auth::user();
+    // Verifica o token temporário e permite acesso ao recurso
+    if (!\App\Models\CheckInConferencia::where('id_user', $user->id)->where('tipo', $id_workshop)->first()) {
+        // Verifica se o token já foi inserido para este usuário
+        $tokentotal = $id_workshop . '' . $user->uuid;
+        $tokenExistente = Log_Token::where('id_user', $user->id)
+            ->where('token', $tokentotal)
+            ->first();
+        if ($tokenExistente) {
+            abort(403, 'Já lês-te o QR code!');
+        } else {
+            $user->pontos += 500;
+            $user->save();
+            $novoToken = new Log_Token();
+            $novoToken->id_user = $user->id;
+            $novoToken->token = "Conerencia";
+            $novoToken->pontos = 500;
+            $novoToken->tipo = 'Conferencia';
+            $novoToken->save();
+        }
+        return view('tcas3');
     } else {
         abort(403, 'QR Code expirado!'); // Acesso negado
     }

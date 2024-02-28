@@ -61,10 +61,6 @@
                                         <div class="blog-image">
                                             <a href="#0"><img src="https://fista.iscte-iul.pt/img/fista.jpg"
                                                     alt=""></a>
-                                            <div class="top-meta">
-                                                <span
-                                                    class="date"><span>{{ date('d', $feed->created_at->timestamp) }}</span>{{ date('M', $feed->created_at->timestamp) }}</span>
-                                            </div>
                                         </div>
                                         <div class="blog-content"
                                             style="background-color: rgba(255, 255, 255);border-radius:10px;padding: 15px 35px 0px;margin-top:-35px;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.20);">
@@ -74,7 +70,7 @@
 
                                                     <span class="col tag" style="font-size:15px"><i
                                                             class="far fa-bookmark"></i>
-                                                        {{ $feed->empresa->plano }}</span>
+                                                        FISTA</span>
                                                     <span class="col align-self-end tag team-social text-right"
                                                         style="margin-right:0px;">
                                                         <a href="{{ $feed->empresa->linkedin }}"
