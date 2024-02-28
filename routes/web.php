@@ -348,6 +348,10 @@ Route::get('/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-conferencia', func
         if ($tokenExistente) {
             abort(403, 'Já lês-te o QR code!');
         } else {
+            $ch = new CheckInConferencia;
+            $ch->id_user = $user->id;
+            $ch->tipo=$id_workshop;
+            $ch->save();
             $user->pontos += 500;
             $user->save();
             $novoToken = new Log_Token();
