@@ -329,6 +329,10 @@ Route::get('/ista-D1cdmC7-SLP-oT384nd6Q-YF7r-uLhft-KYpY-CMOgS-workshops', functi
 Route::get('/confirmar_cv', function () {
     return view('admin.fista.confirmar_cv');
 });
+Route::get('/fistago', function () {
+    $users = User::orderBy('pontos', 'desc')->limit(5)->get();
+    return view('classificacao',['users' => $users]);
+});
 Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/conferencia/8', function () {
 
     if (Auth::check()) {
