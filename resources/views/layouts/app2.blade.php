@@ -96,6 +96,7 @@
                                 </li>
                                 <li><a href="/sobre-nos">Sobre Nós</a></li>
                                 <li><a href="/programa">Programa</a></li>
+                                <li><a href="/fistago">FistaGo</a></li>
                                 <!--
                                 <li><a href="#">Atividades</a>
                                     <ul class="sub-menu">
@@ -161,7 +162,7 @@
                             <li><a href="/empresas">Empresas</a></li>
                             <li><a href="/sobre-nos">Sobre Nós</a></li>
                             <li><a href="/programa">Programa</a></li>
-                            <li><a href="/fistago">FISTA24</a></li>
+                            <li><a href="/fistago">FistaGo</a></li>
                             <!-- <li><a href="#">Oradores</a>
                                     <ul class="sub-menu">
                                         <li><a href="blog.html">IT Speed Talks</a></li>
