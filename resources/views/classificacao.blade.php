@@ -32,15 +32,17 @@
                 </thead>
                 <tbody>
                     @foreach ($users as $user)
-                        @if ($loop->first)
-                            <tr style="font-size:19px;color:#1EC4BD;">
-                            @else
-                            <tr style="font-size:19px;color:black;">
+                        @if ($user->role_id != 2)
+                            @if ($loop->first)
+                                <tr style="font-size:19px;color:#1EC4BD;">
+                                @else
+                                <tr style="font-size:19px;color:black;">
+                            @endif
+                            <th>{{ $loop->iteration }}</th>
+                            <td scope="row">{{ $user->name }}</td>
+                            <td><span style="font-weight: bold">{{ $user->pontos . ' pontos' }}</span></td>
+                            </tr>
                         @endif
-                        <th>{{ $loop->iteration }}</th>
-                        <td scope="row">{{ $user->name }}</td>
-                        <td><span style="font-weight: bold">{{ $user->pontos . ' pontos' }}</span></td>
-                        </tr>
                     @endforeach
                 </tbody>
             </table>
