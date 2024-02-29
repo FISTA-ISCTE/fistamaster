@@ -13,7 +13,7 @@
                             <h1 style="font-size: 60px; color: #666; margin-bottom: 2rem;">FISTA GO</h1>
                             <div class="hero-btn" data-aos="" data-aos-delay="1000">
                                 <a class="btn"
-                                    href="{{ asset('https://fista.iscte-iul.pt/assets/Regulamento FistaGo.pdf') }}">Regulamento</a>
+                                    href="{{ asset('https://fista.iscte-iul.pt/assets/Regulamento FistaGo24.pdf') }}">Regulamento</a>
                             </div>
                         </div>
                     </div>
