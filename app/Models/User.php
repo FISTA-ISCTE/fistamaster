@@ -34,21 +34,7 @@ class User extends Authenticatable
         'linkedin',
         'cv_verify',
     ];
-    public function hasRole($role)
-    {
-        foreach ($this->roles as $r) {
-            if ($r->name == $role) {
-                return true;
-            }
-        }
-        return false;
-    }
 
-    // Certifique-se de ter uma relação 'roles' no modelo User
-    public function roles()
-    {
-        return $this->belongsToMany(Role::class);
-    }
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -96,8 +82,8 @@ class User extends Authenticatable
     {
         // Assume que você tem uma relação definida no modelo User para tokens temporários
         $tokenTemporario = TokenTemporario::where('token', $token)
-            ->where('expires_at', '>', now())
-            ->first();
+                                          ->where('expires_at', '>', now())
+                                          ->first();
 
         if ($tokenTemporario && $tokenTemporario->user_id == auth()->id()) {
             // Token é válido e pertence ao usuário autenticado
