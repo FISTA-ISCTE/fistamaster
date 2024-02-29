@@ -330,8 +330,12 @@ Route::get('/confirmar_cv', function () {
     return view('admin.fista.confirmar_cv');
 });
 Route::get('/fistago', function () {
-    $users = User::orderBy('pontos', 'desc')->limit(5)->get();
-    return view('classificacao',['users' => $users]);
+    // No seu Controller
+    $users = User::whereDoesntHave('roles', function ($query) {
+        $query->whereIn('name', ['admin']);
+    })->limit(5)->get();
+
+    return view('classificacao', ['users' => $users]);
 });
 Route::get('/D1mC7SLPoT6QYF7ruLhftKYpYCMOgS/conferencia/8', function () {
 
