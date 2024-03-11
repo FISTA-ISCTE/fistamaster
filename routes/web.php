@@ -588,8 +588,6 @@ Route::middleware([
         Route::get('/change-roles', function () {
             return view('admin.fista.change-role');
         })->name('fista.change-role');
-
-
         Route::get('/dashboard', function () {
             $usersWithoutRoleXCount = User::all()->count();
             $empresasCount = Empresa::all()->count();
@@ -600,6 +598,7 @@ Route::middleware([
     ->selectRaw('users.id_curso, COUNT(*) as checkin_count')
     ->groupBy('users.id_curso')
     ->get();
+
 
 dd($checkintenda_dia1);
             $checkintenda_dia2 = CheckInTenda::whereDate('created_at', '=', '2024-02-29')->get();
