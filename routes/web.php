@@ -592,8 +592,13 @@ Route::middleware([
         Route::get('/dashboard', function () {
             $usersWithoutRoleXCount = User::all()->count();
             $empresasCount = Empresa::all()->count();
-            $checkintenda_dia1 = CheckInTenda::whereDate('created_at', '=', '2024-02-28')->get();
-            dd($checkintenda_dia1);
+            $checkintenda_dia11 = CheckInTenda::whereDate('created_at', '=', '2024-02-28')->get();
+            $checkintenda_dia1 = CheckInTenda::whereDate('created_at', '=', '2024-02-28')
+    ->join('users', 'check_in_tendas.id_user', '=', 'users.id') // Supondo que a chave estrangeira em CheckInTenda é id_user e a chave primária em User é id
+    ->selectRaw('users.id_curso, COUNT(*) as checkin_count')
+    ->groupBy('users.id_curso')
+    ->get();
+dd($checkintenda_dia1);
             $checkintenda_dia2 = CheckInTenda::whereDate('created_at', '=', '2024-02-29')->get();
             $sessions = $activeSessions = DB::table(config('session.table', 'sessions'))->count();
             return view('admin.fista.dashboard')->with(['usersWithoutRoleXCount' => $usersWithoutRoleXCount, 'empresasCount' => $empresasCount, 'sessions' => $sessions]);
