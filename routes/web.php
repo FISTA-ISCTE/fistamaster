@@ -593,15 +593,13 @@ Route::middleware([
             $empresasCount = Empresa::all()->count();
             $checkintenda_dia11 = CheckInTenda::whereDate('created_at', '=', '2024-02-28')->get();
 
-            $checkintenda_dia1 = CheckInTenda::whereDate('check_in_tenda.created_at', '=', '2024-02-28')
-    ->join('users', 'check_in_tenda.id_user', '=', 'users.id')
-    ->selectRaw('users.id_curso, COUNT(*) as checkin_count')
-    ->groupBy('users.id_curso')
-    ->get();
-
-
-
-dd($checkintenda_dia1);
+            $checkintenda_dia1 = CheckInTenda::whereDate('check_in_tenda.created_at', '=', '2024-02-29')
+            ->join('users', 'check_in_tenda.id_user', '=', 'users.id')
+            ->selectRaw('users.id_curso, COUNT(*) as checkin_count')
+            ->groupBy('users.id_curso')
+            ->get();
+        
+            dd($checkintenda_dia1);
             $checkintenda_dia2 = CheckInTenda::whereDate('created_at', '=', '2024-02-29')->get();
             $sessions = $activeSessions = DB::table(config('session.table', 'sessions'))->count();
             return view('admin.fista.dashboard')->with(['usersWithoutRoleXCount' => $usersWithoutRoleXCount, 'empresasCount' => $empresasCount, 'sessions' => $sessions]);
