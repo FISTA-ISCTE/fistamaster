@@ -6,6 +6,7 @@ use App\Http\Controllers\SorteioController;
 use App\Mail\EmailSends;
 use App\Models\Arquitetura;
 use App\Models\CheckInConferencia;
+use App\Models\CheckInTenda;
 use App\Models\Curso;
 use App\Models\Empresa;
 use App\Models\SiInscricao;
@@ -591,6 +592,9 @@ Route::middleware([
         Route::get('/dashboard', function () {
             $usersWithoutRoleXCount = User::all()->count();
             $empresasCount = Empresa::all()->count();
+            $checkintenda_dia1 = CheckInTenda::whereDate('created_at', '=', '2024-02-28')->get();
+            dd($checkintenda_dia1);
+            $checkintenda_dia2 = CheckInTenda::whereDate('created_at', '=', '2024-02-29')->get();
             $sessions = $activeSessions = DB::table(config('session.table', 'sessions'))->count();
             return view('admin.fista.dashboard')->with(['usersWithoutRoleXCount' => $usersWithoutRoleXCount, 'empresasCount' => $empresasCount, 'sessions' => $sessions]);
         })->name('admin.dashboard');
