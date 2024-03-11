@@ -593,11 +593,12 @@ Route::middleware([
             $empresasCount = Empresa::all()->count();
             $checkintenda_dia11 = CheckInTenda::whereDate('created_at', '=', '2024-02-28')->get();
 
-            $checkintenda_dia1 = CheckInTenda::whereDate('check_in_tendas.created_at', '=', '2024-02-28')
-    ->join('users', 'check_in_tendas.id_user', '=', 'users.id')
+            $checkintenda_dia1 = CheckInTenda::whereDate('check_in_tenda.created_at', '=', '2024-02-28')
+    ->join('users', 'check_in_tenda.id_user', '=', 'users.id')
     ->selectRaw('users.id_curso, COUNT(*) as checkin_count')
     ->groupBy('users.id_curso')
     ->get();
+
 
 
 dd($checkintenda_dia1);
